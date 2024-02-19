@@ -21,11 +21,14 @@ header {
     /* Ajustez la taille de votre logo si nécessaire */
     height: 50px;
 }
+#logo_entreprise {
+    height: 150px;
+    display: flex;
+}
 
 #deconnexion {
-    background-color: #d9534f;
-    color: white;
-    border: none;
+   
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -35,6 +38,7 @@ main {
 }
 
 #offre {
+    display: flex;
     background-color: white;
     border: 1px solid #ccc;
     margin-top: 20px;
@@ -60,41 +64,53 @@ main {
 }
 
 #evaluation {
-    display: flex ;
+    
+    border: none;
     padding-top: 10em;
+
+    
+    
     
 }
 
-#note {
-    display: block;
-    
+
+
+
+.rating-container {
+    display: flex;
+    align-items: center;
+}
+
+.rating-label {
+    margin-right: 10px;
+    font-size: 18px;
 }
 
 .rating {
-    unicode-bidi: bidi-override;
+    display: flex;
+    cursor: pointer;
     direction: rtl;
-    text-align: left;
-    
-    
 }
 
-.rating > .star {
-    display: inline-block;
-    position: relative;
+.star {
     font-size: 30px;
     color: #ddd; /* Couleur des étoiles non-sélectionnées */
-    cursor: pointer;
+    margin-right: 5px;
 }
 
-.rating > .star:hover,
-.rating > .star:hover ~ .star,
-.rating > .star.selected,
-.rating > .star.selected ~ .star {
-    color: #f5eb3b; /* Couleur des étoiles sélectionnées */
+.star:hover,
+.star:hover ~ .star,
+.star.selected,
+.star.selected ~ .star {
+    color: #f5eb3b; /* Couleur des étoiles sélectionnées ou survolées */
 }
+
+
+
 
 
 #commentaires {
+    display: flex;
     width: 100%;
     height: 100px;
 }
