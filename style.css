@@ -1,16 +1,24 @@
 /*PAGE ACCUEIL SANS CONNEXION*/
+body {
+    margin: 0;
+    padding: 0;
+}
+#top_acceuil{
+    background-image: url("C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/Développeur PHP (5).png");
+    /*background: linear-gradient(to bottom, #00D5E8, white);*/
+    background-size: 95em;
+    background-repeat: repeat-x;
+}
 
 /* Header */
 #navbar {
     display: flex;
-    align-items: center; /* Centrer verticalement les éléments enfants */
+    align-items: center;
     padding-bottom: 1.7em;
 }
 
 #lien_connexion_header {
     margin-left: auto; /* Pour pousser le lien "Connexion" à droite */
-    margin-top: 10px; /* Marge en haut */
-    margin-right: 20px; /* Marge à droite */
     border-radius: 5px;
     text-decoration: none;
     color: black;
@@ -18,7 +26,7 @@
     margin-right: 2em;
     font-size: 1.2em;
     font-weight: 600;
-    margin-top: 1.5em;
+    margin-top: 0.7em;
     cursor: pointer;
 }
 
@@ -33,46 +41,21 @@
 
 /* Section accueil */
 #accueil {
-    background-color: rgba(218, 215, 250, 0.299);
-    padding: 3em;
-    position: relative; /* Position relative pour que les éléments positionnés absolument se réfèrent à cette section */
+    padding: 0.5em;
+    text-align: center;
 }
 
 #titre_accueil {
-    font-size: 3em;
-    margin-top: 0;
+    background: linear-gradient(to top, transparent 10%, white 10.01%, white 40%, transparent 40.01%) no-repeat;
+    background-size: 0 100%;
+    transition: 1s;
+    display: inline;
+    color: black; /* Rend le texte transparent */
+    font-size: 5em;
+    margin-top: -3em;
     text-align: center;
     margin-bottom: 1em;
     cursor: default;
-}
-
-#cartes_accueil {
-    display: flex;
-    justify-content: center;
-    overflow: hidden; /* Masquer le débordement pour éviter que les images ne dépassent de la section */
-}
-
-.carte_animation {
-    position: relative; /* Définir la position relative */
-    width: 13em;
-    animation: arriveeDeLaGauche 1s ease-in-out forwards; /* Applique l'animation */
-    opacity: 0; /* Commence avec une opacité à 0 */
-    margin: 0 -10px; /* Ajuste la marge négative pour que les images se chevauchent */
-}
-
-.carte_animation:first-child {
-    margin: 0; /* Réinitialise la marge de la première image */
-}
-
-@keyframes arriveeDeLaGauche {
-    from {
-        transform: translateX(-100%); /* Commence en dehors de la section à gauche */
-        opacity: 0; /* Opacité à 0 */
-    }
-    to {
-        transform: translateX(0); /* Se place à sa position normale */
-        opacity: 1; /* Opacité à 1 */
-    }
 }
 
 
@@ -80,13 +63,14 @@
 #bouton_connexion_accueil {
     display: block;
     margin: 1em auto 0;
-    margin-top: 2em;
+    margin-top: 4em;
+    margin-bottom: 5em;
     font-size: 1rem;
     background-color: azure;
     padding: 0.5em 1em;
     border-radius: 7px;
     cursor: pointer;    
-    border: 2px solid transparent; /* Bord du bouton initialement transparent */
+    border: 2px solid lightblue; /* Bord du bouton initialement transparent */
     transition: border-color 0.3s ease; /* Transition douce pour la couleur du bord */
 
 }
@@ -148,7 +132,21 @@
     margin-top: 1em;
 }
 
+
+
+
+
+
+
+
 /*PAGE DE CONNEXION*/
+
+#body_connexion{
+    background: linear-gradient(to bottom, #00D5E8 10%, white 70%);
+    /*background-image: url("C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/Développeur PHP (5).png");*/
+    /*background-size: 95em;
+    background-repeat: repeat-x;*/
+}
 
 #bienvenue{
     text-align: center;
@@ -173,12 +171,14 @@
     border-radius: 6px;
     padding: 2em;
     padding-top: 0.5em;
+    background-color: white;
 }
 
 .input_connexion{
     padding: 0.6em;
     border-radius: 5px;
     border: solid black 1px;
+    font-size: 1em;
 
 }
 
@@ -209,6 +209,135 @@
 
 
 
+/*   PAGE WISHLIST ET CANDIDATURES   */
+
+#body_whislist_candidatures{
+    background-image: url("C:/Users/quent/Downloads/test2.png");
+    background-repeat: repeat-x;
+    background-size: 95em;
+
+}
+
+#menu_page_wishlist{
+    margin-right: 2em;
+    margin-top: 0.6em;
+
+}
+
+#navbar_wishlist {
+    display: flex;
+    padding-bottom: 1em;
+    margin-top: 2em;
+}
+
+
+#titre_page{
+    margin-left: 1em;
+    font-size: 4em;
+}
+
+
+
+.wish_cand{
+    display: flex;
+    flex-direction: column;        
+    /*align-items: center;*/
+    margin-left: 5em;
+    margin-right: 5em;
+    box-shadow: 0 11px 34px 0 rgba(0,0,0,.2);
+    border-radius: 12px;
+    background: linear-gradient(to bottom, rgba(173, 216, 230, 0.9) 0%, rgba(173, 216, 230, 0.7) 20%, rgba(198, 237, 250, 0.7) 20.01%, rgba(198, 237, 250, 0.7) 100%);
+}
+
+.offres_header{
+    display: flex;
+    align-items: center;
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+.offres_header h2{
+    font-size: 2.5em;
+    margin-right: 1em;
+}
+
+
+.recherche_offres{
+    cursor: text;
+    font-size: 0.9em;
+    border-radius: 20px;
+    width: 30em;
+    padding: 1em;
+    border: none;
+}
+
+.aucune_offre{
+    margin-left: 2em;
+}
+
+
+
+.les_offres{
+    display: flex;
+    align-items: center;
+}
+
+
+.offres_container{
+
+    overflow-x: hidden;
+    display: flex;
+    padding-bottom: 4em;
+    padding-top: 2em;
+    width: 100%;
+    
+}
+
+
+
+.offres_container .offre{
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(to bottom right, rgba(167, 224, 167, 0.737), rgb(111, 204, 235));
+    border-radius: 10px;
+    box-shadow: 0 11px 30px 0 rgba(0,0,0,.2);
+    min-width: 10%;
+    width: 21%;
+    flex-shrink: 0;
+    text-align: center;
+    padding: 1%;
+    margin: 1%;
+    /*padding-right: 2em;*/
+    transition: width 0.6s, height 0.6s, filter 0.6s;
+    transition: transform 0.3s ease;
+
+}
+
+
+ /*
+.wishlist_container .offre_wishlist:hover {
+    
+}
+*/
+
+.offre p{
+    text-align: left;
+}
+
+.offre img{
+    width: 100px;
+}
+
+
+
+.scroll_buttons {
+    display: flex;
+    width: 100%; /* Assurer que les boutons de défilement s'étendent sur toute la largeur */
+    width: 4em; /* Ajuster la taille des images selon vos besoins */
+    height: auto;
+    cursor: pointer; /* Définir le curseur comme un pointeur pour indiquer que les images sont cliquables */
+
+}
 
 
 
@@ -218,10 +347,32 @@ footer{
     padding-bottom: 5em;
     padding-top: 2em;
     text-align: center;
-    background-color: rgb(154, 154, 154);
+    background-color: lightblue;
 }
 
 .police_texte{
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:system-ui;
     cursor:default;
 }
+
+
+@media (max-width: 1300px){
+    #logo_connexion{
+        width: 5em;
+        margin-top: 0.2em;
+    }
+    
+    #titre_bienvenue{
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    #fenetre_login{
+        width: 40%;
+        margin: auto;
+        border: solid black 1px;
+        border-radius: 6px;
+        padding: 2em;
+        padding-top: 0.5em;
+        background-color: white;
+    }
