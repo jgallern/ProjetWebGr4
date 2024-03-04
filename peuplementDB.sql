@@ -1,5 +1,5 @@
 CREATE TABLE Personne(
-   ID_Personne INT,
+   ID_Personne INT NOT NULL AUTO_INCREMENT ,
    nom VARCHAR(50),
    prenom VARCHAR(50),
    centre VARCHAR(50),
@@ -9,14 +9,14 @@ CREATE TABLE Personne(
 );
 
 CREATE TABLE Notes(
-   ID_Note INT,
+   ID_Note INT NOT NULL AUTO_INCREMENT ,
    Note INT,
    Commentaire VARCHAR(280),
    PRIMARY KEY(ID_Note)
 );
 
 CREATE TABLE Centre(
-   ID_Centre INT,
+   ID_Centre INT NOT NULL AUTO_INCREMENT ,
    Nom_centre VARCHAR(50),
    ID_Personne INT NOT NULL,
    PRIMARY KEY(ID_Centre),
@@ -24,7 +24,7 @@ CREATE TABLE Centre(
 );
 
 CREATE TABLE Pilote(
-   ID_Pilote INT,
+   ID_Pilote INT NOT NULL AUTO_INCREMENT ,
    photoprofile VARCHAR(50),
    ID_Note INT NOT NULL,
    ID_Personne INT NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE Pilote(
 );
 
 CREATE TABLE Adresse(
-   ID_Adresse INT,
+   ID_Adresse INT NOT NULL AUTO_INCREMENT,
    Numero_rue INT,
    Nom_rue VARCHAR(200),
    Ville VARCHAR(100),
@@ -46,18 +46,18 @@ CREATE TABLE Adresse(
 );
 
 CREATE TABLE SecteurActivite(
-   ID_secteur INT,
+   ID_secteur INT NOT NULL AUTO_INCREMENT ,
    nom_secteur VARCHAR(50),
    PRIMARY KEY(ID_secteur)
 );
 
 CREATE TABLE Wishlist(
-   ID_Wishlist INT,
+   ID_Wishlist INT NOT NULL AUTO_INCREMENT,
    PRIMARY KEY(ID_Wishlist)
 );
 
 CREATE TABLE Entreprise(
-   ID_Entreprise INT,
+   ID_Entreprise INT NOT NULL AUTO_INCREMENT,
    nom VARCHAR(50),
    logo VARCHAR(50),
    ID_Adresse INT,
@@ -66,7 +66,7 @@ CREATE TABLE Entreprise(
 );
 
 CREATE TABLE Promotion(
-   ID_Promotion INT,
+   ID_Promotion INT NOT NULL AUTO_INCREMENT,
    Nom_Promo VARCHAR(50),
    ID_Pilote INT NOT NULL,
    PRIMARY KEY(ID_Promotion),
@@ -74,7 +74,7 @@ CREATE TABLE Promotion(
 );
 
 CREATE TABLE Etudiant(
-   ID_Etudiant INT,
+   ID_Etudiant INT NOT NULL AUTO_INCREMENT,
    photoprofil VARCHAR(50),
    ID_Wishlist INT NOT NULL,
    ID_Note INT NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE Etudiant(
 );
 
 CREATE TABLE Administrateur(
-   ID_Administrateur INT,
+   ID_Administrateur INT NOT NULL AUTO_INCREMENT,
    ID_Wishlist INT NOT NULL,
    ID_Personne INT NOT NULL,
    PRIMARY KEY(ID_Administrateur),
@@ -99,7 +99,7 @@ CREATE TABLE Administrateur(
 );
 
 CREATE TABLE Candidature(
-   ID_Candidature INT,
+   ID_Candidature INT NOT NULL AUTO_INCREMENT,
    CV VARCHAR(50),
    lettremotiv VARCHAR(50),
    ID_Etudiant INT NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE Candidature(
 );
 
 CREATE TABLE Offre(
-   ID_Offre INT,
+   ID_Offre INT NOT NULL AUTO_INCREMENT,
    Dureestrage INT,
    Baseremuneration INT,
    dateoffre DATE,
@@ -127,7 +127,7 @@ CREATE TABLE Offre(
 );
 
 CREATE TABLE Se_voir_attribué(
-   ID_Entreprise INT,
+   ID_Entreprise INT NOT NULL AUTO_INCREMENT,
    ID_Note INT,
    PRIMARY KEY(ID_Entreprise, ID_Note),
    FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
@@ -135,7 +135,7 @@ CREATE TABLE Se_voir_attribué(
 );
 
 CREATE TABLE Exercer_dans(
-   ID_Entreprise INT,
+   ID_Entreprise INT NOT NULL AUTO_INCREMENT,
    ID_secteur INT,
    PRIMARY KEY(ID_Entreprise, ID_secteur),
    FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
@@ -143,7 +143,7 @@ CREATE TABLE Exercer_dans(
 );
 
 CREATE TABLE contenir(
-   ID_Offre INT,
+   ID_Offre INT NOT NULL AUTO_INCREMENT,
    ID_Wishlist INT,
    PRIMARY KEY(ID_Offre, ID_Wishlist),
    FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre),
