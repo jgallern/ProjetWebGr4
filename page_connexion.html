@@ -15,16 +15,16 @@
         <h1 class="police_texte" id="titre_bienvenue">salut</h1>
     </div>
 
-    <section id="fenetre_login" class="police_texte">
+    <form id="fenetre_login" class="police_texte" method="post" action="connect.php">
         <h2>Qui es tu ?</h2>
-        <input class="input_connexion" type="text" placeholder="Identifiant"><br><br>
+        <input id="id_connection" name="id_connection" class="input_connexion" type="text" placeholder="Identifiant"><br><br>
         <h2>Ton mot de passe ? <span style="font-size: 0.7em;">(promis je garde ça secret)</span></h2>
-        <input class="input_connexion" type="password" placeholder="Mot de passe"><br>
+        <input id="password_connection" name="password_connection" class="input_connexion" type="password" placeholder="Mot de passe"><br>
         <div id="boutons">
             <input id="oubli_mdp" type="button" value="Pardon, j'ai oublié mon mot de passe">
             <input id="submit" type="submit" value="Se connecter">
         </div>  
-    </section>
+    </form>
 
 </body>
 
