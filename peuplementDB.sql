@@ -3,7 +3,7 @@ CREATE TABLE Personne(
    nom VARCHAR(50),
    prenom VARCHAR(50),
    centre VARCHAR(50),
-   Login VARCHAR(50),
+   Login VARCHAR(50) UNIQUE,
    Password VARCHAR(50),
    PRIMARY KEY(ID_Personne)
 );
