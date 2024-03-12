@@ -11,5 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const result = await response.text();
         console.log(result); // Traitez la réponse de votre script PHP ici
+
+        if (result.includes("Fichiers téléchargés et enregistrés avec succès dans la base de données.")){
+            alert("Candidatures envoyées avec success !");
+        }
+        else {
+            alert("Une erreur est survenue lors du téléchargement des fichiers.");
+        }
     };
 });

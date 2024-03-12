@@ -9,22 +9,40 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if (isset($_FILES['cv']) && isset($_FILES['motivation'])) {
-        echo implode(',', $_FILES);
         $cvFile = $_FILES['cv'];
         $motivationFile = $_FILES['motivation'];
-        $uploadDirectory = "uploads\\";
+        $uploadDirectory = "uploads\\"; // Assurez-vous que ce répertoire existe et a les permissions adéquates
 
-        $cvPath = $uploadDirectory . basename($cvFile['name']);
-        $motivationPath = $uploadDirectory . basename($motivationFile['name']);
-        $idEtudiant = 7;
+        // Fonction pour générer un nouveau chemin de fichier si le fichier existe déjà
+        function getUniqueFilePath($uploadDirectory, $filename) {
+            $filePath = $uploadDirectory . basename($filename);
+            $fileInfo = pathinfo($filePath);
+            $fileExtension = $fileInfo['extension'];
+            $filenameWithoutExt = $fileInfo['filename'];
+            $counter = 1; // Compteur pour ajouter un suffixe au fichier si nécessaire
 
-        // Valider et déplacer les fichiers
+            // Boucle jusqu'à ce qu'un nom de fichier unique soit trouvé
+            while (file_exists($filePath)) {
+                $newFilename = $filenameWithoutExt . "_" . $counter . '.' . $fileExtension;
+                $filePath = $uploadDirectory . $newFilename;
+                $counter++;
+            }
+
+            return $filePath;
+        }
+
+        // Générer des chemins de fichiers uniques
+        $cvPath = getUniqueFilePath($uploadDirectory, $cvFile['name']);
+        $motivationPath = getUniqueFilePath($uploadDirectory, $motivationFile['name']);
+        $idEtudiant = 7; // Supposons que cet ID est dynamiquement déterminé ou récupéré d'une autre manière
+
+        // Déplacer les fichiers téléchargés vers leur emplacement final
         $cvUploadSuccess = move_uploaded_file($cvFile['tmp_name'], $cvPath);
         $motivationUploadSuccess = move_uploaded_file($motivationFile['tmp_name'], $motivationPath);
 
         if ($cvUploadSuccess && $motivationUploadSuccess) {
-            // Préparer la requête SQL pour insérer les chemins des fichiers et l'ID de l'étudiant
-            $stmt = $conn->prepare("INSERT INTO Candidature (CV, lettremotiv, ID_Etudiant) VALUES (?, ?,?)");
+
+            $stmt = $conn->prepare("INSERT INTO Candidature (CV, lettremotiv, ID_Etudiant) VALUES (?, ?, ?)");
             $stmt->execute([$cvPath, $motivationPath, $idEtudiant]);
 
             echo "Fichiers téléchargés et enregistrés avec succès dans la base de données.";
