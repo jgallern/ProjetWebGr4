@@ -1,34 +1,38 @@
-document.querySelectorAll('.rating .star').forEach(star => {
-    star.addEventListener('click', function(e) {
-        let ratingValue = this.getAttribute('data-value');
+document.addEventListener('DOMContentLoaded', function () {
+    const stars = document.querySelectorAll('.star');
+    stars.forEach(star => {
+        star.addEventListener('click', function () {
+            removeSelection();
+            this.classList.add('selected');
+            // Optionally, automatically submit the form here or wait for a button click
+
+        });
+    });
+
+    function removeSelection() {
+        stars.forEach(star => {
+            star.classList.remove('selected');
+        });
+    }
+
+    document.getElementById('envoyerCommentaire').addEventListener('click', function () {
+        const selectedRating = document.querySelector('.rating .selected');
+        const ratingValue = selectedRating ? selectedRating.getAttribute('data-value') : null;
+        const commentaire = document.getElementById('commentaire').value;
+
+        if (!ratingValue) {
+            console.error('No rating selected');
+            return; // Exit the function if no rating is selected
+        }
 
         let formData = new FormData();
         formData.append('rating', ratingValue);
+        formData.append('commentaire', commentaire);
 
-        fetch('chemin/vers/votre/script/serveur', {
+        fetch('traiterDonnees.php', {
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Erreur:', error);
-        });
 
-        // Mise à jour de la sélection des étoiles
-        let currentStar = e.target;
-        currentStar.classList.add('selected');
-        let previousStar = currentStar.previousElementSibling;
-        while(previousStar) {
-            previousStar.classList.add('selected');
-            previousStar = previousStar.previousElementSibling;
-        }
-        let nextStar = currentStar.nextElementSibling;
-        while(nextStar) {
-            nextStar.classList.remove('selected');
-            nextStar = nextStar.nextElementSibling;
-        }
     });
 });

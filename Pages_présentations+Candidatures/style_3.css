@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 header {
@@ -25,6 +25,49 @@ header {
     height: 150px;
     display: flex;
 }
+/* Styles for the main title on the application page */
+main h1 {
+    text-align: center;
+    font-size: 36px; /* Adjust size as necessary */
+    color: black; /* Change color based on your preference */
+    margin-bottom: 40px; /* Space below the title */
+}
+
+/* Styles for the application form */
+.input-container {
+    background-color: #ccc; /* Light grey background for file input sections */
+    padding: 20px;
+    margin-bottom: 20px; /* Space between file input sections */
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 10px; /* Space below the label */
+    font-size: 18px; /* Adjust label font size as necessary */
+    color: black; /* Label text color */
+}
+
+input[type="file"] {
+    padding: 10px; /* Padding inside the file input for better visibility */
+    border: 1px solid #ccc; /* Border to make it consistent with design */
+    width: calc(100% - 22px); /* Full width minus padding and border */
+}
+
+/* Style for the send button */
+button[type="submit"] {
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    padding: 15px 30px; /* Padding around the text */
+    font-size: 18px; /* Font size for the button text */
+    border: none; /* No border for the button */
+    width: 100%; /* Make the button full width */
+    margin-top: 20px; /* Space above the button */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+}
+
 
 #deconnexion {
    
@@ -114,6 +157,20 @@ main {
     width: 100%;
     height: 100px;
 }
+#envoyerCommentaire {
+    background-color: #4CAF50; /* Couleur de fond */
+    color: white; /* Couleur du texte */
+    padding: 10px 20px; /* Remplissage */
+    margin: 8px 0; /* Marge */
+    border: none; /* Aucune bordure */
+    cursor: pointer; /* Curseur en forme de pointeur */
+    width: 100%; /* Largeur */
+}
+
+#envoyerCommentaire:hover {
+    background-color: #45a049; /* Changement de couleur au survol */
+}
+
 
 footer {
     background-color: #333;
@@ -124,3 +181,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
