@@ -28,7 +28,12 @@
 
 <?php
 
-require_once "header.php";
+try{
+    require_once 'header.php';
+}
+catch(Exception $e){
+    echo 'petit problème'.$e->getMessage().'';
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
