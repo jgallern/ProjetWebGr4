@@ -4,8 +4,15 @@ $dbname = "test";
 $dbuser = "phpmyadmin";
 $dbpassword = "phpmyadmin";
 
+try {
 $bdd = new PDO("mysql:host=$host; dbname=$dbname", $dbuser, $dbpassword);
+}
+catch (PDOException $e) {
+    echo '<p>'.$e->getMessage().'</p>';
+    exit();
+}
 
+$dtb = new Connection();
 class Connection{
     public $host;
     public $bddconnection;
@@ -49,7 +56,7 @@ class Connection{
         if ($login->rowCount() > 0) {
             echo "<p>Connection réussie</p>";
             setcookie("connected", true);
-            header("Location: pageaccueuil.php");
+            header("Location: page_accueil_ss_connexion.php");
         } else {
             echo "<p>mot de passe ou nom d'utilisateur incorrect</p>";
             setcookie("connected", false);
@@ -63,7 +70,7 @@ class Connection{
     function disconnect()
     {
         setcookie("connected", false);
-        header("Location: pageaccueuil.php");
+        header("Location: page_accueil_ss_connexion.ph");
     }
 }
 
@@ -78,7 +85,6 @@ class Compte{
     public $promo;
     public $photoprofile;
     public $promotion;
+    public $bdd; 
 
 }
-
-$dtb = new Connection();
