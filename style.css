@@ -4,10 +4,11 @@ body {
     padding: 0;
 }
 #top_acceuil{
-    background-image: url("C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/Développeur PHP (5).png");
-    /*background: linear-gradient(to bottom, #00D5E8, white);*/
+    /*background-image: url("C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/Développeur PHP (5).png");
+    background: linear-gradient(to bottom, #00D5E8, white);
     background-size: 95em;
-    background-repeat: repeat-x;
+    background-repeat: repeat-x;*/
+    background: radial-gradient(circle at 25%,hsla(0,0%,100%,.2),rgba(50,50,50,.2) 80%);
 }
 
 /* Header */
@@ -314,11 +315,6 @@ body {
 }
 
 
- /*
-.wishlist_container .offre_wishlist:hover {
-    
-}
-*/
 
 .offre p{
     text-align: left;
@@ -338,6 +334,551 @@ body {
     cursor: pointer; /* Définir le curseur comme un pointeur pour indiquer que les images sont cliquables */
 
 }
+
+
+
+
+/*  GESTION ENTREPRISE ETUDIANTS   */
+
+/*PAGE ACCUEIL SANS CONNEXION*/
+
+/* Header */
+#navbar {
+    display: flex;
+    align-items: center; /* Centrer verticalement les éléments enfants */
+    padding-bottom: 1.7em;
+}
+
+#lien_connexion_header {
+    margin-left: auto; /* Pour pousser le lien "Connexion" à droite */
+    margin-top: 10px; /* Marge en haut */
+    margin-right: 20px; /* Marge à droite */
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    margin-right: 2em;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 1.5em;
+    cursor: pointer;
+}
+
+#logo_accueil {
+    margin-top: 10px; /* Marge en haut */
+    margin-left: 2em; /* Marge à gauche */
+    width: 6em;
+}
+
+
+
+
+/* Section accueil */
+#accueil {
+    background-color: rgba(218, 215, 250, 0.299);
+    padding: 3em;
+    position: relative; /* Position relative pour que les éléments positionnés absolument se réfèrent à cette section */
+}
+
+#titre_accueil {
+    font-size: 3em;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 1em;
+    cursor: default;
+}
+
+#cartes_accueil {
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Masquer le débordement pour éviter que les images ne dépassent de la section */
+}
+
+.carte_animation {
+    position: relative; /* Définir la position relative */
+    width: 13em;
+    animation: arriveeDeLaGauche 1s ease-in-out forwards; /* Applique l'animation */
+    opacity: 0; /* Commence avec une opacité à 0 */
+    margin: 0 -10px; /* Ajuste la marge négative pour que les images se chevauchent */
+}
+
+.carte_animation:first-child {
+    margin: 0; /* Réinitialise la marge de la première image */
+}
+
+@keyframes arriveeDeLaGauche {
+    from {
+        transform: translateX(-100%); /* Commence en dehors de la section à gauche */
+        opacity: 0; /* Opacité à 0 */
+    }
+    to {
+        transform: translateX(0); /* Se place à sa position normale */
+        opacity: 1; /* Opacité à 1 */
+    }
+}
+
+
+
+#bouton_connexion_accueil {
+    display: block;
+    margin: 1em auto 0;
+    margin-top: 2em;
+    font-size: 1rem;
+    background-color: azure;
+    padding: 0.5em 1em;
+    border-radius: 7px;
+    cursor: pointer;    
+    border: 2px solid transparent; /* Bord du bouton initialement transparent */
+    transition: border-color 0.3s ease; /* Transition douce pour la couleur du bord */
+
+}
+
+
+
+/*   SECTION OFFRES  */
+
+.offres-container {
+    display: flex;
+    flex-wrap: wrap; /* Permettre le passage à la ligne */
+}
+
+.offre_stage {
+    width: calc(42% - 5px); /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
+    padding: 20px;
+    background-color: #f2f2f2;
+    margin-right: 10px;
+    margin-bottom: 10px; /* Espacement entre les lignes */
+    border-radius: 6px;
+    margin-top: 2.5em;
+    margin-left: 2.5em;
+    padding-right: 3em;
+    display: flex;
+    align-items: center;
+}
+
+.offre-details {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.imgs_offre {
+    width: 10em;
+    float: left;
+    margin-left: 0.7em;
+    margin-right: 2em;
+    margin-top: auto;
+    margin-bottom: auto;
+
+}
+
+.titre_poste {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.bouton_candidater {
+    width: 80%;
+    align-self: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-radius: 4px;
+    border: 0.5px solid black;
+    cursor: pointer;
+    background-color: white;
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+
+
+
+/*PAGE DE CONNEXION*/
+
+#bienvenue{
+    text-align: center;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+#logo_connexion{
+    width: 10em;
+    margin-top: 0.2em;
+}
+
+#titre_bienvenue{
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
+
+#fenetre_login{
+    width: 40%;
+    margin: auto;
+    border: solid black 1px;
+    border-radius: 6px;
+    padding: 2em;
+    padding-top: 0.5em;
+}
+
+.input_connexion{
+    padding: 0.6em;
+    border-radius: 5px;
+    border: solid black 1px;
+
+}
+
+#boutons{
+    text-align: center;
+    margin-top: 2em;
+}
+
+#oubli_mdp, #submit {
+    cursor: pointer;
+    display: inline-block; /* Afficher les boutons en ligne */
+    margin-top: 2em; /* Marge supérieure entre les boutons et les éléments précédents */
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 1em;
+    margin-right: 0.5em; /* Marge droite de 0.5em entre les boutons */
+}
+
+#oubli_mdp {
+    background-color: lightgray; /* Style différent pour le bouton "Pardon, j'ai oublié mon mot de passe" */
+}
+
+#submit {
+    background-color: lightblue; /* Style différent pour le bouton "Se connecter" */
+}
+
+
+/*gestion entreprise etudiant*/
+
+
+
+#navbar_entreprise_etudiants {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:rgba(198, 237, 250, 0.7);
+    height: 4em;
+}
+
+#lien_navbar{
+    display: flex;
+}
+
+.lien_nav {
+    display: flex;
+    margin-right: 3em;
+    text-decoration: none;
+    cursor: auto;
+    color: #0b0b0b;
+    transition: 0.2s;
+    padding: 1em;
+
+
+}
+
+
+.lien_nav:hover{
+    color: #797979;
+    border-left: solid black 0.1em;
+    border-right: solid black 0.1em;
+    border-bottom: solid black 0.2em;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+
+#profil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-right: 1em;
+}
+
+#detail_profil{
+
+    background-color: #B3B3B3;
+    position: absolute;
+    border-radius: 10px;
+    z-index: 1;
+    top: -0.2em;
+    right: -0.2em;
+    width: 0;
+    height: 0;
+    transition: height 0.6s, width 0.6s;
+    text-align: center;
+    
+}
+
+#detail_profil button{
+    display: none;
+}
+
+
+#detail_profil h3{
+    display: none;
+}
+
+#photo_profil {
+    width: 3em;
+    position: inherit;
+    display: block;
+    cursor: pointer;
+    z-index: 3;
+    top: 0em;
+    right: 0em;
+    transition: top 0.6s, right 0.6s;
+}
+
+#bouton_voir_profil{
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 1em;
+    background-color: #797979;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#nom_prenom_etudiant{
+    margin-top: 40%;
+}
+
+#bouton_deconnexion{
+    cursor: pointer;
+    background-color: lightcoral;
+    padding: 1em;
+    border-radius: 5px;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+
+#partie_filtre{
+    text-align: center;
+}
+
+
+#btn_filtre{
+    width: 90%;
+    height: 3em;
+    border: none;
+    background-color: #ccc;
+    color: #141412;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+#form_filtre{
+    background-color: #797979;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 0;
+    transition: max-height 0.8s;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+}
+
+#filtres_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+
+}
+
+.un_filtre{
+    text-align: left;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-top: 2em;
+    transition: opacity 0.2s;
+    opacity: 0;    
+}
+
+.un_filtre input, .un_filtre select{
+    border-radius: 5px;
+    padding: 0.7em;
+    border: none;
+    margin-top: 1em;
+    width: 15em;
+}
+
+
+#submit_button{
+    cursor: pointer;
+    opacity: 0;
+    border-radius: 5px;
+    background-color:#B3B3B3;
+    padding: 1em;
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+
+
+#titre_entreprises_populaire{
+    margin-top: 5em;
+}
+
+
+.listeentreprises{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+
+.carte_entreprise{
+    width: 21%;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-align: center;
+    color: #141412;
+    transition: transform 0.4s;
+    padding: 1em;
+    
+
+}
+
+.carte_entreprise img{
+    width: 150px;
+}
+
+
+.carte_entreprise:hover{
+    transform: translateY(-4px);
+    transition: transform 0.4s;
+}
+
+
+.carte_voir_plus{
+    background-color: #bbbbbb;
+    text-align: center;
+    border: 0px;
+    transition: 1s;
+
+}
+
+.carte_voir_plus:hover{
+    transform: none;
+    border: #141412 solid;
+    transition: 0.2s;
+}
+
+.carte_voir_plus h3{
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+.form-section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.form-block {
+    border: 1px solid #ccc; 
+    flex:1;
+    background-color: #B3B3B3; 
+    padding: 20px;
+    margin-bottom: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.button-search, .button-reset {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.button-search{
+    border: solid;
+    border-color: #c2c2c2;
+}
+
+.button-reset {
+    background-color: #B3B3B3;
+    color: black;
+    border: solid;
+    border-color: #797979;    
+}
+
+.button-reset:hover {
+    background-color: #bbbbbb;
+}
+
+.logo{
+    text-align: center;
+}
+
+.titre{
+    padding-left: 2.5em;
+    font-weight: 400;
+}
+
+.form-section input {
+    border: 1px solid #e9e9e9; /* Add a solid border */
+    border-radius: 5px; /* Make the borders round */
+  }
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu span {
+  height: 2px;
+  width: 25px;
+  background-color: rgb(0, 0, 0);
+  margin: 4px 0;
+}
+
+.listeentreprises{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.ficheentreprise{
+    background-color: #F8F8F8;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.elementfiche{
+    flex: 1;
+}
+
+
+
+
 
 
 
