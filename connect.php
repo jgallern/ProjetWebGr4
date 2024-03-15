@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -28,6 +31,7 @@
 
 <?php
 
+
 try{
     require_once 'header.php';
 }
@@ -52,7 +56,7 @@ $dtb->set_passwordpersonne($_POST['password_connection']); //'teste');
 
 $dtb->stringconection();
 //$dtb->Montrer_Tables();
-$dtb->trouverUser();
+$dtb->Login();
 
 //$bdd = new PDO("mysql:host=$host; dbname=$dbname", $dbuser, $dbpassword);
 //$bdd->query("use test;");
