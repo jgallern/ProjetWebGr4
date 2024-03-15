@@ -1,6 +1,4 @@
-<?php
 
-?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -15,10 +13,27 @@
 <body>
     <div id="bienvenue">
         <a href="page_accueil_ss_connexion.html"><img id="logo_connexion" alt="logo SEB" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"></a>
+
+            <?php
+            if (isset ($_COOKIE["connected"])) {
+                if ($_COOKIE["connected"] == true) {
+                ?>
+            <form method="post" action="disconnect.php">
+                <input type="submit" value="Se déconnecter">
+            </form>
+
+                <?php
+                } 
+            }
+
+?>
+
+
+
         <h1 class="police_texte" id="titre_bienvenue">salut</h1>
     </div>
 
-    <form id="fenetre_login" class="police_texte" method="post" action="">
+    <form id="fenetre_login" class="police_texte" method="post" action="connect.php">
         <h2>Qui es tu ?</h2>
         <input id="id_connection" name="id_connection" class="input_connexion" type="text" placeholder="Identifiant"><br><br>
         <h2>Ton mot de passe ? <span style="font-size: 0.7em;">(promis je garde ça secret)</span></h2>
@@ -49,7 +64,6 @@ if ( $_POST['id_connection'] == null | $_POST['password_connection']==null){
 }
 
 else {
-$dtb = new Connection();
 $dtb->set_Idpersonne($_POST['id_connection']);//'teste');
     //$_POST['id_connection']);
 $dtb->set_passwordpersonne($_POST['password_connection']); //'teste');
@@ -75,7 +89,9 @@ $dtb->Login();
 
 </body>
 
-<footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
+<footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés
+
+</footer>
 
 </html>
 
