@@ -49,7 +49,7 @@ class Connection{
         if ($login->rowCount() > 0) {
             echo "<p>Connection réussie</p>";
             setcookie("connected", true);
-            header("Location: ");
+            header("Location: pageaccueuil.php");
         } else {
             echo "<p>mot de passe ou nom d'utilisateur incorrect</p>";
             setcookie("connected", false);
@@ -63,7 +63,22 @@ class Connection{
     function disconnect()
     {
         setcookie("connected", false);
-        header("Location: connect.php");
+        header("Location: pageaccueuil.php");
     }
 }
+
+class Compte{
+    public $nom;
+    public $prenom;
+    public $centre;
+    public $login;
+    public $password;
+    public $statut;
+    public $id_wishlist;
+    public $promo;
+    public $photoprofile;
+    public $promotion;
+
+}
+
 $dtb = new Connection();
