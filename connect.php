@@ -54,7 +54,7 @@ $dtb->set_Idpersonne($_POST['id_connection']);//'teste');
     //$_POST['id_connection']);
 $dtb->set_passwordpersonne($_POST['password_connection']); //'teste');
 
-$dtb->stringconection();
+$dtb->set_bddconnection($bdd);
 //$dtb->Montrer_Tables();
 $dtb->Login();
 
