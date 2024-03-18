@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var bouton_voir_profil = document.getElementById("bouton_voir_profil");
     var bouton_deconnexion = document.getElementById("bouton_deconnexion");
 
-    profil_photo.addEventListener('click', function(event) {
+    profil_photo.addEventListener('click', function (event) {
         if (detail_profil.offsetWidth === 0 && detail_profil.offsetHeight === 0) {
             detail_profil.style.height = '20em';
             detail_profil.style.width = '20em';
@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', function (event) {
         if (detail_profil.offsetWidth > 0 && detail_profil.offsetHeight > 0) {
             if (!detail_profil.contains(event.target) && event.target !== profil_photo) {
                 detail_profil.style.height = '0px';
@@ -227,7 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 profil_photo.style.cursor = 'pointer';
                 nom_prenom.style.display = 'none';
                 bouton_voir_profil.style.display = 'none';
-                bouton_deconnexion.style.display = 'none';            }
+                bouton_deconnexion.style.display = 'none';
+            }
         }
     });
 
@@ -274,3 +275,210 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 })
 
+
+
+
+/*   PAGE ENTREPRISES PILOTE ADMIN  */
+
+document.addEventListener('DOMContentLoaded', function () {
+    var btn_modif_click = false;
+    /*
+    document.getElementById('btn_modif').addEventListener('click', function () {
+        if (!btn_modif_click) {
+            const div_voir = document.createElement("div");
+            div_voir.innerHTML = "voir l'entreprise";
+            div_voir.style.backgroundColor = 'green';
+            btn_modif_click = true;
+            var section_apres = document.querySelector('.creation_entreprise');
+            section_apres.parentNode.insertBefore(div_voir, section_apres);
+        }
+    });
+    document.getElementById('btn_voir').addEventListener('click', function () {
+        const div_voir = document.createElement("div");
+        div_voir.innerHTML = "voir l'entreprise";
+        div_voir.style.backgroundColor = 'blue';
+        var section_apres = document.querySelector('.creation_entreprise');
+        section_apres.parentNode.insertBefore(div_voir, section_apres);
+    });
+    document.getElementById('btn_stats').addEventListener('click', function () {
+        const div_voir = document.createElement("div");
+        div_voir.innerHTML = "voir l'entreprise";
+        div_voir.style.backgroundColor = 'red';
+        var section_apres = document.querySelector('.creation_entreprise');
+        section_apres.parentNode.insertBefore(div_voir, section_apres);
+    });
+    */
+
+    var result_all = document.getElementById("result_all");
+    var result_modif = document.getElementById("result_modif");
+    var result_stats = document.getElementById("result_stats");
+
+
+    var divs = document.querySelectorAll('.recherche_fiche_entreprise');
+
+    function no_click_icones() {
+        imageContainers.forEach(container => {
+            container.classList.remove('clicked');
+        });
+    }
+
+    function afficherOverlay() {
+        const overlay = document.getElementById('overlay');
+        const message = document.getElementById('message');
+
+        overlay.style.display = 'block';
+        message.style.display = 'block';
+
+        setTimeout(function () {
+            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+            message.style.opacity = '0';
+        }, 3000);
+
+        setTimeout(function () {
+            overlay.style.display = 'none';
+            message.style.display = 'none';
+            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.715)';
+            message.style.opacity = '1';
+        }, 3400);
+    }
+
+    divs.forEach(function (div) {
+        div.addEventListener('click', function () {
+            // Retirer la classe "selected" de toutes les divs
+            divs.forEach(function (item) {
+                item.classList.remove('selected');
+                item.addEventListener('mouseenter', function () {
+                    this.classList.add('hover');
+                });
+                item.addEventListener('mouseleave', function () {
+                    this.classList.remove('hover');
+                });
+
+            });
+
+            no_click_icones();
+            result_modif.classList.remove("visible");
+            result_stats.classList.remove("visible");
+
+            this.classList.add('selected');
+        });
+    });
+
+
+    document.getElementById('btn_modif').addEventListener('click', function () {
+        var isSelected = false;
+        divs.forEach(div => {
+            if (div.classList.contains('selected')) {
+                isSelected = true;
+            }
+        });
+        if (!isSelected) {
+            afficherOverlay();
+        }
+        else {
+            result_stats.classList.remove("visible");
+
+            result_modif.classList.add("visible");
+
+            const position = document.getElementById('result_all').getBoundingClientRect().top + window.pageYOffset - document.getElementById('navbar').offsetHeight;
+            window.scrollTo({ top: position, behavior: 'smooth' });
+        }
+    });
+
+    document.getElementById('btn_voir').addEventListener('click', function () {
+        var isSelected = false;
+        divs.forEach(div => {
+            if (div.classList.contains('selected')) {
+                isSelected = true;
+            }
+        });
+        if (!isSelected) {
+            afficherOverlay();
+        }
+        else {
+            result_modif.classList.remove("visible");
+            result_stats.classList.remove("visible");
+
+            window.open("https://www.google.com/", "_blank");
+
+        }
+    });
+
+    document.getElementById('btn_stats').addEventListener('click', function () {
+        var isSelected = false;
+        divs.forEach(div => {
+            if (div.classList.contains('selected')) {
+                isSelected = true;
+            }
+        });
+        if (!isSelected) {
+            afficherOverlay();
+        }
+        else {
+            result_modif.classList.remove("visible");
+
+            result_stats.classList.add("visible");
+
+            const position = document.getElementById('result_all').getBoundingClientRect().top + window.pageYOffset - document.getElementById('navbar').offsetHeight;
+            window.scrollTo({ top: position, behavior: 'smooth' });
+        }
+    });
+
+    const imageContainers = document.querySelectorAll('.image-container');
+
+    imageContainers.forEach(container => {
+        container.addEventListener('click', function () {
+
+            no_click_icones();
+            container.classList.add('clicked');
+        });
+    });
+
+
+
+    /*   PERMETTRE DE TAPER PLUSIEURS ADRESSES  */
+
+    const ajouterAdresseBtn = document.getElementById('ajouterAdresse');
+    const adressesContainer = document.getElementById('adresses');
+
+    ajouterAdresseBtn.addEventListener('click', function () {
+        const nouvelleAdresse = document.createElement('div');
+        nouvelleAdresse.classList.add('adresse');
+        nouvelleAdresse.innerHTML = `
+                <input type="text" name="nouv_lieu" placeholder="Nouvelle localité">
+                <button id='bouton_supprimer' type="button" class="supprimer">❌</button>
+            `;
+        
+        adressesContainer.appendChild(nouvelleAdresse);
+    });
+
+    // Gestion des boutons "Supprimer cette adresse" de manière dynamique
+    adressesContainer.addEventListener('click', function (event) {
+        if (event.target.classList.contains('supprimer')) {
+            const adresseASupprimer = event.target.parentElement;
+            adressesContainer.removeChild(adresseASupprimer);
+        }
+    });
+
+    /*   AFFICHER LES INFORMATIONS DE LA DIV SELECTIONNEE 
+    function afficherInfos() {
+
+        // Récupérer les informations de la div sélectionnée
+        var divSelectionnee = document.querySelector('.recherche_fiche_entreprise.selected');
+        var imgSrc = divSelectionnee.querySelector('img').getAttribute('src');
+        var titre = divSelectionnee.querySelector('h3').textContent;
+        var texte = divSelectionnee.querySelector('p').textContent;
+
+        // Afficher les informations dans la div prévue à cet effet
+        var result_modif = document.getElementById('result_modif');
+        result_modif.innerHTML = '<img src="' + imgSrc + '" alt="img entreprise" width="80px">' +
+                                 '<h3>' + titre + '</h3>' +
+                                 '<p>' + texte + '</p>';
+
+        // Afficher la div d'informations
+        document.getElementById('result_modif').style.visibility = 'visible';
+        document.getElementById('result_modif').style.position = 'static';
+    }*/
+
+
+})

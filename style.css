@@ -15,7 +15,12 @@ body {
 #navbar {
     display: flex;
     align-items: center;
-    padding-bottom: 1.7em;
+    justify-content: space-between;
+    background-color:rgb(198, 237, 250);
+    position: sticky;
+    top: 0em;
+    height: 4em;
+    z-index: 999;
 }
 
 #lien_connexion_header {
@@ -342,12 +347,6 @@ body {
 
 /*PAGE ACCUEIL SANS CONNEXION*/
 
-/* Header */
-#navbar {
-    display: flex;
-    align-items: center; /* Centrer verticalement les éléments enfants */
-    padding-bottom: 1.7em;
-}
 
 #lien_connexion_header {
     margin-left: auto; /* Pour pousser le lien "Connexion" à droite */
@@ -553,15 +552,6 @@ body {
 
 /*gestion entreprise etudiant*/
 
-
-
-#navbar_entreprise_etudiants {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color:rgba(198, 237, 250, 0.7);
-    height: 4em;
-}
 
 #lien_navbar{
     display: flex;
@@ -813,7 +803,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 2em;
 }
 
 .button-search{
@@ -881,6 +871,279 @@ body {
 
 
 
+/*   GESTION ENTREPRISES PILOTES ADMIN   */
+
+.recherche_entreprise, .creation_entreprise{
+    background-color: #B3B3B3;
+    border-radius: 10px;
+    margin-left: 3em;
+    padding-left: 2em;
+    padding-top: 1em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.creation_entreprise{
+    margin-top: 5em;
+}
+
+.recherche_entreprise input, .recherche_entreprise select, .creation_entreprise input, .creation_entreprise select{
+    border-radius: 5px;
+    padding: 0.6em;
+    border: none;
+    margin-top: 1em;
+    width: 90%;
+    max-width: 90%;
+}
+
+.form_buttons, .form-actions{
+    margin-left: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#recherche_container{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+#fiches_entreprises_et_boutons{
+    position: relative;
+    max-width: calc(100% - 30%);
+}
+
+#result_recherche_entreprise{
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 100%;
+    margin-left: 2em;
+    margin-right: 2em;
+    height: fit-content;
+    padding: 1em;
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+}
+
+#result_recherche_entreprise::-webkit-scrollbar {
+    width: 3px;
+    height: 0.5rem;
+}
+  
+#result_recherche_entreprise::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+#result_recherche_entreprise::-webkit-scrollbar-thumb {
+    visibility: hidden;
+    background-color: #797979;
+    border-radius: 20px;
+}
+
+#result_recherche_entreprise:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.715); /* Couleur de fond semi-transparente */
+    display: none;
+    transition: background-color 0.4s ease-in-out;
+    z-index: 99; /* Pour placer au-dessus de tout le contenu */
+}
+
+#message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 100; /* Pour placer au-dessus de l'overlay */
+}
+
+
+.recherche_fiche_entreprise{
+    height: 10em;
+    border-radius: 6px;
+    background-color: #797979;
+    padding: 1em;
+    flex: 0 0 calc(30% - 1em);
+    margin-right: 1em;
+    margin-left: 1em;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Pour Firefox */
+    -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+    cursor: pointer;
+    
+    transition: background-color 0.4s;
+
+}
+
+.recherche_fiche_entreprise:hover, 
+.recherche_fiche_entreprise.hover{
+    background-color: #B3B3B3;
+    transition: background-color 0.4s;
+}
+
+.recherche_fiche_entreprise.selected{
+    background-color: coral;
+    transition: background-color 0.4s;
+}
+
+
+.recherche_fiche_entreprise::-webkit-scrollbar {
+    display: none; /* Pour Chrome, Safari et Opera */
+}
+
+#form_recherche{
+    width: 30%;
+}
+
+
+#icones_modif{
+    display: flex;
+    position: absolute;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+#icones_modif> *:nth-child(-n+2){
+    
+    margin-right: 5em;
+    cursor: pointer;
+}
+
+#icones_modif .image-container:last-child {
+    cursor: pointer;
+}
+
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+
+}
+
+.overlay {
+    z-index: -1;
+    position: absolute;
+    bottom: 0; /* Ajustement pour la position de départ */
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 200% / 200% 200% 0 0;
+    transition: bottom 0.3s, height 0.3s ;
+    overflow: hidden;
+}
+
+.image-container.clicked .overlay {
+    height: 100%; /* Ajustement pour la hauteur finale */
+}
+
+
+#result_modif{
+    position: absolute;
+    visibility: hidden;
+}
+
+#result_modif.visible, #result_stats.visible{
+    position: static;
+    visibility: visible;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3em;
+    padding: 2em;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 11px 34px 0 rgba(0,0,0,.2);
+}
+
+#deux_partie_modif{
+    display: flex;
+}
+
+#partie_eval, #partie_modif{
+    flex: 1;
+}
+
+#result_modif input, #result_modif select{
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: solid 1px #B3B3B3;
+}
+
+#result_modif button{
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 0.5em;
+    border: solid 1px #B3B3B3;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#result_modif button:hover{
+    background-color: #797979;
+    transition: background-color 0.3s;
+
+}
+
+#ajouterAdresse{
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+
+#commentaire_entreprise, #description_entreprise{
+    margin-top: 1em;
+    border-radius: 5px;
+    width: 25em;
+    height: 10em;
+    resize: none;
+    cursor: text;
+}
+
+#supprimer_entreprise{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: #fd6969;
+    cursor: pointer;
+    border: solid 1px #bb2323;
+}
+
+#btn_envoi{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btn_envoi button{
+    width: 30%;
+}
+
+#result_stats{
+    position: absolute;
+    visibility: hidden;
+}
+
 
 footer{
 
@@ -917,3 +1180,4 @@ footer{
         padding-top: 0.5em;
         background-color: white;
     }
+}
