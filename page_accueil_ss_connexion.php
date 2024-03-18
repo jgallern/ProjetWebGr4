@@ -7,19 +7,54 @@
   <script src="script.js"></script>
   <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" type="image/png">
 
-
+<?php
+            if (isset ($_COOKIE["connected"])) {
+                if ($_COOKIE["connected"] == true) {
+                ?>
+                <?php
+                }
+            }
+            else{}
+?>
 </head>
 <body>
     <section id="top_acceuil">
         <nav id="navbar">
             <a href="page_accueil_ss_connexion.html"><img id="logo_accueil" alt="logo SEB" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"></a>
-            <a class="police_texte" href="page_connexion.html" id="lien_connexion_header">Connexion</a>
+            <a class="police_texte" href=
+            <?php if (isset ($_COOKIE["connected"])) {?>
+                "disconnect.php"
+            <?php
+        }
+        else{
+            ?>"connect.php" <?php
+        }?> 
+        id="lien_connexion_header">
+            <?php
+            if (isset ($_COOKIE["connected"])) {
+                if ($_COOKIE["connected"] == true) {
+                ?>
+                Deconnection
+                <?php
+                }
+            }
+            else{?>Connection <?php } ?>
+</a>
 
         </nav>
 
         <section id="accueil">
             <h1 class="acentrer police_texte" id="titre_accueil">Tu cherches, <br> SEB trouve, <br> et c'est tout</h1>
-            <a style="text-decoration: none;" href="page_connexion.html"><button class="acentrer police_texte" id="bouton_connexion_accueil">Se connecter</button></a>
+<?php       if (isset ($_COOKIE["connected"]) && $_COOKIE["connected"] == true) {
+?>
+
+            <a style="text-decoration: none;" href="disconnect.php"><button class="acentrer police_texte" id="bouton_connexion_accueil">Se déconnecter</button></a>
+<?php
+                }
+            else{
+                ?>
+            <a style="text-decoration: none;" href="connect.php"><button class="acentrer police_texte" id="bouton_connexion_accueil">Se connecter</button></a>
+            <?php } ?>
         </section>
     </section>
     

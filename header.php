@@ -70,7 +70,7 @@ class Connection{
     function disconnect()
     {
         setcookie("connected", false);
-        header("Location: page_accueil_ss_connexion.ph");
+        header("Location: page_accueil_ss_connexion.php");
     }
 }
 

@@ -43,9 +43,10 @@
             <input id="submit" type="submit" value="Se connecter">
 <?php
 
-
 require_once 'header.php';
 
+
+$dtb = new Connection();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -60,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dtb->set_passwordpersonne($_POST['password_connection']); //'teste');
 
         $dtb->set_bddconnection($bdd);
-        echo 'test';
         //$dtb->Montrer_Tables();
         $dtb->Login();
 
