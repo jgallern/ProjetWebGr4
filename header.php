@@ -56,6 +56,7 @@ class Connection{
         if ($login->rowCount() > 0) {
             echo "<p>Connection réussie</p>";
             setcookie("connected", true);
+            setcookie("name", $this->Idpersonne);
             header("Location: page_accueil_ss_connexion.php");
         } else {
             echo "<p>mot de passe ou nom d'utilisateur incorrect</p>";
