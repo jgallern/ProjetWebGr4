@@ -12,7 +12,9 @@ CREATE TABLE Notes(
    ID_Note INT NOT NULL AUTO_INCREMENT ,
    Note INT,
    Commentaire VARCHAR(280),
+   ID_Personne INT NOT NULL,   
    PRIMARY KEY(ID_Note)
+   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
 );
 
 CREATE TABLE Centre(
@@ -26,11 +28,9 @@ CREATE TABLE Centre(
 CREATE TABLE Pilote(
    ID_Pilote INT NOT NULL AUTO_INCREMENT ,
    photoprofile VARCHAR(50),
-   ID_Note INT NOT NULL,
    ID_Personne INT NOT NULL,
    PRIMARY KEY(ID_Pilote),
    UNIQUE(ID_Personne),
-   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
    FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
 );
 
@@ -77,13 +77,11 @@ CREATE TABLE Etudiant(
    ID_Etudiant INT NOT NULL AUTO_INCREMENT,
    photoprofil VARCHAR(50),
    ID_Wishlist INT NOT NULL,
-   ID_Note INT NOT NULL,
    ID_Promotion INT NOT NULL,
    ID_Personne INT NOT NULL,
    PRIMARY KEY(ID_Etudiant),
    UNIQUE(ID_Personne),
    FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist),
-   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
    FOREIGN KEY(ID_Promotion) REFERENCES Promotion(ID_Promotion),
    FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
 );
@@ -131,7 +129,7 @@ CREATE TABLE Se_voir_attribué(
    ID_Note INT,
    PRIMARY KEY(ID_Entreprise, ID_Note),
    FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
-   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note)
+   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_b)
 );
 
 CREATE TABLE Exercer_dans(
