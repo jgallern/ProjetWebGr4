@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
         star.addEventListener('click', function () {
             removeSelection();
             this.classList.add('selected');
-            // Optionally, automatically submit the form here or wait for a button click
-
         });
     });
 
@@ -29,10 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
         formData.append('rating', ratingValue);
         formData.append('commentaire', commentaire);
 
-        fetch('traiterDonnees.php', {
+        fetch(document.location.href, {
             method: 'POST',
             body: formData
-        })
-
+        }).then(response => response.text())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
     });
 });

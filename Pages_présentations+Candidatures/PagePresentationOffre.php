@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style_3.css">
     <script src="script.js"></script>
+    <title>Page Presentation offre</title>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
                 </div>
             </div>
             <label for="commentaires">Commentaires :</label>
-            <textarea id="commentaire"></textarea>
+            <label for="commentaire"></label><textarea id="commentaire"></textarea>
             <button id="envoyerCommentaire">Envoyer</button>
         </div>
 
@@ -57,5 +58,20 @@
 </html>
 
 <?php
-require_once "traiterDonnees.php";
+global$bdd;
+try{
+    require_once "header.php";
+}
+catch(Exception $e){
+    echo 'petit problème'.$e->getMessage().'';
+}
+$rating = new RatingManager();
+
+$rating->set_bddconnection($bdd);
+// Example usage - adding a rating
+if (isset($_POST['rating']) && isset($_POST['commentaire'])) {
+    $rating->addRating($_POST['rating'], $_POST['commentaire']);
+    echo "Rating and comment added successfully";
+}
+
 ?>
