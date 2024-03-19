@@ -13,11 +13,12 @@
     <nav id="navbar">
         <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
         <div id="lien_navbar">
-            <a class="lien_nav police_texte" href="gestion_entreprise_etudiants.html"
-                id="lien_entreprises_etudiants">Entreprises</a>
-            <a class="lien_nav police_texte" href="gestion_offres_etudiants.html" id="lien_offres_etudiants">Offres</a>
+            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html" id="lien_entreprises_etudiants">Entreprises</a>
+            <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html" id="lien_offres_etudiants">Offres</a>
+            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html" id="lien_offres_etudiants">Pilotes</a>
+            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html" id="lien_offres_etudiants">Etudiants</a>
             <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
-            <a class="lien_nav police_texte" href="#" id="lien_candidatures">Candidatures</a>
+            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_candidatures">Candidatures</a>
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
@@ -152,6 +153,14 @@
 
         </section>
 
+        <div id="overlay_suppression"></div>
+
+        <div id="confirmationSuppression" class="police_texte">
+            <p>Voulez-vous vraiment supprimer l'entreprise ?</p>
+            <button id="btnOui">Oui</button>
+            <button id="btnNon">Non</button>
+        </div>
+
         <section id="result_all">
             <fieldset id="result_modif" class="police_texte">
                 <legend>Modifer une entreprise</legend>
@@ -226,7 +235,8 @@
             </div>
             <div class="form-row">
                 <label for="create-name">Description de l'entreprise</label><br>
-                <textarea class="police_texte" id="description_entreprise" name="description_entreprise" placeholder="Decrivez l'entreprise ici"></textarea>
+                <textarea class="police_texte" id="description_entreprise" name="description_entreprise"
+                    placeholder="Decrivez l'entreprise ici"></textarea>
             </div>
             <div class="form-row">
                 <label for="create-location">Lieu d'entreprise :</label><br>
