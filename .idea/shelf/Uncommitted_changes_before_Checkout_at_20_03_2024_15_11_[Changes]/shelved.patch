@@ -1,0 +1,1685 @@
+Index: script.js
+===================================================================
+diff --git a/script.js b/Pages_Gestions/script.js
+rename from script.js
+rename to Pages_Gestions/script.js
+--- a/script.js	
++++ b/Pages_Gestions/script.js	
+@@ -329,26 +329,6 @@
+         });
+     }
+ 
+-    function afficherOverlay() {
+-        const overlay = document.getElementById('overlay');
+-        const message = document.getElementById('message');
+-
+-        overlay.style.display = 'block';
+-        message.style.display = 'block';
+-
+-        setTimeout(function () {
+-            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+-            message.style.opacity = '0';
+-        }, 3000);
+-
+-        setTimeout(function () {
+-            overlay.style.display = 'none';
+-            message.style.display = 'none';
+-            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.715)';
+-            message.style.opacity = '1';
+-        }, 3400);
+-    }
+-
+     divs.forEach(function (div) {
+         div.addEventListener('click', function () {
+             // Retirer la classe "selected" de toutes les divs
+@@ -392,7 +372,7 @@
+         }
+     });
+ 
+-    boutonSupprimer.addEventListener('click', function(event) {
++    boutonSupprimer.addEventListener('click', function (event) {
+         event.preventDefault();
+         overlay_suppression.classList.add("visible");
+         confirmationSuppression.classList.add("visible");
+@@ -491,25 +471,102 @@
+         }
+     });
+ 
+-    /*   AFFICHER LES INFORMATIONS DE LA DIV SELECTIONNEE 
+-    function afficherInfos() {
++})
++
++
++
++function afficherOverlay() {
++    const overlay = document.getElementById('overlay');
++    const message = document.getElementById('message');
++
++    overlay.style.display = 'block';
++    message.style.display = 'block';
+ 
+-        // Récupérer les informations de la div sélectionnée
+-        var divSelectionnee = document.querySelector('.recherche_fiche_entreprise.selected');
+-        var imgSrc = divSelectionnee.querySelector('img').getAttribute('src');
+-        var titre = divSelectionnee.querySelector('h3').textContent;
+-        var texte = divSelectionnee.querySelector('p').textContent;
++    setTimeout(function () {
++        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
++        message.style.opacity = '0';
++    }, 2000);
+ 
+-        // Afficher les informations dans la div prévue à cet effet
+-        var result_modif = document.getElementById('result_modif');
+-        result_modif.innerHTML = '<img src="' + imgSrc + '" alt="img entreprise" width="80px">' +
+-                                 '<h3>' + titre + '</h3>' +
+-                                 '<p>' + texte + '</p>';
++    setTimeout(function () {
++        overlay.style.display = 'none';
++        message.style.display = 'none';
++        overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.715)';
++        message.style.opacity = '1';
++    }, 2400);
++}
+ 
+-        // Afficher la div d'informations
+-        document.getElementById('result_modif').style.visibility = 'visible';
+-        document.getElementById('result_modif').style.position = 'static';
+-    }*/
++
++
++document.addEventListener('DOMContentLoaded', function () {
++    const fichesOffres = document.querySelectorAll('.recherche_fiche_offres');
++
++    fichesOffres.forEach(ficheOffre => {
++
++        ficheOffre.addEventListener('mouseenter', function () {
++            ficheOffre.classList.add("hover");
++        });
++
++        ficheOffre.addEventListener('mouseleave', function () {
++            ficheOffre.classList.remove("hover");
++        });
++
++        ficheOffre.addEventListener('click', function () {
++            fichesOffres.forEach(function (item) {
++                item.classList.remove('select');
++            });
++            ficheOffre.classList.add('select');
++            result_stats.classList.remove('visible');
++            result_modif.classList.remove("visible");
++        });
++    });
++
++
++
++    const btn_voir_offre = document.getElementById('btn_voir_offre');
++    const btn_modif_offre = document.getElementById('btn_modif_offre');
++    var isSelect = false;
++
++
++    btn_modif_offre.addEventListener('click', function () {
++        fichesOffres.forEach(div => {
++            if (div.classList.contains('select')) {
++                isSelect = true;
++            }
++        });
++
++        if (isSelect == true) {
++            result_stats.classList.remove('visible');
++            result_modif.classList.add("visible");
++        }
++        else {
++            afficherOverlay();
++        }
++
++
++    });
++
++    btn_voir_offre.addEventListener('click', function () {
++        fichesOffres.forEach(div => {
++            if (div.classList.contains('select')) {
++                isSelect = true;
++            }
++        });
++
++        if (isSelect == true) {
++            result_stats.classList.add('visible');
++            result_modif.classList.remove("visible");
++        }
++        else {
++            afficherOverlay();
++        }
++    });
++
++    var boutonSupprimerOffre = document.getElementById("supprimer_offre");
++    boutonSupprimerOffre.addEventListener('click', function (event) {
++        event.preventDefault();
++        document.getElementById('overlay_suppression').classList.add("visible");
++        document.getElementById('confirmationSuppression')  .classList.add("visible");
++    });
+ 
+ 
+-})
+\ No newline at end of file
++});
+\ No newline at end of file
+Index: style.css
+===================================================================
+diff --git a/style.css b/Pages_Gestions/style.css
+rename from style.css
+rename to Pages_Gestions/style.css
+--- a/style.css	
++++ b/Pages_Gestions/style.css	
+@@ -911,26 +911,27 @@
+     margin: 0 10px;
+ }
+ 
+-.recherche_entreprise, .creation_entreprise{
++.bloc_gestion{
+     background-color: #B3B3B3;
+     border-radius: 10px;
+     margin-left: 3em;
+     padding-left: 2em;
+     padding-top: 1em;
++    padding-bottom: 2em;
+     width: 80%;
+     margin-left: auto;
+     margin-right: auto;
++    margin-top: 5em;
++
+ }
+ 
+ #section_recherche_offres{
+     padding-bottom: 3em;
++    position: relative;
+ }
+ 
+-.creation_entreprise{
+-    margin-top: 5em;
+-}
+ 
+-.recherche_entreprise input, .recherche_entreprise select, .creation_entreprise input, .creation_entreprise select{
++.bloc_gestion input, .bloc_gestion select{
+     border-radius: 5px;
+     padding: 0.6em;
+     border: none;
+@@ -981,6 +982,7 @@
+     padding: 1em;
+     display: flex;
+     overflow-x: scroll;
++    position: relative;
+ }
+ 
+ #result_recherche_entreprise::-webkit-scrollbar, #result_recherche_offres::-webkit-scrollbar {
+@@ -1046,6 +1048,7 @@
+ #fiches_offres{
+     height: 15em;
+     flex: 0 0 calc(20% - 1em);
++    position: relative;
+ 
+ }
+ 
+@@ -1232,6 +1235,113 @@
+ }
+ 
+ 
++
++
++/*    PAGE GESTION OFFRES STAGES    */
++
++.recherche_fiche_offres{
++    height: 15em;
++    border-radius: 6px;
++    background-color: #797979;
++    padding: 1em;
++    flex: 0 0 calc(20% - 1em);
++    margin-right: 1em;
++    margin-left: 1em;
++    overflow-y: scroll;
++    scrollbar-width: none; /* Pour Firefox */
++    -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
++    cursor: pointer;
++    position: relative;
++    
++    transition: background-color 0.4s;
++}
++
++.recherche_fiche_offres.hover{
++    background-color: #bbbbbb;
++}
++
++.recherche_fiche_offres.select{
++    background-color: coral;
++}
++
++
++#icones_modif_offres{
++    width: fit-content;
++    display: flex;
++    margin-left: auto;
++    margin-right: auto;
++    margin-top: 3em;
++}
++
++.fond_ico_offres{
++    cursor: pointer;
++    padding: 1em;
++    clip-path: circle(46% at 50% 50%);
++    background-color: #fff;
++    transition: background-color 0.4s;
++
++}
++
++.fond_ico_offres:hover{
++    background-color: coral;
++    transition: background-color 0.4s;
++}
++
++#btn_modif_offre{
++    margin-right: 5em;
++}
++
++.overlay_fiche_offres{
++    visibility: hidden;
++    position: absolute;
++}
++
++.overlay_fiche_offres.visible{
++    bottom: 0;
++    left: 0;
++    width: 100%;
++    height: 100%;
++    z-index: 30;
++    position: absolute;
++    text-align: center;
++    vertical-align:top;
++    z-index: 50;
++}
++
++.bouton_voir_offre, .bouton_modifier_offre{
++    visibility: hidden;
++    position: absolute;
++    height: 0;
++    transition: height 0.4s;
++}
++
++.bouton_voir_offre.visible, .bouton_modifier_offre.visible{
++    visibility: visible;
++    position: static;
++    height: 50%;
++    width: 100%;
++    border: none;
++    cursor: pointer;
++    z-index: 60;
++    transition: height 0.4s;
++}
++
++.bouton_voir_offre.visible{
++    background-color: rgba(167, 224, 167, 0.737);
++    transition: height 0.4s;
++}
++
++.bouton_voir_offre.visible:hover{
++    height: 100%;
++    transition: height 0.4s;
++}
++
++.bouton_modifier_offre.visible{
++    background-color: rgba(167, 224, 100, 0.737);
++}
++
++
++
+ footer{
+ 
+     margin-top: 15em;
+@@ -1267,4 +1377,5 @@
+         padding-top: 0.5em;
+         background-color: white;
+     }
++
+ }
+\ No newline at end of file
+Index: Pages_Gestions/gestion_pilotes_admin.html
+===================================================================
+diff --git a/Pages_Gestions/gestion_pilotes_admin.html b/Pages_Gestions/gestion_pilotes_admin.html
+new file mode 100644
+--- /dev/null	
++++ b/Pages_Gestions/gestion_pilotes_admin.html	
+@@ -0,0 +1,376 @@
++<!doctype html>
++<html lang="fr">
++
++<head>
++    <meta charset="utf-8">
++    <title>Gestion Pilotes
++    </title>
++    <link rel="stylesheet" href="style.css">
++    <script src="script.js"></script>
++    <link rel="icon" href="" type="image/png">
++
++<body>
++    <nav id="navbar">
++        <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
++        <div id="lien_navbar">
++            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.php"
++                id="lien_entreprises_etudiants">Entreprises</a>
++            <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html"
++                id="lien_offres_etudiants">Offres</a>
++            <a class="lien_nav police_texte" href="gestion_pilotes_admin.html" id="lien_offres_etudiants">Pilotes</a>
++            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.php"
++                id="lien_offres_etudiants">Etudiants</a>
++            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
++            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html"
++                id="lien_candidatures">Candidatures</a>
++        </div>
++        <div id="profil">
++            <div id="detail_profil" class="police_texte">
++                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
++                <button id="bouton_voir_profil">Voir le profil</button>
++                <button id="bouton_deconnexion">Se déconnecter</button>
++            </div>
++
++            <img id="photo_profil"
++                src="C:\Users\quent\OneDrive - Association Cesi Viacesi mail\A2\04_web\Projet\images\photo_profil.png"
++                alt="photo_profil">
++        </div>
++
++    </nav>
++
++    <main>
++        <h1 class="titre police_texte">Gestion des Pilotes</h1>
++
++        <section class="bloc_gestion police_texte">
++            <h2>Rechercher un pilote</h2>
++            <div id="recherche_container">
++
++                <div id="form_recherche">
++                    <form>
++                        <div class="form-row">
++                            <label for="search-name">Nom du pilote :</label><br>
++                            <input id="search-name" type="text" placeholder="Entrez le nom du pilote">
++                        </div>
++                        <div class="form-row">
++                            <label for="search-stages">Prénom du pilote :</label><br>
++                            <input id="search-stages" type="text" placeholder="Entrez le prénom du pilote">
++                        </div>
++                        <div class="form-row">
++                            <label for="search-sector">Centre :</label><br>
++                            <select>
++                                <option disabled selected>Choisissez un centre</option>
++                                <option disabled selected>Est</option>
++                                <option>Strasbourg</option>
++                                <option>Dijon</option>
++                                <option>Nancy</option>
++                                <option>Reims</option>
++                                <option disabled selected>Sud-Est</option>
++                                <option>Aix-en-provence</option>
++                                <option>Grenoble</option>
++                                <option>Lyon</option>
++                                <option>Nice</option>
++                                <option disabled selected>Ile-de-France-Centre</option>
++                                <option>Châteauroux</option>
++                                <option>Orléans</option>
++                                <option>Paris Nanterre</option>
++                                <option disabled selected>Ouest</option>
++                                <option>Angoulême</option>
++                                <option>Brest</option>
++                                <option>La Rochelle</option>
++                                <option>Le Mans</option>
++                                <option>Nantes</option>
++                                <option>Saint-Nazaire</option>
++                                <option disabled selected>Sud-Ouest</option>
++                                <option>Bordeaux</option>
++                                <option>Montpellier</option>
++                                <option>Pau</option>
++                                <option>Toulouse</option>
++                                <option disabled selected>Nord-Ouest</option>
++                                <option>Lille</option>
++                                <option>Rouen</option>
++                                <option>Arras</option>
++                                <option>Cean</option>
++                            </select>
++                        </div>
++                        <div class="form-row">
++                            <label for="search-name">Promotion :</label><br>
++                            <select name="promo">
++                                <option>--Choisir--</option>
++                                <option>A2 informatique</option>
++                                <option>A2 BTP</option>
++                                <option>A2 S3E</option>
++                                <option>A2 Généraliste</option>
++                                <option>A3 informatique</option>
++                                <option>A3 BTP</option>
++                                <option>A3 S3E</option>
++                                <option>A3 Généraliste</option>
++                                <option>A4 informatique</option>
++                                <option>A4 BTP</option>
++                                <option>A4 S3E</option>
++                                <option>A4 Généraliste</option>
++                                <option>A5 informatique</option>
++                                <option>A5 BTP</option>
++                                <option>A5 S3E</option>
++                                <option>A5 Généraliste</option>
++                            </select>
++                        </div>
++                        <div class="form_buttons">
++                            <button class="button-search">Rechercher</button>
++                            <button class="button-reset">Réinitialiser</button>
++                        </div>
++                    </form>
++                </div>
++                <div id="fiches_entreprises_et_boutons">
++                    <div id="result_recherche_entreprise">
++                        <div class="recherche_fiche_entreprise">
++                            <img width="80px"
++                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
++                                alt="img entreprise">
++                            <h3>Nom Prénom</h3>
++                            <p>Centre</p>
++                            <p>Promos :</p>
++                            <ul>
++                                <li>A1</li>
++                                <li>A2</li>
++                                <li>A3</li>
++                            </ul>
++                        </div>
++                        <div class="recherche_fiche_entreprise">
++                            <img width="80px"
++                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
++                                alt="img entreprise">
++                            <h3>Nom Prénom</h3>
++                            <p>Centre</p>
++                            <p>Promos :</p>
++                            <ul>
++                                <li>A1</li>
++                                <li>A2</li>
++                                <li>A3</li>
++                            </ul>
++                        </div>
++                        <div class="recherche_fiche_entreprise">
++                            <img width="80px"
++                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
++                                alt="img entreprise">
++                            <h3>Nom Prénom</h3>
++                            <p>Centre</p>
++                            <p>Promos :</p>
++                            <ul>
++                                <li>A1</li>
++                                <li>A2</li>
++                                <li>A3</li>
++                            </ul>
++                        </div>
++                        <div class="recherche_fiche_entreprise">
++                            <img width="80px"
++                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
++                                alt="img entreprise">
++                            <h3>Nom Prénom</h3>
++                            <p>Centre</p>
++                            <p>Promos :</p>
++                            <ul>
++                                <li>A1</li>
++                                <li>A2</li>
++                                <li>A3</li>
++                            </ul>
++                        </div>
++                        <div class="recherche_fiche_entreprise">
++                            <img width="80px"
++                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
++                                alt="img entreprise">
++                            <h3>Nom Prénom</h3>
++                            <p>Centre</p>
++                            <p>Promos :</p>
++                            <ul>
++                                <li>A1</li>
++                                <li>A2</li>
++                                <li>A3</li>
++                            </ul>
++                        </div>
++                        <div class="recherche_fiche_entreprise">
++                            <img width="80px"
++                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
++                                alt="img entreprise">
++                            <h3>Nom Prénom</h3>
++                            <p>Centre</p>
++                            <p>Promos :</p>
++                            <ul>
++                                <li>A1</li>
++                                <li>A2</li>
++                                <li>A3</li>
++                            </ul>
++                        </div>
++
++                        <div id="overlay"></div>
++                        <div id="message">Veuillez sélectionner une entreprise</div>
++                    </div>
++
++
++                    <div id="icones_modif">
++                        <div class="image-container" id="btn_modif">
++                            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
++                                width="30px">
++                            <div class="overlay"></div>
++                        </div>
++                        <div class="image-container" id="btn_stats">
++                            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
++                                width="30px">
++                            <div class="overlay"></div>
++                        </div>
++                        <div class="image-container" id="btn_voir">
++                            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
++                                width="30px">
++                            <div class="overlay"></div>
++                        </div>
++                    </div>
++
++                </div>
++            </div>
++
++        </section>
++
++        <div id="overlay_suppression"></div>
++
++        <div id="confirmationSuppression" class="police_texte">
++            <p>Voulez-vous vraiment supprimer l'entreprise ?</p>
++            <button id="btnOui">Oui</button>
++            <button id="btnNon">Non</button>
++        </div>
++
++        <section id="result_all">
++            <fieldset id="result_modif_pilote" class="police_texte">
++                <legend>Modifer un pilote</legend>
++                <form>
++                    <div id="deux_partie_modif">
++                        <label>Nouveau nom :</label><br>
++                        <input type="text" id="nouv_nom" name="nouv_nom_pilote" placeholder="Nouveau nom">
++                        <br>
++                        <label>Nouveau Prénom :</label><br>
++                        <input type="text" id="nouv_nom" name="nouv_prenom_pilote" placeholder="Nouveau nom">
++                        <br>
++                        <label>Nouveau centre :</label><br>
++                        <select>
++                            <option disabled selected>Choisissez un centre</option>
++                            <option disabled selected>Est</option>
++                            <option>Strasbourg</option>
++                            <option>Dijon</option>
++                            <option>Nancy</option>
++                            <option>Reims</option>
++                            <option disabled selected>Sud-Est</option>
++                            <option>Aix-en-provence</option>
++                            <option>Grenoble</option>
++                            <option>Lyon</option>
++                            <option>Nice</option>
++                            <option disabled selected>Ile-de-France-Centre</option>
++                            <option>Châteauroux</option>
++                            <option>Orléans</option>
++                            <option>Paris Nanterre</option>
++                            <option disabled selected>Ouest</option>
++                            <option>Angoulême</option>
++                            <option>Brest</option>
++                            <option>La Rochelle</option>
++                            <option>Le Mans</option>
++                            <option>Nantes</option>
++                            <option>Saint-Nazaire</option>
++                            <option disabled selected>Sud-Ouest</option>
++                            <option>Bordeaux</option>
++                            <option>Montpellier</option>
++                            <option>Pau</option>
++                            <option>Toulouse</option>
++                            <option disabled selected>Nord-Ouest</option>
++                            <option>Lille</option>
++                            <option>Rouen</option>
++                            <option>Arras</option>
++                            <option>Cean</option>
++                        </select>
++                        <br>
++                        <label for="search-name">Promotion :</label><br>
++                            <select name="promo">
++                                <option>--Choisir--</option>
++                                <option>A2 informatique</option>
++                                <option>A2 BTP</option>
++                                <option>A2 S3E</option>
++                                <option>A2 Généraliste</option>
++                                <option>A3 informatique</option>
++                                <option>A3 BTP</option>
++                                <option>A3 S3E</option>
++                                <option>A3 Généraliste</option>
++                                <option>A4 informatique</option>
++                                <option>A4 BTP</option>
++                                <option>A4 S3E</option>
++                                <option>A4 Généraliste</option>
++                                <option>A5 informatique</option>
++                                <option>A5 BTP</option>
++                                <option>A5 S3E</option>
++                                <option>A5 Généraliste</option>
++                            </select>
++
++                        <br>
++                        <label>Nouvelle image :</label><br>
++                        <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
++                        
++                        <button id="supprimer_entreprise">Supprimer le pilote</button> <br>
++                        <div id="btn_envoi">
++                            <button type="reset">Réinitialiser</button>
++                            <button type="submit">Modifer</button>
++                        </div>
++                    </div>
++
++                </form>
++            </fieldset>
++
++
++            <fieldset id="result_stats" class="police_texte">
++                <legend>Statistiques de l'entreprise</legend>
++                <p><strong>Nom de l'entreprise :</strong> GOGO Corporation</p>
++                <p><strong>Le top des offres :</strong></p>
++                <p><strong>Nombre d'étudiants actuellement en stage :</strong00< /p>
++                        <div class="rating">
++                            <span><strong>Moyenne de l'entreprise :</strong></span>
++                            <div class="stars">★★★☆☆</div>
++                        </div>
++            </fieldset>
++
++        </section>
++
++        <section class="bloc_gestion police_texte">
++            <h2>Créer une entreprise</h2>
++            <div class="form-row">
++                <label for="create-name">Nom de l'entreprise :</label><br>
++                <input id="create-name" type="text" placeholder="Entrez le nom de l'entreprise" />
++            </div>
++            <div class="form-row">
++                <label for="create-name">Description de l'entreprise</label><br>
++                <textarea class="police_texte" id="description_entreprise" name="description_entreprise"
++                    placeholder="Decrivez l'entreprise ici"></textarea>
++            </div>
++            <div class="form-row">
++                <label for="create-location">Lieu d'entreprise :</label><br>
++                <input id="create-location" type="text" placeholder="Entrez le lieu" />
++            </div>
++            <div class="form-row">
++                <label for="create-sector">Secteur d'activité :</label><br>
++                <select name="nouv_secteur">
++                    <option>--Choisir--</option>
++                    <option>Informatique</option>
++                    <option>BTP</option>
++                    <option>S3E</option>
++                    <option>jesaisplu</option>
++                </select>
++            </div>
++            <div class="form-row">
++                <label for="create-sector">Image de l'entreprise :</label><br>
++                <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
++            </div>
++            <div class="form-actions">
++                <button class="button-search">Créer</button>
++                <button class="button-reset">Réinitialiser</button>
++            </div>
++        </section>
++
++
++
++        <footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
++</body>
++
++</html>
+\ No newline at end of file
+Index: Pages_Gestions/peuplementDB.sql
+===================================================================
+diff --git a/Pages_Gestions/peuplementDB.sql b/Pages_Gestions/peuplementDB.sql
+new file mode 100644
+--- /dev/null	
++++ b/Pages_Gestions/peuplementDB.sql	
+@@ -0,0 +1,229 @@
++DROP TABLE IF EXISTS contenir;
++DROP TABLE IF EXISTS Se_voir_attribué;
++DROP TABLE IF EXISTS Exercer_dans;
++DROP TABLE IF EXISTS Offre;
++DROP TABLE IF EXISTS Candidature;
++DROP TABLE IF EXISTS Administrateur;
++DROP TABLE IF EXISTS Etudiant;
++DROP TABLE IF EXISTS Promotion;
++DROP TABLE IF EXISTS Entreprise;
++DROP TABLE IF EXISTS Wishlist;
++DROP TABLE IF EXISTS SecteurActivite;
++DROP TABLE IF EXISTS Adresse;
++DROP TABLE IF EXISTS Pilote;
++DROP TABLE IF EXISTS Centre;
++DROP TABLE IF EXISTS Notes;
++DROP TABLE IF EXISTS Personne;
++
++CREATE TABLE Personne(
++   ID_Personne INT NOT NULL AUTO_INCREMENT ,
++   nom VARCHAR(50),
++   prenom VARCHAR(50),
++   centre VARCHAR(50),
++   Login VARCHAR(50) UNIQUE,
++   Password VARCHAR(50),
++   PRIMARY KEY(ID_Personne),
++   FOREIGN KEY(ID_Centre) REFERENCES Centre(ID_Centre),
++);
++
++CREATE TABLE Notes(
++   ID_Note INT NOT NULL AUTO_INCREMENT ,
++   Note INT,
++   Commentaire VARCHAR(280),
++   PRIMARY KEY(ID_Note)
++);
++
++CREATE TABLE Centre(
++   ID_Centre INT NOT NULL AUTO_INCREMENT ,
++   Nom_centre VARCHAR(50),
++   ID_Personne INT NOT NULL,
++   PRIMARY KEY(ID_Centre),
++   UNIQUE(ID_Adresse),
++   FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse)
++);
++
++CREATE TABLE Pilote(
++   ID_Pilote INT NOT NULL AUTO_INCREMENT ,
++   photoprofile VARCHAR(50),
++   ID_Note INT NOT NULL,
++   ID_Personne INT NOT NULL,
++   PRIMARY KEY(ID_Pilote),
++   UNIQUE(ID_Personne),
++   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
++   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
++);
++
++CREATE TABLE Adresse(
++   ID_Adresse INT NOT NULL AUTO_INCREMENT,
++   Numero_rue INT,
++   Nom_rue VARCHAR(200),
++   Ville VARCHAR(100),
++   ID_Centre INT NOT NULL,
++   PRIMARY KEY(ID_Adresse),
++);
++
++CREATE TABLE SecteurActivite(
++   ID_secteur INT NOT NULL AUTO_INCREMENT ,
++   nom_secteur VARCHAR(50),
++   PRIMARY KEY(ID_secteur)
++);
++
++CREATE TABLE Wishlist(
++   ID_Wishlist INT NOT NULL AUTO_INCREMENT,
++   PRIMARY KEY(ID_Wishlist)
++);
++
++CREATE TABLE Entreprise(
++   ID_Entreprise INT NOT NULL AUTO_INCREMENT,
++   nom VARCHAR(50),
++   logo VARCHAR(50),
++   ID_Adresse INT,
++   PRIMARY KEY(ID_Entreprise),
++   FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse)
++);
++
++CREATE TABLE Promotion(
++   ID_Promotion INT NOT NULL AUTO_INCREMENT,
++   Nom_Promo VARCHAR(50) UNIQUE,
++   ID_Pilote INT NOT NULL,
++   PRIMARY KEY(ID_Promotion),
++   FOREIGN KEY(ID_Pilote) REFERENCES Pilote(ID_Pilote)
++);
++
++CREATE TABLE Etudiant(
++   ID_Etudiant INT NOT NULL AUTO_INCREMENT,
++   photoprofil VARCHAR(50),
++   ID_Wishlist INT NOT NULL,
++   ID_Note INT NOT NULL,
++   ID_Promotion INT NOT NULL,
++   ID_Personne INT NOT NULL,
++   PRIMARY KEY(ID_Etudiant),
++   UNIQUE(ID_Personne),
++   FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist),
++   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
++   FOREIGN KEY(ID_Promotion) REFERENCES Promotion(ID_Promotion),
++   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
++);
++
++CREATE TABLE Administrateur(
++   ID_Administrateur INT NOT NULL AUTO_INCREMENT,
++   ID_Wishlist INT NOT NULL,
++   ID_Personne INT NOT NULL,
++   PRIMARY KEY(ID_Administrateur),
++   UNIQUE(ID_Personne),
++   FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist),
++   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
++);
++
++CREATE TABLE Candidature(
++   ID_Candidature INT NOT NULL AUTO_INCREMENT,
++   CV VARCHAR(50),
++   lettremotiv VARCHAR(50),
++   ID_Etudiant INT NOT NULL,
++   PRIMARY KEY(ID_Candidature),
++   FOREIGN KEY(ID_Etudiant) REFERENCES Etudiant(ID_Etudiant)
++);
++
++CREATE TABLE Offre(
++   ID_Offre INT NOT NULL AUTO_INCREMENT,
++   Dureestage INT,
++   Baseremuneration INT,
++   dateoffre DATE,
++   nbplaces INT,
++   nbdejapostule INT,
++   Competence VARCHAR(50),
++   Destination_promotion VARCHAR(50),
++   ID_Adresse INT,
++   ID_Entreprise INT NOT NULL,
++   ID_Candidature INT NOT NULL,
++   PRIMARY KEY(ID_Offre),
++   UNIQUE(ID_Adresse),
++   FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse),
++   FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
++   FOREIGN KEY(ID_Candidature) REFERENCES Candidature(ID_Candidature)
++);
++
++CREATE TABLE Se_voir_attribué(
++   ID_Entreprise INT NOT NULL AUTO_INCREMENT,
++   ID_Note INT,
++   PRIMARY KEY(ID_Entreprise, ID_Note),
++   FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
++   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note)
++);
++
++CREATE TABLE Exercer_dans(
++   ID_Entreprise INT NOT NULL AUTO_INCREMENT,
++   ID_secteur INT,
++   PRIMARY KEY(ID_Entreprise, ID_secteur),
++   FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
++   FOREIGN KEY(ID_secteur) REFERENCES SecteurActivite(ID_secteur)
++);
++
++CREATE TABLE contenir(
++   ID_Offre INT NOT NULL AUTO_INCREMENT,
++   ID_Wishlist INT,
++   PRIMARY KEY(ID_Offre, ID_Wishlist),
++   FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre),
++   FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist)
++);
++
++INSERT INTO Personne (nom, prenom, centre, Login, Password) VALUES
++('Doe', 'John', 'Centre A', 'john.doe', 'password123'),
++('Smith', 'Jane', 'Centre B', 'jane.smith', 'password456'),
++('Julien', 'Chagnon', 'Centre C', 'julien.chagnon', 'password789'),
++('Silvain', 'Alméras', 'Centre D', 'silvain.alméras', 'password987'),
++('Raphaël', 'Affré', 'Centre A', 'raphaël.affré', 'password654'),
++('Hugo', 'Barrault', 'Centre B', 'hugo.barrault', 'password321'),
++('Adolphe', 'Gérald', 'Centre C', 'adolphe.gérald', 'password135'),
++('Timothée', 'Adnet', 'Centre D', 'timothée.adnet', 'password246'),
++('Francis', 'Chappuis', 'Centre E', 'francis.chappuis', 'password791'),
++('Benjamin', 'Léger', 'Centre A', 'benjamin.léger', 'password148');
++
++INSERT INTO Notes (Note, Commentaire) VALUES
++(4/5, "Un service clientèle exceptionnel et des produits de haute qualité. Une entreprise fiable et digne de confiance."),
++(3/5, "Des prix compétitifs, mais des délais de livraison un peu longs. Peut améliorer la communication avec les clients."),
++(5/5, "Innovation constante, respect de l\'environnement et engagement social. Une entreprise exemplaire à tous les niveaux."),
++(2/5, "Des problèmes récurrents de qualité des produits et de service après-vente. Des efforts à faire pour s'améliorer."),
++(4/5, "Une large gamme de produits de haute qualité. Un service client réactif et professionnel."),
++(3/5, "Des produits originaux, mais des prix un peu élevés. Une communication à améliorer pour fidéliser la clientèle."),
++(5/5, "Une culture d'entreprise forte, des valeurs éthiques et un engagement envers la satisfaction client. Recommandé sans hésitation."),
++(2/5, "Des retards fréquents dans les livraisons et un service clientèle peu réactif. Des efforts à fournir pour améliorer l'expérience client."),
++(4/5, "Des produits innovants et de qualité. Un bon rapport qualité-prix, mais des délais de réponse un peu longs au service client."),
++(3/5, "Une entreprise en croissance avec un potentiel intéressant. Besoin d'investir dans la formation du personnel pour améliorer la qualité des services.");
++
++INSERT INTO Etudiant (photoprofil, ID_Wishlist, ID_Note, ID_Promotion, ID_Personne) VALUES
++('etudiant1.png', 1, 3, 1, 1),
++('etudiant2.png', 2, 4, 3, 2),
++('etudiant3.png', 3, 5, 8, 6),
++('etudiant4.png', 4, 1, 10, 7),
++('etudiant5.png', 5, 8, 2, 4),
++('etudiant6.png', 6, 7, 6, 9),
++('etudiant7.png', 7, 8, 4, 5),
++('etudiant8.png', 8, 9, 7, 8),
++('etudiant1.png', 9, 2, 5, 3),
++('etudiant1.png', 10, 10, 9, 10);
++
++INSERT INTO Administrateur (ID_Wishlist, ID_Personne) VALUES
++(1, 1),
++(2, 2),
++(3, 3),
++(4, 4),
++(5, 5),
++(6, 6),
++(7, 7),
++(8, 8),
++(9, 9),
++(10, 10);
++
++INSERT INTO Offre (Dureestage, Baseremuneration, dateoffre, nbplaces, nbdejapostule, Competence, Destination_promotion, ID_Adresse, ID_Entreprise, ID_Candidature) VALUES
++(6, 500, '2023-09-01', 3, 0, 'Java', 'Promo 2024', 1, 1, 1),
++(12, 1000, '2023-06-01', 2, 1, 'Marketing Digital', 'Promo 2025', 2, 2, 2),
++(10, 1100, '2023-08-01', 5, 4, 'C/C++', 'Promo 2023', 3, 3, 3),
++(8, 600, '2023-03-01', 1, 3, 'Réseau', 'Promo 2022', 4, 4, 4),
++(5, 700, '2023-01-01', 4, 6, 'Management', 'Promo 2023', 5, 5, 5),
++(7, 800, '2023-02-01', 9, 7, 'Comptabilité', 'Promo 2024', 6, 6, 6),
++(3, 900, '2024-01-01', 8, 10, 'Python', 'Promo 2025', 7, 7, 7),
++(12, 1200, '2024-02-01', 6, 8, 'Robotique', 'Promo 2022', 8, 8, 8),
++(9, 800, '2023-09-01', 6, 9, 'Mécanique', 'Promo 2024', 9, 9, 9),
++(7, 600, '2023-04-01', 10, 2, 'Matériaux', 'Promo 2023', 10, 10, 10);
++
+Index: page_connexion.html
+===================================================================
+diff --git a/page_connexion.html b/Page_Connexion&ss/page_connexion.html
+rename from page_connexion.html
+rename to Page_Connexion&ss/page_connexion.html
+--- a/page_connexion.html	
++++ b/Page_Connexion&ss/page_connexion.html	
+@@ -3,8 +3,8 @@
+ <head>
+   <meta charset="utf-8">
+   <title>Stage En Bref</title>
+-  <link rel="stylesheet" href="style.css">
+-  <script src="script.js"></script>
++  <link rel="stylesheet" href="../Pages_Gestions/style.css">
++  <script src="../Pages_Gestions/script.js"></script>
+   <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" type="image/png">
+ 
+ 
+Index: gestion_entreprise_pilote_admin.html
+===================================================================
+diff --git a/gestion_entreprise_pilote_admin.html b/Pages_Gestions/gestion_entreprise_pilote_admin.php
+rename from gestion_entreprise_pilote_admin.html
+rename to Pages_Gestions/gestion_entreprise_pilote_admin.php
+--- a/gestion_entreprise_pilote_admin.html	
++++ b/Pages_Gestions/gestion_entreprise_pilote_admin.php	
+@@ -37,7 +37,7 @@
+     <main>
+         <h1 class="titre police_texte">Gestion des Entreprises</h1>
+ 
+-        <section class="recherche_entreprise police_texte">
++        <section class="bloc_gestion police_texte">
+             <h2>Rechercher une entreprise</h2>
+             <div id="recherche_container">
+ 
+@@ -128,20 +128,20 @@
+ 
+ 
+                     <div id="icones_modif">
+-                        <div class="image-container">
+-                            <img id="btn_modif"
++                        <div class="image-container" id="btn_modif">
++                            <img 
+                                 src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
+                                 width="30px">
+                             <div class="overlay"></div>
+                         </div>
+-                        <div class="image-container">
+-                            <img id="btn_stats"
++                        <div class="image-container" id="btn_stats">
++                            <img
+                                 src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
+                                 width="30px">
+                             <div class="overlay"></div>
+                         </div>
+-                        <div class="image-container">
+-                            <img id="btn_voir"
++                        <div class="image-container" id="btn_voir">
++                            <img
+                                 src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
+                                 width="30px">
+                             <div class="overlay"></div>
+@@ -227,7 +227,7 @@
+ 
+         </section>
+ 
+-        <section class="creation_entreprise police_texte">
++        <section class="bloc_gestion police_texte">
+             <h2>Créer une entreprise</h2>
+             <div class="form-row">
+                 <label for="create-name">Nom de l'entreprise :</label><br>
+@@ -263,61 +263,11 @@
+         </section>
+ 
+ 
+-
+-
+-
+-
+-
+-
+-
+-        <!--
+-        <h2>Statistiques d'une entreprise</h2>
+-        <div class="stats-detail">
+-            <p><strong>Nom de l'entreprise :</strong> GOGO Corporation</p>
+-            <p><strong>Le top des offres :</strong></p>
+-            <p><strong>Nombre d'étudiants actuellement en stage :</strong00< /p>
+-                    <div class="rating">
+-                        <span><strong>Moyenne de l'entreprise :</strong></span>
+-                        <div class="stars">★★★☆☆</div>
+-                    </div>
+-        </div>
+-        </article>
+-        <br>
+-
+-        <article class="form-block">
+-            <h3>Modifier une entreprise</h3>
+-            <div class="form-row">
+-                <label for="modify-select">Sélectionner l'entreprise à modifier :</label>
+-                <select id="modify-select">
+-                    <option value="">Choisissez une entreprise</option>
+-                </select>
+-            </div>
+-
+-            <label for="new-name">Nouveau nom :</label>
+-            <input id="new-name" type="text" placeholder="Entrez le nouveau nom" />
+-
+-            <label for="new-sector">Nouveau secteur d'activité :</label>
+-            <input id="new-sector" type="text" placeholder="Entrez le nouveau secteur d'activité" />
+-
+-            <label for="new-location">Localité :</label>
+-            <input id="new-location" type="text" placeholder="Entrez la nouvelle localité" />
+-
+-            <label for="comments">Commentaire :</label>
+-            <textarea id="comments" placeholder="Ajoutez un commentaire"></textarea>
+-
+-            <div class="form-actions">
+-                <button class="delete">Supprimer l'entreprise</button>
+-                <button>Modifier</button>
+-            </div>
+-            </div>
+-            </div>
+-    </main>
+-    </div>
+-    </div>
+--->
+-
+-
++        
+         <footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
++
++<?php
++
+Index: Pages_présentations+Candidatures/header.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\n$servername = \"localhost\";\r\n$username = \"root\";\r\n$password = \"\";\r\n$dbname = \"bdd_projetweb\";\r\n\r\ntry {\r\n    $bdd = new PDO(\"mysql:host=$servername;dbname=$dbname\", $username, $password);\r\n    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);\r\n\r\n} catch(PDOException $e) {\r\n    echo \"Connexion échouée: \" . $e->getMessage();\r\n}\r\n\r\nclass FileManager {\r\n    private $uploadDirectory = \"uploads\\\\\"; // Assurez-vous que ce répertoire existe et a les permissions adéquates\r\n\r\n    public function getUniqueFilePath($filename) {\r\n        $filePath = $this->uploadDirectory . basename($filename);\r\n        $fileInfo = pathinfo($filePath);\r\n        $fileExtension = $fileInfo['extension'];\r\n        $filenameWithoutExt = $fileInfo['filename'];\r\n        $counter = 1;\r\n\r\n        while (file_exists($filePath)) {\r\n            $newFilename = $filenameWithoutExt . \"_\" . $counter . '.' . $fileExtension;\r\n            $filePath = $this->uploadDirectory . $newFilename;\r\n            $counter++;\r\n        }\r\n\r\n        return $filePath;\r\n    }\r\n}\r\n\r\nclass Application {\r\n    private $bddconnection;\r\n    private $fileManager;\r\n\r\n    public function __construct()\r\n    {\r\n        $this->fileManager = new FileManager();\r\n    }\r\n    function set_bddconnection($bddconnection){\r\n        $this->bddconnection = $bddconnection;\r\n    }\r\n\r\n    public function handleUpload($cvFile, $motivationFile, $idEtudiant = 7) {\r\n        if ($cvFile && $motivationFile) {\r\n            $cvPath = $this->fileManager->getUniqueFilePath($cvFile['name']);\r\n            $motivationPath = $this->fileManager->getUniqueFilePath($motivationFile['name']);\r\n\r\n            $cvUploadSuccess = move_uploaded_file($cvFile['tmp_name'], $cvPath);\r\n            $motivationUploadSuccess = move_uploaded_file($motivationFile['tmp_name'], $motivationPath);\r\n\r\n            if ($cvUploadSuccess && $motivationUploadSuccess) {\r\n                $stmt = $this->bddconnection->prepare(\"INSERT INTO Candidature (CV, lettremotiv, ID_Etudiant) VALUES (?, ?, ?)\");\r\n                $stmt->execute([$cvPath, $motivationPath, $idEtudiant]);\r\n\r\n                echo \"Fichiers téléchargés et enregistrés avec succès dans la base de données.\";\r\n            } else {\r\n                echo \"Erreur lors du téléchargement des fichiers.\";\r\n            }\r\n        } else {\r\n            echo \"Erreur : Fichiers non fournis.\";\r\n        }\r\n    }\r\n}\r\n\r\n\r\nclass RatingManager\r\n{\r\n    private $bddconnection;\r\n\r\n    public function __construct()\r\n    {\r\n\r\n    }\r\n    function set_bddconnection($bddconnection){\r\n        $this->bddconnection = $bddconnection;\r\n    }\r\n\r\n    public function addRating($rating, $comment)\r\n    {\r\n        if (isset($rating) && isset($comment)) {\r\n            try {\r\n                $stmt = $this->bddconnection->prepare(\"INSERT INTO Notes (Note, Commentaire) VALUES (?, ?)\");\r\n                $stmt->execute([$rating, $comment]);\r\n                echo \"Nouvel enregistrement créé avec succès\";\r\n            } catch (PDOException $e) {\r\n                echo \"Erreur lors de l'ajout de la note: \" . $e->getMessage();\r\n            }\r\n        } else {\r\n            echo \"Note ou commentaire non fourni.\";\r\n        }\r\n    }\r\n}\r\n\r\n\r\n\r\n
+===================================================================
+diff --git a/Pages_présentations+Candidatures/header.php b/Pages_présentations+Candidatures/header.php
+--- a/Pages_présentations+Candidatures/header.php	
++++ b/Pages_présentations+Candidatures/header.php	
+@@ -13,13 +13,20 @@
+     echo "Connexion échouée: " . $e->getMessage();
+ }
+ 
+-class FileManager {
+-    private $uploadDirectory = "uploads\\"; // Assurez-vous que ce répertoire existe et a les permissions adéquates
++
++class Offre {
++    private $bddconnection;
++    private $uploadDirectory = "uploads\\"; // Make sure this directory exists and has the correct permissions
+ 
+-    public function getUniqueFilePath($filename) {
++    function set_bddconnection($bddconnection) {
++        $this->bddconnection = $bddconnection;
++    }
++
++    // Integrated unique file path generator
++    private function getUniqueFilePath($filename) {
+         $filePath = $this->uploadDirectory . basename($filename);
+         $fileInfo = pathinfo($filePath);
+-        $fileExtension = $fileInfo['extension'];
++        $fileExtension = isset($fileInfo['extension']) ? $fileInfo['extension'] : '';
+         $filenameWithoutExt = $fileInfo['filename'];
+         $counter = 1;
+ 
+@@ -31,24 +38,12 @@
+ 
+         return $filePath;
+     }
+-}
+-
+-class Application {
+-    private $bddconnection;
+-    private $fileManager;
+ 
+-    public function __construct()
+-    {
+-        $this->fileManager = new FileManager();
+-    }
+-    function set_bddconnection($bddconnection){
+-        $this->bddconnection = $bddconnection;
+-    }
+-
++    // Method to handle file uploads and insert details into the database
+     public function handleUpload($cvFile, $motivationFile, $idEtudiant = 7) {
+         if ($cvFile && $motivationFile) {
+-            $cvPath = $this->fileManager->getUniqueFilePath($cvFile['name']);
+-            $motivationPath = $this->fileManager->getUniqueFilePath($motivationFile['name']);
++            $cvPath = $this->getUniqueFilePath($cvFile['name']);
++            $motivationPath = $this->getUniqueFilePath($motivationFile['name']);
+ 
+             $cvUploadSuccess = move_uploaded_file($cvFile['tmp_name'], $cvPath);
+             $motivationUploadSuccess = move_uploaded_file($motivationFile['tmp_name'], $motivationPath);
+@@ -68,7 +63,10 @@
+ }
+ 
+ 
+-class RatingManager
++
++
++
++class Entreprise
+ {
+     private $bddconnection;
+ 
+@@ -80,7 +78,7 @@
+         $this->bddconnection = $bddconnection;
+     }
+ 
+-    public function addRating($rating, $comment)
++    public function Evaluer_Entreprise($rating, $comment)
+     {
+         if (isset($rating) && isset($comment)) {
+             try {
+@@ -94,6 +92,11 @@
+             echo "Note ou commentaire non fourni.";
+         }
+     }
++
++    public function Rechercher_Entreprise()
++    {
++
++    }
+ }
+ 
+ 
+Index: Pages_présentations+Candidatures/PagedeCandidature.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"fr\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"style_3.css\">\r\n    <title>Candidature</title>\r\n</head>\r\n\r\n<body>\r\n\r\n<header>\r\n    <img src=\"logo_png.png\" alt=\"Logo\" id=\"logo\">\r\n    <button id=\"deconnexion\">Déconnexion</button>\r\n</header>\r\n\r\n<main>\r\n    <h1>Tu y es presque !</h1>\r\n    <form id=\"candidature-form\" action=\"\" method=\"POST\" enctype=\"multipart/form-data\">\r\n        <div class=\"input-container\">\r\n            <label for=\"cv\">Ton CV</label>\r\n            <input type=\"file\" id=\"cv\" name=\"cv\">\r\n        </div>\r\n        <div class=\"input-container\">\r\n            <label for=\"motivation\">Ta lettre de motivation</label>\r\n            <input type=\"file\" id=\"motivation\" name=\"motivation\">\r\n        </div>\r\n        <button type=\"submit\">ENVOYER</button>\r\n    </form>\r\n\r\n</main>\r\n\r\n\r\n\r\n</body>\r\n</html>\r\n\r\n<?php\r\nglobal$bdd;\r\ntry{\r\n    require_once \"header.php\";\r\n}\r\ncatch(Exception $e){\r\n    echo 'petit problème'.$e->getMessage().'';\r\n}\r\n\r\n// Utilisation\r\n\r\n$app = new Application();\r\n$app->set_bddconnection($bdd);\r\nif (isset($_FILES['cv']) && isset($_FILES['motivation'])) {\r\n    $app->handleUpload($_FILES['cv'], $_FILES['motivation']);\r\n} else {\r\n    echo \"\";\r\n}\r\n\r\n?>\r\n\r\n
+===================================================================
+diff --git a/Pages_présentations+Candidatures/PagedeCandidature.php b/Pages_présentations+Candidatures/PagedeCandidature.php
+--- a/Pages_présentations+Candidatures/PagedeCandidature.php	
++++ b/Pages_présentations+Candidatures/PagedeCandidature.php	
+@@ -46,7 +46,7 @@
+ 
+ // Utilisation
+ 
+-$app = new Application();
++$app = new Offre();
+ $app->set_bddconnection($bdd);
+ if (isset($_FILES['cv']) && isset($_FILES['motivation'])) {
+     $app->handleUpload($_FILES['cv'], $_FILES['motivation']);
+Index: Pages_présentations+Candidatures/PagePresentationEntreprise.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n<!DOCTYPE html>\r\n<html lang=\"fr\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"style_3.css\">\r\n    <script src=\"script.js\"></script>\r\n</head>\r\n\r\n<body>\r\n\r\n    <header>\r\n        <img src=\"logo_png.png\" alt=\"Logo\" id=\"logo\">\r\n        <button id=\"deconnexion\">Déconnexion</button>\r\n    </header>\r\n\r\n    <main>\r\n        <section id=\"offre\">\r\n            <img src=\"2560px-Logo_Pôle_Emploi_2008.svg.png\" alt=\"Logo\" id=\"logo_entreprise\">\r\n            <div id=\"details-offre\">\r\n                <!-- Contenu des détails de l'offre ici -->\r\n                <h1>Travailler à France Travail </h1>\r\n                <p>France Travail est une entreprise spécialisée dans le recrutement de personnel pour les entreprises.\r\n                    Nous\r\n                    sommes à la recherche d'un(e) développeur(se) web pour notre client, une entreprise de développement\r\n                    informatique. </p>\r\n                <button id=\"postuler\">Candidater</button>\r\n            </div>\r\n        </section>\r\n        <div id=\"evaluation\">\r\n            <div class=\"rating-container\">\r\n                <p class=\"rating-label\">Évaluer l'offre: </p>\r\n                <div class=\"rating\">\r\n                    <span class=\"star\" data-value=\"5\">&#9733;</span>\r\n                    <span class=\"star\" data-value=\"4\">&#9733;</span>\r\n                    <span class=\"star\" data-value=\"3\">&#9733;</span>\r\n                    <span class=\"star\" data-value=\"2\">&#9733;</span>\r\n                    <span class=\"star\" data-value=\"1\">&#9733;</span>\r\n                </div>\r\n            </div>\r\n            <label for=\"commentaires\">Commentaires :</label>\r\n            <textarea id=\"commentaire\"></textarea>\r\n            <button id=\"envoyerCommentaire\">Envoyer</button>\r\n        </div>\r\n\r\n    </main>\r\n\r\n\r\n\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n\r\n<?php\r\nrequire_once \"traiterDonnees.php\";\r\n?>
+===================================================================
+diff --git a/Pages_présentations+Candidatures/PagePresentationEntreprise.php b/Pages_présentations+Candidatures/PagePresentationEntreprise.php
+--- a/Pages_présentations+Candidatures/PagePresentationEntreprise.php	
++++ b/Pages_présentations+Candidatures/PagePresentationEntreprise.php	
+@@ -5,7 +5,7 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style_3.css">
+-    <script src="script.js"></script>
++    <script src="JS_Files/script.js"></script>
+ </head>
+ 
+ <body>
+@@ -55,5 +55,9 @@
+ </html>
+ 
+ <?php
+-require_once "traiterDonnees.php";
+-?>
+\ No newline at end of file
++try{
++    require_once "header.php";
++}
++catch(Exception $e){
++    echo 'petit problème'.$e->getMessage().'';
++}?>
+\ No newline at end of file
+Index: Pages_présentations+Candidatures/PagePresentationOffre.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n<!DOCTYPE html>\r\n<html lang=\"fr\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"style_3.css\">\r\n    <script src=\"script.js\"></script>\r\n    <title>Page Presentation offre</title>\r\n</head>\r\n\r\n<body>\r\n\r\n    <header>\r\n        <img src=\"logo_png.png\" alt=\"Logo\" id=\"logo\">\r\n        <button id=\"deconnexion\">Déconnexion</button>\r\n    </header>\r\n\r\n    <main>\r\n        <section id=\"offre\">\r\n            <img src=\"2560px-Logo_Pôle_Emploi_2008.svg.png\" alt=\"Logo\" id=\"logo_entreprise\">\r\n            <div id=\"details-offre\">\r\n                <!-- Contenu des détails de l'offre ici -->\r\n                <h1>Travailler à France Travail </h1>\r\n                <p>France Travail est une entreprise spécialisée dans le recrutement de personnel pour les entreprises.\r\n                    Nous\r\n                    sommes à la recherche d'un(e) développeur(se) web pour notre client, une entreprise de développement\r\n                    informatique. </p>\r\n                <a href=\"PagedeCandidature.php\">\r\n                <button id=\"postuler\">Candidater</button>\r\n                </a>\r\n            </div>\r\n        </section>\r\n        <div id=\"evaluation\">\r\n            <div class=\"rating-container\">\r\n                <p class=\"rating-label\">Évaluer l'offre: </p>\r\n                <div class=\"rating\">\r\n                    <span class=\"star\" data-value=\"5\">&#9733;</span>\r\n                    <span class=\"star\" data-value=\"4\">&#9733;</span>\r\n                    <span class=\"star\" data-value=\"3\">&#9733;</span>\r\n                    <span class=\"star\" data-value=\"2\">&#9733;</span>\r\n                    <span class=\"star\" data-value=\"1\">&#9733;</span>\r\n                </div>\r\n            </div>\r\n            <label for=\"commentaires\">Commentaires :</label>\r\n            <label for=\"commentaire\"></label><textarea id=\"commentaire\"></textarea>\r\n            <button id=\"envoyerCommentaire\">Envoyer</button>\r\n        </div>\r\n\r\n    </main>\r\n\r\n\r\n\r\n\r\n\r\n</body>\r\n\r\n</html>\r\n\r\n<?php\r\nglobal$bdd;\r\ntry{\r\n    require_once \"header.php\";\r\n}\r\ncatch(Exception $e){\r\n    echo 'petit problème'.$e->getMessage().'';\r\n}\r\n$rating = new RatingManager();\r\n\r\n$rating->set_bddconnection($bdd);\r\n// Example usage - adding a rating\r\nif (isset($_POST['rating']) && isset($_POST['commentaire'])) {\r\n    $rating->addRating($_POST['rating'], $_POST['commentaire']);\r\n    echo \"Rating and comment added successfully\";\r\n}\r\n\r\n?>
+===================================================================
+diff --git a/Pages_présentations+Candidatures/PagePresentationOffre.php b/Pages_présentations+Candidatures/PagePresentationOffre.php
+--- a/Pages_présentations+Candidatures/PagePresentationOffre.php	
++++ b/Pages_présentations+Candidatures/PagePresentationOffre.php	
+@@ -5,7 +5,7 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style_3.css">
+-    <script src="script.js"></script>
++    <script src="JS_Files/script.js"></script>
+     <title>Page Presentation offre</title>
+ </head>
+ 
+@@ -65,13 +65,13 @@
+ catch(Exception $e){
+     echo 'petit problème'.$e->getMessage().'';
+ }
+-$rating = new RatingManager();
++$rating = new Entreprise();
+ 
+ $rating->set_bddconnection($bdd);
+ // Example usage - adding a rating
+ if (isset($_POST['rating']) && isset($_POST['commentaire'])) {
+-    $rating->addRating($_POST['rating'], $_POST['commentaire']);
+-    echo "Rating and comment added successfully";
++    $rating->Evaluer_Entreprise($_POST['rating'], $_POST['commentaire']);
++    echo "";
+ }
+ 
+ ?>
+\ No newline at end of file
+Index: gestion_offres_pilote_admin.html
+===================================================================
+diff --git a/gestion_offres_pilote_admin.html b/Pages_Gestions/gestion_offres_pilote_admin.html
+rename from gestion_offres_pilote_admin.html
+rename to Pages_Gestions/gestion_offres_pilote_admin.html
+--- a/gestion_offres_pilote_admin.html	
++++ b/Pages_Gestions/gestion_offres_pilote_admin.html	
+@@ -13,13 +13,13 @@
+     <nav id="navbar">
+         <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
+         <div id="lien_navbar">
+-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
++            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.php"
+                 id="lien_entreprises_etudiants">Entreprises</a>
+-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
++            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.php"
+                 id="lien_offres_etudiants">Offres</a>
+-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
++            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.php"
+                 id="lien_offres_etudiants">Etudiants</a>
+-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
++            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.php"
+                 id="lien_offres_etudiants">Etudiants</a>
+ 
+             <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
+@@ -43,7 +43,7 @@
+     <main>
+         <h1 class="titre police_texte">Gestion des offres de stages</h1>
+ 
+-        <section class="recherche_entreprise police_texte" id="section_recherche_offres">
++        <section class="bloc_gestion police_texte" id="section_recherche_offres">
+             <h2>Rechercher une offre</h2>
+             <div id="recherche_container">
+ 
+@@ -112,11 +112,6 @@
+                                 <input name="nbr_offre" id="search-stages" type="number"
+                                     placeholder="Entrez le nombre de place" />
+                             </div>
+-                            <div class="form-row">
+-                                <label for="search-location">Nombre de demanndes :</label><br>
+-                                <input name="nbr_demandes" id="search-location" type="number"
+-                                    placeholder="Entrez le nombre de demandes" />
+-                            </div>
+ 
+                             </form>
+                         </div>
+@@ -128,7 +123,9 @@
+                 </div>
+             </div>
+             <div id="result_recherche_offres">
+-                <div class="recherche_fiche_entreprise" id='fiches_offres'>
++                
++                <div class="recherche_fiche_offres">
++                    
+                     <img width="80px"
+                         src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                         alt="img entreprise">
+@@ -136,15 +133,9 @@
+                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                         chocolats</p>
+                 </div>
+-                <div id='fiches_offres'>
+-                    <img width="80px"
+-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                        alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+-                        chocolats</p>
+-                </div>
+-                <div class="recherche_fiche_entreprise" id='fiches_offres'>
++        
++                <div class="recherche_fiche_offres">
++                    
+                     <img width="80px"
+                         src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                         alt="img entreprise">
+@@ -152,7 +143,8 @@
+                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                         chocolats</p>
+                 </div>
+-                <div class="recherche_fiche_entreprise" id='fiches_offres'>
++                <div class="recherche_fiche_offres">
++                    
+                     <img width="80px"
+                         src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                         alt="img entreprise">
+@@ -160,7 +152,8 @@
+                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                         chocolats</p>
+                 </div>
+-                <div class="recherche_fiche_entreprise" id='fiches_offres'>
++                <div class="recherche_fiche_offres">
++                    
+                     <img width="80px"
+                         src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                         alt="img entreprise">
+@@ -168,7 +161,8 @@
+                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                         chocolats</p>
+                 </div>
+-                <div class="recherche_fiche_entreprise" id='fiches_offres'>
++                <div class="recherche_fiche_offres">
++                    
+                     <img width="80px"
+                         src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                         alt="img entreprise">
+@@ -180,6 +174,22 @@
+                 <div id="overlay"></div>
+                 <div id="message">Veuillez sélectionner une entreprise</div>
+             </div>
++
++            <div id="icones_modif_offres">
++                <div class="fond_ico_offres" id="btn_modif_offre">
++                    <img 
++                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
++                        width="40px">
++                    <div class="overlay"></div>
++                </div>
++
++                <div class="fond_ico_offres" id="btn_voir_offre">
++                    <img
++                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
++                        width="40px">
++                    <div class="overlay"></div>
++                </div>
++            </div>
+         </section>
+ 
+         <div id="overlay_suppression"></div>
+@@ -192,53 +202,64 @@
+ 
+         <section id="result_all">
+             <fieldset id="result_modif" class="police_texte">
+-                <legend>Modifer une entreprise</legend>
++                <legend>Modifer une offre</legend>
+                 <form>
+                     <div id="deux_partie_modif">
+                         <div id="partie_modif">
+-                            <label>Nouveau nom :</label><br>
+-                            <input type="text" id="nouv_nom" name="nouv_nom" placeholder="Nouveau nom">
++                            <label>Lieu du stage</label><br>
++                            <input type="text" id="nouv_lieu_offre" name="nouv_lieu_offre" placeholder="Nouveau lieu">
+                             <br>
+                             <label>Nouveau secteur :</label><br>
+-                            <select name="nouv_secteur">
++                            <select name="nouv_secteur_offre">
+                                 <option>--Choisir--</option>
+                                 <option>Informatique</option>
+                                 <option>BTP</option>
+                                 <option>S3E</option>
+-                                <option>jesaisplu</option>
++                                <option>Généraliste</option>
+                             </select>
+                             <br>
+-                            <label>Nouvelle localité :</label><br>
+-                            <div id="adresses">
+-                                <!-- Conteneur pour les adresses -->
+-                            </div>
+-                            <button type="button" id="ajouterAdresse">Ajouter une adresse</button>
+-
++                            <label>Promotion</label><br>
++                            <select name="promo">
++                                <option>--Choisir--</option>
++                                <option>A2 informatique</option>
++                                <option>A2 BTP</option>
++                                <option>A2 S3E</option>
++                                <option>A2 Généraliste</option>
++                                <option>A3 informatique</option>
++                                <option>A3 BTP</option>
++                                <option>A3 S3E</option>
++                                <option>A3 Généraliste</option>
++                                <option>A4 informatique</option>
++                                <option>A4 BTP</option>
++                                <option>A4 S3E</option>
++                                <option>A4 Généraliste</option>
++                                <option>A5 informatique</option>
++                                <option>A5 BTP</option>
++                                <option>A5 S3E</option>
++                                <option>A5 Généraliste</option>
++                            </select>
+                             <br>
+-                            <label>Nouvelle image :</label><br>
+-                            <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
++                            <label>Nouvelle durée du stage (en semaines)</label><br>
++                            <input name="image_entreprise" type="number" placeholder="Durée du stage en semaines">
+                         </div>
+                         <div id="partie_eval">
+-                            <label>Evaluer l'entreprise :</label>
+-                            <div class="rating" id="rating">
+-                                <span class="star" data-value="1">&#9733;</span>
+-                                <span class="star" data-value="2">&#9733;</span>
+-                                <span class="star" data-value="3">&#9733;</span>
+-                                <span class="star" data-value="4">&#9733;</span>
+-                                <span class="star" data-value="5">&#9733;</span>
+-                            </div>
+-                            <label>Commentaire :</label><br>
+-                            <textarea class="police_texte" id="commentaire_entreprise" name="commentaire_entreprise"
+-                                placeholder="Entrez un commentaire"></textarea>
+-                            <br>
+-                            <button id="supprimer_entreprise">Supprimer l'entreprise</button> <br>
+-                            <div id="btn_envoi">
+-                                <button type="reset">Réinitialiser</button>
+-                                <button type="submit">Modifer</button>
+-                            </div>
+-                        </div>
++                            <label>Nouvelle rémunération :</label><br>
++                            <input type="number" name="renum" placeholder="Rémunération en euros par mois"><br>
++                            <label>Nouvelle Date :</label><br>
++                            <input type="date" name="nouv_date">
++                            <br>
++                            <label>Nombre de place</label><br>
++                            <input type="number" placeholder="Nombre de place pour l'offre" name="nbr_place"> <br>
++                            <label>Nouvelle image</label><br>
++                            <input name="nouv_image_offre" type="file" accept="image/jpeg, image/png"><br>
++                            
++                        </div>
++                    </div>
++                    <button id="supprimer_offre">Supprimer l'offre</button> <br>
++                    <div id="btn_envoi">
++                        <button type="reset">Réinitialiser</button>
++                        <button type="submit">Modifer</button>
+                     </div>
+-
+                 </form>
+             </fieldset>
+ 
+@@ -256,94 +277,67 @@
+ 
+         </section>
+ 
+-        <section class="creation_entreprise police_texte">
+-            <h2>Créer une entreprise</h2>
++        <section class="bloc_gestion police_texte">
++            <h2>Créer une offre</h2>
+             <div class="form-row">
+-                <label for="create-name">Nom de l'entreprise :</label><br>
+-                <input id="create-name" type="text" placeholder="Entrez le nom de l'entreprise" />
++                <label for="create-name">Intitulé de l'offre :</label><br>
++                <input id="create-name" type="text" placeholder="Entrez le nom de l'offre" name="nom_offre" >
+             </div>
+             <div class="form-row">
+-                <label for="create-name">Description de l'entreprise</label><br>
+-                <textarea class="police_texte" id="description_entreprise" name="description_entreprise"
+-                    placeholder="Decrivez l'entreprise ici"></textarea>
++                <label for="create-name">Entreprise</label><br>
++                <input type="text" name="offre_entreprise"
++                    placeholder="Decrivez l'entreprise ici"></input>
+             </div>
+             <div class="form-row">
+-                <label for="create-location">Lieu d'entreprise :</label><br>
+-                <input id="create-location" type="text" placeholder="Entrez le lieu" />
++                <label for="create-location">Lieu du stage :</label><br>
++                <input id="create-location" type="text" placeholder="Entrez le lieu">
+             </div>
+             <div class="form-row">
+                 <label for="create-sector">Secteur d'activité :</label><br>
+-                <select name="nouv_secteur">
++                <select name="promo">
+                     <option>--Choisir--</option>
+-                    <option>Informatique</option>
+-                    <option>BTP</option>
+-                    <option>S3E</option>
+-                    <option>jesaisplu</option>
++                    <option>A2 informatique</option>
++                    <option>A2 BTP</option>
++                    <option>A2 S3E</option>
++                    <option>A2 Généraliste</option>
++                    <option>A3 informatique</option>
++                    <option>A3 BTP</option>
++                    <option>A3 S3E</option>
++                    <option>A3 Généraliste</option>
++                    <option>A4 informatique</option>
++                    <option>A4 BTP</option>
++                    <option>A4 S3E</option>
++                    <option>A4 Généraliste</option>
++                    <option>A5 informatique</option>
++                    <option>A5 BTP</option>
++                    <option>A5 S3E</option>
++                    <option>A5 Généraliste</option>
+                 </select>
+             </div>
+             <div class="form-row">
+-                <label for="create-sector">Image de l'entreprise :</label><br>
+-                <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
++                <label for="create-sector">Durée du stage :</label><br>
++                <input type="number" placeholder="Durée du stage en semaine">
+             </div>
+-            <div class="form-actions">
+-                <button class="button-search">Créer</button>
+-                <button class="button-reset">Réinitialiser</button>
++            <div class="form-row">
++                <label>Rémunération</label><br>
++                <input type="number" placeholder="Rémunération par mois">
+             </div>
+-        </section>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-        <!--
+-        <h2>Statistiques d'une entreprise</h2>
+-        <div class="stats-detail">
+-            <p><strong>Nom de l'entreprise :</strong> GOGO Corporation</p>
+-            <p><strong>Le top des offres :</strong></p>
+-            <p><strong>Nombre d'étudiants actuellement en stage :</strong00< /p>
+-                    <div class="rating">
+-                        <span><strong>Moyenne de l'entreprise :</strong></span>
+-                        <div class="stars">★★★☆☆</div>
+-                    </div>
+-        </div>
+-        </article>
+-        <br>
+-
+-        <article class="form-block">
+-            <h3>Modifier une entreprise</h3>
++            <div class="form-row">
++                <label>Date de l'offre</label><br>
++                <input type="date">
++            </div>
+             <div class="form-row">
+-                <label for="modify-select">Sélectionner l'entreprise à modifier :</label>
+-                <select id="modify-select">
+-                    <option value="">Choisissez une entreprise</option>
+-                </select>
++                <label>Nombre de place</label><br>
++                <input type="number" placeholder="Nombre de place proposées par l'entreprise">
+             </div>
+-
+-            <label for="new-name">Nouveau nom :</label>
+-            <input id="new-name" type="text" placeholder="Entrez le nouveau nom" />
+-
+-            <label for="new-sector">Nouveau secteur d'activité :</label>
+-            <input id="new-sector" type="text" placeholder="Entrez le nouveau secteur d'activité" />
+-
+-            <label for="new-location">Localité :</label>
+-            <input id="new-location" type="text" placeholder="Entrez la nouvelle localité" />
+-
+-            <label for="comments">Commentaire :</label>
+-            <textarea id="comments" placeholder="Ajoutez un commentaire"></textarea>
+-
++            <label>Ajouter une image</label>
++            <input name="nouv_image_offre" type="file" accept="image/jpeg, image/png"><br>
++           
+             <div class="form-actions">
+-                <button class="delete">Supprimer l'entreprise</button>
+-                <button>Modifier</button>
++                <button type="submit" class="button-search">Créer</button>
++                <button type="reset" class="button-reset">Réinitialiser</button>
+             </div>
+-            </div>
+-            </div>
+-    </main>
+-    </div>
+-    </div>
+--->
++        </section>
+ 
+ 
+         <footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
+Index: page_accueil_ss_connexion.html
+===================================================================
+diff --git a/page_accueil_ss_connexion.html b/Page_Connexion&ss/page_accueil_ss_connexion.html
+rename from page_accueil_ss_connexion.html
+rename to Page_Connexion&ss/page_accueil_ss_connexion.html
+--- a/page_accueil_ss_connexion.html	
++++ b/Page_Connexion&ss/page_accueil_ss_connexion.html	
+@@ -3,8 +3,8 @@
+ <head>
+   <meta charset="utf-8">
+   <title>Stage En Bref</title>
+-  <link rel="stylesheet" href="style.css">
+-  <script src="script.js"></script>
++  <link rel="stylesheet" href="../Pages_Gestions/style.css">
++  <script src="../Pages_Gestions/script.js"></script>
+   <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" type="image/png">
+ 
+ 
+Index: Pages_Menus/MenuPilote.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"fr\">\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n<title>Menu Pilote</title>\r\n<link rel=\"stylesheet\" href=\"styles.css\">\r\n</head>\r\n<body>\r\n  <header class=\"top-bar\">\r\n    <h1 class=\"menu-title\">Menu pilote</h1>\r\n    <button class=\"logout\">DÉCONNEXION</button>\r\n  </header>\r\n  <main class=\"main-content\">\r\n    <section class=\"welcome-section\">\r\n      <div class=\"logo-placeholder\">LOGO</div>\r\n      <div class=\"welcome-text\">\r\n          <h2>Bonjour Alice</h2>\r\n          <p>Que souhaitez vous faire aujourd'hui ?</p>\r\n      </div>\r\n    </section>\r\n    <nav class=\"menu-options\">\r\n      <a href=\"#\" class=\"menu-option\">Gérer les entreprises</a>\r\n      <a href=\"#\" class=\"menu-option\">Gérer les offres</a>\r\n      <a href=\"#\" class=\"menu-option\">Gérer les étudiants</a>\r\n      <a href=\"#\" class=\"menu-option\">Se déconnecter</a>\r\n    </nav>\r\n  </main>\r\n  <footer>\r\n    Footer\r\n  </footer>\r\n</body>\r\n</html>\r\n
+===================================================================
+diff --git a/Pages_Menus/MenuPilote.html b/Pages_Menus/MenuPilote.html
+--- a/Pages_Menus/MenuPilote.html	
++++ b/Pages_Menus/MenuPilote.html	
+@@ -1,4 +1,4 @@
+-<!DOCTYPE html>
++z<!DOCTYPE html>
+ <html lang="fr">
+ <head>
+ <meta charset="UTF-8">
+diff --git a/Pages_présentations+Candidatures/script.js b/Pages_présentations+Candidatures/JS_Files/script.js
+rename from Pages_présentations+Candidatures/script.js
+rename to Pages_présentations+Candidatures/JS_Files/script.js
+diff --git a/Pages_présentations+Candidatures/traiterDonnees_Candidatures.php b/Old Files/traiterDonnees_Candidatures.php
+rename from Pages_présentations+Candidatures/traiterDonnees_Candidatures.php
+rename to Old Files/traiterDonnees_Candidatures.php
+diff --git a/Pages_présentations+Candidatures/Script_Candidature.js b/Pages_présentations+Candidatures/JS_Files/Script_Candidature.js
+rename from Pages_présentations+Candidatures/Script_Candidature.js
+rename to Pages_présentations+Candidatures/JS_Files/Script_Candidature.js
+diff --git a/Pages_présentations+Candidatures/traiterDonnees.php b/Old Files/traiterDonnees.php
+rename from Pages_présentations+Candidatures/traiterDonnees.php
+rename to Old Files/traiterDonnees.php

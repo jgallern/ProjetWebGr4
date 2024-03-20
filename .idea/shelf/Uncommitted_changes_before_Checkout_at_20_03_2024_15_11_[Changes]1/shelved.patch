@@ -1,0 +1,1814 @@
+Index: Pages_Gestions/Gestion des étudiants admin.html
+===================================================================
+diff --git a/Pages_Gestions/Gestion des étudiants admin.html b/Pages_Gestions/Gestion des étudiants admin.html
+deleted file mode 100644
+--- a/Pages_Gestions/Gestion des étudiants admin.html	
++++ /dev/null	
+@@ -1,156 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="fr">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Gestion des étudiants</title>
+-    <link rel="stylesheet" href="style2.css">
+-</head>
+-<body>
+-    <div class="container">
+-    <header class="top-bar">
+-        <h1 class="menu-title">Gestion des étudiants</h1>
+-        <div class="logo">LOGO</div>
+-        <button class="logout">DÉCONNEXION</button>
+-    </header>
+-
+-    <main>
+-        <section class="form-section">
+-            <article class="form-block">
+-                <h2>Rechercher un compte étudiant</h2>
+-                <div class="form-row">
+-                    <label for="search-nom">Nom de l'étudiant :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom de l'étudiant :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Promotion :</label>
+-                    <input id="search-promo" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-actions">
+-                    <button class="button-search">Rechercher</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-            <article class="form-block">
+-                <h2>Créer un étudiant</h2>
+-                <div class="form-row">
+-                    <label for="search-nom">Nom de l'étudiant :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom de l'étudiant :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Promotion :</label>
+-                    <input id="search-promo" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Photo de profil :</label>
+-
+-                </div>
+-                <div class="form-actions">
+-                    <button class="button-search">Rechercher</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-            <article class="form-block">
+-                <h2>Statistiques d'un compte étudiant</h2>
+-                <div class="form-row">
+-                    <label for="search-nom">Nom de l'étudiant :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom de l'étudiant :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Promotion :</label>
+-                    <input id="search-promo" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-recherche">Les recherches de stage :</label>
+-                    <input id="search-recherche" type="text" placeholder=" " />
+-                </div>
+-            </article>
+-            <br>
+-
+-                <article class="form-block">
+-                    <h3>Modifier un compte étudiant</h3>
+-                    <div class="form-row">
+-                    <label for="modify-select">Nouveaux champs :</label>
+-                </div>
+-        
+-                <div class="form-row">
+-                    <label for="search-nom">Nom de l'étudiant :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom de l'étudiant :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Promotion :</label>
+-                    <input id="search-promo" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-actions">
+-                    <button class="delete">Supprimer le compte</button>
+-                    <button>Modifier</button>
+-                <button class="button-reset">Réinitialiser</button>
+-            </div>
+-            </article>
+-                </div>
+-            </div>
+-        </main>
+-    </div>
+-    </div>
+-</body>
+-</html>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+Index: page_wishlist_candidatures.html
+===================================================================
+diff --git a/page_wishlist_candidatures.html b/page_wishlist_candidatures.html
+deleted file mode 100644
+--- a/page_wishlist_candidatures.html	
++++ /dev/null	
+@@ -1,192 +0,0 @@
+-<!doctype html>
+-<html lang="fr">
+-
+-<head>
+-    <meta charset="utf-8">
+-    <title>Stage En Bref</title>
+-    <link rel="stylesheet" href="style.css">
+-    <script src="script.js"></script>
+-    <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-        type="image/png">
+-
+-
+-</head>
+-
+-<body id="body_whislist_candidatures">
+-    <header>
+-        <nav id="navbar_wishlist">
+-            <a class="police_texte" href="page_connexion.html" id="lien_connexion_header">déconnexion</a>
+-            <a href="#"><img id="menu_page_wishlist" width="35em"
+-                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_menu.png"></img></a>
+-        </nav>
+-        <div id="bienvenue">
+-            <a href="page_accueil_ss_connexion.html"><img id="logo_connexion" alt="logo SEB"
+-                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"></a>
+-        </div>
+-        <h1 class="police_texte" id="titre_page">Wishlist et candidatures</h1>
+-    </header>
+-
+-    <section class="wish_cand apple_style">
+-        <div class="offres_header">
+-            <h2 class="police_texte">Ta Wishlist</h2>
+-            <input class="police_texte recherche_offres" type="text" id="recherche_wishlist" placeholder="Rechercher...">
+-        </div>
+-        <div class="les_offres">
+-            <img id="defilement_gauche_wishlist" class="scroll_buttons" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/fleche_gauche.png">
+-            <h3 id="aucune_offre" class="aucune_offre police_texte" style="display: none;">Aucune offre ne correspond à votre recherche</h3>
+-
+-            <div class="offres_container" id="wishlist_container">
+-                
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a><a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-                <a href="#" class="offre offre_wishlist police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                    <input type="button" value="Supprimer">
+-                </a>
+-
+-            </div>
+-            <img id="defilement_droite_wishlist" class="scroll_buttons" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/fleche_droite.png">
+-
+-        </div>
+-
+-        
+-    </section>
+-
+-    <br><br><br>
+-
+-
+-    <section class="wish_cand apple_style">
+-        <div class="offres_header">
+-            <h2 class="police_texte">Tes candidatures</h2>
+-            <input class="police_texte recherche_offres" type="text" id="recherche_candidatures" placeholder="Rechercher...">
+-        </div>
+-        <div class="les_offres">
+-            <img id="defilement_gauche_candidatures" class="scroll_buttons" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/fleche_gauche.png">
+-            <h3 id="aucune_offre_candidatures" class="police_texte aucune_offre" style="display: none;">Aucune offre ne correspond à votre recherche</h3>
+-
+-            <div class="offres_container" id="candidatures_container">
+-                
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-                <a href="#" class="offre offre_candidatures police_texte">
+-                    <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
+-                    <h3>Intitulé 2</h3>
+-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-                </a>
+-        
+-            </div>
+-            <img id="defilement_droite_candidatures" class="scroll_buttons" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/fleche_droite.png">
+-
+-        </div>
+-
+-        
+-    </section>
+-
+-</body>
+-
+-<footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
+-
+-
+-</html>
+\ No newline at end of file
+Index: Pages_Gestions/Gestion des étudiants.html
+===================================================================
+diff --git a/Pages_Gestions/Gestion des étudiants.html b/Pages_Gestions/Gestion des étudiants.html
+deleted file mode 100644
+--- a/Pages_Gestions/Gestion des étudiants.html	
++++ /dev/null	
+@@ -1,156 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="fr">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Gestion des étudiants</title>
+-    <link rel="stylesheet" href="style2.css">
+-</head>
+-<body>
+-    <div class="container">
+-    <header class="top-bar">
+-        <h1 class="menu-title">Gestion des étudiants</h1>
+-        <div class="logo">LOGO</div>
+-        <button class="logout">DÉCONNEXION</button>
+-    </header>
+-
+-    <main>
+-        <section class="form-section">
+-            <article class="form-block">
+-                <h2>Rechercher un compte étudiant</h2>
+-                <div class="form-row">
+-                    <label for="search-nom">Nom de l'étudiant :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom de l'étudiant :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Promotion :</label>
+-                    <input id="search-promo" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-actions">
+-                    <button class="button-search">Rechercher</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-            <article class="form-block">
+-                <h2>Créer un étudiant</h2>
+-                <div class="form-row">
+-                    <label for="search-nom">Nom de l'étudiant :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom de l'étudiant :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Promotion :</label>
+-                    <input id="search-promo" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Photo de profil :</label>
+-
+-                </div>
+-                <div class="form-actions">
+-                    <button class="button-search">Rechercher</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-            <article class="form-block">
+-                <h2>Statistiques d'un compte étudiant</h2>
+-                <div class="form-row">
+-                    <label for="search-nom">Nom de l'étudiant :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom de l'étudiant :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Promotion :</label>
+-                    <input id="search-promo" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-recherche">Les recherches de stage :</label>
+-                    <input id="search-recherche" type="text" placeholder=" " />
+-                </div>
+-            </article>
+-            <br>
+-
+-                <article class="form-block">
+-                    <h3>Modifier un compte étudiant</h3>
+-                    <div class="form-row">
+-                    <label for="modify-select">Nouveaux champs :</label>
+-                </div>
+-        
+-                <div class="form-row">
+-                    <label for="search-nom">Nom de l'étudiant :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom de l'étudiant :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promo">Promotion :</label>
+-                    <input id="search-promo" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-actions">
+-                    <button class="delete">Supprimer le compte</button>
+-                    <button>Modifier</button>
+-                <button class="button-reset">Réinitialiser</button>
+-            </div>
+-            </article>
+-                </div>
+-            </div>
+-        </main>
+-    </div>
+-    </div>
+-</body>
+-</html>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+Index: Pages_Gestions/Gestion des entreprises admin et pilotes.html
+===================================================================
+diff --git a/Pages_Gestions/Gestion des entreprises admin et pilotes.html b/Pages_Gestions/Gestion des entreprises admin et pilotes.html
+deleted file mode 100644
+--- a/Pages_Gestions/Gestion des entreprises admin et pilotes.html	
++++ /dev/null	
+@@ -1,134 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="fr">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Gestion des entreprises admin et pilote</title>
+-    <link rel="stylesheet" href="style2.css">
+-</head>
+-<body>
+-    <div class="container">
+-    <header class="top-bar">
+-        <h1 class="menu-title">Gestion des entreprises admin et pilote</h1>
+-        <div class="logo">LOGO</div>
+-        <button class="logout">DÉCONNEXION</button>
+-    </header>
+-
+-    <main>
+-        <section class="form-section">
+-            <article class="form-block">
+-                <h2>Rechercher une entreprise</h2>
+-                <div class="form-row">
+-                    <label for="search-name">Nom de l'entreprise :</label>
+-                    <input id="search-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-stages">Nombre d'offres de stage :</label>
+-                    <input id="search-stages" type="text" placeholder="Entrez le nombre d'offres" />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-location">Lieu d'entreprise :</label>
+-                    <input id="search-location" type="text" placeholder="Entrez le lieu" />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-sector">Secteur d'activité :</label>
+-                    <input id="search-sector" type="text" placeholder="Entrez le secteur d'activité" />
+-                </div>
+-                <div class="form-actions">
+-                    <button class="button-search">Rechercher</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-            <article class="form-block">
+-                <h2>Créer une entreprise</h2>
+-                <div class="form-row">
+-                    <label for="create-name">Nom de l'entreprise :</label>
+-                    <input id="create-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+-                </div>
+-                <div class="form-row">
+-                    <label for="create-location">Lieu d'entreprise :</label>
+-                    <input id="create-location" type="text" placeholder="Entrez le lieu" />
+-                </div>
+-                <div class="form-row">
+-                    <label for="create-sector">Secteur d'activité :</label>
+-                    <input id="create-sector" type="text" placeholder="Entrez le secteur d'activité" />
+-                </div>
+-                <div class="form-actions">
+-                    <button>Créer</button>
+-                    <button>Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-            <article class="form-block">
+-                <h2>Statistiques d'une entreprise</h2>
+-                <div class="stats-detail">
+-                    <p><strong>Nom de l'entreprise :</strong> GOGO Corporation</p>
+-                    <p><strong>Le top des offres :</strong></p>
+-                    <p><strong>Nombre d'étudiants actuellement en stage :</strong00</p>
+-                        <div class="rating">
+-                            <span><strong>Moyenne de l'entreprise :</strong></span>
+-                            <div class="stars">★★★☆☆</div>
+-                        </div>
+-                </div>
+-            </article>
+-            <br>
+-
+-                <article class="form-block">
+-                    <h3>Modifier une entreprise</h3>
+-                    <div class="form-row">
+-                    <label for="modify-select">Sélectionner l'entreprise à modifier :</label>
+-                    <select id="modify-select">
+-                        <option value="">Choisissez une entreprise</option>
+-                    </select>
+-                </div>
+-        
+-                    <label for="new-name">Nouveau nom :</label>
+-                    <input id="new-name" type="text" placeholder="Entrez le nouveau nom" />
+-        
+-                    <label for="new-sector">Nouveau secteur d'activité :</label>
+-                    <input id="new-sector" type="text" placeholder="Entrez le nouveau secteur d'activité" />
+-        
+-                    <label for="new-location">Localité :</label>
+-                    <input id="new-location" type="text" placeholder="Entrez la nouvelle localité" />
+-        
+-                    <label for="comments">Commentaire :</label>
+-                    <textarea id="comments" placeholder="Ajoutez un commentaire"></textarea>
+-        
+-                    <div class="form-actions">
+-                        <button class="delete">Supprimer l'entreprise</button>
+-                        <button>Modifier</button>
+-                    </div>
+-                </div>
+-            </div>
+-        </main>
+-    </div>
+-    </div>
+-</body>
+-</html>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+Index: gestion_offres_etudiants.html
+===================================================================
+diff --git a/gestion_offres_etudiants.html b/gestion_offres_etudiants.html
+deleted file mode 100644
+--- a/gestion_offres_etudiants.html	
++++ /dev/null	
+@@ -1,222 +0,0 @@
+-<!doctype html>
+-<html lang="fr">
+-
+-<head>
+-    <meta charset="utf-8">
+-    <title>Gestion entreprise
+-    </title>
+-    <link rel="stylesheet" href="style.css">
+-    <script src="script.js"></script>
+-    <link rel="icon" href="" type="image/png">
+-
+-<body>
+-    <nav id="navbar_entreprise_etudiants">
+-        <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
+-        <div id="lien_navbar">
+-            <a class="lien_nav police_texte" href="gestion_entreprise_etudiants.html" id="lien_entreprises_etudiants">Entreprises</a>
+-            <a class="lien_nav police_texte" href="gestion_offres_etudiants.html" id="lien_offres_etudiants">Offres</a>
+-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
+-            <a class="lien_nav police_texte" href="#" id="lien_candidatures">Candidatures</a>
+-        </div>
+-        <div id="profil">
+-            <div id="detail_profil" class="police_texte">
+-                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
+-                <button id="bouton_voir_profil">Voir le profil</button>
+-                <button id="bouton_deconnexion">Se déconnecter</button>
+-            </div>
+-
+-            <img id="photo_profil"
+-                src="C:\Users\quent\OneDrive - Association Cesi Viacesi mail\A2\04_web\Projet\images\photo_profil.png"
+-                alt="photo_profil">
+-        </div>
+-
+-    </nav>
+-
+-
+-
+-    <h1 class="titre police_texte">Un stage en poche en un rien de temps
+-    </h1>
+-    <section id="partie_filtre" class="police_texte">
+-        <button id="btn_filtre">Filtrer</button>
+-        <form>
+-            <div id="form_filtre">
+-                <div id="filtres_wrapper">
+-                    <div class="un_filtre">
+-                        <label for="search-name">Nom de l'entreprise</label><br>
+-                        <input id="search-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-location">Lieu d'entreprise</label><br>
+-                        <input id="search-location" type="text" placeholder="Entrez le lieu" />
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-stages">Promotion</label><br>
+-                        <select>
+-                            <option>A1</option>
+-                            <option>A2</option>
+-                            <option>A3</option>
+-                            <option>A4</option>
+-                            <option>A5</option>
+-                        </select>
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-sector">Secteur d'activité</label><br>
+-                        <select>
+-                            <option>Informatique</option>
+-                            <option>BTP</option>
+-                            <option>S3E</option>
+-                            <option>Généraliste</option>
+-                        </select>
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-sector">Durée du stage (en semaines)</label><br>
+-                        <input type="number" id="search-sector" name="duree" min="1" max="26" step="1">
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-sector">Date de l'offre</label><br>
+-                        <input id="search-sector" type="date" placeholder="Date de mise en ligne" />
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-sector">Nombre de place</label><br>
+-                        <input id="search-sector" type="number" placeholder="Entrez le nombre de place" />
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-sector">Nombre de demandes</label><br>
+-                        <input id="search-sector" type="number" placeholder="Entrez le nombre de demandes" />
+-                    </div>
+-                </div>
+-                <button id="submit_button" type="submit">Filtrer</button>
+-            </div>
+-
+-        </form>
+-    </section>
+-
+-    </section>
+-    <h2 class="titre police_texte" id="titre_entreprises_populaire">Les plus populaires</h2>
+-    <div class="listeentreprises">
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-        <a href="#" class="carte_entreprise police_texte carte_voir_plus">
+-            <h3>Voir plus d'offres</h3>
+-        </a>
+-
+-
+-    </div>
+-    <h2 class="titre police_texte">Proche de toi</h2>
+-    <div class="listeentreprises">
+-
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-        <a href="#" class="carte_entreprise police_texte carte_voir_plus">
+-            <h3>Voir plus d'offres</h3>
+-        </a>
+-
+-    </div>
+-
+-
+-
+-    </div>
+-    <h2 class="titre police_texte">Les plus actifs</h2>
+-    <div class="listeentreprises">
+-
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-        <a href="#" class="carte_entreprise police_texte carte_voir_plus">
+-            <h3>Voir plus d'offres</h3>
+-        </a>
+-
+-    </div>
+-
+-
+-</body>
+-<footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
+\ No newline at end of file
+Index: peuplementDB.sql
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/peuplementDB.sql b/peuplementDB.sql
+deleted file mode 100644
+--- a/peuplementDB.sql	
++++ /dev/null	
+@@ -1,302 +0,0 @@
+-CREATE TABLE Personne(
+-   ID_Personne INT,
+-   nom VARCHAR(50),
+-   prenom VARCHAR(50),
+-   centre VARCHAR(50),
+-   Login VARCHAR(50),
+-   Password VARCHAR(50),
+-   PRIMARY KEY(ID_Personne)
+-);
+-
+-CREATE TABLE Notes(
+-   ID_Note INT,
+-   Note INT,
+-   Commentaire VARCHAR(280),
+-   PRIMARY KEY(ID_Note)
+-);
+-
+-CREATE TABLE Centre(
+-   ID_Centre INT,
+-   Nom_centre VARCHAR(50),
+-   ID_Personne INT NOT NULL,
+-   PRIMARY KEY(ID_Centre),
+-   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
+-);
+-
+-CREATE TABLE Pilote(
+-   ID_Pilote INT,
+-   photoprofile VARCHAR(50),
+-   ID_Note INT NOT NULL,
+-   ID_Personne INT NOT NULL,
+-   PRIMARY KEY(ID_Pilote),
+-   UNIQUE(ID_Personne),
+-   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
+-   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
+-);
+-
+-CREATE TABLE Adresse(
+-   ID_Adresse INT,
+-   Numero_rue INT,
+-   Nom_rue VARCHAR(200),
+-   Ville VARCHAR(100),
+-   ID_Centre INT NOT NULL,
+-   PRIMARY KEY(ID_Adresse),
+-   UNIQUE(ID_Centre),
+-   FOREIGN KEY(ID_Centre) REFERENCES Centre(ID_Centre)
+-);
+-
+-CREATE TABLE SecteurActivite(
+-   ID_secteur INT,
+-   nom_secteur VARCHAR(50),
+-   PRIMARY KEY(ID_secteur)
+-);
+-
+-CREATE TABLE Wishlist(
+-   ID_Wishlist INT,
+-   PRIMARY KEY(ID_Wishlist)
+-);
+-
+-CREATE TABLE Entreprise(
+-   ID_Entreprise INT,
+-   nom VARCHAR(50),
+-   logo VARCHAR(50),
+-   ID_Adresse INT,
+-   PRIMARY KEY(ID_Entreprise),
+-   FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse)
+-);
+-
+-CREATE TABLE Promotion(
+-   ID_Promotion INT,
+-   Nom_Promo VARCHAR(50),
+-   ID_Pilote INT NOT NULL,
+-   PRIMARY KEY(ID_Promotion),
+-   FOREIGN KEY(ID_Pilote) REFERENCES Pilote(ID_Pilote)
+-);
+-
+-CREATE TABLE Etudiant(
+-   ID_Etudiant INT,
+-   photoprofil VARCHAR(50),
+-   ID_Wishlist INT NOT NULL,
+-   ID_Note INT NOT NULL,
+-   ID_Promotion INT NOT NULL,
+-   ID_Personne INT NOT NULL,
+-   PRIMARY KEY(ID_Etudiant),
+-   UNIQUE(ID_Personne),
+-   FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist),
+-   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
+-   FOREIGN KEY(ID_Promotion) REFERENCES Promotion(ID_Promotion),
+-   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
+-);
+-
+-CREATE TABLE Administrateur(
+-   ID_Administrateur INT,
+-   ID_Wishlist INT NOT NULL,
+-   ID_Personne INT NOT NULL,
+-   PRIMARY KEY(ID_Administrateur),
+-   UNIQUE(ID_Personne),
+-   FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist),
+-   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
+-);
+-
+-CREATE TABLE Candidature(
+-   ID_Candidature INT,
+-   CV VARCHAR(50),
+-   lettremotiv VARCHAR(50),
+-   ID_Etudiant INT NOT NULL,
+-   PRIMARY KEY(ID_Candidature),
+-   FOREIGN KEY(ID_Etudiant) REFERENCES Etudiant(ID_Etudiant)
+-);
+-
+-CREATE TABLE Offre(
+-   ID_Offre INT,
+-   Dureestrage INT,
+-   Baseremuneration INT,
+-   dateoffre DATE,
+-   nbplaces INT,
+-   nbdejapostule INT,
+-   Competence VARCHAR(50),
+-   Destination_promotion VARCHAR(50),
+-   ID_Adresse INT,
+-   ID_Entreprise INT NOT NULL,
+-   ID_Candidature INT NOT NULL,
+-   PRIMARY KEY(ID_Offre),
+-   UNIQUE(ID_Adresse),
+-   FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse),
+-   FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
+-   FOREIGN KEY(ID_Candidature) REFERENCES Candidature(ID_Candidature)
+-);
+-
+-CREATE TABLE Se_voir_attribué(
+-   ID_Entreprise INT,
+-   ID_Note INT,
+-   PRIMARY KEY(ID_Entreprise, ID_Note),
+-   FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
+-   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note)
+-);
+-
+-CREATE TABLE Exercer_dans(
+-   ID_Entreprise INT,
+-   ID_secteur INT,
+-   PRIMARY KEY(ID_Entreprise, ID_secteur),
+-   FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
+-   FOREIGN KEY(ID_secteur) REFERENCES SecteurActivite(ID_secteur)
+-);
+-
+-CREATE TABLE contenir(
+-   ID_Offre INT,
+-   ID_Wishlist INT,
+-   PRIMARY KEY(ID_Offre, ID_Wishlist),
+-   FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre),
+-   FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist)
+-);
+-CREATE TABLE Personne(
+-   ID_Personne INT,
+-   nom VARCHAR(50),
+-   prenom VARCHAR(50),
+-   centre VARCHAR(50),
+-   Login VARCHAR(50),
+-   Password VARCHAR(50),
+-   PRIMARY KEY(ID_Personne)
+-);
+-
+-CREATE TABLE Notes(
+-   ID_Note INT,
+-   Note INT,
+-   Commentaire VARCHAR(280),
+-   PRIMARY KEY(ID_Note)
+-);
+-
+-CREATE TABLE Centre(
+-   ID_Centre INT,
+-   Nom_centre VARCHAR(50),
+-   ID_Personne INT NOT NULL,
+-   PRIMARY KEY(ID_Centre),
+-   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
+-);
+-
+-CREATE TABLE Pilote(
+-   ID_Pilote INT,
+-   photoprofile VARCHAR(50),
+-   ID_Note INT NOT NULL,
+-   ID_Personne INT NOT NULL,
+-   PRIMARY KEY(ID_Pilote),
+-   UNIQUE(ID_Personne),
+-   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
+-   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
+-);
+-
+-CREATE TABLE Adresse(
+-   ID_Adresse INT,
+-   Numero_rue INT,
+-   Nom_rue VARCHAR(200),
+-   Ville VARCHAR(100),
+-   ID_Centre INT NOT NULL,
+-   PRIMARY KEY(ID_Adresse),
+-   UNIQUE(ID_Centre),
+-   FOREIGN KEY(ID_Centre) REFERENCES Centre(ID_Centre)
+-);
+-
+-CREATE TABLE SecteurActivite(
+-   ID_secteur INT,
+-   nom_secteur VARCHAR(50),
+-   PRIMARY KEY(ID_secteur)
+-);
+-
+-CREATE TABLE Wishlist(
+-   ID_Wishlist INT,
+-   PRIMARY KEY(ID_Wishlist)
+-);
+-
+-CREATE TABLE Entreprise(
+-   ID_Entreprise INT,
+-   nom VARCHAR(50),
+-   logo VARCHAR(50),
+-   ID_Adresse INT,
+-   PRIMARY KEY(ID_Entreprise),
+-   FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse)
+-);
+-
+-CREATE TABLE Promotion(
+-   ID_Promotion INT,
+-   Nom_Promo VARCHAR(50),
+-   ID_Pilote INT NOT NULL,
+-   PRIMARY KEY(ID_Promotion),
+-   FOREIGN KEY(ID_Pilote) REFERENCES Pilote(ID_Pilote)
+-);
+-
+-CREATE TABLE Etudiant(
+-   ID_Etudiant INT,
+-   photoprofil VARCHAR(50),
+-   ID_Wishlist INT NOT NULL,
+-   ID_Note INT NOT NULL,
+-   ID_Promotion INT NOT NULL,
+-   ID_Personne INT NOT NULL,
+-   PRIMARY KEY(ID_Etudiant),
+-   UNIQUE(ID_Personne),
+-   FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist),
+-   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
+-   FOREIGN KEY(ID_Promotion) REFERENCES Promotion(ID_Promotion),
+-   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
+-);
+-
+-CREATE TABLE Administrateur(
+-   ID_Administrateur INT,
+-   ID_Wishlist INT NOT NULL,
+-   ID_Personne INT NOT NULL,
+-   PRIMARY KEY(ID_Administrateur),
+-   UNIQUE(ID_Personne),
+-   FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist),
+-   FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
+-);
+-
+-CREATE TABLE Candidature(
+-   ID_Candidature INT,
+-   CV VARCHAR(50),
+-   lettremotiv VARCHAR(50),
+-   ID_Etudiant INT NOT NULL,
+-   PRIMARY KEY(ID_Candidature),
+-   FOREIGN KEY(ID_Etudiant) REFERENCES Etudiant(ID_Etudiant)
+-);
+-
+-CREATE TABLE Offre(
+-   ID_Offre INT,
+-   Dureestrage INT,
+-   Baseremuneration INT,
+-   dateoffre DATE,
+-   nbplaces INT,
+-   nbdejapostule INT,
+-   Competence VARCHAR(50),
+-   Destination_promotion VARCHAR(50),
+-   ID_Adresse INT,
+-   ID_Entreprise INT NOT NULL,
+-   ID_Candidature INT NOT NULL,
+-   PRIMARY KEY(ID_Offre),
+-   UNIQUE(ID_Adresse),
+-   FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse),
+-   FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
+-   FOREIGN KEY(ID_Candidature) REFERENCES Candidature(ID_Candidature)
+-);
+-
+-CREATE TABLE Se_voir_attribué(
+-   ID_Entreprise INT,
+-   ID_Note INT,
+-   PRIMARY KEY(ID_Entreprise, ID_Note),
+-   FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
+-   FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note)
+-);
+-
+-CREATE TABLE Exercer_dans(
+-   ID_Entreprise INT,
+-   ID_secteur INT,
+-   PRIMARY KEY(ID_Entreprise, ID_secteur),
+-   FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
+-   FOREIGN KEY(ID_secteur) REFERENCES SecteurActivite(ID_secteur)
+-);
+-
+-CREATE TABLE contenir(
+-   ID_Offre INT,
+-   ID_Wishlist INT,
+-   PRIMARY KEY(ID_Offre, ID_Wishlist),
+-   FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre),
+-   FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist)
+-);
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+deleted file mode 100644
+--- a/README.md	
++++ /dev/null	
+@@ -1,62 +0,0 @@
+-# Projet Web groupe 4
+-
+-Dépot git de notre groupe de projet Web constitué de:
+-
+-- Quentin B
+-- Gauthier W
+-- Mohammed EO
+-- Jules G
+-
+-## Git Workflow
+-
+-Un workflow git est le mode d'emploi qui encadre l'utilisation du git dans le but de réaliser notre travail d'une manière organisée et productive.
+-
+-### Dépôt principal (upstream) :
+-
+-Nous optons pour un dépôt centralisé sur Github:
+-https://github.com/jgallern/ProjetWebGr4
+-Nous allons nous baser sur la méthode "gitflow workflow"
+-
+-Chaque membre clone le dépôt sur leur machine locale.
+-`git clone https://github.com/jgallern/ProjetWebGr4.git`
+-
+-### Branches :
+-
+-- main (ou master) : Cette branche représente la version stable du projet. Aucun développement direct n'est effectué sur cette branche.
+-- develop : Branche de développement où les fonctionnalités sont intégrées avant d'être fusionnées dans la branche principale.
+-- Branches de fonctionnalités : Chaque fonctionnalité ou tâche peut avoir sa propre branche. Par exemple, feature/login pour une fonctionnalité de connexion. Supprimer les branches fonctionnalités quand elles ne sont plus utiles.
+-
+-### Workflow de développement :
+-
+-- Chaque membre travaille sur sa propre branche pour développer une fonctionnalité ou résoudre un problème.
+-- On commence par se mettre à jour avec la branche develop pour éviter les conflits inutiles : `git pull origin develop`.
+-- On effectue les changements, on les committe régulièrement sur la branche branche de la fonctionnalité sur laquelle on travaille.
+-- Une fois que la fonctionnalité est prête, on effectue une demande de fusion (Pull Request) vers la branche develop.
+-
+-### Revue de code :
+-
+-- Les Pull Requests sont examinées par les pairs pour garantir la qualité du code.
+-- Les commentaires et les corrections sont discutés et résolus avant la fusion.
+-
+-### Déploiement :
+-
+-- Une fois que la branche develop atteint un état stable, elle peut être fusionnée dans la branche principale (main ou master).
+-
+-### Gestion des versions :
+-
+-- Utiliser les DVCS ( Distributed Version Control Systems) de git.
+-  [explication des différents type de gestion des versions](https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-%C3%80-propos-de-la-gestion-de-version)
+-
+-### Résolution de conflits :
+-
+-- En cas de conflits lors de la fusion, ils doivent être résolus avant de pouvoir fusionner avec la branche cible.
+-
+-### Communication :
+-
+-- Communique régulièrement sur les changements effectués et les problèmes rencontrés.
+-
+-Moyens: en vrai si à l'école / serveur Discord du groupe sinon. Garder trace écrites des décision faites dans les deux cas.
+-
+-### Documentation :
+-
+-- Documenter le code avec des commentaires.
+Index: Pages_Gestions/Gestion des offres admin et pilote.html
+===================================================================
+diff --git a/Pages_Gestions/Gestion des offres admin et pilote.html b/Pages_Gestions/Gestion des offres admin et pilote.html
+deleted file mode 100644
+--- a/Pages_Gestions/Gestion des offres admin et pilote.html	
++++ /dev/null	
+@@ -1,179 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="fr">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Gestion des offres admin et pilote</title>
+-    <link rel="stylesheet" href="style2.css">
+-</head>
+-<body>
+-    <div class="container">
+-    <header class="top-bar">
+-        <h1 class="menu-title">Gestion des offres de stage</h1>
+-        <div class="logo">LOGO</div>
+-        <button class="logout">DÉCONNEXION</button>
+-    </header>
+-
+-    <main>
+-        <section class="form-section">
+-            <article class="form-block">
+-                <h2>Rechercher une offre</h2>
+-                <div class="form-row">
+-                    <label for="search-name">Nom de l'entreprise :</label>
+-                    <input id="search-name" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-location">Localité :</label>
+-                    <input id="search-location" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promotion">Type de promotion :</label>
+-                    <input id="search-promotion" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-sector">Secteur d'activité :</label>
+-                    <input id="search-sector" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-remuneration">Rémunération :</label>
+-                    <input id="search-remuneration" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-date">Date de l'offre :</label>
+-                    <input id="search-date" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-place">Nombre de place :</label>
+-                    <input id="search-place" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-demandes">Nombre de demandes :</label>
+-                    <input id="search-demandes" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-image">Ajouter une image :</label>
+-                    
+-                </div>
+-                <div class="form-actions">
+-                    <button class="button-search">Rechercher</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-            <article class="form-block">
+-                <h2>Créer une offre</h2>
+-                <div class="form-row">
+-                    <label for="search-name">Nom de l'entreprise :</label>
+-                    <input id="search-name" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-location">Localité :</label>
+-                    <input id="search-location" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promotion">Type de promotion :</label>
+-                    <input id="search-promotion" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-sector">Secteur d'activité :</label>
+-                    <input id="search-sector" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-remuneration">Rémunération :</label>
+-                    <input id="search-remuneration" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-date">Date de l'offre :</label>
+-                    <input id="search-date" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-place">Nombre de place :</label>
+-                    <input id="search-place" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-demandes">Nombre de demandes :</label>
+-                    <input id="search-demandes" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-actions">
+-                    <button class="button-search">Rechercher</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-                <article class="form-block">
+-                    <h3>Modifier une offre</h3>
+-                    <div class="form-row">
+-                    <label for="modify-select">Nouveaux champs :</label>
+-                </div>
+-        
+-                <div class="form-row">
+-                    <label for="search-name">Nom de l'entreprise :</label>
+-                    <input id="search-name" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-location">Localité :</label>
+-                    <input id="search-location" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promotion">Type de promotion :</label>
+-                    <input id="search-promotion" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-sector">Secteur d'activité :</label>
+-                    <input id="search-sector" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-remuneration">Rémunération :</label>
+-                    <input id="search-remuneration" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-date">Date de l'offre :</label>
+-                    <input id="search-date" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-place">Nombre de place :</label>
+-                    <input id="search-place" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-demandes">Nombre de demandes :</label>
+-                    <input id="search-demandes" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-actions">
+-                        <button class="delete">Supprimer l'offre</button>
+-                        <button>Modifier</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-                </div>
+-            </div>
+-        </main>
+-    </div>
+-    </div>
+-</body>
+-</html>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+Index: Pages_Gestions/header.php
+===================================================================
+diff --git a/Pages_Gestions/header.php b/Pages_Gestions/header.php
+deleted file mode 100644
+--- a/Pages_Gestions/header.php	
++++ /dev/null	
+@@ -1,2 +0,0 @@
+-<?php
+-
+Index: Pages_Gestions/Gestion des pilotes admin.html
+===================================================================
+diff --git a/Pages_Gestions/Gestion des pilotes admin.html b/Pages_Gestions/Gestion des pilotes admin.html
+deleted file mode 100644
+--- a/Pages_Gestions/Gestion des pilotes admin.html	
++++ /dev/null	
+@@ -1,127 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="fr">
+-<head>
+-    <meta charset="UTF-8">
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Gestion des pilotes admin</title>
+-    <link rel="stylesheet" href="style2.css">
+-</head>
+-<body>
+-    <div class="container">
+-    <header class="top-bar">
+-        <h1 class="menu-title">Gestion des pilotes de promotion</h1>
+-        <div class="logo">LOGO</div>
+-        <button class="logout">DÉCONNEXION</button>
+-    </header>
+-
+-    <main>
+-        <section class="form-section">
+-            <article class="form-block">
+-                <h2>Rechercher un pilote</h2>
+-                <div class="form-row">
+-                    <label for="search-nom">Nom du pilote :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom du pilote :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promos">Promotions assignées :</label>
+-                    <input id="search-promos" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-actions">
+-                    <button class="button-search">Rechercher</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-            <article class="form-block">
+-                <h2>Créer un pilote</h2>
+-                <div class="form-row">
+-                    <label for="search-nom">Nom du pilote :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom du pilote :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promos">Promotions assignées :</label>
+-                    <input id="search-promos" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-actions">
+-                    <button class="button-search">Rechercher</button>
+-                    <button class="button-reset">Réinitialiser</button>
+-                </div>
+-            </article>
+-            <br>
+-
+-                <article class="form-block">
+-                    <h3>Modifier un pilote</h3>
+-                    <div class="form-row">
+-                    <label for="modify-select">Nouveaux champs :</label>
+-                </div>
+-        
+-                <div class="form-row">
+-                    <label for="search-nom">Nom du pilote :</label>
+-                    <input id="search-nom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-prenom">Prénom du pilote :</label>
+-                    <input id="search-prenom" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-centre">Centre :</label>
+-                    <input id="search-centre" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-row">
+-                    <label for="search-promos">Promotions assignées :</label>
+-                    <input id="search-promos" type="text" placeholder=" " />
+-                </div>
+-                <div class="form-actions">
+-                    <button class="delete">Supprimer le pilote</button>
+-                    <button>Modifier</button>
+-                <button class="button-reset">Réinitialiser</button>
+-            </div>
+-            </article>
+-                </div>
+-            </div>
+-        </main>
+-    </div>
+-    </div>
+-</body>
+-</html>
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+Index: gestion_entreprise_etudiants.html
+===================================================================
+diff --git a/gestion_entreprise_etudiants.html b/gestion_entreprise_etudiants.html
+deleted file mode 100644
+--- a/gestion_entreprise_etudiants.html	
++++ /dev/null	
+@@ -1,196 +0,0 @@
+-<!doctype html>
+-<html lang="fr">
+-
+-<head>
+-    <meta charset="utf-8">
+-    <title>Gestion offres
+-    </title>
+-    <link rel="stylesheet" href="style.css">
+-    <script src="script.js"></script>
+-    <link rel="icon" href="" type="image/png">
+-
+-<body>
+-    <nav id="navbar_entreprise_etudiants">
+-        <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
+-        <div id="lien_navbar">
+-            <a class="lien_nav police_texte" href="gestion_entreprise_etudiants.html" id="lien_entreprises_etudiants">Entreprises</a>
+-            <a class="lien_nav police_texte" href="gestion_offres_etudiants.html" id="lien_offres_etudiants">Offres</a>
+-            <a class="lien_nav police_texte" href="#" id="lien_wishlist">Mes listes</a>
+-            <a class="lien_nav police_texte" href="#" id="lien_candidatures">Candidatures</a>
+-        </div>
+-        <div id="profil">
+-            <div id="detail_profil" class="police_texte">
+-                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
+-                <button id="bouton_voir_profil">Voir le profil</button>
+-                <button id="bouton_deconnexion">Se déconnecter</button>
+-            </div>
+-
+-            <img id="photo_profil"
+-                src="C:\Users\quent\OneDrive - Association Cesi Viacesi mail\A2\04_web\Projet\images\photo_profil.png"
+-                alt="photo_profil">
+-        </div>
+-
+-    </nav>
+-
+-
+-
+-    <h1 class="titre police_texte">
+-        Ton prochain employeur est tout près
+-    </h1>
+-    <section id="partie_filtre" class="police_texte">
+-        <button id="btn_filtre">Filtrer</button>
+-        <form>
+-            <div id="form_filtre">
+-                <div id="filtres_wrapper">
+-                    <div class="un_filtre">
+-                        <label for="search-name">Nom de l'entreprise</label><br>
+-                        <input id="search-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-location">Lieu d'entreprise</label><br>
+-                        <input id="search-location" type="text" placeholder="Entrez le lieu" />
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-stages">Nombre d'offres de stage</label><br>
+-                        <input id="search-stages" type="text" placeholder="Entrez le nombre d'offres" />
+-                    </div>
+-                    <div class="un_filtre">
+-                        <label for="search-sector">Secteur d'activité</label><br>
+-                        <input id="search-sector" type="text" placeholder="Entrez le secteur d'activité" />
+-                    </div>
+-                </div>
+-                <button id="submit_button" type="submit">Filtrer</button>
+-            </div>
+-
+-        </form>
+-    </section>
+-
+-    </section>
+-    <h2 class="titre police_texte" id="titre_entreprises_populaire">Les plus populaires</h2>
+-    <div class="listeentreprises">
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-        <a href="#" class="carte_entreprise police_texte carte_voir_plus">
+-            <h3>Voir plus d'entreprise</h3>
+-        </a>
+-
+-
+-    </div>
+-    <h2 class="titre police_texte">Proche de toi</h2>
+-    <div class="listeentreprises">
+-
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-        <a href="#" class="carte_entreprise police_texte carte_voir_plus">
+-            <h3>Voir plus d'entreprise</h3>
+-        </a>
+-
+-    </div>
+-
+-
+-
+-    </div>
+-    <h2 class="titre police_texte">Les plus actifs</h2>
+-    <div class="listeentreprises">
+-
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-        <a href="#" class="carte_entreprise police_texte">
+-            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+-                alt="img entreprise">
+-            <h3>Intitulé 2</h3>
+-            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
+-        </a>
+-
+-        <a href="#" class="carte_entreprise police_texte carte_voir_plus">
+-            <h3>Voir plus d'entreprise</h3>
+-        </a>
+-
+-    </div>
+-
+-
+-</body>
+-<footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
+\ No newline at end of file
