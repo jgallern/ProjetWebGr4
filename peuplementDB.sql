@@ -40,6 +40,7 @@ CREATE TABLE Notes(
 CREATE TABLE Wishlist(
     ID_Wishlist INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY(ID_Wishlist)
+    FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre)
 );
 
 CREATE TABLE Centre(
@@ -55,7 +56,6 @@ CREATE TABLE Personne(
     ID_Personne INT NOT NULL AUTO_INCREMENT,
     nom VARCHAR(50),
     prenom VARCHAR(50),
-    centre VARCHAR(50),
     Login VARCHAR(50) UNIQUE,
     Password VARCHAR(50),
     ID_Centre INT,
