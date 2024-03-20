@@ -1046,6 +1046,7 @@ body {
 #fiches_offres{
     height: 15em;
     flex: 0 0 calc(20% - 1em);
+    position: relative;
 
 }
 
@@ -1230,6 +1231,45 @@ body {
     position: absolute;
     visibility: hidden;
 }
+
+
+
+
+/*    PAGE GESTION OFFRES STAGES    */
+
+.overlay_fiche_offres{
+    visibility: hidden;
+    position: absolute;
+
+}
+
+.overlay_fiche_offres.visible{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    position: absolute;
+    text-align: center;
+    vertical-align:top;
+}
+
+.overlay_fiche_offres button{
+    visibility: hidden;
+    position: absolute;
+
+}
+
+.overlay_fiche_offres button.visible{
+    height: 50%;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
 
 
 footer{

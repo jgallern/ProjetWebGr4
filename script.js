@@ -491,25 +491,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    /*   AFFICHER LES INFORMATIONS DE LA DIV SELECTIONNEE 
-    function afficherInfos() {
-
-        // Récupérer les informations de la div sélectionnée
-        var divSelectionnee = document.querySelector('.recherche_fiche_entreprise.selected');
-        var imgSrc = divSelectionnee.querySelector('img').getAttribute('src');
-        var titre = divSelectionnee.querySelector('h3').textContent;
-        var texte = divSelectionnee.querySelector('p').textContent;
-
-        // Afficher les informations dans la div prévue à cet effet
-        var result_modif = document.getElementById('result_modif');
-        result_modif.innerHTML = '<img src="' + imgSrc + '" alt="img entreprise" width="80px">' +
-                                 '<h3>' + titre + '</h3>' +
-                                 '<p>' + texte + '</p>';
-
-        // Afficher la div d'informations
-        document.getElementById('result_modif').style.visibility = 'visible';
-        document.getElementById('result_modif').style.position = 'static';
-    }*/
+})
 
 
+document.addEventListener('DOMContentLoaded', function(){
+    var fiches_offres = document.querySelectorAll('#fiches_offres');
+    var overlay_offres = document.querySelectorAll("overlay_fiche_offres");
+    fiches_offres.forEach(article => {
+
+    });
 })
