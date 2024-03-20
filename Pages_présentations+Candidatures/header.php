@@ -13,13 +13,20 @@ try {
     echo "Connexion échouée: " . $e->getMessage();
 }
 
-class FileManager {
-    private $uploadDirectory = "uploads\\"; // Assurez-vous que ce répertoire existe et a les permissions adéquates
 
-    public function getUniqueFilePath($filename) {
+class Offre {
+    private $bddconnection;
+    private $uploadDirectory = "uploads\\"; // Make sure this directory exists and has the correct permissions
+
+    function set_bddconnection($bddconnection) {
+        $this->bddconnection = $bddconnection;
+    }
+
+    // Integrated unique file path generator
+    private function getUniqueFilePath($filename) {
         $filePath = $this->uploadDirectory . basename($filename);
         $fileInfo = pathinfo($filePath);
-        $fileExtension = $fileInfo['extension'];
+        $fileExtension = isset($fileInfo['extension']) ? $fileInfo['extension'] : '';
         $filenameWithoutExt = $fileInfo['filename'];
         $counter = 1;
 
@@ -31,24 +38,12 @@ class FileManager {
 
         return $filePath;
     }
-}
 
-class Application {
-    private $bddconnection;
-    private $fileManager;
-
-    public function __construct()
-    {
-        $this->fileManager = new FileManager();
-    }
-    function set_bddconnection($bddconnection){
-        $this->bddconnection = $bddconnection;
-    }
-
+    // Method to handle file uploads and insert details into the database
     public function handleUpload($cvFile, $motivationFile, $idEtudiant = 7) {
         if ($cvFile && $motivationFile) {
-            $cvPath = $this->fileManager->getUniqueFilePath($cvFile['name']);
-            $motivationPath = $this->fileManager->getUniqueFilePath($motivationFile['name']);
+            $cvPath = $this->getUniqueFilePath($cvFile['name']);
+            $motivationPath = $this->getUniqueFilePath($motivationFile['name']);
 
             $cvUploadSuccess = move_uploaded_file($cvFile['tmp_name'], $cvPath);
             $motivationUploadSuccess = move_uploaded_file($motivationFile['tmp_name'], $motivationPath);
@@ -68,7 +63,10 @@ class Application {
 }
 
 
-class RatingManager
+
+
+
+class Entreprise
 {
     private $bddconnection;
 
@@ -80,7 +78,7 @@ class RatingManager
         $this->bddconnection = $bddconnection;
     }
 
-    public function addRating($rating, $comment)
+    public function Evaluer_Entreprise($rating, $comment)
     {
         if (isset($rating) && isset($comment)) {
             try {
@@ -94,7 +92,21 @@ class RatingManager
             echo "Note ou commentaire non fourni.";
         }
     }
+
+    public function Creer_Entreprise($nom, $description, $secteur, $logoPath, $numeroRue, $nomRue, $ville, $idCentre) {
+        try {
+            // Step 1: Insert address into the Adresse table
+            $stmtAdresse = $this->bddconnection->prepare("INSERT INTO Adresse (Numero_rue, Nom_rue, Ville, ID_Centre) VALUES (?, ?, ?, ?)");
+            $stmtAdresse->execute([$numeroRue, $nomRue, $ville, $idCentre]);
+            $idAdresse = $this->bddconnection->lastInsertId(); // Retrieve the ID of the newly inserted address
+
+            // Step 2: Insert entreprise information into the Entreprise table, including the new ID_Adresse
+            $stmtEntreprise = $this->bddconnection->prepare("INSERT INTO Entreprise (nom, description, secteur, logo, ID_Adresse) VALUES (?, ?, ?, ?, ?)");
+            $stmtEntreprise->execute([$nom, $description, $secteur, $logoPath, $idAdresse]);
+
+            echo "Entreprise créée avec succès.";
+        } catch (PDOException $e) {
+            echo "Erreur lors de la création de l'entreprise: " . $e->getMessage();
+        }
+    }
 }
-
-
-

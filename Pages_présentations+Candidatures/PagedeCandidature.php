@@ -46,7 +46,7 @@ catch(Exception $e){
 
 // Utilisation
 
-$app = new Application();
+$app = new Offre();
 $app->set_bddconnection($bdd);
 if (isset($_FILES['cv']) && isset($_FILES['motivation'])) {
     $app->handleUpload($_FILES['cv'], $_FILES['motivation']);

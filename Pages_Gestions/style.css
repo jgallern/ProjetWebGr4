@@ -911,26 +911,27 @@ body {
     margin: 0 10px;
 }
 
-.recherche_entreprise, .creation_entreprise{
+.bloc_gestion{
     background-color: #B3B3B3;
     border-radius: 10px;
     margin-left: 3em;
     padding-left: 2em;
     padding-top: 1em;
+    padding-bottom: 2em;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 5em;
+
 }
 
 #section_recherche_offres{
     padding-bottom: 3em;
+    position: relative;
 }
 
-.creation_entreprise{
-    margin-top: 5em;
-}
 
-.recherche_entreprise input, .recherche_entreprise select, .creation_entreprise input, .creation_entreprise select{
+.bloc_gestion input, .bloc_gestion select{
     border-radius: 5px;
     padding: 0.6em;
     border: none;
@@ -981,6 +982,7 @@ body {
     padding: 1em;
     display: flex;
     overflow-x: scroll;
+    position: relative;
 }
 
 #result_recherche_entreprise::-webkit-scrollbar, #result_recherche_offres::-webkit-scrollbar {
@@ -1046,6 +1048,7 @@ body {
 #fiches_offres{
     height: 15em;
     flex: 0 0 calc(20% - 1em);
+    position: relative;
 
 }
 
@@ -1232,6 +1235,113 @@ body {
 }
 
 
+
+
+/*    PAGE GESTION OFFRES STAGES    */
+
+.recherche_fiche_offres{
+    height: 15em;
+    border-radius: 6px;
+    background-color: #797979;
+    padding: 1em;
+    flex: 0 0 calc(20% - 1em);
+    margin-right: 1em;
+    margin-left: 1em;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Pour Firefox */
+    -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+    cursor: pointer;
+    position: relative;
+    
+    transition: background-color 0.4s;
+}
+
+.recherche_fiche_offres.hover{
+    background-color: #bbbbbb;
+}
+
+.recherche_fiche_offres.select{
+    background-color: coral;
+}
+
+
+#icones_modif_offres{
+    width: fit-content;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+}
+
+.fond_ico_offres{
+    cursor: pointer;
+    padding: 1em;
+    clip-path: circle(46% at 50% 50%);
+    background-color: #fff;
+    transition: background-color 0.4s;
+
+}
+
+.fond_ico_offres:hover{
+    background-color: coral;
+    transition: background-color 0.4s;
+}
+
+#btn_modif_offre{
+    margin-right: 5em;
+}
+
+.overlay_fiche_offres{
+    visibility: hidden;
+    position: absolute;
+}
+
+.overlay_fiche_offres.visible{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    position: absolute;
+    text-align: center;
+    vertical-align:top;
+    z-index: 50;
+}
+
+.bouton_voir_offre, .bouton_modifier_offre{
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+    transition: height 0.4s;
+}
+
+.bouton_voir_offre.visible, .bouton_modifier_offre.visible{
+    visibility: visible;
+    position: static;
+    height: 50%;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    z-index: 60;
+    transition: height 0.4s;
+}
+
+.bouton_voir_offre.visible{
+    background-color: rgba(167, 224, 167, 0.737);
+    transition: height 0.4s;
+}
+
+.bouton_voir_offre.visible:hover{
+    height: 100%;
+    transition: height 0.4s;
+}
+
+.bouton_modifier_offre.visible{
+    background-color: rgba(167, 224, 100, 0.737);
+}
+
+
+
 footer{
 
     margin-top: 15em;
@@ -1267,4 +1377,5 @@ footer{
         padding-top: 0.5em;
         background-color: white;
     }
+
 }

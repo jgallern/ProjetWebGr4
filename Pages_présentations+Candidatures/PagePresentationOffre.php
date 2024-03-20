@@ -65,12 +65,12 @@ try{
 catch(Exception $e){
     echo 'petit problème'.$e->getMessage().'';
 }
-$rating = new RatingManager();
+$rating = new Entreprise();
 
 $rating->set_bddconnection($bdd);
 // Example usage - adding a rating
 if (isset($_POST['rating']) && isset($_POST['commentaire'])) {
-    $rating->addRating($_POST['rating'], $_POST['commentaire']);
+    $rating->Evaluer_Entreprise($_POST['rating'], $_POST['commentaire']);
     echo "Rating and comment added successfully";
 }
 

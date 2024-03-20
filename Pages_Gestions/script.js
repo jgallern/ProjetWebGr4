@@ -329,26 +329,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function afficherOverlay() {
-        const overlay = document.getElementById('overlay');
-        const message = document.getElementById('message');
-
-        overlay.style.display = 'block';
-        message.style.display = 'block';
-
-        setTimeout(function () {
-            overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-            message.style.opacity = '0';
-        }, 3000);
-
-        setTimeout(function () {
-            overlay.style.display = 'none';
-            message.style.display = 'none';
-            overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.715)';
-            message.style.opacity = '1';
-        }, 3400);
-    }
-
     divs.forEach(function (div) {
         div.addEventListener('click', function () {
             // Retirer la classe "selected" de toutes les divs
@@ -392,7 +372,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    boutonSupprimer.addEventListener('click', function(event) {
+    boutonSupprimer.addEventListener('click', function (event) {
         event.preventDefault();
         overlay_suppression.classList.add("visible");
         confirmationSuppression.classList.add("visible");
@@ -491,25 +471,102 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    /*   AFFICHER LES INFORMATIONS DE LA DIV SELECTIONNEE 
-    function afficherInfos() {
-
-        // Récupérer les informations de la div sélectionnée
-        var divSelectionnee = document.querySelector('.recherche_fiche_entreprise.selected');
-        var imgSrc = divSelectionnee.querySelector('img').getAttribute('src');
-        var titre = divSelectionnee.querySelector('h3').textContent;
-        var texte = divSelectionnee.querySelector('p').textContent;
-
-        // Afficher les informations dans la div prévue à cet effet
-        var result_modif = document.getElementById('result_modif');
-        result_modif.innerHTML = '<img src="' + imgSrc + '" alt="img entreprise" width="80px">' +
-                                 '<h3>' + titre + '</h3>' +
-                                 '<p>' + texte + '</p>';
-
-        // Afficher la div d'informations
-        document.getElementById('result_modif').style.visibility = 'visible';
-        document.getElementById('result_modif').style.position = 'static';
-    }*/
-
-
 })
+
+
+
+function afficherOverlay() {
+    const overlay = document.getElementById('overlay');
+    const message = document.getElementById('message');
+
+    overlay.style.display = 'block';
+    message.style.display = 'block';
+
+    setTimeout(function () {
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        message.style.opacity = '0';
+    }, 2000);
+
+    setTimeout(function () {
+        overlay.style.display = 'none';
+        message.style.display = 'none';
+        overlay.style.backgroundColor = 'rgba(255, 255, 255, 0.715)';
+        message.style.opacity = '1';
+    }, 2400);
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const fichesOffres = document.querySelectorAll('.recherche_fiche_offres');
+
+    fichesOffres.forEach(ficheOffre => {
+
+        ficheOffre.addEventListener('mouseenter', function () {
+            ficheOffre.classList.add("hover");
+        });
+
+        ficheOffre.addEventListener('mouseleave', function () {
+            ficheOffre.classList.remove("hover");
+        });
+
+        ficheOffre.addEventListener('click', function () {
+            fichesOffres.forEach(function (item) {
+                item.classList.remove('select');
+            });
+            ficheOffre.classList.add('select');
+            result_stats.classList.remove('visible');
+            result_modif.classList.remove("visible");
+        });
+    });
+
+
+
+    const btn_voir_offre = document.getElementById('btn_voir_offre');
+    const btn_modif_offre = document.getElementById('btn_modif_offre');
+    var isSelect = false;
+
+
+    btn_modif_offre.addEventListener('click', function () {
+        fichesOffres.forEach(div => {
+            if (div.classList.contains('select')) {
+                isSelect = true;
+            }
+        });
+
+        if (isSelect == true) {
+            result_stats.classList.remove('visible');
+            result_modif.classList.add("visible");
+        }
+        else {
+            afficherOverlay();
+        }
+
+
+    });
+
+    btn_voir_offre.addEventListener('click', function () {
+        fichesOffres.forEach(div => {
+            if (div.classList.contains('select')) {
+                isSelect = true;
+            }
+        });
+
+        if (isSelect == true) {
+            result_stats.classList.add('visible');
+            result_modif.classList.remove("visible");
+        }
+        else {
+            afficherOverlay();
+        }
+    });
+
+    var boutonSupprimerOffre = document.getElementById("supprimer_offre");
+    boutonSupprimerOffre.addEventListener('click', function (event) {
+        event.preventDefault();
+        document.getElementById('overlay_suppression').classList.add("visible");
+        document.getElementById('confirmationSuppression')  .classList.add("visible");
+    });
+
+
+});
