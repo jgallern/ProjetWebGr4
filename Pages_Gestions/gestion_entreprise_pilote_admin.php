@@ -1,3 +1,19 @@
+<?php
+require_once "header1.php"; // Make sure this file path is correct
+global$bdd;
+
+// Assurez-vous d'avoir une connexion à la base de données disponible ($pdo)
+$secteurs = [];
+try {
+    $stmt = $bdd->query("SELECT ID_secteur, nom_secteur FROM secteuractivite");
+    $secteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    // Gestion d'erreur
+    echo "Erreur lors de la récupération des centres : " . $e->getMessage();
+    exit;
+}
+
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -57,13 +73,14 @@
                         </div>
                         <div class="form-row">
                             <label for="search-sector">Secteur d'activité :</label><br>
-                            <select>
-                                <option>--Choisir--</option>
-                                <option>Informatique</option>
-                                <option>BTP</option>
-                                <option>S3E</option>
-                                <option>Généraliste</option>
+                            <select id="create-sector" name="secteur" required onchange="showOtherSectorInput(this.value);">
+                                <option value="">--Choisir--</option>
+                                <?php foreach ($secteurs as $secteur): ?>
+                                    <option value="<?= htmlspecialchars($secteur['ID_secteur']) ?>"><?= htmlspecialchars($secteur['nom_secteur']) ?></option>
+                                <?php endforeach; ?>
+                                <option value="Autre">Autre</option>
                             </select>
+                            <input type="text" id="autre-secteur" name="autre_secteur" placeholder="Entrez le nouveau secteur" style="display: none;">
                         </div>
                         <div class="form_buttons">
                             <button class="button-search">Rechercher</button>
@@ -218,7 +235,7 @@
                 <legend>Statistiques de l'entreprise</legend>
                 <p><strong>Nom de l'entreprise :</strong> GOGO Corporation</p>
                 <p><strong>Le top des offres :</strong></p>
-                <p><strong>Nombre d'étudiants actuellement en stage :</strong00< /p>
+                <p><strong>Nombre d'étudiants actuellement en stage :</strong< /p>
                         <div class="rating">
                             <span><strong>Moyenne de l'entreprise :</strong></span>
                             <div class="stars">★★★☆☆</div>
@@ -229,42 +246,133 @@
 
         <section class="bloc_gestion police_texte">
             <h2>Créer une entreprise</h2>
-            <div class="form-row">
-                <label for="create-name">Nom de l'entreprise :</label><br>
-                <input id="create-name" type="text" placeholder="Entrez le nom de l'entreprise" />
-            </div>
-            <div class="form-row">
-                <label for="create-name">Description de l'entreprise</label><br>
-                <textarea class="police_texte" id="description_entreprise" name="description_entreprise"
-                    placeholder="Decrivez l'entreprise ici"></textarea>
-            </div>
-            <div class="form-row">
-                <label for="create-location">Lieu d'entreprise :</label><br>
-                <input id="create-location" type="text" placeholder="Entrez le lieu" />
-            </div>
-            <div class="form-row">
-                <label for="create-sector">Secteur d'activité :</label><br>
-                <select name="nouv_secteur">
-                    <option>--Choisir--</option>
-                    <option>Informatique</option>
-                    <option>BTP</option>
-                    <option>S3E</option>
-                    <option>jesaisplu</option>
-                </select>
-            </div>
-            <div class="form-row">
-                <label for="create-sector">Image de l'entreprise :</label><br>
-                <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
-            </div>
-            <div class="form-actions">
-                <button class="button-search">Créer</button>
-                <button class="button-reset">Réinitialiser</button>
-            </div>
+            <form action="" method="POST" enctype="multipart/form-data">
+                <div class="form-row">
+                    <label for="create-name">Nom de l'entreprise :</label><br>
+                    <input id="create-name" name="nom" type="text" placeholder="Entrez le nom de l'entreprise" required />
+                </div>
+                <div class="form-row">
+                    <label for="description_entreprise">Description de l'entreprise</label><br>
+                    <textarea class="police_texte" id="description_entreprise" name="description" placeholder="Décrivez l'entreprise ici" required></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="create-location"> Numéro Rue :</label><br>
+                    <input id="create-location" name="numero_rue" type="text" placeholder="Entrez le numeéro de la rue" required />
+                </div>
+                <div class="form-row">
+                    <label for="create-location">Rue :</label><br>
+                    <input id="create-location" name="nom_rue" type="text" placeholder="Entrez la Rue" required />
+                </div>
+                <div class="form-row">
+                    <label for="create-location">Ville :</label><br>
+                    <input id="create-location" name="ville" type="text" placeholder="Entrez la ville" required />
+                </div>
+
+                <div class="form-row">
+                    <label for="create-sector">Secteur d'activité :</label><br>
+                    <select id="create-sector" name="secteur" required onchange="showOtherSectorInput(this.value);">
+                        <option value="">--Choisir--</option>
+                        <?php foreach ($secteurs as $secteur): ?>
+                            <option value="<?= htmlspecialchars($secteur['ID_secteur']) ?>"><?= htmlspecialchars($secteur['nom_secteur']) ?></option>
+                        <?php endforeach; ?>
+                        <option value="Autre">Autre</option>
+                    </select>
+                    <input type="text" id="autre-secteur" name="autre_secteur" placeholder="Entrez le nouveau secteur" style="display: none;">
+
+                </div>
+                <div class="form-row">
+                    <label for="image_entreprise">Image de l'entreprise :</label><br>
+                    <input id="image_entreprise" name="logo" type="file" accept="image/jpeg, image/png" required>
+                    <br>
+                    <?php
+                    // Handle the logo file upload
+                    if (isset($_FILES['logo']) && $_FILES['logo']['error'] == 0) {
+                        // Define allowed MIME types for images
+                        $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
+
+                        // Get MIME type of the uploaded file
+                        $fileMimeType = mime_content_type($_FILES['logo']['tmp_name']);
+
+                        // Check if the uploaded file is an allowed image type
+                        if (in_array($fileMimeType, $allowedMimeTypes)) {
+                            $targetDirectory = "uploads//"; // Adjust based on your actual uploads directory
+                            $logoPath = $targetDirectory . basename($_FILES['logo']['name']);
+
+                            // Attempt to move the uploaded file to the target directory
+                            if (move_uploaded_file($_FILES['logo']['tmp_name'], $logoPath)) {
+                                // Success message or further processing
+                                echo "Le logo a été téléchargé avec succès.";
+                            } else {
+                                // Reset $logoPath if the upload fails
+                                $logoPath = '';
+                                echo "Erreur lors de l'upload du logo.";
+                            }
+                        } else {
+                            echo "Le fichier téléchargé n'est pas une image valide. Seuls les formats JPEG, PNG et GIF sont autorisés.";
+                        }
+                    } else {
+                        // Handle other errors or no file being uploaded
+                        if (!isset($_FILES['logo'])) {
+                            echo "Aucun fichier n'a été téléchargé.";
+                        } else {
+                            // Output error for debugging
+                            echo "Erreur lors du téléchargement: " . $_FILES['logo']['error'];
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button-search">Créer</button>
+                    <button type="reset" class="button-reset">Réinitialiser</button>
+                </div>
+            </form>
         </section>
 
 
-        
+
+
         <footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
 </body>
 
 </html>
+
+<?php
+require_once "header1.php"; // Make sure this file path is correct
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Check if 'Other' was selected and 'other_sector' field is set
+    if (isset($_POST['secteur']) && $_POST['secteur'] === 'Autre' && !empty($_POST['autre_secteur'])) {
+        $Nouveau_secteur = $_POST['autre_secteur'];
+
+        // Insert new sector into database
+        $stmt = $bdd->prepare("INSERT INTO secteuractivite (nom_secteur) VALUES (?)");
+        $stmt->execute([$Nouveau_secteur]);
+        $Id_Nouveau_secteur = $bdd->lastInsertId(); // Get the ID of the newly inserted sector
+
+        // Use $newSectorId for linking to the enterprise or any further operations
+    }
+
+    // Proceed with other form handling like saving enterprise details
+}
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nom = $_POST['nom'];
+    $description = $_POST['description'];
+    $secteur = $_POST['secteur'];
+    // Assuming a single address for simplicity. Adjust if multiple addresses are needed.
+    $numeroRue = $_POST['numero_rue'];
+    $nomRue = $_POST['nom_rue'];
+    $ville = $_POST['ville'];
+
+
+
+    // Proceed only if the logo upload was successful
+    if ($logoPath !== ''){
+        $entreprise = new Entreprise();
+        $entreprise->set_bddconnection($bdd); // Assuming $bdd is your PDO instance from header1.php
+        $entreprise->Creer_Entreprise($nom, $description, $secteur, $logoPath, $numeroRue, $nomRue, $ville);
+
+    }
+}
+?>

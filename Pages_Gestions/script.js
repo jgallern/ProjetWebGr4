@@ -65,8 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const container_candidatures = document.getElementById('candidatures_container');
     const scrollRightButtonCandidatures = document.getElementById('defilement_droite_candidatures');
@@ -112,14 +110,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const searchBar = document.getElementById('recherche_wishlist');
     const articles = document.querySelectorAll('#wishlist_container .offre_wishlist');
     var boutons_nav = document.getElementById('defilement_droite_wishlist');
     var boutons_nav2 = document.getElementById('defilement_gauche_wishlist');
     var message = document.getElementById('aucune_offre');
-
 
 
     searchBar.addEventListener('input', function () {
@@ -157,7 +153,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var message_candidatures = document.getElementById('aucune_offre_candidatures');
 
 
-
     searchBarCandidatures.addEventListener('input', function () {
         const searchValueCandidatures = searchBarCandidatures.value.trim().toLowerCase(); // Récupérer la valeur de la recherche et la convertir en minuscules
         boutons_nav_candidatures.style.display = 'block';
@@ -183,12 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
-
-
-
-
-
 
 
 // PAGE GESTION ENTREPRISES ETUDIANTS
@@ -233,9 +222,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-
-
-
     var filter_button = document.getElementById("btn_filtre");
     var formulaire_filtre = document.getElementById("form_filtre");
     var les_filtres = document.querySelectorAll(".un_filtre");
@@ -256,8 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
             formulaire_filtre.style.maxHeight = formulaire_filtre.scrollHeight + 'px';
 
             deplier_ou_pas = true;
-        }
-        else {
+        } else {
             filter_button.style.borderBottomLeftRadius = '8px';
             filter_button.style.borderBottomRightRadius = '8px';
             les_filtres.forEach(function (filtre) {
@@ -274,8 +259,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 })
-
-
 
 
 /*   PAGE ENTREPRISES PILOTE ADMIN  */
@@ -320,7 +303,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var btnNon = document.getElementById('btnNon');
 
 
-
     var divs = document.querySelectorAll('.recherche_fiche_entreprise');
 
     function no_click_icones() {
@@ -361,14 +343,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (!isSelected) {
             afficherOverlay();
-        }
-        else {
+        } else {
             result_stats.classList.remove("visible");
 
             result_modif.classList.add("visible");
 
             const position = document.getElementById('result_all').getBoundingClientRect().top + window.pageYOffset - document.getElementById('navbar').offsetHeight;
-            window.scrollTo({ top: position, behavior: 'smooth' });
+            window.scrollTo({top: position, behavior: 'smooth'});
         }
     });
 
@@ -405,8 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (!isSelected) {
             afficherOverlay();
-        }
-        else {
+        } else {
             result_modif.classList.remove("visible");
             result_stats.classList.remove("visible");
 
@@ -424,14 +404,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (!isSelected) {
             afficherOverlay();
-        }
-        else {
+        } else {
             result_modif.classList.remove("visible");
 
             result_stats.classList.add("visible");
 
             const position = document.getElementById('result_all').getBoundingClientRect().top + window.pageYOffset - document.getElementById('navbar').offsetHeight;
-            window.scrollTo({ top: position, behavior: 'smooth' });
+            window.scrollTo({top: position, behavior: 'smooth'});
         }
     });
 
@@ -444,7 +423,6 @@ document.addEventListener('DOMContentLoaded', function () {
             container.classList.add('clicked');
         });
     });
-
 
 
     /*   PERMETTRE DE TAPER PLUSIEURS ADRESSES  */
@@ -474,7 +452,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 
-
 function afficherOverlay() {
     const overlay = document.getElementById('overlay');
     const message = document.getElementById('message');
@@ -494,7 +471,6 @@ function afficherOverlay() {
         message.style.opacity = '1';
     }, 2400);
 }
-
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -521,7 +497,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
     const btn_voir_offre = document.getElementById('btn_voir_offre');
     const btn_modif_offre = document.getElementById('btn_modif_offre');
     var isSelect = false;
@@ -537,8 +512,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isSelect == true) {
             result_stats.classList.remove('visible');
             result_modif.classList.add("visible");
-        }
-        else {
+        } else {
             afficherOverlay();
         }
 
@@ -555,8 +529,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isSelect == true) {
             result_stats.classList.add('visible');
             result_modif.classList.remove("visible");
-        }
-        else {
+        } else {
             afficherOverlay();
         }
     });
@@ -565,8 +538,17 @@ document.addEventListener('DOMContentLoaded', function () {
     boutonSupprimerOffre.addEventListener('click', function (event) {
         event.preventDefault();
         document.getElementById('overlay_suppression').classList.add("visible");
-        document.getElementById('confirmationSuppression')  .classList.add("visible");
+        document.getElementById('confirmationSuppression').classList.add("visible");
     });
 
 
 });
+
+function showOtherSectorInput(value) {
+    var otherInput = document.getElementById("autre-secteur");
+    if(value === "Autre") {
+        otherInput.style.display = "block";
+    } else {
+        otherInput.style.display = "none";
+    }
+}

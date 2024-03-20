@@ -69,8 +69,10 @@ CREATE TABLE Pilote(
 
 CREATE TABLE Entreprise(
     ID_Entreprise INT NOT NULL AUTO_INCREMENT,
-    nom VARCHAR(50),
-    logo VARCHAR(50),
+    nom VARCHAR(255),
+    description VARCHAR(255),
+    secteur VARCHAR (255),
+    logo VARCHAR(255),
     ID_Adresse INT,
     PRIMARY KEY(ID_Entreprise),
     FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse)
@@ -167,3 +169,21 @@ CREATE TABLE contenir(
     FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre),
     FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist)
 );
+
+INSERT INTO SecteurActivite (nom_secteur) VALUES
+('Informatique'),
+('BTP'),
+('S3E'),
+('Finance'),
+('Santé'),
+('Éducation'),
+('Loisirs'),
+('Immobilier'),
+('Transport'),
+('Énergie'),
+('Agriculture'),
+('Communication'),
+('Commerce'),
+('Industrie Manufacturière'),
+('Autre');
+
