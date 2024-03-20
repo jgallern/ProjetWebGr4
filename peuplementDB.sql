@@ -152,14 +152,14 @@ CREATE TABLE contenir(
 
 INSERT INTO Personne (nom, prenom, centre, Login, Password) VALUES
 ('Doe', 'John', 'Centre A', 'john.doe', 'password123'),
-('Smith', 'Jane', 'Centre B', 'jane.smith', 'password456');
-('Julien', 'Chagnon', 'Centre C', 'julien.chagnon', 'password789');
-('Silvain', 'Alméras', 'Centre D', 'silvain.alméras', 'password987');
-('Raphaël', 'Affré', 'Centre A', 'raphaël.affré', 'password654');
-('Hugo', 'Barrault', 'Centre B', 'hugo.barrault', 'password321');
-('Adolphe', 'Gérald', 'Centre C', 'adolphe.gérald', 'password135');
-('Timothée', 'Adnet', 'Centre D', 'timothée.adnet', 'password246');
-('Francis', 'Chappuis', 'Centre E', 'francis.chappuis', 'password791');
+('Smith', 'Jane', 'Centre B', 'jane.smith', 'password456'),
+('Julien', 'Chagnon', 'Centre C', 'julien.chagnon', 'password789'),
+('Silvain', 'Alméras', 'Centre D', 'silvain.alméras', 'password987'),
+('Raphaël', 'Affré', 'Centre A', 'raphaël.affré', 'password654'),
+('Hugo', 'Barrault', 'Centre B', 'hugo.barrault', 'password321'),
+('Adolphe', 'Gérald', 'Centre C', 'adolphe.gérald', 'password135'),
+('Timothée', 'Adnet', 'Centre D', 'timothée.adnet', 'password246'),
+('Francis', 'Chappuis', 'Centre E', 'francis.chappuis', 'password791'),
 ('Benjamin', 'Léger', 'Centre A', 'benjamin.léger', 'password148');
 
 INSERT INTO Notes (Note, Commentaire) VALUES
