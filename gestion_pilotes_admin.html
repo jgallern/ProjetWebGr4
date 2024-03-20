@@ -212,18 +212,7 @@
                                 width="30px">
                             <div class="overlay"></div>
                         </div>
-                        <div class="image-container" id="btn_stats">
-                            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
-                                width="30px">
-                            <div class="overlay"></div>
-                        </div>
-                        <div class="image-container" id="btn_voir">
-                            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
-                                width="30px">
-                            <div class="overlay"></div>
-                        </div>
                     </div>
-
                 </div>
             </div>
 
@@ -285,30 +274,30 @@
                         </select>
                         <br>
                         <label for="search-name">Promotion :</label><br>
-                            <select name="promo">
-                                <option>--Choisir--</option>
-                                <option>A2 informatique</option>
-                                <option>A2 BTP</option>
-                                <option>A2 S3E</option>
-                                <option>A2 Généraliste</option>
-                                <option>A3 informatique</option>
-                                <option>A3 BTP</option>
-                                <option>A3 S3E</option>
-                                <option>A3 Généraliste</option>
-                                <option>A4 informatique</option>
-                                <option>A4 BTP</option>
-                                <option>A4 S3E</option>
-                                <option>A4 Généraliste</option>
-                                <option>A5 informatique</option>
-                                <option>A5 BTP</option>
-                                <option>A5 S3E</option>
-                                <option>A5 Généraliste</option>
-                            </select>
+                        <select name="promo">
+                            <option>--Choisir--</option>
+                            <option>A2 informatique</option>
+                            <option>A2 BTP</option>
+                            <option>A2 S3E</option>
+                            <option>A2 Généraliste</option>
+                            <option>A3 informatique</option>
+                            <option>A3 BTP</option>
+                            <option>A3 S3E</option>
+                            <option>A3 Généraliste</option>
+                            <option>A4 informatique</option>
+                            <option>A4 BTP</option>
+                            <option>A4 S3E</option>
+                            <option>A4 Généraliste</option>
+                            <option>A5 informatique</option>
+                            <option>A5 BTP</option>
+                            <option>A5 S3E</option>
+                            <option>A5 Généraliste</option>
+                        </select>
 
                         <br>
                         <label>Nouvelle image :</label><br>
                         <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
-                        
+
                         <button id="supprimer_entreprise">Supprimer le pilote</button> <br>
                         <div id="btn_envoi">
                             <button type="reset">Réinitialiser</button>
@@ -319,47 +308,77 @@
                 </form>
             </fieldset>
 
-
-            <fieldset id="result_stats" class="police_texte">
-                <legend>Statistiques de l'entreprise</legend>
-                <p><strong>Nom de l'entreprise :</strong> GOGO Corporation</p>
-                <p><strong>Le top des offres :</strong></p>
-                <p><strong>Nombre d'étudiants actuellement en stage :</strong00< /p>
-                        <div class="rating">
-                            <span><strong>Moyenne de l'entreprise :</strong></span>
-                            <div class="stars">★★★☆☆</div>
-                        </div>
-            </fieldset>
-
         </section>
 
         <section class="bloc_gestion police_texte">
-            <h2>Créer une entreprise</h2>
+            <h2>Créer un pilote</h2>
             <div class="form-row">
-                <label for="create-name">Nom de l'entreprise :</label><br>
-                <input id="create-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+                <label for="create-name">Nom du pilote :</label><br>
+                <input id="create-name" type="text" placeholder="Entrez le nom du pilote" />
             </div>
             <div class="form-row">
-                <label for="create-name">Description de l'entreprise</label><br>
-                <textarea class="police_texte" id="description_entreprise" name="description_entreprise"
-                    placeholder="Decrivez l'entreprise ici"></textarea>
+                <label for="create-name">Prénom du pilote :</label><br>
+                <input id="create-name" type="text" placeholder="Entrez le nom du pilote" />
             </div>
+
             <div class="form-row">
-                <label for="create-location">Lieu d'entreprise :</label><br>
-                <input id="create-location" type="text" placeholder="Entrez le lieu" />
-            </div>
-            <div class="form-row">
-                <label for="create-sector">Secteur d'activité :</label><br>
-                <select name="nouv_secteur">
-                    <option>--Choisir--</option>
-                    <option>Informatique</option>
-                    <option>BTP</option>
-                    <option>S3E</option>
-                    <option>jesaisplu</option>
+                <label for="search-sector">Centre :</label><br>
+                <select>
+                    <option disabled selected>Choisissez un centre</option>
+                    <option disabled selected>Est</option>
+                    <option>Strasbourg</option>
+                    <option>Dijon</option>
+                    <option>Nancy</option>
+                    <option>Reims</option>
+                    <option disabled selected>Sud-Est</option>
+                    <option>Aix-en-provence</option>
+                    <option>Grenoble</option>
+                    <option>Lyon</option>
+                    <option>Nice</option>
+                    <option disabled selected>Ile-de-France-Centre</option>
+                    <option>Châteauroux</option>
+                    <option>Orléans</option>
+                    <option>Paris Nanterre</option>
+                    <option disabled selected>Ouest</option>
+                    <option>Angoulême</option>
+                    <option>Brest</option>
+                    <option>La Rochelle</option>
+                    <option>Le Mans</option>
+                    <option>Nantes</option>
+                    <option>Saint-Nazaire</option>
+                    <option disabled selected>Sud-Ouest</option>
+                    <option>Bordeaux</option>
+                    <option>Montpellier</option>
+                    <option>Pau</option>
+                    <option>Toulouse</option>
+                    <option disabled selected>Nord-Ouest</option>
+                    <option>Lille</option>
+                    <option>Rouen</option>
+                    <option>Arras</option>
+                    <option>Cean</option>
                 </select>
             </div>
+            <label for="search-name">Promotions :</label><br>
+            <div id="check_promos" name="promo">
+                <input type="checkbox">A2 informatique</input type="checkbox">
+                <input type="checkbox">A2 BTP</input type="checkbox">
+                <input type="checkbox">A2 S3E</input type="checkbox">
+                <input type="checkbox">A2 Généraliste</input type="checkbox">
+                <input type="checkbox">A3 informatique</input type="checkbox">
+                <input type="checkbox">A3 BTP</input type="checkbox">
+                <input type="checkbox">A3 S3E</input type="checkbox">
+                <input type="checkbox">A3 Généraliste</input type="checkbox">
+                <input type="checkbox">A4 informatique</input type="checkbox">
+                <input type="checkbox">A4 BTP</input type="checkbox">
+                <input type="checkbox">A4 S3E</input type="checkbox">
+                <input type="checkbox">A4 Généraliste</input type="checkbox">
+                <input type="checkbox">A5 informatique</input type="checkbox">
+                <input type="checkbox">A5 BTP</input type="checkbox">
+                <input type="checkbox">A5 S3E</input type="checkbox">
+                <input type="checkbox">A5 Généraliste</input type="checkbox">
+            </select><br>
             <div class="form-row">
-                <label for="create-sector">Image de l'entreprise :</label><br>
+                <label for="create-sector">Photo du pilote :</label><br>
                 <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
             </div>
             <div class="form-actions">
