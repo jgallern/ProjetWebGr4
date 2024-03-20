@@ -70,6 +70,8 @@ CREATE TABLE Pilote(
 CREATE TABLE Entreprise(
     ID_Entreprise INT NOT NULL AUTO_INCREMENT,
     nom VARCHAR(50),
+    description VARCHAR(255),
+    secteur VARCHAR (255),
     logo VARCHAR(50),
     ID_Adresse INT,
     PRIMARY KEY(ID_Entreprise),
