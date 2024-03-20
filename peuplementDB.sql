@@ -10,10 +10,10 @@ DROP TABLE IF EXISTS Entreprise;
 DROP TABLE IF EXISTS Wishlist;
 DROP TABLE IF EXISTS SecteurActivite;
 DROP TABLE IF EXISTS Pilote;
-DROP TABLE IF EXISTS Centre;
-DROP TABLE IF EXISTS Adresse;
 DROP TABLE IF EXISTS Notes;
 DROP TABLE IF EXISTS Personne;
+DROP TABLE IF EXISTS Centre;
+DROP TABLE IF EXISTS Adresse;
 
 CREATE TABLE Adresse(
     ID_Adresse INT NOT NULL AUTO_INCREMENT,
@@ -36,12 +36,6 @@ CREATE TABLE Notes(
     PRIMARY KEY(ID_Note)
 );
 
--- Wishlist table corrected
-CREATE TABLE Wishlist(
-    ID_Wishlist INT NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY(ID_Wishlist)
-    FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre)
-);
 
 CREATE TABLE Centre(
     ID_Centre INT NOT NULL AUTO_INCREMENT,
@@ -90,6 +84,32 @@ CREATE TABLE Promotion(
     FOREIGN KEY(ID_Pilote) REFERENCES Pilote(ID_Pilote)
 );
 
+
+
+CREATE TABLE Offre(
+    ID_Offre INT NOT NULL AUTO_INCREMENT,
+    Dureestage INT,
+    Baseremuneration INT,
+    dateoffre DATE,
+    nbplaces INT,
+    nbdejapostule INT,
+    Competence VARCHAR(50),
+    Destination_promotion VARCHAR(50),
+    ID_Adresse INT,
+    ID_Entreprise INT NOT NULL,
+    PRIMARY KEY(ID_Offre),
+    FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse),
+    FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise)
+);
+
+-- Wishlist table corrected
+CREATE TABLE Wishlist(
+    ID_Wishlist INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY(ID_Wishlist),
+    ID_Offre INT,
+    FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre)
+);
+
 CREATE TABLE Etudiant(
     ID_Etudiant INT NOT NULL AUTO_INCREMENT,
     photoprofil VARCHAR(50),
@@ -122,25 +142,6 @@ CREATE TABLE Candidature(
     FOREIGN KEY(ID_Etudiant) REFERENCES Etudiant(ID_Etudiant)
 );
 
-CREATE TABLE Offre(
-    ID_Offre INT NOT NULL AUTO_INCREMENT,
-    Dureestage INT,
-    Baseremuneration INT,
-    dateoffre DATE,
-    nbplaces INT,
-    nbdejapostule INT,
-    Competence VARCHAR(50),
-    Destination_promotion VARCHAR(50),
-    ID_Adresse INT,
-    ID_Entreprise INT NOT NULL,
-    ID_Candidature INT,
-    PRIMARY KEY(ID_Offre),
-    FOREIGN KEY(ID_Adresse) REFERENCES Adresse(ID_Adresse),
-    FOREIGN KEY(ID_Entreprise) REFERENCES Entreprise(ID_Entreprise),
-    FOREIGN KEY(ID_Candidature) REFERENCES Candidature(ID_Candidature)
-);
-
-
 CREATE TABLE Se_voir_attribué(
     ID_Entreprise INT NOT NULL,
     ID_Note INT NOT NULL,
@@ -166,5 +167,3 @@ CREATE TABLE contenir(
     FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre),
     FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist)
 );
-
-
