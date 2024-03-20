@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /*   PAGE ENTREPRISES PILOTE ADMIN  */
 
 document.addEventListener('DOMContentLoaded', function () {
-    var btn_modif_click = false;
+
     /*
     document.getElementById('btn_modif').addEventListener('click', function () {
         if (!btn_modif_click) {
@@ -312,6 +312,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var result_all = document.getElementById("result_all");
     var result_modif = document.getElementById("result_modif");
     var result_stats = document.getElementById("result_stats");
+    var boutonSupprimer = document.getElementById("supprimer_entreprise");
+
+    var overlay_suppression = document.getElementById('overlay_suppression');
+    var confirmationSuppression = document.getElementById('confirmationSuppression');
+    var btnOui = document.getElementById('btnOui');
+    var btnNon = document.getElementById('btnNon');
+
 
 
     var divs = document.querySelectorAll('.recherche_fiche_entreprise');
@@ -385,6 +392,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    boutonSupprimer.addEventListener('click', function(event) {
+        event.preventDefault();
+        overlay_suppression.classList.add("visible");
+        confirmationSuppression.classList.add("visible");
+    });
+
+    btnOui.addEventListener('click', function () {
+        // Insérez ici votre logique pour supprimer l'entreprise
+        console.log("Entreprise supprimée !");
+        // Cachez l'overlay et la confirmation après la suppression
+        overlay_suppression.classList.remove("visible");
+
+        confirmationSuppression.classList.remove("visible");
+
+    });
+
+    btnNon.addEventListener('click', function () {
+        // Cachez l'overlay et la confirmation si l'utilisateur clique sur "Non"
+        overlay_suppression.classList.remove("visible");
+
+        confirmationSuppression.classList.remove("visible");
+
+    });
+
     document.getElementById('btn_voir').addEventListener('click', function () {
         var isSelected = false;
         divs.forEach(div => {
@@ -448,7 +479,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <input type="text" name="nouv_lieu" placeholder="Nouvelle localité">
                 <button id='bouton_supprimer' type="button" class="supprimer">❌</button>
             `;
-        
+
         adressesContainer.appendChild(nouvelleAdresse);
     });
 
