@@ -67,7 +67,7 @@ CREATE TABLE Entreprise(
 
 CREATE TABLE Promotion(
    ID_Promotion INT NOT NULL AUTO_INCREMENT,
-   Nom_Promo VARCHAR(50),
+   Nom_Promo VARCHAR(50) UNIQUE,
    ID_Pilote INT NOT NULL,
    PRIMARY KEY(ID_Promotion),
    FOREIGN KEY(ID_Pilote) REFERENCES Pilote(ID_Pilote)
