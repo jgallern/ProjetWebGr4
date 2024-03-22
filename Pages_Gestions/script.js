@@ -546,9 +546,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function showOtherSectorInput(value) {
     var otherInput = document.getElementById("autre-secteur");
-    if(value === "Autre") {
+    if (value === "Autre") {
         otherInput.style.display = "block";
     } else {
         otherInput.style.display = "none";
     }
 }
+
+
+

@@ -111,27 +111,39 @@ class Entreprise
         }
     }
 
-    public function Rechercher_Entreprise($nom = null, $secteur = null, $ville = null) {
-        $sql = "SELECT * FROM Entreprise WHERE 1=1";
+    public function Rechercher_Entreprise($name = null, $sector = null, $ville = null, $numeroRue = null, $nomRue = null) {
+        $query = "SELECT Entreprise.* FROM Entreprise 
+              JOIN Adresse ON Entreprise.ID_Adresse = Adresse.ID_Adresse 
+              WHERE 1=1";
         $params = [];
 
-        if (!is_null($nom)) {
-            $sql .= " AND nom LIKE ?";
-            $params[] = "%$nom%";
+        if ($name) {
+            $query .= " AND Entreprise.Nom LIKE ?";
+            $params[] = "%" . $name . "%";
         }
-        if (!is_null($secteur) && $secteur !== 'Autre') {
-            $sql .= " AND secteur = ?";
-            $params[] = $secteur;
+        if ($sector) {
+            $query .= " AND Entreprise.Sector = ?"; // Adjust based on your actual column name
+            $params[] = $sector;
         }
-        if (!is_null($ville)) {
-            $sql .= " AND ville LIKE ?";
-            $params[] = "%$ville%";
+        if ($ville) {
+            $query .= " AND Adresse.Ville LIKE ?";
+            $params[] = "%" . $ville . "%";
+        }
+        if ($numeroRue) {
+            $query .= " AND Adresse.Numero_Rue = ?";
+            $params[] = $numeroRue;
+        }
+        if ($nomRue) {
+            $query .= " AND Adresse.Nom_Rue LIKE ?";
+            $params[] = "%" . $nomRue . "%";
         }
 
-        $stmt = $this->bddconnection->prepare($sql);
+        $stmt = $this->bddconnection->prepare($query);
         $stmt->execute($params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
 
     public function FetchRandomEntreprises() {
         try {

@@ -1,36 +1,76 @@
 <?php
-require_once "header1.php"; // Make sure this file path is correct
-global$bdd;
+require_once "header1.php"; 
+global $bdd;
+
 $entreprise = new Entreprise();
 $entreprise->set_bddconnection($bdd);
 
-// Handle form submission
-if (isset($_POST['submit-search'])) {
-    $searchName = isset($_POST['search-name']) ? $_POST['search-name'] : null;
-    $searchLocation = isset($_POST['search-location']) ? $_POST['search-location'] : null;
-    $searchSector = isset($_POST['search-sector']) ? $_POST['search-sector'] : null;
-
-    // Call your search function
-    $entreprises= $entreprise->Rechercher_Entreprise($searchName, $searchSector, $searchLocation);
-} else {
-    // Fetch random enterprises for initial page load
-    $entreprises=  $entreprise->FetchRandomEntreprises(); // You need to implement this method
-}
-
-// Assurez-vous d'avoir une connexion à la base de données disponible ($pdo)
+// Initial definitions
+$entreprises = [];
 $secteurs = [];
+
+// Handling form submissions for creating enterprises and adding new sectors
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Handling 'Other' sector submissions
+    if (isset($_POST['secteur']) && $_POST['secteur'] === 'Autre' && !empty($_POST['autre_secteur'])) {
+        $Nouveau_secteur = $_POST['autre_secteur'];
+
+        // Insert new sector into database
+        $stmt = $bdd->prepare("INSERT INTO secteuractivite (nom_secteur) VALUES (?)");
+        $stmt->execute([$Nouveau_secteur]);
+        $secteur = $bdd->lastInsertId(); // Update $secteur to use the newly inserted sector's ID
+    }
+
+    // Handling submissions from the create enterprise form
+    if (isset($_POST['nom'])) {
+        $nom = $_POST['nom'];
+        $description = $_POST['description'];
+        $numeroRue = $_POST['numero_rue'];
+        $nomRue = $_POST['nom_rue'];
+        $ville = $_POST['ville'];
+        $logoPath = ''; // Initialize the variable to avoid errors
+
+        // Handle logo upload logic here
+        // Ensure $logoPath is correctly set upon successful upload or remains empty
+
+        // Create enterprise with provided information
+        if ($logoPath !== '') {
+            $entreprise->Creer_Entreprise($nom, $description, $secteur, $logoPath, $numeroRue, $nomRue, $ville);
+        }
+    }
+
+    // Handling search form submissions
+    if (isset($_POST['submit-search'])) {
+        $searchName = isset($_POST['search_name']) ? $_POST['search_name'] : null;
+        $searchVille = isset($_POST['search_ville']) ? $_POST['search_ville'] : '';
+        $searchNumeroRue = isset($_POST['search_numero-rue']) ? $_POST['search_numero-rue'] : '';
+        $searchNomRue = isset($_POST['search_nom-rue']) ? $_POST['search_nom-rue'] : '';
+        $searchSector = isset($_POST['search_sector']) ? $_POST['search_sector'] : null;
+
+        $entreprises = $entreprise->Rechercher_Entreprise($searchName, $searchSector, $searchVille,$searchNumeroRue,$searchNomRue);
+        if (empty($entreprises)) {
+            $noResultsMessage = "Aucun résultat trouvé pour les critères de recherche spécifiés.";
+        }
+    } else {
+        // Fetch random or initial set of enterprises
+        $entreprises = $entreprise->FetchRandomEntreprises(); // Ensure you have this method in your class
+        if (empty($entreprises)) {
+            $noResultsMessage = "Aucune entreprise disponible pour l'affichage.";
+        }
+    }
+}
+// Fetching sectors for the sector selection dropdown
 try {
     $stmt = $bdd->query("SELECT ID_secteur, nom_secteur FROM secteuractivite");
     $secteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    // Gestion d'erreur
-    echo "Erreur lors de la récupération des centres : " . $e->getMessage();
+    echo "Erreur lors de la récupération des secteurs : " . $e->getMessage();
     exit;
 }
 
-
-
+// Continue with HTML content below
 ?>
+
 <!doctype html>
 <html lang="fr">
 
@@ -75,7 +115,7 @@ try {
             <div id="recherche_container">
 
                 <div id="form_recherche">
-                    <form method="POST" action="">
+                    <form id="searchForm" method="POST" action="" enctype="multipart/form-data">
                         <div class="form-row">
                             <label for="search-name">Nom de l'entreprise :</label><br>
                             <input id="search-name" name="search_name" type="text" placeholder="Entrez le nom de l'entreprise" />
@@ -85,12 +125,20 @@ try {
                             <input id="search-stages" name="search_stages" type="number" placeholder="Entrez le nombre d'offres" />
                         </div>
                         <div class="form-row">
-                            <label for="search-location">Lieu d'entreprise :</label><br>
-                            <input id="search-location" name="search_location" type="text" placeholder="Entrez le lieu" />
+                            <label for="search-ville">Ville d'entreprise :</label><br>
+                            <input id="search-ville" name="search_ville" type="text" placeholder="Entrez le lieu" />
+                        </div>
+                        <div class="form-row">
+                            <label for="search-numero-rue">Numero-Rue d'entreprise :</label><br>
+                            <input id="search-numero-rue" name="search_numero-rue" type="text" placeholder="Entrez le lieu" />
+                        </div>
+                        <div class="form-row">
+                            <label for="search-nom-rue">Nom-Rue d'entreprise :</label><br>
+                            <input id="search-nom-rue" name="search_nom-rue" type="text" placeholder="Entrez le lieu" />
                         </div>
                         <div class="form-row">
                             <label for="search-sector">Secteur d'activité :</label><br>
-                            <select id="create-sector" name="secteur" required onchange="showOtherSectorInput(this.value);">
+                            <select id="create-sector" name="secteur" onchange="showOtherSectorInput(this.value);">
                                 <option value="">--Choisir--</option>
                                 <?php foreach ($secteurs as $secteur): ?>
                                     <option value="<?= htmlspecialchars($secteur['ID_secteur']) ?>"><?= htmlspecialchars($secteur['nom_secteur']) ?></option>
@@ -107,16 +155,27 @@ try {
                 </div>
                 <div id="fiches_entreprises_et_boutons">
                     <div id="result_recherche_entreprise">
-                        <?php foreach ($entreprises as $entreprise): ?>
-                            <div class="recherche_fiche_entreprise">
-                                <img width="80px" src="path/to/logo/<?php echo htmlspecialchars($entreprise['logo']); ?>" alt="img entreprise">
-                                <h3><?php echo htmlspecialchars($entreprise['nom']); ?></h3>
-                                <p><?php echo htmlspecialchars($entreprise['description']); ?></p>
-                                <!-- Additional details here -->
-                            </div>
-                        <?php endforeach; ?>
+                        <?php
+                        // Display no results message if set
+                        if (isset($noResultsMessage)) {
+                            echo '<div class="no-results-message">' . htmlspecialchars($noResultsMessage) . '</div>';
+                        } else {
+                            // Iterate over $entreprises to display them, since there's no "no results" message set
+                            foreach ($entreprises as $entreprise) {
+                                ?>
+                                <div class="recherche_fiche_entreprise">
+                                    <img width="80px" src="path/to/logo/<?php echo htmlspecialchars($entreprise['logo']); ?>" alt="img entreprise">
+                                    <h3><?php echo htmlspecialchars($entreprise['nom']); ?></h3>
+                                    <p><?php echo htmlspecialchars($entreprise['description']); ?></p>
+                                    <!-- Additional details here -->
+                                </div>
+                                <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
+
 
 
                 <div id="overlay"></div>
@@ -316,49 +375,4 @@ try {
 
 </html>
 
-<?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Check if 'Other' was selected and 'other_sector' field is set
-    if (isset($_POST['secteur']) && $_POST['secteur'] === 'Autre' && !empty($_POST['autre_secteur'])) {
-        $Nouveau_secteur = $_POST['autre_secteur'];
-
-        // Insert new sector into database
-        $stmt = $bdd->prepare("INSERT INTO secteuractivite (nom_secteur) VALUES (?)");
-        $stmt->execute([$Nouveau_secteur]);
-        $Id_Nouveau_secteur = $bdd->lastInsertId(); // Get the ID of the newly inserted sector
-
-        // Use $newSectorId for linking to the enterprise or any further operations
-    }
-
-    // Proceed with other form handling like saving enterprise details
-}
-
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nom = $_POST['nom'];
-    $description = $_POST['description'];
-    $secteur = $_POST['secteur'];
-    // Assuming a single address for simplicity. Adjust if multiple addresses are needed.
-    $numeroRue = $_POST['numero_rue'];
-    $nomRue = $_POST['nom_rue'];
-    $ville = $_POST['ville'];
-
-
-
-    // Proceed only if the logo upload was successful
-    if ($logoPath !== ''){
-        $entreprise = new Entreprise();
-        $entreprise->set_bddconnection($bdd); // Assuming $bdd is your PDO instance from header1.php
-        $entreprise->Creer_Entreprise($nom, $description, $secteur, $logoPath, $numeroRue, $nomRue, $ville);
-
-    }
-
-
-
-
-// Note: Implement Rechercher_Entreprise() and FetchRandomEntreprises() in your Entreprise class
-
-
-}
-?>
