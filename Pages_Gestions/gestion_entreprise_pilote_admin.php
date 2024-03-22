@@ -1,6 +1,21 @@
 <?php
 require_once "header1.php"; // Make sure this file path is correct
 global$bdd;
+$entreprise = new Entreprise();
+$entreprise->set_bddconnection($bdd);
+
+// Handle form submission
+if (isset($_POST['submit-search'])) {
+    $searchName = isset($_POST['search-name']) ? $_POST['search-name'] : null;
+    $searchLocation = isset($_POST['search-location']) ? $_POST['search-location'] : null;
+    $searchSector = isset($_POST['search-sector']) ? $_POST['search-sector'] : null;
+
+    // Call your search function
+    $entreprises= $entreprise->Rechercher_Entreprise($searchName, $searchSector, $searchLocation);
+} else {
+    // Fetch random enterprises for initial page load
+    $entreprises=  $entreprise->FetchRandomEntreprises(); // You need to implement this method
+}
 
 // Assurez-vous d'avoir une connexion à la base de données disponible ($pdo)
 $secteurs = [];
@@ -12,6 +27,8 @@ try {
     echo "Erreur lors de la récupération des centres : " . $e->getMessage();
     exit;
 }
+
+
 
 ?>
 <!doctype html>
@@ -58,18 +75,18 @@ try {
             <div id="recherche_container">
 
                 <div id="form_recherche">
-                    <form>
+                    <form method="POST" action="">
                         <div class="form-row">
                             <label for="search-name">Nom de l'entreprise :</label><br>
-                            <input id="search-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+                            <input id="search-name" name="search_name" type="text" placeholder="Entrez le nom de l'entreprise" />
                         </div>
                         <div class="form-row">
                             <label for="search-stages">Nombre d'offres de stage :</label><br>
-                            <input id="search-stages" type="number" placeholder="Entrez le nombre d'offres" />
+                            <input id="search-stages" name="search_stages" type="number" placeholder="Entrez le nombre d'offres" />
                         </div>
                         <div class="form-row">
                             <label for="search-location">Lieu d'entreprise :</label><br>
-                            <input id="search-location" type="text" placeholder="Entrez le lieu" />
+                            <input id="search-location" name="search_location" type="text" placeholder="Entrez le lieu" />
                         </div>
                         <div class="form-row">
                             <label for="search-sector">Secteur d'activité :</label><br>
@@ -83,63 +100,26 @@ try {
                             <input type="text" id="autre-secteur" name="autre_secteur" placeholder="Entrez le nouveau secteur" style="display: none;">
                         </div>
                         <div class="form_buttons">
-                            <button class="button-search">Rechercher</button>
-                            <button class="button-reset">Réinitialiser</button>
+                            <button type="submit" name="submit-search" class="button-search">Rechercher</button>
+                            <button type="reset" class="button-reset">Réinitialiser</button>
                         </div>
                     </form>
                 </div>
                 <div id="fiches_entreprises_et_boutons">
                     <div id="result_recherche_entreprise">
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 1</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 2</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
+                        <?php foreach ($entreprises as $entreprise): ?>
+                            <div class="recherche_fiche_entreprise">
+                                <img width="80px" src="path/to/logo/<?php echo htmlspecialchars($entreprise['logo']); ?>" alt="img entreprise">
+                                <h3><?php echo htmlspecialchars($entreprise['nom']); ?></h3>
+                                <p><?php echo htmlspecialchars($entreprise['description']); ?></p>
+                                <!-- Additional details here -->
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
 
-                        <div id="overlay"></div>
+
+                <div id="overlay"></div>
                         <div id="message">Veuillez sélectionner une entreprise</div>
                     </div>
 
@@ -337,7 +317,6 @@ try {
 </html>
 
 <?php
-require_once "header1.php"; // Make sure this file path is correct
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if 'Other' was selected and 'other_sector' field is set
@@ -374,5 +353,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $entreprise->Creer_Entreprise($nom, $description, $secteur, $logoPath, $numeroRue, $nomRue, $ville);
 
     }
+
+
+
+
+// Note: Implement Rechercher_Entreprise() and FetchRandomEntreprises() in your Entreprise class
+
+
 }
 ?>

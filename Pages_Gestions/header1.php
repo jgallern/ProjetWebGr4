@@ -9,6 +9,7 @@ try {
     $bdd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
 } catch(PDOException $e) {
     echo "Connexion échouée: " . $e->getMessage();
 }
@@ -110,8 +111,37 @@ class Entreprise
         }
     }
 
-    public function Recherher_Entreprise()
-    {
+    public function Rechercher_Entreprise($nom = null, $secteur = null, $ville = null) {
+        $sql = "SELECT * FROM Entreprise WHERE 1=1";
+        $params = [];
 
+        if (!is_null($nom)) {
+            $sql .= " AND nom LIKE ?";
+            $params[] = "%$nom%";
+        }
+        if (!is_null($secteur) && $secteur !== 'Autre') {
+            $sql .= " AND secteur = ?";
+            $params[] = $secteur;
+        }
+        if (!is_null($ville)) {
+            $sql .= " AND ville LIKE ?";
+            $params[] = "%$ville%";
+        }
+
+        $stmt = $this->bddconnection->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function FetchRandomEntreprises() {
+        try {
+            $stmt = $this->bddconnection->query("SELECT * FROM Entreprise ORDER BY RAND() LIMIT 5"); // Adjust table name and limit as needed
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Erreur lors de la récupération des entreprises: " . $e->getMessage();
+            return [];
+        }
+    }
+
+
 }
