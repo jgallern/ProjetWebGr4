@@ -125,7 +125,7 @@ class Compte{
 
     function Creer_compte()
     {
-        $this->statut = "etudiant";
+        $this->statut = "pilote";
         if (isset ($this->statut)) {
             if ($this->statut == "etudiant") {
                 $create = $this->bddconnection->prepare("
@@ -141,7 +141,12 @@ class Compte{
                     -- Insérer l'étudiant correspondant dans la table Etudiant
                     INSERT INTO Etudiant (ID_Personne, ID_Wishlist, ID_Promotion) 
                     VALUES (@id_personne, @ID_Wishlist, @ID_Promotion);");
-                   }
+                $create->bind_param(":nom", $this->nom) ;
+                $create->bind_param(":prenom", $this->prenom) ;
+                $create->bind_param(":centre", $this->centre) ;
+                $create->bind_param(":login", $this->login) ;
+                $create->bind_param(":password", $this->password) ;
+                }
 
             if ($this->statut == "pilote") {
                 $create = $this->bddconnection->prepare("
@@ -149,10 +154,27 @@ class Compte{
                 VALUES (:nom, :prenom, :centre, :login, :password); 
                 SET @id_personne = LAST_INSERT_ID(); 
                 INSERT INTO Pilote (ID_Personne) Values (@id_personne);
+                Select LAST_INSERT_ID();
                 ");
+                $create->execute();
+                foreach ($create as $row) {
+                    $idpilote = $row['LAST_INSERT_ID()'];
+                }
+                $promoexists = $this->bddconnection->query("select ID_Promotion where ID_Pilote = :idpilote");
+                $promoexists->bindParam(":idpilote", $idpilote);
+                $promoexists->execute();
+                if ($promoexists->rowCount() > 0) {
+                } else {
+                    $promo = $this->bddconnection->prepare("
+                    INSERT INTO Promotion (ID_Pilote, Nom_Promo) VALUES (:idpilote, :nompromo);
+                    ");
+                    $promo->bindParam(":idpilote",$idpilote);
+                    $promo->bindParam(":nompromo",$promoexists['ID_Promotion']);
+
+                    $promo->execute();
+                }
             }
             try {
-                $create->execute();
                 //echo "création du compte réussie\n";
                 $id = $this->bddconnection->prepare("SELECT LAST_INSERT_ID() AS Nv_ID;");
                 $id->execute();
@@ -196,6 +218,12 @@ class Compte{
             $this->bddconnection->rollBack();
             echo "Erreur lors de la suppression du compte : " . $e->getMessage();
         }
+    }
+
+    function chercher_compte(){
+        $chercher_pilote= $this->bddconnection->prepare("
+        select photoprofile, nom, prenom from Pilote inner join Personne on Personne.ID_Personne =Pilote.ID_Personne inner join Centre ON Personne.ID_Centre = Centre.ID_Centre;
+        ");
     }
 }
 
