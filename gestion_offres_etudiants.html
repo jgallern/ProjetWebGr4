@@ -6,17 +6,17 @@
     <title>Gestion entreprise
     </title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script_gestion_entreprise_etudiant.js"></script>
     <link rel="icon" href="" type="image/png">
 
 <body>
-    <nav id="navbar_entreprise_etudiants">
+    <nav id="navbar">
         <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="gestion_entreprise_etudiants.html" id="lien_entreprises_etudiants">Entreprises</a>
             <a class="lien_nav police_texte" href="gestion_offres_etudiants.html" id="lien_offres_etudiants">Offres</a>
             <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
-            <a class="lien_nav police_texte" href="#" id="lien_candidatures">Candidatures</a>
+            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_candidatures">Candidatures</a>
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
@@ -70,7 +70,7 @@
                     </div>
                     <div class="un_filtre">
                         <label for="search-sector">Durée du stage (en semaines)</label><br>
-                        <input type="number" id="search-sector" name="duree" min="1" max="26" step="1">
+                        <input type="number" placeholder="Durée du stage" id="search-sector" name="duree" min="1" max="26" step="1">
                     </div>
                     <div class="un_filtre">
                         <label for="search-sector">Date de l'offre</label><br>
