@@ -2,52 +2,45 @@
 body {
     margin: 0;
     padding: 0;
-}
-#top_acceuil{
-    /*background-image: url("C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/Développeur PHP (5).png");
-    background: linear-gradient(to bottom, #00D5E8, white);
-    background-size: 95em;
-    background-repeat: repeat-x;*/
-    background: radial-gradient(circle at 25%,hsla(0,0%,100%,.2),rgba(50,50,50,.2) 80%);
+    background-image: url("C:/Users/quent/Downloads/Design sans titre (1).svg");
+    background-attachment: fixed;
+    background-size:cover;
 }
 
-/* Header */
-#navbar {
+#header_page_ss_connexion {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background-color:rgb(198, 237, 250);
-    position: sticky;
-    top: 0em;
-    height: 4em;
-    z-index: 999;
-}
-
-#lien_connexion_header {
-    margin-left: auto; /* Pour pousser le lien "Connexion" à droite */
-    border-radius: 5px;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    margin-right: 2em;
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-top: 0.7em;
-    cursor: pointer;
+    align-items: center;
+    width: 100%;
+    height: 8em;
 }
 
 #logo_accueil {
-    margin-top: 10px; /* Marge en haut */
-    margin-left: 2em; /* Marge à gauche */
     width: 6em;
+    vertical-align: middle;
+    margin-left: 2em;
 }
 
-
-
-
-/* Section accueil */
-#accueil {
+#lien_connexion_header {
+    margin-left: auto;
+    /* Place le lien à droite */
+    text-decoration: none;
+    margin-right: 2em;
+    background-color: #B3B3B3;
     padding: 0.5em;
+    border-radius: 10px;
+    color: #0b0b0b;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+#lien_connexion_header:hover{
+    background-color: #ccc;
+    transition: background-color 0.4s;
+}
+
+#top_acceuil {
+    background: linear-gradient(to bottom, #00D5E8, white);
     text-align: center;
 }
 
@@ -56,46 +49,57 @@ body {
     background-size: 0 100%;
     transition: 1s;
     display: inline;
-    color: black; /* Rend le texte transparent */
+    color: black;
     font-size: 5em;
-    margin-top: -3em;
-    text-align: center;
     margin-bottom: 1em;
     cursor: default;
 }
 
-
-
 #bouton_connexion_accueil {
-    display: block;
-    margin: 1em auto 0;
-    margin-top: 4em;
-    margin-bottom: 5em;
-    font-size: 1rem;
-    background-color: azure;
+    font-size: 3vh;
+    margin-top: 5em;
+    border: none;
     padding: 0.5em 1em;
     border-radius: 7px;
-    cursor: pointer;    
-    border: 2px solid lightblue; /* Bord du bouton initialement transparent */
-    transition: border-color 0.3s ease; /* Transition douce pour la couleur du bord */
-
+    cursor: pointer;
+    background-color: azure;
+    transition: background-color 0.3s ease-in-out; /* Utilisation de la fonction de transition "ease-in-out" */
 }
 
+#bouton_connexion_accueil:hover {
+    background-color: #B3B3B3; 
+}
+
+
+/* Header */
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #272727;
+    position: sticky;
+    top: 0em;
+    height: 4em;
+    z-index: 999;
+}
 
 
 /*   SECTION OFFRES  */
 
 .offres-container {
     display: flex;
-    flex-wrap: wrap; /* Permettre le passage à la ligne */
+    flex-wrap: wrap;
+    /* Permettre le passage à la ligne */
 }
 
 .offre_stage {
-    width: calc(42% - 5px); /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
+    width: calc(42% - 5px);
+    /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
     padding: 20px;
     background-color: #f2f2f2;
     margin-right: 10px;
-    margin-bottom: 10px; /* Espacement entre les lignes */
+    margin-bottom: 10px;
+    /* Espacement entre les lignes */
     border-radius: 6px;
     margin-top: 2.5em;
     margin-left: 2.5em;
@@ -147,30 +151,27 @@ body {
 
 /*PAGE DE CONNEXION*/
 
-#body_connexion{
+#body_connexion {
     background: linear-gradient(to bottom, #00D5E8 10%, white 70%);
-    /*background-image: url("C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/Développeur PHP (5).png");*/
-    /*background-size: 95em;
-    background-repeat: repeat-x;*/
 }
 
-#bienvenue{
+#bienvenue {
     text-align: center;
     padding-left: 3em;
     padding-right: 3em;
 }
 
-#logo_connexion{
+#logo_connexion {
     width: 10em;
     margin-top: 0.2em;
 }
 
-#titre_bienvenue{
+#titre_bienvenue {
     font-size: 2.5em;
     margin-bottom: 1em;
 }
 
-#fenetre_login{
+#fenetre_login {
     width: 40%;
     margin: auto;
     border: solid black 1px;
@@ -180,7 +181,7 @@ body {
     background-color: white;
 }
 
-.input_connexion{
+.input_connexion {
     padding: 0.6em;
     border-radius: 5px;
     border: solid black 1px;
@@ -188,27 +189,33 @@ body {
 
 }
 
-#boutons{
+#boutons {
     text-align: center;
     margin-top: 2em;
 }
 
-#oubli_mdp, #submit {
+#oubli_mdp,
+#submit {
     cursor: pointer;
-    display: inline-block; /* Afficher les boutons en ligne */
-    margin-top: 2em; /* Marge supérieure entre les boutons et les éléments précédents */
+    display: inline-block;
+    /* Afficher les boutons en ligne */
+    margin-top: 2em;
+    /* Marge supérieure entre les boutons et les éléments précédents */
     border: 1px solid black;
     border-radius: 6px;
     padding: 1em;
-    margin-right: 0.5em; /* Marge droite de 0.5em entre les boutons */
+    margin-right: 0.5em;
+    /* Marge droite de 0.5em entre les boutons */
 }
 
 #oubli_mdp {
-    background-color: lightgray; /* Style différent pour le bouton "Pardon, j'ai oublié mon mot de passe" */
+    background-color: lightgray;
+    /* Style différent pour le bouton "Pardon, j'ai oublié mon mot de passe" */
 }
 
 #submit {
-    background-color: lightblue; /* Style différent pour le bouton "Se connecter" */
+    background-color: lightblue;
+    /* Style différent pour le bouton "Se connecter" */
 }
 
 
@@ -217,14 +224,8 @@ body {
 
 /*   PAGE WISHLIST ET CANDIDATURES   */
 
-#body_whislist_candidatures{
-    background-image: url("C:/Users/quent/Downloads/test2.png");
-    background-repeat: repeat-x;
-    background-size: 95em;
 
-}
-
-#menu_page_wishlist{
+#menu_page_wishlist {
     margin-right: 2em;
     margin-top: 0.6em;
 
@@ -237,38 +238,38 @@ body {
 }
 
 
-#titre_page{
+#titre_page {
     margin-left: 1em;
     font-size: 4em;
 }
 
 
 
-.wish_cand{
+.wish_cand {
     display: flex;
-    flex-direction: column;        
+    flex-direction: column;
     /*align-items: center;*/
     margin-left: 5em;
     margin-right: 5em;
-    box-shadow: 0 11px 34px 0 rgba(0,0,0,.2);
+    box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
     border-radius: 12px;
-    background: linear-gradient(to bottom, rgba(173, 216, 230, 0.9) 0%, rgba(173, 216, 230, 0.7) 20%, rgba(198, 237, 250, 0.7) 20.01%, rgba(198, 237, 250, 0.7) 100%);
+    background: radial-gradient(circle at 100% 0,hsla(0,0%,100%,.50) 0,hsla(0,0%,96.1%,.3) 183%);
 }
 
-.offres_header{
+.offres_header {
     display: flex;
     align-items: center;
     padding-right: 2em;
     padding-left: 2em;
 }
 
-.offres_header h2{
+.offres_header h2 {
     font-size: 2.5em;
     margin-right: 1em;
 }
 
 
-.recherche_offres{
+.recherche_offres {
     cursor: text;
     font-size: 0.9em;
     border-radius: 20px;
@@ -277,41 +278,41 @@ body {
     border: none;
 }
 
-.aucune_offre{
+.aucune_offre {
     margin-left: 2em;
 }
 
 
 
-.les_offres{
+.les_offres {
     display: flex;
     align-items: center;
 }
 
 
-.offres_container{
+.offres_container {
 
     overflow-x: hidden;
     display: flex;
     padding-bottom: 4em;
     padding-top: 2em;
     width: 100%;
-    
+
 }
 
 
 
-.offres_container .offre{
+.offres_container .offre {
     text-decoration: none;
     color: black;
-    background: linear-gradient(to bottom right, rgba(167, 224, 167, 0.737), rgb(111, 204, 235));
+    background: radial-gradient(circle at 100% 0,hsla(0,0%,100%,.50) 0,hsla(0,0%,96.1%,.3) 183%);
     border-radius: 10px;
-    box-shadow: 0 11px 30px 0 rgba(0,0,0,.2);
+    box-shadow: 0 11px 10px 0 rgba(0, 0, 0, .2);
     min-width: 10%;
     width: 21%;
     flex-shrink: 0;
     text-align: center;
-    padding: 1%;
+    padding-top: 1%;
     margin: 1%;
     /*padding-right: 2em;*/
     transition: width 0.6s, height 0.6s, filter 0.6s;
@@ -320,12 +321,36 @@ body {
 }
 
 
+.btn_suppr{
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 1em;
+    border: none;
+    background-color: #d4aa7dbc;
+    padding: 2em;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s;
 
-.offre p{
+}
+
+
+.btn_suppr:hover{
+    background-color: #bb2323;
+    color: white;
+    transition: 0.4s;
+
+}
+
+
+.offre p {
     text-align: left;
 }
 
-.offre img{
+.offre img {
     width: 100px;
 }
 
@@ -333,10 +358,13 @@ body {
 
 .scroll_buttons {
     display: flex;
-    width: 100%; /* Assurer que les boutons de défilement s'étendent sur toute la largeur */
-    width: 4em; /* Ajuster la taille des images selon vos besoins */
+    width: 100%;
+    /* Assurer que les boutons de défilement s'étendent sur toute la largeur */
+    width: 4em;
+    /* Ajuster la taille des images selon vos besoins */
     height: auto;
-    cursor: pointer; /* Définir le curseur comme un pointeur pour indiquer que les images sont cliquables */
+    cursor: pointer;
+    /* Définir le curseur comme un pointeur pour indiquer que les images sont cliquables */
 
 }
 
@@ -345,108 +373,22 @@ body {
 
 /*  GESTION ENTREPRISE ETUDIANTS   */
 
-/*PAGE ACCUEIL SANS CONNEXION*/
-
-
-#lien_connexion_header {
-    margin-left: auto; /* Pour pousser le lien "Connexion" à droite */
-    margin-top: 10px; /* Marge en haut */
-    margin-right: 20px; /* Marge à droite */
-    border-radius: 5px;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    margin-right: 2em;
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-top: 1.5em;
-    cursor: pointer;
-}
-
-#logo_accueil {
-    margin-top: 10px; /* Marge en haut */
-    margin-left: 2em; /* Marge à gauche */
-    width: 6em;
-}
-
-
-
-
-/* Section accueil */
-#accueil {
-    background-color: rgba(218, 215, 250, 0.299);
-    padding: 3em;
-    position: relative; /* Position relative pour que les éléments positionnés absolument se réfèrent à cette section */
-}
-
-#titre_accueil {
-    font-size: 3em;
-    margin-top: 0;
-    text-align: center;
-    margin-bottom: 1em;
-    cursor: default;
-}
-
-#cartes_accueil {
-    display: flex;
-    justify-content: center;
-    overflow: hidden; /* Masquer le débordement pour éviter que les images ne dépassent de la section */
-}
-
-.carte_animation {
-    position: relative; /* Définir la position relative */
-    width: 13em;
-    animation: arriveeDeLaGauche 1s ease-in-out forwards; /* Applique l'animation */
-    opacity: 0; /* Commence avec une opacité à 0 */
-    margin: 0 -10px; /* Ajuste la marge négative pour que les images se chevauchent */
-}
-
-.carte_animation:first-child {
-    margin: 0; /* Réinitialise la marge de la première image */
-}
-
-@keyframes arriveeDeLaGauche {
-    from {
-        transform: translateX(-100%); /* Commence en dehors de la section à gauche */
-        opacity: 0; /* Opacité à 0 */
-    }
-    to {
-        transform: translateX(0); /* Se place à sa position normale */
-        opacity: 1; /* Opacité à 1 */
-    }
-}
-
-
-
-#bouton_connexion_accueil {
-    display: block;
-    margin: 1em auto 0;
-    margin-top: 2em;
-    font-size: 1rem;
-    background-color: azure;
-    padding: 0.5em 1em;
-    border-radius: 7px;
-    cursor: pointer;    
-    border: 2px solid transparent; /* Bord du bouton initialement transparent */
-    transition: border-color 0.3s ease; /* Transition douce pour la couleur du bord */
-
-}
-
-
-
 /*   SECTION OFFRES  */
 
 .offres-container {
     display: flex;
-    flex-wrap: wrap; /* Permettre le passage à la ligne */
+    flex-wrap: wrap;
+    /* Permettre le passage à la ligne */
 }
 
 .offre_stage {
-    width: calc(42% - 5px); /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
+    width: calc(42% - 5px);
+    /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
     padding: 20px;
     background-color: #f2f2f2;
     margin-right: 10px;
-    margin-bottom: 10px; /* Espacement entre les lignes */
+    margin-bottom: 10px;
+    /* Espacement entre les lignes */
     border-radius: 6px;
     margin-top: 2.5em;
     margin-left: 2.5em;
@@ -494,23 +436,23 @@ body {
 
 /*PAGE DE CONNEXION*/
 
-#bienvenue{
+#bienvenue {
     text-align: center;
     padding-left: 3em;
     padding-right: 3em;
 }
 
-#logo_connexion{
+#logo_connexion {
     width: 10em;
     margin-top: 0.2em;
 }
 
-#titre_bienvenue{
+#titre_bienvenue {
     font-size: 2.5em;
     margin-bottom: 1em;
 }
 
-#fenetre_login{
+#fenetre_login {
     width: 40%;
     margin: auto;
     border: solid black 1px;
@@ -519,41 +461,47 @@ body {
     padding-top: 0.5em;
 }
 
-.input_connexion{
+.input_connexion {
     padding: 0.6em;
     border-radius: 5px;
     border: solid black 1px;
 
 }
 
-#boutons{
+#boutons {
     text-align: center;
     margin-top: 2em;
 }
 
-#oubli_mdp, #submit {
+#oubli_mdp,
+#submit {
     cursor: pointer;
-    display: inline-block; /* Afficher les boutons en ligne */
-    margin-top: 2em; /* Marge supérieure entre les boutons et les éléments précédents */
+    display: inline-block;
+    /* Afficher les boutons en ligne */
+    margin-top: 2em;
+    /* Marge supérieure entre les boutons et les éléments précédents */
     border: 1px solid black;
     border-radius: 6px;
     padding: 1em;
-    margin-right: 0.5em; /* Marge droite de 0.5em entre les boutons */
+    margin-right: 0.5em;
+    /* Marge droite de 0.5em entre les boutons */
 }
 
 #oubli_mdp {
-    background-color: lightgray; /* Style différent pour le bouton "Pardon, j'ai oublié mon mot de passe" */
+    background-color: lightgray;
+    /* Style différent pour le bouton "Pardon, j'ai oublié mon mot de passe" */
 }
 
 #submit {
-    background-color: lightblue; /* Style différent pour le bouton "Se connecter" */
+    background-color: lightblue;
+    /* Style différent pour le bouton "Se connecter" */
 }
 
 
 /*gestion entreprise etudiant*/
 
 
-#lien_navbar{
+#lien_navbar {
     display: flex;
 }
 
@@ -561,21 +509,15 @@ body {
     display: flex;
     margin-right: 3em;
     text-decoration: none;
-    cursor: auto;
-    color: #0b0b0b;
+    color: #fff;
     transition: 0.2s;
     padding: 1em;
-
-
+    cursor: pointer;
 }
 
 
-.lien_nav:hover{
-    color: #797979;
-    border-left: solid black 0.1em;
-    border-right: solid black 0.1em;
-    border-bottom: solid black 0.2em;
-    border-radius: 8px;
+.lien_nav:hover {
+    color: #D4AA7D;
     transition: 0.2s;
 }
 
@@ -589,9 +531,9 @@ body {
     margin-right: 1em;
 }
 
-#detail_profil{
+#detail_profil {
 
-    background-color: #B3B3B3;
+    background-color: #D4AA7D;
     position: absolute;
     border-radius: 10px;
     z-index: 1;
@@ -601,15 +543,15 @@ body {
     height: 0;
     transition: height 0.6s, width 0.6s;
     text-align: center;
-    
+
 }
 
-#detail_profil button{
+#detail_profil button {
     display: none;
 }
 
 
-#detail_profil h3{
+#detail_profil h3 {
     display: none;
 }
 
@@ -624,7 +566,7 @@ body {
     transition: top 0.6s, right 0.6s;
 }
 
-#bouton_voir_profil{
+#bouton_voir_profil {
     cursor: pointer;
     border-radius: 5px;
     padding: 1em;
@@ -633,11 +575,11 @@ body {
     margin-right: auto;
 }
 
-#nom_prenom_etudiant{
+#nom_prenom_etudiant {
     margin-top: 40%;
 }
 
-#bouton_deconnexion{
+#bouton_deconnexion {
     cursor: pointer;
     background-color: lightcoral;
     padding: 1em;
@@ -652,12 +594,12 @@ body {
 
 
 
-#partie_filtre{
+#partie_filtre {
     text-align: center;
 }
 
 
-#btn_filtre{
+#btn_filtre {
     width: 90%;
     height: 3em;
     border: none;
@@ -668,7 +610,7 @@ body {
 }
 
 
-#form_filtre{
+#form_filtre {
     background-color: #797979;
     width: 90%;
     margin-left: auto;
@@ -680,23 +622,24 @@ body {
 
 }
 
-#filtres_wrapper{
+#filtres_wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; 
+    justify-content: center;
 
 }
 
-.un_filtre{
+.un_filtre {
     text-align: left;
     margin-left: 3em;
     margin-right: 3em;
     margin-top: 2em;
     transition: opacity 0.2s;
-    opacity: 0;    
+    opacity: 0;
 }
 
-.un_filtre input, .un_filtre select{
+.un_filtre input,
+.un_filtre select {
     border-radius: 5px;
     padding: 0.7em;
     border: none;
@@ -705,11 +648,11 @@ body {
 }
 
 
-#submit_button{
+#submit_button {
     cursor: pointer;
     opacity: 0;
     border-radius: 5px;
-    background-color:#B3B3B3;
+    background-color: #B3B3B3;
     padding: 1em;
     margin-top: 3em;
     margin-bottom: 2em;
@@ -717,12 +660,12 @@ body {
 
 
 
-#titre_entreprises_populaire{
+#titre_entreprises_populaire {
     margin-top: 5em;
 }
 
 
-.listeentreprises{
+.listeentreprises {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
@@ -730,31 +673,32 @@ body {
 }
 
 
-.carte_entreprise{
+.carte_entreprise {
     width: 21%;
     text-decoration: none;
     border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
     color: #141412;
     transition: transform 0.4s;
+    background: radial-gradient(circle at 100% 0,hsla(0,0%,100%,.50) 0,hsla(0,0%,96.1%,.3) 183%);
     padding: 1em;
-    
+
 
 }
 
-.carte_entreprise img{
+.carte_entreprise img {
     width: 150px;
 }
 
 
-.carte_entreprise:hover{
+.carte_entreprise:hover {
     transform: translateY(-4px);
     transition: transform 0.4s;
 }
 
 
-.carte_voir_plus{
+.carte_voir_plus {
     background-color: #bbbbbb;
     text-align: center;
     border: 0px;
@@ -762,13 +706,13 @@ body {
 
 }
 
-.carte_voir_plus:hover{
+.carte_voir_plus:hover {
     transform: none;
     border: #141412 solid;
     transition: 0.2s;
 }
 
-.carte_voir_plus h3{
+.carte_voir_plus h3 {
     font-size: 30px;
 }
 
@@ -785,20 +729,21 @@ body {
 }
 
 .form-block {
-    border: 1px solid #ccc; 
-    flex:1;
-    background-color: #B3B3B3; 
+    border: 1px solid #ccc;
+    flex: 1;
+    background-color: #B3B3B3;
     padding: 20px;
-    margin-bottom: 20px; 
-    border-radius: 8px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .form-row {
     margin-bottom: 15px;
 }
 
-.button-search, .button-reset {
+.button-search,
+.button-reset {
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -806,7 +751,7 @@ body {
     margin-right: 2em;
 }
 
-.button-search{
+.button-search {
     border: solid;
     border-color: #c2c2c2;
 }
@@ -815,54 +760,56 @@ body {
     background-color: #B3B3B3;
     color: black;
     border: solid;
-    border-color: #797979;    
+    border-color: #797979;
 }
 
 .button-reset:hover {
     background-color: #bbbbbb;
 }
 
-.logo{
+.logo {
     text-align: center;
 }
 
-.titre{
+.titre {
     padding-left: 2.5em;
     font-weight: 400;
 }
 
 .form-section input {
-    border: 1px solid #e9e9e9; /* Add a solid border */
-    border-radius: 5px; /* Make the borders round */
-  }
+    border: 1px solid #e9e9e9;
+    /* Add a solid border */
+    border-radius: 5px;
+    /* Make the borders round */
+}
 
 .burger-menu {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
 }
 
 .burger-menu span {
-  height: 2px;
-  width: 25px;
-  background-color: rgb(0, 0, 0);
-  margin: 4px 0;
+    height: 2px;
+    width: 25px;
+    background-color: rgb(0, 0, 0);
+    margin: 4px 0;
 }
 
-.listeentreprises{
+.listeentreprises {
     display: flex;
     gap: 20px;
     padding: 20px;
 }
 
-.ficheentreprise{
+.ficheentreprise {
     background-color: #F8F8F8;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 
-.elementfiche{
+.elementfiche {
     flex: 1;
 }
 
@@ -873,26 +820,27 @@ body {
 
 /*   GESTION ENTREPRISES PILOTES ADMIN   */
 
-#overlay_suppression, #confirmationSuppression{
+#overlay_suppression,
+#confirmationSuppression {
     opacity: 0;
     position: absolute;
     transition: opacity 0.2s;
 
 }
 
-#overlay_suppression.visible{
+#overlay_suppression.visible {
     opacity: 1;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 10001;
     transition: opacity 0.2s;
 }
 
-#confirmationSuppression.visible{
+#confirmationSuppression.visible {
     opacity: 1;
     position: fixed;
     top: 50%;
@@ -911,7 +859,7 @@ body {
     margin: 0 10px;
 }
 
-.bloc_gestion{
+.bloc_gestion {
     background-color: #B3B3B3;
     border-radius: 10px;
     margin-left: 3em;
@@ -922,16 +870,17 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 5em;
-
 }
 
-#section_recherche_offres{
+
+#section_recherche_offres {
     padding-bottom: 3em;
     position: relative;
 }
 
 
-.bloc_gestion input, .bloc_gestion select{
+.bloc_gestion input,
+.bloc_gestion select {
     border-radius: 5px;
     padding: 0.6em;
     border: none;
@@ -940,25 +889,26 @@ body {
     max-width: 90%;
 }
 
-.form_buttons, .form-actions{
+.form_buttons,
+.form-actions {
     margin-left: 2em;
     margin-top: 2em;
     margin-bottom: 2em;
 }
 
-#recherche_container{
+#recherche_container {
     display: flex;
     position: relative;
     justify-content: space-between;
 }
 
-#fiches_entreprises_et_boutons{
+#fiches_entreprises_et_boutons {
     position: relative;
     max-width: calc(100% - 30%);
 }
 
 
-#result_recherche_entreprise{
+#result_recherche_entreprise {
     border-radius: 8px;
     background-color: #fff;
     max-width: 100%;
@@ -971,7 +921,7 @@ body {
     position: relative;
 }
 
-#result_recherche_offres{
+#result_recherche_offres {
     border-radius: 8px;
     background-color: #fff;
     width: 80%;
@@ -985,22 +935,26 @@ body {
     position: relative;
 }
 
-#result_recherche_entreprise::-webkit-scrollbar, #result_recherche_offres::-webkit-scrollbar {
+#result_recherche_entreprise::-webkit-scrollbar,
+#result_recherche_offres::-webkit-scrollbar {
     width: 3px;
     height: 0.5rem;
 }
-  
-#result_recherche_entreprise::-webkit-scrollbar-track, #result_recherche_offres::-webkit-scrollbar-track {
+
+#result_recherche_entreprise::-webkit-scrollbar-track,
+#result_recherche_offres::-webkit-scrollbar-track {
     background: transparent;
-  }
-  
-#result_recherche_entreprise::-webkit-scrollbar-thumb, #result_recherche_offres::-webkit-scrollbar-thumb {
+}
+
+#result_recherche_entreprise::-webkit-scrollbar-thumb,
+#result_recherche_offres::-webkit-scrollbar-thumb {
     visibility: hidden;
     background-color: #797979;
     border-radius: 20px;
 }
 
-#result_recherche_entreprise:hover::-webkit-scrollbar-thumb, #result_recherche_offres:hover::-webkit-scrollbar-thumb{
+#result_recherche_entreprise:hover::-webkit-scrollbar-thumb,
+#result_recherche_offres:hover::-webkit-scrollbar-thumb {
 
     visibility: visible;
 }
@@ -1011,10 +965,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.715); /* Couleur de fond semi-transparente */
+    background-color: rgba(255, 255, 255, 0.715);
+    /* Couleur de fond semi-transparente */
     display: none;
     transition: background-color 0.4s ease-in-out;
-    z-index: 99; /* Pour placer au-dessus de tout le contenu */
+    z-index: 99;
+    /* Pour placer au-dessus de tout le contenu */
 }
 
 #message {
@@ -1025,11 +981,12 @@ body {
     padding: 20px;
     border-radius: 5px;
     display: none;
-    z-index: 100; /* Pour placer au-dessus de l'overlay */
+    z-index: 100;
+    /* Pour placer au-dessus de l'overlay */
 }
 
 
-.recherche_fiche_entreprise{
+.recherche_fiche_entreprise {
     height: 10em;
     border-radius: 6px;
     background-color: #797979;
@@ -1038,42 +995,45 @@ body {
     margin-right: 1em;
     margin-left: 1em;
     overflow-y: scroll;
-    scrollbar-width: none; /* Pour Firefox */
-    -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+    scrollbar-width: none;
+    /* Pour Firefox */
+    -ms-overflow-style: none;
+    /* Pour Internet Explorer et Edge */
     cursor: pointer;
-    
+
     transition: background-color 0.4s;
 }
 
-#fiches_offres{
+#fiches_offres {
     height: 15em;
     flex: 0 0 calc(20% - 1em);
     position: relative;
 
 }
 
-.recherche_fiche_entreprise:hover, 
-.recherche_fiche_entreprise.hover{
+.recherche_fiche_entreprise:hover,
+.recherche_fiche_entreprise.hover {
     background-color: #B3B3B3;
     transition: background-color 0.4s;
 }
 
-.recherche_fiche_entreprise.selected{
+.recherche_fiche_entreprise.selected {
     background-color: coral;
     transition: background-color 0.4s;
 }
 
 
 .recherche_fiche_entreprise::-webkit-scrollbar {
-    display: none; /* Pour Chrome, Safari et Opera */
+    display: none;
+    /* Pour Chrome, Safari et Opera */
 }
 
-#form_recherche{
+#form_recherche {
     width: 30%;
 }
 
 
-#form_recherche_offres{
+#form_recherche_offres {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -1081,7 +1041,7 @@ body {
     margin-bottom: 4em;
 }
 
-#form_partie_all{
+#form_partie_all {
     display: flex;
     width: 80%;
     margin-left: auto;
@@ -1089,17 +1049,18 @@ body {
 
 }
 
-#form_partie1, #form_partie2{
+#form_partie1,
+#form_partie2 {
     flex: 1;
 }
 
-#form_button_offres{
+#form_button_offres {
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
 
-#icones_modif{
+#icones_modif {
     display: flex;
     position: absolute;
     width: fit-content;
@@ -1108,8 +1069,8 @@ body {
     bottom: 0;
 }
 
-#icones_modif> *:nth-child(-n+2){
-    
+#icones_modif>*:nth-child(-n+2) {
+
     margin-right: 5em;
     cursor: pointer;
 }
@@ -1131,27 +1092,30 @@ body {
 .overlay {
     z-index: -1;
     position: absolute;
-    bottom: 0; /* Ajustement pour la position de départ */
+    bottom: 0;
+    /* Ajustement pour la position de départ */
     left: 0;
     width: 100%;
     height: 0;
     background-color: rgb(255, 255, 255);
     border-radius: 200% / 200% 200% 0 0;
-    transition: bottom 0.3s, height 0.3s ;
+    transition: bottom 0.3s, height 0.3s;
     overflow: hidden;
 }
 
 .image-container.clicked .overlay {
-    height: 100%; /* Ajustement pour la hauteur finale */
+    height: 100%;
+    /* Ajustement pour la hauteur finale */
 }
 
 
-#result_modif{
+#result_modif {
     position: absolute;
     visibility: hidden;
 }
 
-#result_modif.visible, #result_stats.visible{
+#result_modif.visible,
+#result_stats.visible {
     position: static;
     visibility: visible;
     margin-right: auto;
@@ -1160,18 +1124,20 @@ body {
     padding: 2em;
     width: 60%;
     border-radius: 10px;
-    box-shadow: 0 11px 34px 0 rgba(0,0,0,.2);
+    box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
 }
 
-#deux_partie_modif{
+#deux_partie_modif {
     display: flex;
 }
 
-#partie_eval, #partie_modif{
+#partie_eval,
+#partie_modif {
     flex: 1;
 }
 
-#result_modif input, #result_modif select{
+#result_modif input,
+#result_modif select {
     margin-top: 1em;
     margin-bottom: 2em;
     padding: 0.5em;
@@ -1179,7 +1145,7 @@ body {
     border: solid 1px #B3B3B3;
 }
 
-#result_modif button{
+#result_modif button {
     border-radius: 3px;
     background-color: #fff;
     padding: 0.5em;
@@ -1189,18 +1155,19 @@ body {
     transition: background-color 0.3s;
 }
 
-#result_modif button:hover{
+#result_modif button:hover {
     background-color: #797979;
     transition: background-color 0.3s;
 
 }
 
-#ajouterAdresse{
+#ajouterAdresse {
     margin-bottom: 2em;
     margin-top: 1em;
 }
 
-#commentaire_entreprise, #description_entreprise{
+#commentaire_entreprise,
+#description_entreprise {
     margin-top: 1em;
     border-radius: 5px;
     width: 25em;
@@ -1209,7 +1176,7 @@ body {
     cursor: text;
 }
 
-#supprimer_entreprise{
+#supprimer_entreprise {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -1220,16 +1187,16 @@ body {
     border: solid 1px #bb2323;
 }
 
-#btn_envoi{
+#btn_envoi {
     margin-left: auto;
     margin-right: auto;
 }
 
-#btn_envoi button{
+#btn_envoi button {
     width: 30%;
 }
 
-#result_stats{
+#result_stats {
     position: absolute;
     visibility: hidden;
 }
@@ -1239,7 +1206,7 @@ body {
 
 /*    PAGE GESTION OFFRES STAGES    */
 
-.recherche_fiche_offres{
+.recherche_fiche_offres {
     height: 15em;
     border-radius: 6px;
     background-color: #797979;
@@ -1248,24 +1215,26 @@ body {
     margin-right: 1em;
     margin-left: 1em;
     overflow-y: scroll;
-    scrollbar-width: none; /* Pour Firefox */
-    -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
+    scrollbar-width: none;
+    /* Pour Firefox */
+    -ms-overflow-style: none;
+    /* Pour Internet Explorer et Edge */
     cursor: pointer;
     position: relative;
-    
+
     transition: background-color 0.4s;
 }
 
-.recherche_fiche_offres.hover{
+.recherche_fiche_offres.hover {
     background-color: #bbbbbb;
 }
 
-.recherche_fiche_offres.select{
+.recherche_fiche_offres.select {
     background-color: coral;
 }
 
 
-#icones_modif_offres{
+#icones_modif_offres {
     width: fit-content;
     display: flex;
     margin-left: auto;
@@ -1273,7 +1242,7 @@ body {
     margin-top: 3em;
 }
 
-.fond_ico_offres{
+.fond_ico_offres {
     cursor: pointer;
     padding: 1em;
     clip-path: circle(46% at 50% 50%);
@@ -1282,21 +1251,21 @@ body {
 
 }
 
-.fond_ico_offres:hover{
+.fond_ico_offres:hover {
     background-color: coral;
     transition: background-color 0.4s;
 }
 
-#btn_modif_offre{
+#btn_modif_offre {
     margin-right: 5em;
 }
 
-.overlay_fiche_offres{
+.overlay_fiche_offres {
     visibility: hidden;
     position: absolute;
 }
 
-.overlay_fiche_offres.visible{
+.overlay_fiche_offres.visible {
     bottom: 0;
     left: 0;
     width: 100%;
@@ -1304,18 +1273,20 @@ body {
     z-index: 30;
     position: absolute;
     text-align: center;
-    vertical-align:top;
+    vertical-align: top;
     z-index: 50;
 }
 
-.bouton_voir_offre, .bouton_modifier_offre{
+.bouton_voir_offre,
+.bouton_modifier_offre {
     visibility: hidden;
     position: absolute;
     height: 0;
     transition: height 0.4s;
 }
 
-.bouton_voir_offre.visible, .bouton_modifier_offre.visible{
+.bouton_voir_offre.visible,
+.bouton_modifier_offre.visible {
     visibility: visible;
     position: static;
     height: 50%;
@@ -1326,23 +1297,105 @@ body {
     transition: height 0.4s;
 }
 
-.bouton_voir_offre.visible{
+.bouton_voir_offre.visible {
     background-color: rgba(167, 224, 167, 0.737);
     transition: height 0.4s;
 }
 
-.bouton_voir_offre.visible:hover{
+.bouton_voir_offre.visible:hover {
     height: 100%;
     transition: height 0.4s;
 }
 
-.bouton_modifier_offre.visible{
+.bouton_modifier_offre.visible {
     background-color: rgba(167, 224, 100, 0.737);
 }
 
 
 
-footer{
+
+/*  Présentation offre  */
+#entete_presentation_offre{
+    display: flex;
+    align-items: center;
+}
+
+#nom_description{
+    margin-left: 3em;
+    width: 60%;
+}
+
+#icone_favori{
+    margin-left: auto;
+    margin-right: 2em;
+    width: 50px;
+    fill: #00D5E8;
+    stroke: #0b0b0b;
+    cursor: pointer;
+    transition:  0.3s;
+}
+#icone_favori.clicked{
+    fill: red;
+}
+#icone_favori:hover {
+    stroke: gold; /* Couleur de fond lors du survol */
+}
+
+#details_offre{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+
+#partie_2_offre{
+    margin-left: 6em;
+}
+
+#btn_candidater, #submit_cv{
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    color: black;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-right: auto  ;
+    padding: 1em;
+    border: solid 2px #c2c2c2;
+    background-color: #797979;
+    transition: 0.4s;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#btn_candidater:hover, #submit_cv:hover{
+    background-color: #B3B3B3;
+    border: solid 1px #797979;
+    transition: 0.4s;
+}
+
+#upload_cv input{
+    margin-bottom: 3em;
+}
+
+#previews{
+    display: flex;
+}
+
+#pdf_viewer_cv,#pdf_viewer_lm{
+    border-radius: 10px;
+    margin-left: 3em;
+    width: 250px;
+    height: 300px;
+    margin-top: 3em;
+    border:none;
+    background-image: url("C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/aucun_fichier.png");
+    background-size:250px;
+    background-position-y: 55%;
+}
+
+footer {
 
     margin-top: 15em;
     padding-bottom: 5em;
@@ -1351,24 +1404,24 @@ footer{
     background-color: lightblue;
 }
 
-.police_texte{
-    font-family:system-ui;
-    cursor:default;
+.police_texte {
+    font-family: system-ui;
+    cursor: default;
 }
 
 
-@media (max-width: 1300px){
-    #logo_connexion{
+@media (max-width: 1300px) {
+    #logo_connexion {
         width: 5em;
         margin-top: 0.2em;
     }
-    
-    #titre_bienvenue{
+
+    #titre_bienvenue {
         font-size: 1.5em;
         margin-bottom: 0.5em;
     }
-    
-    #fenetre_login{
+
+    #fenetre_login {
         width: 40%;
         margin: auto;
         border: solid black 1px;
