@@ -1,6 +1,6 @@
 <?php
 
-require_once '../models/header.php';
+require_once '../models/connect_model.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -24,16 +24,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../views/auth/login.php?login=false");
 
         }
-
-
-//$bdd->query("use test;");
-//
-//$test = $bdd->query("show tables;");
-//
-//
-//foreach($test as $row) {
-//    echo "<li>".$row['Tables_in_test']."<li>";
-//}
-
     }
 }
