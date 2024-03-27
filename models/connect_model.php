@@ -1,11 +1,11 @@
 <?php
-
-$host = "localhost";
-$dbname = "test";
-$dbuser = "phpmyadmin";
-$dbpassword = "phpmyadmin";
-
 if (!isset($bdd)) {
+    $host = "localhost";
+    $dbname = "test";
+    $dbuser = "phpmyadmin";
+    $dbpassword = "phpmyadmin";
+
+
     try {
         $bdd = new PDO("mysql:host=$host; dbname=$dbname", $dbuser, $dbpassword);
     } catch (PDOException $e) {
