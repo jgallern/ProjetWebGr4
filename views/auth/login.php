@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Stage En Bref</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <script src="script.js"></script>
   <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" type="image/png">
 
@@ -33,53 +33,28 @@
         <h1 class="police_texte" id="titre_bienvenue">salut</h1>
     </div>
 
-    <form id="fenetre_login" class="police_texte" method="post" action="connect.php">
+    <form id="fenetre_login" class="police_texte" method="post" action="../../controllers/auth_controller.php">
         <h2>Qui es tu ?</h2>
         <input id="id_connection" name="id_connection" class="input_connexion" type="text" placeholder="Identifiant"><br><br>
         <h2>Ton mot de passe ? <span style="font-size: 0.7em;">(promis je garde ça secret)</span></h2>
         <input id="password_connection" name="password_connection" class="input_connexion" type="password" placeholder="Mot de passe"><br>
-        <div id="boutons">
-            <input id="oubli_mdp" type="button" value="Pardon, j'ai oublié mon mot de passe">
-            <input id="submit" type="submit" value="Se connecter">
+
+    <div id="boutons">
+        <input id="oubli_mdp" type="button" value="Pardon, j'ai oublié mon mot de passe">
+        <input id="submit" type="submit" value="Se connecter">
 <?php
-
-require_once 'header.php';
-
-
-$dtb = new Connection();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    //$id = $_POST['id_connection'];
-//$password = $_POST['password_connection'];
-
-    if ($_POST['id_connection'] == null | $_POST['password_connection'] == null) {
-        echo "<p>veuillez renseigner tous les champs de connection<p>";
-    } else {
-        $dtb->set_Idpersonne($_POST['id_connection']);//'teste');
-        //$_POST['id_connection']);
-        $dtb->set_passwordpersonne($_POST['password_connection']); //'teste');
-
-        $dtb->set_bddconnection($bdd);
-        //$dtb->Montrer_Tables();
-        $dtb->Login();
-
-        //$bdd = new PDO("mysql:host=$host; dbname=$dbname", $dbuser, $dbpassword);
-//$bdd->query("use test;");
-//
-//$test = $bdd->query("show tables;");
-//
-//
-//foreach($test as $row) {
-//    echo "<li>".$row['Tables_in_test']."<li>";
-//}
+    $erreur = $_GET['login'];
+    if ($erreur == 'false') {
+        echo "<p>mot de passe ou nom d'utilisateur incorrect</p>";
     }
-}
+    elseif ($erreur == 'missingfields') {
+        echo "<p>Veuillez entrer tous les champs de connection</p>";
+    }
 
-
-?>
+    ?>
 </div>
 </form>
+
 
 
 
