@@ -16,7 +16,7 @@
 
             <?php
             if (isset ($_COOKIE["connected"])) {
-                if ($_COOKIE["connected"] == true) {
+                if ($_COOKIE["connected"] == 1) {
                 ?>
             <form method="post" action="disconnect.php">
                 <input type="submit" value="Se déconnecter">

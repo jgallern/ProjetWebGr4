@@ -52,7 +52,7 @@ class Connection{
         //$this->connection->query();
         $login = $this->bddconnection->prepare("select * from Personne where Login= :idquiexiste && Password = :password");
         $login->bindParam(':idquiexiste', $this->Idpersonne);
-        $login->bindParam(':password', $this->passwordpersonne);
+        $login->bindParam(':password', hash('SHA256',$this->passwordpersonne ));
         $login->execute();
 
         if ($login->rowCount() > 0) {
