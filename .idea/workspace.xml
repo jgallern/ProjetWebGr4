@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b150bf6-44f2-4083-9e4f-c66330f153d5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/controllers/ControllerAccueil.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/Router.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Offre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/header.php" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Melo_Branch" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP from XAMPP" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2dxKGHBjpJSfwlggsZgwYAYnwd9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "migration__archi__Class__Entreprise&&Offre",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/xampp/htdocs/GitHub/ProjetWebGr4/Pages_Gestions",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\Pages_Gestions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\Pages_Gestions" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-6f8e3395a2b4-com.jetbrains.php.sharedIndexes-PS-233.15026.12" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b150bf6-44f2-4083-9e4f-c66330f153d5" name="Changes" comment="" />
+      <created>1710944192649</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1710944192649</updated>
+      <workItem from="1710944196170" duration="13911000" />
+      <workItem from="1711010988841" duration="206000" />
+      <workItem from="1711011959477" duration="96000" />
+      <workItem from="1711018315598" duration="731000" />
+      <workItem from="1711040758881" duration="4306000" />
+      <workItem from="1711101592885" duration="75000" />
+      <workItem from="1711110860615" duration="78000" />
+      <workItem from="1711111353318" duration="3844000" />
+      <workItem from="1711118959880" duration="704000" />
+      <workItem from="1711120060157" duration="6146000" />
+      <workItem from="1711441393496" duration="10000" />
+      <workItem from="1711442689557" duration="1513000" />
+      <workItem from="1711542031829" duration="1386000" />
+      <workItem from="1711544987413" duration="267000" />
+      <workItem from="1711545268992" duration="120000" />
+      <workItem from="1711545396887" duration="9431000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
