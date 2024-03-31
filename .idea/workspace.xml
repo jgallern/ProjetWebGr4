@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b150bf6-44f2-4083-9e4f-c66330f153d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/ControllerAccueil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/Router.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Offre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/header.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/Router.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Offre.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/connect_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +33,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP from XAMPP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -39,26 +42,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "migration__archi__Class__Entreprise&&Offre",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/xampp/htdocs/GitHub/ProjetWebGr4/Pages_Gestions",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;migration__archi__Class__Entreprise&amp;&amp;Offre&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/GitHub/ProjetWebGr4/Pages_Gestions&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\Pages_Gestions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\views" />
+      <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\assets\js" />
+      <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\assets" />
+      <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\models" />
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\Pages_Gestions" />
     </key>
   </component>
@@ -93,6 +102,8 @@
       <workItem from="1711544987413" duration="267000" />
       <workItem from="1711545268992" duration="120000" />
       <workItem from="1711545396887" duration="9431000" />
+      <workItem from="1711882889855" duration="824000" />
+      <workItem from="1711883734526" duration="4459000" />
     </task>
     <servers />
   </component>
@@ -110,7 +121,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/develop" />
+                        <option value="origin/Melo_Branch" />
                       </list>
                     </value>
                   </entry>
