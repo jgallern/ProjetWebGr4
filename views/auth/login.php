@@ -13,8 +13,9 @@
 <body>
     <div id="bienvenue">
         <a href="../page_accueil_ss_connexion.php"><img id="logo_connexion" alt="logo SEB" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"></a>
-
+            
             <?php
+            
             if (isset ($_COOKIE["connected"])) {
                 if ($_COOKIE["connected"] == 1) {
                 ?>

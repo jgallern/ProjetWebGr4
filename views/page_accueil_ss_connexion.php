@@ -15,6 +15,11 @@
     <section id="top_acceuil">
         <nav id="navbar">
             <a href="page_accueil_ss_connexion.html"><img id="logo_accueil" alt="logo SEB" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"></a>
+            <?php
+            if (isset($_COOKIE["prenom"])) {
+                echo  "<p style='color:white'>".$_COOKIE["prenom"]."<p>";
+            }
+            ?>
             <a class="police_texte" href=
             <?php if (isset ($_COOKIE["connected"])) {?>
                 "../controllers/deconnection_controller.php"
