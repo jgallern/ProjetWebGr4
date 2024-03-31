@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -15,7 +17,7 @@
             <a href="page_accueil_ss_connexion.html"><img id="logo_accueil" alt="logo SEB" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"></a>
             <a class="police_texte" href=
             <?php if (isset ($_COOKIE["connected"])) {?>
-                "disconnect.php"
+                "../controllers/deconnection_controller.php"
             <?php
         }
         else{
@@ -23,14 +25,14 @@
         }?> 
         id="lien_connexion_header">
             <?php
-            if (isset ($_COOKIE['connected'])) {
-                if ($_COOKIE['connected'] == 1) {
+                if ($_COOKIE['connected'] == "1") {
                 ?>
                 Deconnection
                 <?php
                 }
-            }
-            else{?>Connection <?php } ?>
+            else{?>Connection <?php } 
+?>
+            
 </a>
 
         </nav>
@@ -38,7 +40,7 @@
         <section id="accueil">
             <h1 class="acentrer police_texte" id="titre_accueil">Tu cherches, <br> SEB trouve, <br> et c'est tout</h1>
 <?php      
-            if (isset ($_COOKIE["connected"]) && $_COOKIE["connected"] == 1) {
+            if (isset ($_COOKIE["connected"]) && $_COOKIE["connected"] == "1") {
 ?>
             <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button class="acentrer police_texte" id="bouton_connexion_accueil">Se déconnecter</button></a>
 <?php

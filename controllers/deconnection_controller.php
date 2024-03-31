@@ -1,7 +1,7 @@
 <?php
 
 
-setcookie("connected", false);
+setcookie("connected", false,time()+3600, "/");
 
-header("Location: page_accueil_ss_connexion.php");
+header("Location: ../views/page_accueil_ss_connexion.php");
 exit;

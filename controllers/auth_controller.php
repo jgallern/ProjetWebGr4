@@ -10,14 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['id_connection'] == null | $_POST['password_connection'] == null) {
             header("Location: ../views/auth/login.php?login=missingfields");
     } else {
-        $dtb->set_Idpersonne($_POST['id_connection']);//'teste');
+        $prs->set_Idpersonne($_POST['id_connection']);//'teste');
         //$_POST['id_connection']);
-        $dtb->set_passwordpersonne($_POST['password_connection']); //'teste');
+        $prs->set_passwordpersonne($_POST['password_connection']); //'teste');
 
-        $dtb->set_bddconnection($bdd);
+        $prs->set_bddconnection($bdd);
         //$dtb->Montrer_Tables();
-        if ($dtb->Login() == true) {
-            setcookie("connected", true);
+        if ($prs->Login() == true) {
+            setcookie("connected", true,time()+3600, "/");
             header("Location: ../views/page_accueil_ss_connexion.php");
         } else {
             setcookie("connected", false);

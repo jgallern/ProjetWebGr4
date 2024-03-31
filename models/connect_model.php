@@ -14,8 +14,8 @@ if (!isset($bdd)) {
     }
 }
 
-$dtb = new Connection();
-class Connection{
+$prs = new Personne();
+class Personne{
     private $host;
     private $bddconnection;
     private $Idpersonne;
