@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_3.css">
+    <link rel="stylesheet" href="../assets/css/style_3.css">
     <script src="script.js"></script>
 </head>
 
 <body>
 
     <header>
-        <img src="logo_png.png" alt="Logo" id="logo">
+        <img src="../assets/images/logo_png.png" alt="Logo" id="logo">
         <button id="deconnexion">Déconnexion</button>
     </header>
 

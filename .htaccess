@@ -1,0 +1,8 @@
+RewriteEngine On
+# If your application is in a subfolder, you might need to set RewriteBase accordingly
+# RewriteBase /pathToYourProject/
+
+# Redirect all requests not pointing to an actual file or directory to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]

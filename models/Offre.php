@@ -1,49 +1,60 @@
 <?php
 
-class Offre extends Model
-{
-    private $uploadDirectory = "uploads\\"; // Make sure this directory exists and has the correct permissions
+require_once 'Model.php';
 
+class Offre extends Model {
+    private $uploadDirectory;
 
-// Incremente fichier, si existe deja
-    private function getUniqueFilePath($filename)
-    {
+    public function __construct() {
+        parent::__construct();
+        $this->uploadDirectory = __DIR__ . "../assets/uploads"; // Use absolute path
+
+        // Ensure upload directory exists and is writable
+        if (!file_exists($this->uploadDirectory) && !mkdir($this->uploadDirectory, 0755, true) && !is_dir($this->uploadDirectory)) {
+            throw new RuntimeException(sprintf('Directory "%s" was not created', $this->uploadDirectory));
+        }
+    }
+
+    private function getUniqueFilePath($filename) {
         $filePath = $this->uploadDirectory . basename($filename);
         $fileInfo = pathinfo($filePath);
-        $fileExtension = isset($fileInfo['extension']) ? $fileInfo['extension'] : '';
+        $fileExtension = isset($fileInfo['extension']) ? '.' . $fileInfo['extension'] : '';
         $filenameWithoutExt = $fileInfo['filename'];
         $counter = 1;
 
+        // Ensure file path is unique to avoid overwriting existing files
         while (file_exists($filePath)) {
-            $newFilename = $filenameWithoutExt . "_" . $counter . '.' . $fileExtension;
-            $filePath = $this->uploadDirectory . $newFilename;
+            $filePath = $this->uploadDirectory . $filenameWithoutExt . "_" . $counter . $fileExtension;
             $counter++;
         }
 
         return $filePath;
     }
 
-// Method to handle file uploads and insert details into the database
-    public function handleUpload($cvFile, $motivationFile, $idEtudiant = 7)
-    {
+    public function handleUpload($cvFile, $motivationFile, $idEtudiant = 7) {
+        // Validate file upload presence
+        if (!$cvFile || !$motivationFile) {
+            return ["success" => false, "message" => "Erreur : Fichiers non fournis."];
+        }
 
-        if ($cvFile && $motivationFile) {
-            $cvPath = $this->getUniqueFilePath($cvFile['name']);
-            $motivationPath = $this->getUniqueFilePath($motivationFile['name']);
+        $cvPath = $this->getUniqueFilePath($cvFile['name']);
+        $motivationPath = $this->getUniqueFilePath($motivationFile['name']);
 
-            $cvUploadSuccess = move_uploaded_file($cvFile['tmp_name'], $cvPath);
-            $motivationUploadSuccess = move_uploaded_file($motivationFile['tmp_name'], $motivationPath);
+        // Attempt to move uploaded files to target directory
+        $cvUploadSuccess = move_uploaded_file($cvFile['tmp_name'], $cvPath);
+        $motivationUploadSuccess = move_uploaded_file($motivationFile['tmp_name'], $motivationPath);
 
-            if ($cvUploadSuccess && $motivationUploadSuccess) {
-                $stmt = $this->getBDD()->prepare("INSERT INTO Candidature (CV, lettremotiv, ID_Etudiant) VALUES (?, ?, ?)");
-                $stmt->execute([$cvPath, $motivationPath, $idEtudiant]);
+        if ($cvUploadSuccess && $motivationUploadSuccess) {
+            $stmt = $this->getBDD()->prepare("INSERT INTO Candidature (CV, lettremotiv, ID_Etudiant) VALUES (?, ?, ?)");
+            $stmt->execute([$cvPath, $motivationPath, $idEtudiant]);
 
-                echo "Fichiers téléchargés et enregistrés avec succès dans la base de données.";
-            } else {
-                echo "Erreur lors du téléchargement des fichiers.";
-            }
+            return ["success" => true, "message" => "Fichiers téléchargés et enregistrés avec succès dans la base de données."];
         } else {
-            echo "Erreur : Fichiers non fournis.";
+            // Cleanup if one of the uploads failed but the other succeeded
+            if ($cvUploadSuccess) unlink($cvPath);
+            if ($motivationUploadSuccess) unlink($motivationPath);
+
+            return ["success" => false, "message" => "Erreur lors du téléchargement des fichiers."];
         }
     }
 }

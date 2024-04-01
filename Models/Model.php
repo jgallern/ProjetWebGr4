@@ -5,6 +5,10 @@ abstract class Model
 
     private static $_bdd;
 
+    public function __construct()
+    {
+    }
+
     private static function setBDD()
     {
         $servername = "localhost";

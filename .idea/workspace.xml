@@ -8,11 +8,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b150bf6-44f2-4083-9e4f-c66330f153d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/Router.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Offre.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/connect_model.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/header.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/ControllerOffre.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/accueilView.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/viewError.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_03_2024_14_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_03_2024_14_09__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Offre.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Offre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationEntreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationEntreprise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationOffre.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationOffre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagedeCandidature.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature/PagedeCandidature.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/logo_png.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/logo_png.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/style_3.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style_3.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ControllerAccueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ControllerAccueil.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,12 +56,15 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;PHP Built-in Web Server.PHP_Server.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.PagedeCandidature.php.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.Router.php.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;migration__archi__Class__Entreprise&amp;&amp;Offre&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/GitHub/ProjetWebGr4/Pages_Gestions&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/orfal/OneDrive/Documents/GitHub/ProjetWebGr4/Controllers/Router.php&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -65,11 +80,16 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\views" />
+      <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\assets\images" />
+      <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\assets\css" />
+      <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\views\Page_Candidature" />
       <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\assets\js" />
-      <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\assets" />
-      <recent name="C:\Users\orfal\OneDrive\Documents\GitHub\ProjetWebGr4\models" />
-      <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\Pages_Gestions" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="PHP_Server" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="8000" router_script="$PROJECT_DIR$/Controllers/Router.php">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -104,6 +124,7 @@
       <workItem from="1711545396887" duration="9431000" />
       <workItem from="1711882889855" duration="824000" />
       <workItem from="1711883734526" duration="4459000" />
+      <workItem from="1711984078189" duration="1028000" />
     </task>
     <servers />
   </component>
@@ -132,5 +153,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
