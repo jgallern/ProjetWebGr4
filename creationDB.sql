@@ -51,7 +51,7 @@ CREATE TABLE Personne(
     nom VARCHAR(50),
     prenom VARCHAR(50),
     Login VARCHAR(50) UNIQUE,
-    Password VARCHAR(50),
+    Password VARCHAR(64),
     ID_Centre INT,
     PRIMARY KEY(ID_Personne),
     FOREIGN KEY(ID_Centre) REFERENCES Centre(ID_Centre)
