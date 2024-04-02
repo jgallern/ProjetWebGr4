@@ -1,6 +1,6 @@
 -- peuplement table adresse
 
-INSERT INTO adresse (Nom_rue,Numero_rue,Ville)
+INSERT INTO Adresse (Nom_rue,Numero_rue,Ville)
 VALUES ('Avenue Montaigne', 24, 'Paris'),
 ('Rue Royale', 56, 'Lyon'),
 ('Place Vendôme', 13, 'Paris'),
@@ -83,7 +83,7 @@ VALUES ('Avenue Montaigne', 24, 'Paris'),
 
 -- peuplement table centre
 
-INSERT INTO centre(ID_Adresse,Nom_centre)
+INSERT INTO Centre(ID_Adresse,Nom_centre)
 VALUES(51, 'CESI Aix-en-Provence'),
 (52, 'CESI Grenoble'),
 (53, 'CESI Lyon'),
@@ -114,7 +114,7 @@ VALUES(51, 'CESI Aix-en-Provence'),
 
 -- peuplement table personne
 
-INSERT INTO personne (ID_Centre,Login,nom,Password,prenom)
+INSERT INTO Personne (ID_Centre,Login,nom,Password,prenom)
 VALUES (23, 'jdoe', 'Doe', sha2('password123',256), 'John'),
 (12, 'asmith', 'Smith', sha2('abc123',256), 'Alice'),
 (7, 'mjohnson', 'Johnson', sha2('qwerty',256), 'Michael'),
@@ -168,18 +168,18 @@ VALUES (23, 'jdoe', 'Doe', sha2('password123',256), 'John'),
 
 -- peuplement table secteuractivites
 
-INSERT INTO secteuractivite(nom_secteur) VALUES('Informatique'),('Bâtiment et travaux publics'),('Systèmes embarqués'),('Généraliste');
+INSERT INTO Secteuractivite(nom_secteur) VALUES('Informatique'),('Bâtiment et travaux publics'),('Systèmes embarqués'),('Généraliste');
 
 
 -- peuplement table wishlist
 
-INSERT INTO wishlist(ID_Offre)
+INSERT INTO Wishlist(ID_Offre)
 VALUES (null),(null),(null),(null);
 
 
 --peuplement table administrateur
 
-INSERT INTO administrateur(ID_Personne,ID_Wishlist) VALUES(100,1),(101,2),(102,3),(103,4);
+INSERT INTO Administrateur(ID_Personne,ID_Wishlist) VALUES(100,1),(101,2),(102,3),(103,4);
 
 
 
