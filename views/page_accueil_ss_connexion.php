@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <title>Stage En Bref</title>
   <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="manifest" href="manifest.json" scope="/">
   <script src="script.js"></script>
   <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" type="image/png">
 
