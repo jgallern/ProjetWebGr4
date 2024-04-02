@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Gestion Pilotes
     </title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/script.js"></script>
     <link rel="icon" href="" type="image/png">
 
 <body>
@@ -46,18 +46,18 @@
             <div id="recherche_container">
 
                 <div id="form_recherche">
-                    <form>
+                    <form method="post" action="../controllers/creation_compte.php">
                         <div class="form-row">
                             <label for="search-name">Nom du pilote :</label><br>
-                            <input id="search-name" type="text" placeholder="Entrez le nom du pilote">
+                            <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom du pilote">
                         </div>
                         <div class="form-row">
-                            <label for="search-stages">Prénom du pilote :</label><br>
-                            <input id="search-stages" type="text" placeholder="Entrez le prénom du pilote">
+                            <label for="search-prenom">Prénom du pilote :</label><br>
+                            <input id="search-prenom" name="search-prenom" type="text" placeholder="Entrez le prénom du pilote">
                         </div>
                         <div class="form-row">
                             <label for="search-sector">Centre :</label><br>
-                            <select>
+                            <select name="search-sector">
                                 <option disabled selected>Choisissez un centre</option>
                                 <option disabled selected>Est</option>
                                 <option>Strasbourg</option>
