@@ -51,7 +51,6 @@ VALUES ('Avenue Montaigne', 24, 'Paris'),
 ('Rue Saint-Honoré', 30, 'Nice'),
 ('Boulevard Saint-Germain', 58, 'Lyon'),
 ('Rue de la Paix', 26, 'Bordeaux'),
-
 ('Rue de la Paix', 24, 'Nancy'),
 ('Boulevard Haussmann', 56, 'Strasbourg'),
 ('Avenue Montaigne', 13, 'Dijon'),
