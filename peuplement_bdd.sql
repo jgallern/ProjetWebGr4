@@ -63,7 +63,7 @@ VALUES ('Avenue Montaigne', 24, 'Paris'),
 ('Boulevard Saint-Germain', 3, 'La Rochelle'),
 ('Rue de la Paix', 11, 'Le Mans'),
 ('Avenue Montaigne', 66, 'Nantes'),
-('Rue Royale', 28, 'Saint-Nazaire')
+('Rue Royale', 28, 'Saint-Nazaire'),
 ('Rue de la Paix', 24, 'Aix-en-Provence'),
 ('Boulevard Haussmann', 56, 'Grenoble'),
 ('Avenue Montaigne', 13, 'Lyon'),
