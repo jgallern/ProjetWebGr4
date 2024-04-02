@@ -3,35 +3,29 @@
 require_once 'Model.php';
 
 class Offre extends Model {
-    private $uploadDirectory;
 
-    public function __construct() {
-        parent::__construct();
-        $this->uploadDirectory = __DIR__ . "../assets/uploads"; // Use absolute path
+    private $uploadDirectory = "../assets/Uploads/"; // Make sure this directory exists and has the correct permissions
 
-        // Ensure upload directory exists and is writable
-        if (!file_exists($this->uploadDirectory) && !mkdir($this->uploadDirectory, 0755, true) && !is_dir($this->uploadDirectory)) {
-            throw new RuntimeException(sprintf('Directory "%s" was not created', $this->uploadDirectory));
-        }
-    }
 
+    // Integrated unique file path generator
     private function getUniqueFilePath($filename) {
         $filePath = $this->uploadDirectory . basename($filename);
         $fileInfo = pathinfo($filePath);
-        $fileExtension = isset($fileInfo['extension']) ? '.' . $fileInfo['extension'] : '';
+        $fileExtension = isset($fileInfo['extension']) ? $fileInfo['extension'] : '';
         $filenameWithoutExt = $fileInfo['filename'];
         $counter = 1;
 
-        // Ensure file path is unique to avoid overwriting existing files
         while (file_exists($filePath)) {
-            $filePath = $this->uploadDirectory . $filenameWithoutExt . "_" . $counter . $fileExtension;
+            $newFilename = $filenameWithoutExt . "_" . $counter . '.' . $fileExtension;
+            $filePath = $this->uploadDirectory . $newFilename;
             $counter++;
         }
 
         return $filePath;
     }
 
-    public function handleUpload($cvFile, $motivationFile, $idEtudiant = 7) {
+    // Method to handle file uploads and insert details into the database
+    public function handleUpload($cvFile, $motivationFile, $idEtudiant = 2) {
         // Validate file upload presence
         if (!$cvFile || !$motivationFile) {
             return ["success" => false, "message" => "Erreur : Fichiers non fournis."];

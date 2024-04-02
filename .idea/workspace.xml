@@ -8,23 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b150bf6-44f2-4083-9e4f-c66330f153d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/ControllerOffre.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/accueilView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/viewError.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_03_2024_14_09__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_03_2024_14_09__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ControllerOffre.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ControllerOffre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Router.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Offre.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Offre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationEntreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationEntreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationOffre.php" beforeDir="false" afterPath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationOffre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagedeCandidature.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature/PagedeCandidature.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/logo_png.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/logo_png.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/style_3.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style_3.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/ControllerAccueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/ControllerAccueil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/ControllerAccueil.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Page_Candidature/PagedeCandidature.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature/PagedeCandidature.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +27,12 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="282f9d61-9fac-49f1-98c8-1f83a0e1dc05" value="Violet" />
+      <entry key="49ae6a09-d844-4562-b4f7-cb1457671f47" value="Violet" />
+    </colors>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -45,7 +45,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\xampp\php\php.exe" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP from XAMPP" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -54,26 +54,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;PHP Built-in Web Server.PHP_Server.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.PagedeCandidature.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.Router.php.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;migration__archi__Class__Entreprise&amp;&amp;Offre&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/orfal/OneDrive/Documents/GitHub/ProjetWebGr4/Controllers/Router.php&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "PHP Built-in Web Server.PHP_Server.executor": "Run",
+    "PHP Script.PagedeCandidature.php.executor": "Run",
+    "PHP Script.Router.php.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.laravel-idea.search-composer-json": "true",
+    "git-widget-placeholder": "migration__archi__Class__Entreprise&&Offre",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/orfal/OneDrive/Documents/GitHub/ProjetWebGr4/Controllers/Router.php",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mariadb"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\Pages_Gestions" />

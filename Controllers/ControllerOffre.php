@@ -1,37 +1,33 @@
 <?php
 
-require_once "Models/Offre.php"; // Adjust the path as necessary.
+require_once "../models/Offre.php"; // Adjust the path as necessary.
+// controllers/OffreController.php
 
-class ControllerOffre {
-    private $offreModel;
+class OffreController {
+    private $model;
 
     public function __construct() {
-        $this->offreModel = new Offre();
-    }
-
-    // Entry point for showing the form.
-    public function showForm() {
-        // This might include preloading any data required for the form.
-        include '../views/Page_Candidature/PagedeCandidature.php';
+        $this->model = new Offre();
     }
 
     public function handleFormSubmission() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['cv'], $_FILES['motivation'])) {
-            $response = $this->offreModel->handleUpload($_FILES['cv'], $_FILES['motivation']);
-            $_SESSION['message'] = $response['message'];
+            $result = $this->model->handleUpload($_FILES['cv'], $_FILES['motivation']);
 
-            // Redirect to a route that displays the form again or to a success page
-            $this->redirect('your_route_here'); // Adjust the redirection path to fit your routing strategy
-        } else {
-            // Handle the case where the method is called incorrectly.
-            $_SESSION['message'] = 'Invalid request method.';
-            $this->redirect('your_error_route_here'); // Adjust as needed
+            // Prepare message based on result
+            $message = $result ? "Candidature envoyée avec succès." : "Erreur lors de l'envoi de la candidature.";
+
+            // Store message in session or pass directly to view
+            $_SESSION['message'] = $message;
+
+            // Redirect back to form or to a confirmation page
+            header("Location: /views/Page_Candidature/PagedeCandidature.php");
+            exit();
         }
     }
-
-    private function redirect($route) {
-        header('Location: ' . $route);
-        exit();
-    }
 }
+
+// Instantiate and call the method
+$controller = new OffreController();
+$controller->handleFormSubmission();
 
