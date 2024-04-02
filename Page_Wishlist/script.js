@@ -511,28 +511,40 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('result_modif').style.position = 'static';
     }*/
 
-    document.querySelectorAll('.btn-supprimer-offre').forEach(button => {
-        button.addEventListener('click', function() {
-            const idOffre = this.getAttribute('data-id-offre');
+    document.addEventListener('DOMContentLoaded', function () {
+        // Récupération de l'ID de la wishlist de l'utilisateur
+        fetch('get_wishlist_id.php') // Remplacez 'get_wishlist_id.php' par le chemin vers votre script PHP
+        .then(response => response.json())
+        .then(data => {
+            const idWishlist = data.idWishlist;
     
-            fetch('supprimer_offre.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: 'id_offre=' + idOffre + '&id_wishlist=' + idWishlist
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Suppression visuelle de l'offre de la page
-                    document.querySelector('#offre_' + idOffre).remove();
-                } else {
-                    alert('Erreur lors de la suppression de l\'offre.');
-                }
+            // Maintenant que nous avons l'ID de la wishlist, nous pouvons configurer les écouteurs d'événements sur les boutons de suppression
+            document.querySelectorAll('.btn-supprimer-offre').forEach(button => {
+                button.addEventListener('click', function() {
+                    const idOffre = this.getAttribute('data-id-offre');
+            
+                    // Utilisation de l'ID de la wishlist dans la requête
+                    fetch('supprimer_offre.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: 'id_offre=' + idOffre + '&id_wishlist=' + idWishlist
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Suppression visuelle de l'offre de la page
+                            this.parentElement.remove(); // Supposons que le bouton est directement dans l'élément de l'offre
+                        } else {
+                            alert('Erreur lors de la suppression de l\'offre.');
+                        }
+                    });
+                });
             });
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération de l\'ID de la wishlist:', error);
         });
     });
-    
-
 })
