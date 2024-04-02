@@ -1,3 +1,26 @@
+<?php
+require_once "headerw.php";
+global $bdd;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset( $_POST['id_offre'] ) && isset( $_POST['id_wishlist'])){
+    $idOffre = $_POST['id_offre'];
+    $idWishlist = $_POST['id_wishlist'];
+
+    $wishlist = new Wishlist();
+    $wishlist->set_connection($bdd);
+
+    if($wishlist->removeOfferFromWishlist($idOffre, $idWishlist)){
+        echo json_encode(['success'=> true]);
+    } else {
+        echo json_encode(['success'=> false]);
+    } 
+} else {
+    echo json_encode(['error'=> 'Requête invalide']);
+}
+
+?>
+
+
 <!doctype html>
 <html lang="fr">
 
@@ -41,66 +64,66 @@
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="1">Supprimer</button>
                 </a><a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="2">Supprimer</button>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="3">Supprimer</button>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="4">Supprimer</button>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="5">Supprimer</button>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="6">Supprimer</button>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="7">Supprimer</button>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="8">Supprimer</button>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="9">Supprimer</button>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="10">Supprimer</button>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="img entreprise">
                     <h3>Intitulé 2</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
-                    <input type="button" value="Supprimer">
+                    <button class="btn-supprimer-offre" data-id-offre="11">Supprimer</button>
                 </a>
 
             </div>

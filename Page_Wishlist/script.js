@@ -511,5 +511,28 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('result_modif').style.position = 'static';
     }*/
 
+    document.querySelectorAll('.btn-supprimer-offre').forEach(button => {
+        button.addEventListener('click', function() {
+            const idOffre = this.getAttribute('data-id-offre');
+    
+            fetch('supprimer_offre.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'id_offre=' + idOffre + '&id_wishlist=' + idWishlist
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Suppression visuelle de l'offre de la page
+                    document.querySelector('#offre_' + idOffre).remove();
+                } else {
+                    alert('Erreur lors de la suppression de l\'offre.');
+                }
+            });
+        });
+    });
+    
 
 })
