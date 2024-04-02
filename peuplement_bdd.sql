@@ -168,7 +168,7 @@ VALUES (23, 'jdoe', 'Doe', sha2('password123',256), 'John'),
 
 -- peuplement table secteuractivites
 
-INSERT INTO Secteuractivite(nom_secteur) VALUES('Informatique'),('Bâtiment et travaux publics'),('Systèmes embarqués'),('Généraliste');
+INSERT INTO SecteurActivite(nom_secteur) VALUES('Informatique'),('Bâtiment et travaux publics'),('Systèmes embarqués'),('Généraliste');
 
 
 -- peuplement table wishlist
@@ -177,7 +177,7 @@ INSERT INTO Wishlist(ID_Offre)
 VALUES (null),(null),(null),(null);
 
 
---peuplement table administrateur
+-- peuplement table administrateur
 
 INSERT INTO Administrateur(ID_Personne,ID_Wishlist) VALUES(100,1),(101,2),(102,3),(103,4);
 
