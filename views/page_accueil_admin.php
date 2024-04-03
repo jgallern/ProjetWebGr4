@@ -42,17 +42,17 @@
     </nav>
 
     <div id="lien_navbar_expand">
-        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.php"
             id="lien_entreprises_etudiants">Acceuil</a>
-        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.php"
             id="lien_entreprises_etudiants">Entreprises</a>
-        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.php"
             id="lien_offres_etudiants">Offres</a>
-        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.php"
             id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.php"
             id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
+        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.php"
             id="lien_candidatures">Candidatures</a>
     </div>
 
