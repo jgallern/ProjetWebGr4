@@ -179,7 +179,7 @@ VALUES (null),(null),(null),(null);
 
 -- peuplement table administrateur
 
-INSERT INTO Administrateur(ID_Personne,ID_Wishlist) VALUES(100,1),(101,2),(102,3),(103,4);
+INSERT INTO Administrateur(ID_Personne,ID_Wishlist) VALUES(1,1),(2,2),(3,3),(4,4);
 
 
 
