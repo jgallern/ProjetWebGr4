@@ -35,6 +35,15 @@
     </nav>
 
     <main>
+        <?php
+        if ($_GET["creation"]=="echec"){
+            echo "<p style='text-align:center'>Erreur lors de la création du compte étudiant  	&#128546</p>";
+        }
+        else if ($_GET["creation"]== "succes"){
+
+            echo "<p style='text-align:center'>Création du compte étudiant réussie &#128077</p>";
+        }
+        ?>
         <h1 class="titre police_texte">Gestion des Etudiants</h1>
 
         <section class="bloc_gestion police_texte">

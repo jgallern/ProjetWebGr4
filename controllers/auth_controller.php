@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['id_connection'] == null | $_POST['password_connection'] == null) {
             header("Location: ../views/auth/login.php?login=missingfields");
     } else {
+        $prs = new Personne();
         $prs->set_Login($_POST['id_connection']);//'teste');
         //$_POST['id_connection']);
         $prs->set_Password($_POST['password_connection']); //'teste');
@@ -24,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             setcookie("prenom", $name ,time()+ 3600 ,"/");
             setcookie("statut", $statut ,time()+ 3600 ,"/");
             if ($statut == "Étudiant") {
-                header("Location: ../views/page_accueil_etudiant");
+                header("Location: ../views/page_accueil_etudiant.php");
             }
             else if ($statut == "Pilote") {
                 header("Location: ../views/page_accueil_pilote.php");

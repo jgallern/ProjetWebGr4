@@ -9,8 +9,8 @@ if (isset($_POST["search-prenom"])) {
     //echo $prenom;
 }
 if (isset($_POST["search-sector"])) {
-    $secteur = $_POST["search-sector"];
-    //echo $secteur;
+    $secteur = "CESI ".$_POST["search-sector"];
+    echo $secteur;
 }
 if (isset($_POST["promo"])) {
     $promo = $_POST["promo"];
@@ -26,14 +26,19 @@ if (isset($_POST["password"])) {
 
 require_once '../models/personne_model.php';
 require_once '../models/promo_model.php';
+require_once '../models/centre_model.php';
 
 $prs = new Etudiant();
 $prmo = new Promo();
+$cntr = new Centre(); 
 $prmo->set_bddconnection($bdd);
 $prs->set_bddconnection($bdd);
+$cntr->set_bddconnection($bdd);
+$cntr->set_Nom($secteur);
+echo "<p>".$cntr->get_ID()."<p>";
 $prs->set_Nom($nom);
 $prs->set_Prenom($prenom);
-$prs->set_ID_Centre($secteur);
+$prs->set_ID_Centre($cntr->get_ID());
 $prmo->set_name($promo);
 echo "<p>".$prmo->get_name()."<p>";
 echo "<p>".$prmo->get_ID()."<p>";
@@ -43,8 +48,9 @@ $prs->set_Password($password);
 
 $creation = $prs->creer_personne();
 
-if ($creation == true) {
+if ($creation == "true") {
     echo "création réussie";
+    header("Location: ../views/gestion_etudiants_pilote_admin.php?creation=succes");
 } else {
-    echo "test".$creation;
+    header("Location: ../views/gestion_etudiants_pilote_admin.php?creation=echec");
 }

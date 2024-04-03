@@ -43,10 +43,10 @@ class Personne{
     }
 
     function set_Nom($nom){
-        $this->Nom = $nom;
+        $this->nom = $nom;
     }
     function set_Prenom($prenom){
-        $this->Prenom = $prenom;
+        $this->prenom = $prenom;
     }
     function set_ID_Centre($ID_Centre){ 
         $this->ID_Centre = $ID_Centre;
@@ -138,12 +138,12 @@ class Etudiant extends Personne {
     }
     function creer_personne(){
         try {
-            $creation = $this->bddconnection->prepare("INSERT INTO personne (ID_Centre,Login,nom,Password,prenom)
+            $creation = $this->bddconnection->prepare("INSERT INTO Personne (ID_Centre,Login,nom,Password,prenom)
         VALUES (:idcentre, :login , :nom , :motdepasse , :prenom);
         SET @ID_pers = LAST_INSERT_ID();
         INSERT INTO Wishlist (ID_Offre) VALUES (null);
         SET @ID_wishlist = LAST_INSERT_ID();
-        INSERT INTO Etudiant (photoprofile, ID_Wishlist, ID_Promotion, ID_Personne) values (:photoprofile, @ID_wishlist, :ID_Promo, @ID_pers)");
+        INSERT INTO Etudiant (photoprofil, ID_Wishlist, ID_Promotion, ID_Personne) values (:photoprofile, @ID_wishlist, :ID_Promo, @ID_pers)");
 
             $creation->bindParam(":login", $this->Login);
             $creation->bindParam(":idcentre", $this->ID_Centre);
@@ -153,7 +153,7 @@ class Etudiant extends Personne {
             $creation->bindParam(":photoprofile", $this->prenom);
             $creation->bindParam(":ID_Promo", $this->ID_Promotion);
             $creation->execute();
-            return true;
+            return "true";
         }
         catch(PDOException $e) {
             return "erreur".$e->getMessage();
