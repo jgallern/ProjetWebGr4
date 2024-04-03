@@ -181,6 +181,24 @@ VALUES (null),(null),(null),(null);
 
 INSERT INTO Administrateur(ID_Personne,ID_Wishlist) VALUES(1,1),(2,2),(3,3),(4,4);
 
+-- peuplement promotions
+INSERT INTO Promotion (ID_Promotion, Nom_Promo) VALUES   (null,"A2 informatique")
+  (null,"A2 BTP"),
+  (null,"A2 S3E"),
+  (null,"A2 Généraliste"),
+  (null,"A3 informatique"),
+  (null,"A3 BTP"),
+  (null,"A3 S3E"),
+  (null,"A3 Généraliste"),
+  (null,"A4 informatique)",
+  (null,"A4 BTP"),
+  (null,"A4 S3E"),
+  (null,"A4 Généraliste"),
+  (null,"A5 informatique"),
+  (null,"A5 BTP"),
+  (null,"A5 S3E"),
+  (null,"A5 Généraliste")
+
 
 
 
