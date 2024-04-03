@@ -121,7 +121,6 @@ CREATE TABLE Etudiant(
     ID_Personne INT NOT NULL,
     PRIMARY KEY(ID_Etudiant),
     FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist),
-    FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
     FOREIGN KEY(ID_Promotion) REFERENCES Promotion(ID_Promotion),
     FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
 );
