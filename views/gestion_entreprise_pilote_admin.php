@@ -3,14 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Gestion entreprise
-    </title>
+    <title>Gestion des entreprises</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <link rel="icon" href="" type="image/png">
+    <script src="script_page_gestion_entreprise_admin.js"></script>
+</head>
 
 <body>
     <nav id="navbar">
+        <div class="menu-icon">
+            <div class="bar"></div>
+            <div class="bar_2"></div>
+        </div>
         <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html" id="lien_entreprises_etudiants">Entreprises</a>
@@ -23,8 +26,7 @@
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <button id="bouton_voir_profil">Voir le profil</button>
-                <button id="bouton_deconnexion">Se déconnecter</button>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
             <img id="photo_profil"
@@ -34,11 +36,26 @@
 
     </nav>
 
+    <div id="lien_navbar_expand">
+        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
+            id="lien_entreprises_etudiants">Acceuil</a>
+        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
+            id="lien_entreprises_etudiants">Entreprises</a>
+        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
+            id="lien_candidatures">Candidatures</a>
+    </div>
+
     <main>
         <h1 class="titre police_texte">Gestion des Entreprises</h1>
 
         <section class="bloc_gestion police_texte">
-            <h2>Rechercher une entreprise</h2>
+            <h2 id="titre_recherche">Rechercher une entreprise</h2>
             <div id="recherche_container">
 
                 <div id="form_recherche">
@@ -52,11 +69,12 @@
                             <input id="search-stages" type="number" placeholder="Entrez le nombre d'offres" />
                         </div>
                         <div class="form-row">
-                            <label for="search-location">Lieu d'entreprise :</label><br>
-                            <input id="search-location" type="text" placeholder="Entrez le lieu" />
+                            <label>Lieu d'entreprise :</label><br>
+                            <input id="code_postal_entreprise" type="number" placeholder="Code postal"/>
+                            <input id="adresse_entreprise" type="text" placeholder="Entrez le lieu" />
                         </div>
                         <div class="form-row">
-                            <label for="search-sector">Secteur d'activité :</label><br>
+                            <label>Secteur d'activité :</label><br>
                             <select>
                                 <option>--Choisir--</option>
                                 <option>Informatique</option>
@@ -127,7 +145,7 @@
                     </div>
 
 
-                    <div id="icones_modif">
+                    <div id="icones_modif_entreprise">
                         <div class="image-container" id="btn_modif">
                             <img 
                                 src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
@@ -187,7 +205,7 @@
 
                             <br>
                             <label>Nouvelle image :</label><br>
-                            <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
+                            <input id="input_image" name="image_entreprise" type="file" accept="image/jpeg, image/png">
                         </div>
                         <div id="partie_eval">
                             <label>Evaluer l'entreprise :</label>
@@ -218,7 +236,7 @@
                 <legend>Statistiques de l'entreprise</legend>
                 <p><strong>Nom de l'entreprise :</strong> GOGO Corporation</p>
                 <p><strong>Le top des offres :</strong></p>
-                <p><strong>Nombre d'étudiants actuellement en stage :</strong00< /p>
+                <p><strong>Nombre d'étudiants actuellement en stage :</strong></p>
                         <div class="rating">
                             <span><strong>Moyenne de l'entreprise :</strong></span>
                             <div class="stars">★★★☆☆</div>
@@ -227,7 +245,7 @@
 
         </section>
 
-        <section class="bloc_gestion police_texte">
+        <section id="bloc_padding" class="bloc_gestion police_texte">
             <h2>Créer une entreprise</h2>
             <div class="form-row">
                 <label for="create-name">Nom de l'entreprise :</label><br>
@@ -239,11 +257,14 @@
                     placeholder="Decrivez l'entreprise ici"></textarea>
             </div>
             <div class="form-row">
-                <label for="create-location">Lieu d'entreprise :</label><br>
-                <input id="create-location" type="text" placeholder="Entrez le lieu" />
+                <label >Lieu d'entreprise :</label><br>
+                <input id="code_postal_entreprise_creer" type="number" placeholder="Code postal"/>
+                <input id="adresse_entreprise_creer" type="text" placeholder="Entrez le lieu" />
+                <ul id="ul_adresse">
+                </ul>
             </div>
             <div class="form-row">
-                <label for="create-sector">Secteur d'activité :</label><br>
+                <label >Secteur d'activité :</label><br>
                 <select name="nouv_secteur">
                     <option>--Choisir--</option>
                     <option>Informatique</option>
@@ -253,7 +274,7 @@
                 </select>
             </div>
             <div class="form-row">
-                <label for="create-sector">Image de l'entreprise :</label><br>
+                <label >Image de l'entreprise :</label><br>
                 <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
             </div>
             <div class="form-actions">

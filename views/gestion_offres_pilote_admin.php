@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Gestion entreprise
+    <title>Gestion des offres
     </title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -11,7 +11,11 @@
 
 <body>
     <nav id="navbar">
-        <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar_2"></div>
+        </div>
+        <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px">
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
                 id="lien_entreprises_etudiants">Entreprises</a>
@@ -29,8 +33,7 @@
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <button id="bouton_voir_profil">Voir le profil</button>
-                <button id="bouton_deconnexion">Se déconnecter</button>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
             <img id="photo_profil"
@@ -40,11 +43,26 @@
 
     </nav>
 
+    <div id="lien_navbar_expand">
+        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
+            id="lien_entreprises_etudiants">Acceuil</a>
+        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
+            id="lien_entreprises_etudiants">Entreprises</a>
+        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
+            id="lien_candidatures">Candidatures</a>
+    </div>
+
     <main>
         <h1 class="titre police_texte">Gestion des offres de stages</h1>
 
         <section class="bloc_gestion police_texte" id="section_recherche_offres">
-            <h2>Rechercher une offre</h2>
+            <h2 id="titre_recherche">Rechercher une offre</h2>
             <div id="recherche_container">
 
                 <div id="form_recherche_offres">
@@ -178,15 +196,13 @@
             <div id="icones_modif_offres">
                 <div class="fond_ico_offres" id="btn_modif_offre">
                     <img 
-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
-                        width="40px">
+                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png">
                     <div class="overlay"></div>
                 </div>
 
                 <div class="fond_ico_offres" id="btn_voir_offre">
                     <img
-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
-                        width="40px">
+                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png">
                     <div class="overlay"></div>
                 </div>
             </div>
@@ -202,7 +218,7 @@
 
         <section id="result_all">
             <fieldset id="result_modif" class="police_texte">
-                <legend>Modifer une offre</legend>
+                <legend>Modifer l'offre</legend>
                 <form>
                     <div id="deux_partie_modif">
                         <div id="partie_modif">
@@ -251,11 +267,11 @@
                             <label>Nombre de place</label><br>
                             <input type="number" placeholder="Nombre de place pour l'offre" name="nbr_place"> <br>
                             <label>Nouvelle image</label><br>
-                            <input name="nouv_image_offre" type="file" accept="image/jpeg, image/png"><br>
+                            <input id="input_image" name="nouv_image_offre" type="file" accept="image/jpeg, image/png"><br>
                             
                         </div>
                     </div>
-                    <button id="supprimer_offre">Supprimer l'offre</button> <br>
+                    <button id="supprimer_offre" style="background-color: indianred; color: #fff;">Supprimer l'offre</button> <br>
                     <div id="btn_envoi">
                         <button type="reset">Réinitialiser</button>
                         <button type="submit">Modifer</button>
@@ -277,7 +293,7 @@
 
         </section>
 
-        <section class="bloc_gestion police_texte">
+        <section id="bloc_padding" class="bloc_gestion police_texte">
             <h2>Créer une offre</h2>
             <div class="form-row">
                 <label for="create-name">Intitulé de l'offre :</label><br>
