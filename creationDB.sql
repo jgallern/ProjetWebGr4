@@ -116,7 +116,6 @@ CREATE TABLE Etudiant(
     ID_Etudiant INT NOT NULL AUTO_INCREMENT,
     photoprofil VARCHAR(50),
     ID_Wishlist INT NOT NULL,
-    ID_Note INT NOT NULL,
     ID_Promotion INT NOT NULL,
     ID_Personne INT NOT NULL,
     PRIMARY KEY(ID_Etudiant),
