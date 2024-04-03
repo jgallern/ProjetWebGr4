@@ -21,7 +21,7 @@ class OffreController {
             $_SESSION['message'] = $message;
 
             // Redirect back to form or to a confirmation page
-            header("Location: /views/Page_Candidature/PagedeCandidature.php");
+            header("Location: ../views/Page_Candidature+PresentationOffre-Entreprise/PagedeCandidature.php");
             exit();
         }
     }
