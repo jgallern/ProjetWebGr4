@@ -8,6 +8,7 @@
     <script src="script_page_ss_connexion.js"></script>
     <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
         type="image/png">
+    <link rel="manifest" href="../assets/manifest.json" scope="/">
 
 
 </head>
