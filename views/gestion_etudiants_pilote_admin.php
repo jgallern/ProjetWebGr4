@@ -292,13 +292,14 @@
 
         <section class="bloc_gestion police_texte">
             <h2>Créer un étudiant</h2>
+            <form method="post" action="../controllers/creation_compte.php">
             <div class="form-row">
                 <label for="search-name">Nom de l'étudiant :</label><br>
-                <input id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
+                <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
             </div><br>
             <div class="form-row">
                 <label for="search-name">Prénom de l'étudiant :</label><br>
-                <input id="search-name" type="text" placeholder="Entrez le prénom de l'étudiant" />
+                <input  name="search-prenom" id="search-name" type="text" placeholder="Entrez le prénom de l'étudiant" />
             </div><br>
             <label>Promotion :</label>
             <select name="promo">
@@ -321,7 +322,7 @@
                 <option>A5 Généraliste</option>
             </select><br>
             <label>Centre :</label><br>
-            <select>
+            <select name="search-sector">
                 <option disabled selected>Choisissez un centre</option>
                 <option disabled selected>Est</option>
                 <option>Strasbourg</option>
@@ -359,10 +360,21 @@
                 <label for="create-sector">Photo de l'étudiant :</label><br>
                 <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
             </div>
+            <div class="form-row">
+                <label for="create-sector">Login :</label><br>
+                <input  name="login" id="search-name" type="text" placeholder="Entrez le login de connexion de l'étudiant" />
+
+            </div> 
+            <div class="form-row">
+                <label for="create-sector">Mot de passe :</label><br>
+                <input  name="password" id="search-name" type="password" placeholder="Entrez le mot de passe de connexion de l'étudiant" />
+
+            </div> 
             <div class="form-actions">
                 <button class="button-search">Créer</button>
                 <button class="button-reset">Réinitialiser</button>
             </div>
+            </form>
         </section>
 
 
