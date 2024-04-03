@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Stage En Bref</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script_page_ss_connexion.js"></script>
     <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
         type="image/png">
@@ -18,12 +18,41 @@
         <div id="header_page_ss_connexion">
             <a href="page_accueil_ss_connexion.html"><img id="logo_accueil" alt="logo SEB"
                     src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"></a>
-            <a class="police_texte" href="page_connexion.html" id="lien_connexion_header">CONNEXION</a>
+        <?php
+            if (isset($_COOKIE["prenom"])) {
+                echo  "<a style='color:white' href='page_accueil_admin.php'>".$_COOKIE["prenom"]."<a>";
+            }
+            ?>
+            <a class="police_texte" href=
+            <?php if (isset ($_COOKIE["connected"])) {?>
+                "../controllers/deconnection_controller.php"
+            <?php
+        }
+        else{
+            ?>"./auth/login.php" <?php
+        }?> 
+        id="lien_connexion_header">
+            <?php
+                if ($_COOKIE['connected'] == "1") {
+                ?>
+                Deconnection
+                <?php
+                }
+            else{?>Connection <?php } 
+?>
         </div>
 
         <h1 class="police_texte" id="titre_accueil">Tu cherches, <br> SEB trouve, <br> et c'est tout</h1><br>
-        <a style="text-decoration: none;" href="page_connexion.html"><button class="acentrer police_texte"
-                id="bouton_connexion_accueil">Se connecter</button></a>
+        <?php      
+            if (isset ($_COOKIE["connected"]) && $_COOKIE["connected"] == "1") {
+?>
+            <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button class="acentrer police_texte" id="bouton_connexion_accueil">Se déconnecter</button></a>
+<?php
+                }
+            else{
+                ?>
+            <a style="text-decoration: none;" href="./auth/login.php"><button class="acentrer police_texte" id="bouton_connexion_accueil">Se connecter</button></a>
+            <?php } ?>
     </section>
 
 
