@@ -94,7 +94,7 @@ class Personne{
         $status = $this->bddconnection->prepare("SELECT 
         Per.*,
         CASE
-            WHEN Etu.ID_Personne IS NOT NULL THEN 'Étudiant'
+            WHEN Etu.ID_Personne IS NOT NULL THEN 'Etudiant'
             WHEN Pil.ID_Personne IS NOT NULL THEN 'Pilote'
             WHEN Adm.ID_Personne IS NOT NULL THEN 'Administrateur'
             ELSE 'Non défini'
@@ -126,6 +126,18 @@ class Personne{
         $creation->bindParam(":prenom", $this->prenom);
 
     }
+    function chercher_personne() {  
+        try {
+            $select= $this->bddconnection->prepare("Select * from Personne");
+            $select->execute();
+            $result = $select->fetchAll();
+            return $result;
+        }
+        catch(PDOException $e) {
+
+
+    }
+}
 }
 
 
@@ -158,11 +170,19 @@ class Etudiant extends Personne {
         catch(PDOException $e) {
             return "erreur".$e->getMessage();
         }
-
-
-        
-
     }
+    function chercher_personne()
+    {
+        try {
+            $select = $this->bddconnection->prepare("Select * from Personne inner join Etudiant on Personne.ID_Personne=Etudiant.ID_Personne");
+            $select->execute(); 
+            $result = $select->fetchAll();
+            return $result;
+        } catch (PDOException $e) {
+
+        }  
+    }
+
 }
 
 

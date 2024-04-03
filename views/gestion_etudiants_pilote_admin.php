@@ -47,11 +47,10 @@
         <h1 class="titre police_texte">Gestion des Etudiants</h1>
 
         <section class="bloc_gestion police_texte">
+            <form method="post" action="../controllers/Chercher_compte.php">
             <h2>Rechercher un étudiant</h2>
             <div id="recherche_container">
-
                 <div id="form_recherche">
-                    <form>
                         <div class="form-row">
                             <label for="search-name">Nom de l'étudiant :</label><br>
                             <input id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
@@ -196,6 +195,7 @@
 
                 </div>
             </div>
+    </form>
 
         </section>
 
@@ -303,15 +303,15 @@
             <h2>Créer un étudiant</h2>
             <form method="post" action="../controllers/creation_compte.php">
             <div class="form-row">
-                <label for="search-name">Nom de l'étudiant :</label><br>
-                <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
+                <label for="search-name">Nom de l'étudiant : *</label><br>
+                <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" required/>
             </div><br>
             <div class="form-row">
-                <label for="search-name">Prénom de l'étudiant :</label><br>
-                <input  name="search-prenom" id="search-name" type="text" placeholder="Entrez le prénom de l'étudiant" />
+                <label for="search-name">Prénom de l'étudiant : *</label><br>
+                <input  name="search-prenom" id="search-name" type="text" placeholder="Entrez le prénom de l'étudiant" required />
             </div><br>
-            <label>Promotion :</label>
-            <select name="promo">
+            <label>Promotion : *</label>
+            <select required name="promo">
                 <option>--Choisir--</option>
                 <option>A2 informatique</option>
                 <option>A2 BTP</option>
@@ -330,8 +330,8 @@
                 <option>A5 S3E</option>
                 <option>A5 Généraliste</option>
             </select><br>
-            <label>Centre :</label><br>
-            <select name="search-sector">
+            <label>Centre : *</label><br>
+            <select required name="search-sector">
                 <option disabled selected>Choisissez un centre</option>
                 <option disabled selected>Est</option>
                 <option>Strasbourg</option>
@@ -370,18 +370,19 @@
                 <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
             </div>
             <div class="form-row">
-                <label for="create-sector">Login :</label><br>
-                <input  name="login" id="search-name" type="text" placeholder="Entrez le login de connexion de l'étudiant" />
+                <label for="create-sector">Login : *</label><br>
+                <input required  name="login" id="search-name" type="text" placeholder="Entrez le login de connexion de l'étudiant" />
 
             </div> 
             <div class="form-row">
-                <label for="create-sector">Mot de passe :</label><br>
-                <input  name="password" id="search-name" type="password" placeholder="Entrez le mot de passe de connexion de l'étudiant" />
+                <label for="create-sector">Mot de passe : *</label><br>
+                <input required  name="password" id="search-name" type="password" placeholder="Entrez le mot de passe de connexion de l'étudiant" />
 
             </div> 
             <div class="form-actions">
                 <button class="button-search">Créer</button>
                 <button class="button-reset">Réinitialiser</button>
+                <p> *: champ obligatoire </p>
             </div>
             </form>
         </section>
