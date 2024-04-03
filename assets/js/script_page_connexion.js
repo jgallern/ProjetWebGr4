@@ -5,4 +5,3 @@ document.addEventListener('DOMContentLoaded', function () {
     txt_bienvenue.textContent = phrase[indiceAleatoire];
 
 });
-

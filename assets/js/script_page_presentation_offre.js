@@ -80,22 +80,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 })
-
-
-function toggleMenu() {
-    var menuIcon = document.querySelector('.menu-icon');
-    var navbar = document.getElementById("navbar");
-    var lien_navbar = document.getElementById("lien_navbar_expand");
-
-    menuIcon.classList.toggle('cross');
-    if(navbar.classList.contains("expand")) {
-        navbar.classList.remove("expand");
-        document.body.classList.remove('disable-scroll');
-        lien_navbar.classList.remove('visible');
-
-    } else {
-        document.body.classList.add('disable-scroll');
-        navbar.classList.add("expand");
-        lien_navbar.classList.add('visible');
-    }  
-}

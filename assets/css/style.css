@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-image: url("C:/Users/quent/Downloads/Design sans titre (1).svg");
     background-attachment: fixed;
-    background-size: cover;
+    background-size:cover;
 }
 
 #header_page_ss_connexion {
@@ -34,7 +34,7 @@ body {
     transition: background-color 0.4s;
 }
 
-#lien_connexion_header:hover {
+#lien_connexion_header:hover{
     background-color: #ccc;
     transition: background-color 0.4s;
 }
@@ -63,93 +63,25 @@ body {
     border-radius: 7px;
     cursor: pointer;
     background-color: azure;
-    transition: background-color 0.3s ease-in-out;
-    /* Utilisation de la fonction de transition "ease-in-out" */
+    transition: background-color 0.3s ease-in-out; /* Utilisation de la fonction de transition "ease-in-out" */
 }
 
 #bouton_connexion_accueil:hover {
-    background-color: #B3B3B3;
+    background-color: #B3B3B3; 
 }
 
 
 /* Header */
 #navbar {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     background-color: #272727;
     position: sticky;
     top: 0em;
     height: 4em;
     z-index: 999;
-    transition: height 0.4s;
 }
-
-#lien_navbar_expand {
-    display: none;
-}
-
-#lien_navbar_expand.visible {
-    display: block;
-    position: absolute;
-    top: 6em;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-}
-
-.linking-animation {
-    opacity: 0;
-    animation: slideAndFade 0.5s ease forwards;
-}
-
-.delay-0 {
-    animation-delay: 0.1s;
-    /* délai pour le premier lien */
-}
-
-.delay-1 {
-    animation-delay: 0.2s;
-    /* délai pour le deuxième lien */
-}
-
-.delay-2 {
-    animation-delay: 0.3s;
-    /* délai pour le troisième lien */
-}
-
-.delay-3 {
-    animation-delay: 0.4s;
-    /* délai pour le quatrième lien */
-}
-
-.delay-4 {
-    animation-delay: 0.5s;
-    /* délai pour le cinquième lien */
-}
-
-.delay-5 {
-    animation-delay: 0.6s;
-    /* délai pour le sixième lien */
-}
-
-@keyframes slideAndFade {
-    0% {
-        opacity: 0;
-        transform: translateX(-20%);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-#navbar.expand {
-    height: 100vh;
-    align-items: flex-start;
-    transition: height 0.4s;
-}
-
 
 
 /*   SECTION OFFRES  */
@@ -189,6 +121,7 @@ body {
     margin-right: 2em;
     margin-top: auto;
     margin-bottom: auto;
+
 }
 
 .titre_poste {
@@ -253,6 +186,7 @@ body {
     border-radius: 5px;
     border: solid black 1px;
     font-size: 1em;
+
 }
 
 #boutons {
@@ -319,7 +253,7 @@ body {
     margin-right: 5em;
     box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
     border-radius: 12px;
-    background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
+    background: radial-gradient(circle at 100% 0,hsla(0,0%,100%,.50) 0,hsla(0,0%,96.1%,.3) 183%);
 }
 
 .offres_header {
@@ -371,7 +305,7 @@ body {
 .offres_container .offre {
     text-decoration: none;
     color: black;
-    background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
+    background: radial-gradient(circle at 100% 0,hsla(0,0%,100%,.50) 0,hsla(0,0%,96.1%,.3) 183%);
     border-radius: 10px;
     box-shadow: 0 11px 10px 0 rgba(0, 0, 0, .2);
     min-width: 10%;
@@ -383,10 +317,11 @@ body {
     /*padding-right: 2em;*/
     transition: width 0.6s, height 0.6s, filter 0.6s;
     transition: transform 0.3s ease;
+
 }
 
 
-.btn_suppr {
+.btn_suppr{
     bottom: 0;
     left: 0;
     right: 0;
@@ -403,7 +338,7 @@ body {
 }
 
 
-.btn_suppr:hover {
+.btn_suppr:hover{
     background-color: #bb2323;
     color: white;
     transition: 0.4s;
@@ -570,11 +505,6 @@ body {
     display: flex;
 }
 
-#lien_accueil {
-    display: none;
-}
-
-
 .lien_nav {
     display: flex;
     margin-right: 3em;
@@ -591,23 +521,15 @@ body {
     transition: 0.2s;
 }
 
-/*
+
 #profil {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: inherit;
-    margin-top: 0.3em;
-    margin-right: 1em;
-    background-color: blue;
-}*/
-
-#profil {
-    margin-top: 0.5em;
+    position: relative;
     margin-right: 1em;
 }
-
 
 #detail_profil {
 
@@ -759,7 +681,7 @@ body {
     text-align: center;
     color: #141412;
     transition: transform 0.4s;
-    background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
+    background: radial-gradient(circle at 100% 0,hsla(0,0%,100%,.50) 0,hsla(0,0%,96.1%,.3) 183%);
     padding: 1em;
 
 
@@ -1044,9 +966,11 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.715);
+    /* Couleur de fond semi-transparente */
     display: none;
     transition: background-color 0.4s ease-in-out;
     z-index: 99;
+    /* Pour placer au-dessus de tout le contenu */
 }
 
 #message {
@@ -1072,7 +996,9 @@ body {
     margin-left: 1em;
     overflow-y: scroll;
     scrollbar-width: none;
+    /* Pour Firefox */
     -ms-overflow-style: none;
+    /* Pour Internet Explorer et Edge */
     cursor: pointer;
 
     transition: background-color 0.4s;
@@ -1099,6 +1025,7 @@ body {
 
 .recherche_fiche_entreprise::-webkit-scrollbar {
     display: none;
+    /* Pour Chrome, Safari et Opera */
 }
 
 #form_recherche {
@@ -1152,25 +1079,6 @@ body {
     cursor: pointer;
 }
 
-#icones_modif_entreprise {
-    display: flex;
-    position: absolute;
-    width: fit-content;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-}
-
-#icones_modif_entreprise>*:nth-child(-n+2) {
-
-    margin-right: 5em;
-    cursor: pointer;
-}
-
-#icones_modif_entreprise .image-container:last-child {
-    cursor: pointer;
-}
-
 
 .image-container {
     position: relative;
@@ -1178,12 +1086,14 @@ body {
     padding-left: 1em;
     padding-right: 1em;
     padding-top: 1em;
+
 }
 
 .overlay {
     z-index: -1;
     position: absolute;
     bottom: 0;
+    /* Ajustement pour la position de départ */
     left: 0;
     width: 100%;
     height: 0;
@@ -1332,10 +1242,6 @@ body {
     margin-top: 3em;
 }
 
-#icones_modif_offres img {
-    width: 40px;
-}
-
 .fond_ico_offres {
     cursor: pointer;
     padding: 1em;
@@ -1409,36 +1315,33 @@ body {
 
 
 /*  Présentation offre  */
-#entete_presentation_offre {
+#entete_presentation_offre{
     display: flex;
     align-items: center;
 }
 
-#nom_description {
+#nom_description{
     margin-left: 3em;
     width: 60%;
 }
 
-#icone_favori {
+#icone_favori{
     margin-left: auto;
     margin-right: 2em;
     width: 50px;
     fill: #00D5E8;
     stroke: #0b0b0b;
     cursor: pointer;
-    transition: 0.3s;
+    transition:  0.3s;
 }
-
-#icone_favori.clicked {
+#icone_favori.clicked{
     fill: red;
 }
-
 #icone_favori:hover {
-    stroke: gold;
-    /* Couleur de fond lors du survol */
+    stroke: gold; /* Couleur de fond lors du survol */
 }
 
-#details_offre {
+#details_offre{
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -1446,19 +1349,18 @@ body {
 }
 
 
-#partie_2_offre {
+#partie_2_offre{
     margin-left: 6em;
 }
 
-#btn_candidater,
-#submit_cv {
+#btn_candidater, #submit_cv{
     text-decoration: none;
     display: block;
     width: fit-content;
     color: black;
     margin-top: 2em;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto  ;
     padding: 1em;
     border: solid 2px #c2c2c2;
     background-color: #797979;
@@ -1467,31 +1369,29 @@ body {
     cursor: pointer;
 }
 
-#btn_candidater:hover,
-#submit_cv:hover {
+#btn_candidater:hover, #submit_cv:hover{
     background-color: #B3B3B3;
     border: solid 1px #797979;
     transition: 0.4s;
 }
 
-#upload_cv input {
+#upload_cv input{
     margin-bottom: 3em;
 }
 
-#previews {
+#previews{
     display: flex;
 }
 
-#pdf_viewer_cv,
-#pdf_viewer_lm {
+#pdf_viewer_cv,#pdf_viewer_lm{
     border-radius: 10px;
     margin-left: 3em;
     width: 250px;
     height: 300px;
     margin-top: 3em;
-    border: none;
+    border:none;
     background-image: url("C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/aucun_fichier.png");
-    background-size: 250px;
+    background-size:250px;
     background-position-y: 55%;
 }
 
@@ -1510,448 +1410,25 @@ footer {
 }
 
 
-.menu-icon {
-    display: none;
-    width: 30px;
-    height: 20px;
-    position: relative;
-    cursor: pointer;
-    margin-left: 2em;
-    position: inherit;
-    margin-top: 1.5em;
-}
-
-.bar,
-.bar_2 {
-    width: 100%;
-    height: 4px;
-    background-color: white;
-    position: absolute;
-    transition: transform 0.4s ease;
-    border-radius: 8px;
-}
-
-.bar_2 {
-    width: 80%;
-}
-
-.bar:nth-child(1) {
-    top: 0;
-}
-
-.bar_2:nth-child(2) {
-    bottom: 0;
-}
-
-.cross .bar:nth-child(1) {
-    transform: rotate(45deg);
-    top: 8px;
-}
-
-.cross .bar_2:nth-child(2) {
-    transform: rotate(-45deg);
-    bottom: 8px;
-    width: 100%;
-}
-
-#ul_adresse li, .ul_adresse_modif li{
-    list-style: none;
-    background-color:#ccc;
-    cursor: pointer;
-    border-radius: 6px;
-    width: fit-content;
-    padding: 0.5em;
-    margin-bottom: 0.2em;
-    transition: 0.2s;
-}
-
-#ul_adresse li:hover, .ul_adresse_modif li:hover{
-    background-color: #797979;
-    transition: 0.2s;
-
-}
-
-
-@media (max-width: 1000px) {
-
-    body {
-        overflow-x: hidden;
-    }
-
-    #logo_seb {
-        display: none;
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-
-    #lien_navbar {
-        display: none;
-    }
-
-
-    .disable-scroll {
-        overflow: hidden;
-    }
-
-    #recherche_container {
-        display: block;
-    }
-
-    #form_recherche {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #titre_recherche {
-        margin-left: 1em;
-    }
-
-
-    .bloc_gestion {
-        padding-left: 0;
-    }
-
-    #fiches_entreprises_et_boutons {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-        position: static;
-        text-align: center;
-    }
-
-    #icones_modif {
-        position: static;
-        display: block;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
-        bottom: 0;
-        width: fit-content;
-        left: 0;
-        transform: none;
-    }
-
-    #icones_modif_entreprise {
-        position: static;
-        margin-top: 2em;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        left: 0;
-        transform: none;
-
-
-        width: fit-content;
-        bottom: 0;
-    }
-
-    #icones_modif_entreprise>*:nth-child(-n+2) {
-        margin-right: 2em;
-        cursor: pointer;
-    }
-
-    .image-container {
-        position: static;
-        display: block;
-        padding-left: 0em;
-        padding-right: 0em;
-        padding-top: 0em;
-        margin-top: 1em;
-        transform: translateX(120%);
-    }
-
-    #btn_modif,
-    #btn_stats,
-    #btn_voir {
-        transform: none;
-    }
-
-    #result_recherche_entreprise {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .form_buttons {
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
-
-    .recherche_fiche_entreprise {
-        margin-right: 0.2em;
-        margin-left: 0.2em;
-        flex: 0 0 calc(50% - 1em);
-    }
-
-
-
-    #form_partie_all {
-        display: block;
-    }
-
-
-    .recherche_fiche_offres {
-        height: 12em;
-        flex: 0 0 calc(70% - 1em);
-        margin-left: 0.2em;
-        margin-right: 0.2em;
-    }
-
-    #icones_modif_offres img {
-        width: 20px;
-    }
-
-    #btn_modif_offre {
-        margin-right: 2em;
-    }
-
-    #bloc_padding {
-        padding: 1em;
-    }
-
-    .titre {
-        padding-left: 1em;
-        font-weight: 400;
-    }
-
-    #deux_partie_modif {
-        display: block;
-    }
-
-
-    #result_modif.visible,
-    #result_stats.visible {
-        position: static;
-        visibility: visible;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 3em;
-        padding-left: 0.5em;
-        width: 60%;
-        border-radius: 10px;
-        box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
-    }
-
-    #input_image {
-        width: 10em;
-    }
-
-    #btn_envoi button {
-        width: 50%;
-        margin-top: 0.5em;
-    }
-
-    #description_entreprise,
-    #commentaire_entreprise {
-        margin-top: 1em;
-        border-radius: 5px;
-        width: 15em;
-        height: 7em;
-        resize: none;
-        cursor: text;
-    }
-
-
-    .carte_entreprise {
-        width: 80%;
-        text-decoration: none;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        color: #141412;
-        transition: transform 0.4s;
-        background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
-        padding: 1em;
-
-    }
-
-    .carte_entreprise img {
-        width: 80px;
-    }
-
-    #titre_page {
-        margin-left: 1em;
-        font-size: 2em;
-    }
-
-    #titre_ta_wishlist,
-    #titre_tes_candidatures {
-        font-size: 1.5em;
-    }
-
-    .offres_header {
-        display: block;
-        align-items: center;
-        padding-right: 0.2em;
-        padding-left: 0.2em;
-    }
-
-    .recherche_offres {
-        cursor: text;
-        font-size: 0.9em;
-        margin-left: 1em;
-        border-radius: 20px;
-        width: 80%;
-        padding: 0.2em;
-        border: none;
-    }
-
-    .wish_cand {
-        display: flex;
-        flex-direction: column;
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
-        border-radius: 12px;
-        background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
-    }
-
-    #defilement_gauche_wishlist,
-    #defilement_gauche_candidatures {
-        display: none;
-    }
-
-    #defilement_droite_wishlist,
-    #defilement_droite_candidatures {
-        display: none;
-    }
-
-    .offres_container .offre {
-        width: 80%;
-    }
-
-    .offre img {
-        width: 50px;
-    }
-
-    .offres_container {
-
-        overflow-x: scroll;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        padding-bottom: 4em;
-        padding-top: 2em;
-        width: 90%;
-    }
-
-    .offres_container::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    .offres_container::-webkit-scrollbar {
-        width: 3px;
-        height: 0.5rem;
-    }
-
-    .offres_container::-webkit-scrollbar-thumb {
-        border-radius: 20px;
-        background-color: #797979;
-    }
-
-    .lien_nav {
-        cursor: pointer;
-        display: flex;
-        margin-right: 3em;
-        text-decoration: none;
-        color: #fff;
-        transition: 0.2s;
-        padding: 1em;
-        font-size: larger;
-    }
-
-    .imgs_offre {
-        width: 6em;
-        float: left;
-        margin-left: 0.7em;
-        margin-right: 2em;
-        margin-top: auto;
-        margin-bottom: auto;
-    }
-
-    .offre_stage {
-        width: 80%;
-        /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
-        padding: 5px;
-        background-color: #f2f2f2;
-        margin-bottom: 10px;
-        /* Espacement entre les lignes */
-        border-radius: 6px;
-        margin-top: 2.5em;
-        margin-left: 1em;
-        display: block;
-        align-items: center;
-    }
-
-    .offre-details {
-        display: block;
-        justify-content: left;
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .bouton_candidater {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        border-radius: 4px;
-        border: 0.5px solid black;
-        cursor: pointer;
-        background-color: white;
-        font-size: 1em;
-        margin-top: 1em;
-    }
-
+@media (max-width: 1300px) {
     #logo_connexion {
         width: 5em;
         margin-top: 0.2em;
     }
 
     #titre_bienvenue {
-        font-size: 1em;
-        margin-bottom: 1em;
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
     }
 
     #fenetre_login {
-        width: 80%;
+        width: 40%;
         margin: auto;
         border: solid black 1px;
         border-radius: 6px;
-        padding: 1em;
+        padding: 2em;
         padding-top: 0.5em;
         background-color: white;
-    }
-
-    #txt_connexion_responsive {
-        font-size: 1em;
-    }
-
-    .input_connexion {
-        padding: 0.4em;
-        border-radius: 5px;
-        border: solid black 1px;
-        font-size: 0.7em;
-    }
-
-    #oubli_mdp,
-    #submit {
-        font-size: 0.7em;
-        cursor: pointer;
-        display: inline-block;
-        margin-top: 1em;
-        border: 1px solid black;
-        border-radius: 6px;
-        padding: 1em;
-        margin-right: 0.5em;
     }
 
 }
