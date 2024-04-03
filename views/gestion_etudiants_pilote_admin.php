@@ -5,12 +5,16 @@
     <meta charset="utf-8">
     <title>Gestion Etudiants
     </title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <link rel="icon" href="" type="image/png">
 
 <body>
     <nav id="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar_2"></div>
+        </div>
         <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html" id="lien_entreprises_etudiants">Entreprises</a>
@@ -23,8 +27,7 @@
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <button id="bouton_voir_profil">Voir le profil</button>
-                <button id="bouton_deconnexion">Se déconnecter</button>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
             <img id="photo_profil"
@@ -34,16 +37,22 @@
 
     </nav>
 
-    <main>
-        <?php
-        if ($_GET["creation"]=="echec"){
-            echo "<p style='text-align:center'>Erreur lors de la création du compte étudiant  	&#128546</p>";
-        }
-        else if ($_GET["creation"]== "succes"){
+    <div id="lien_navbar_expand">
+        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
+            id="lien_entreprises_etudiants">Acceuil</a>
+        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
+            id="lien_entreprises_etudiants">Entreprises</a>
+        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
+            id="lien_candidatures">Candidatures</a>
+    </div>
 
-            echo "<p style='text-align:center'>Création du compte étudiant réussie &#128077</p>";
-        }
-        ?>
+    <main>
         <h1 class="titre police_texte">Gestion des Etudiants</h1>
 
         <section class="bloc_gestion police_texte">
@@ -301,7 +310,6 @@
 
         <section class="bloc_gestion police_texte">
             <h2>Créer un étudiant</h2>
-            <form method="post" action="../controllers/creation_compte.php">
             <div class="form-row">
                 <label for="search-name">Nom de l'étudiant : *</label><br>
                 <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" required/>
@@ -384,7 +392,6 @@
                 <button class="button-reset">Réinitialiser</button>
                 <p> *: champ obligatoire </p>
             </div>
-            </form>
         </section>
 
 

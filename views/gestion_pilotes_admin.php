@@ -5,16 +5,22 @@
     <meta charset="utf-8">
     <title>Gestion Pilotes
     </title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="../assets/js/script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <link rel="icon" href="" type="image/png">
 
 <body>
     <nav id="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar_2"></div>
+        </div>
         <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
         <div id="lien_navbar">
-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
-                id="lien_entreprises_etudiants">Entreprises</a>
+            
+            <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html"
+            id="lien_accueil">Accueil</a>
+
             <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html"
                 id="lien_offres_etudiants">Offres</a>
             <a class="lien_nav police_texte" href="gestion_pilotes_admin.html" id="lien_offres_etudiants">Pilotes</a>
@@ -27,8 +33,7 @@
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <button id="bouton_voir_profil">Voir le profil</button>
-                <button id="bouton_deconnexion">Se déconnecter</button>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
             <img id="photo_profil"
@@ -38,26 +43,41 @@
 
     </nav>
 
+    <div id="lien_navbar_expand">
+        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
+            id="lien_entreprises_etudiants">Acceuil</a>
+        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
+            id="lien_entreprises_etudiants">Entreprises</a>
+        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
+            id="lien_candidatures">Candidatures</a>
+    </div>
+
     <main>
         <h1 class="titre police_texte">Gestion des Pilotes</h1>
 
         <section class="bloc_gestion police_texte">
-            <h2>Rechercher un pilote</h2>
+            <h2 id="titre_recherche">Rechercher un pilote</h2>
             <div id="recherche_container">
 
                 <div id="form_recherche">
-                    <form method="post" action="../controllers/creation_compte.php">
+                    <form>
                         <div class="form-row">
                             <label for="search-name">Nom du pilote :</label><br>
-                            <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom du pilote">
+                            <input id="search-name" type="text" placeholder="Entrez le nom du pilote">
                         </div>
                         <div class="form-row">
-                            <label for="search-prenom">Prénom du pilote :</label><br>
-                            <input id="search-prenom" name="search-prenom" type="text" placeholder="Entrez le prénom du pilote">
+                            <label for="search-stages">Prénom du pilote :</label><br>
+                            <input id="search-stages" type="text" placeholder="Entrez le prénom du pilote">
                         </div>
                         <div class="form-row">
                             <label for="search-sector">Centre :</label><br>
-                            <select name="search-sector">
+                            <select>
                                 <option disabled selected>Choisissez un centre</option>
                                 <option disabled selected>Est</option>
                                 <option>Strasbourg</option>
