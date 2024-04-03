@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Gestion des entreprises</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script_page_gestion_entreprise_admin.js"></script>
 </head>
 
