@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Nom Offre</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script_page_presentation_offre.js"></script>
     <link rel="icon" href="" type="image/png">
 </head>

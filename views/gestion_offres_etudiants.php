@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Gestion entreprise
     </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script_gestion_entreprise_etudiant.js"></script>
     <link rel="icon" href="" type="image/png">
 
