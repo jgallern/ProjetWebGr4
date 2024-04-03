@@ -795,11 +795,6 @@ body {
 }
 
 
-
-
-
-
-
 .form-section {
     display: flex;
     gap: 20px;
@@ -999,7 +994,8 @@ body {
     position: relative;
 }
 
-#result_recherche_offres {
+
+#result_recherche_offres{
     border-radius: 8px;
     background-color: #fff;
     width: 80%;
@@ -1203,6 +1199,76 @@ body {
     position: absolute;
     visibility: hidden;
 }
+
+
+#result_modif_pilote{
+    margin-top: 2em;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
+    padding: 2em;
+    display: block;
+}
+
+#result_modif_pilote input, select{
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+    border-radius: 8px;
+    padding: 0.5em;
+}
+
+#result_modif_pilote #supprimer_entreprise{
+    width: 40%;
+    padding: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    color: #fff;
+    transition: 0.2s;
+
+}
+
+#result_modif_pilote #supprimer_entreprise:hover{
+    background-color: rgb(183, 40, 40);
+    transition: 0.2s;
+}
+
+#result_modif_pilote #btn_envoi{
+    text-align: center;
+}
+
+#result_modif_pilote #btn_envoi button{
+    padding: 1em;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+#result_modif_pilote #btn_envoi button:hover{
+    transition: 0.2s;
+    background-color: #c2c2c2;
+}
+
+#btn_reinitialiser_pilote{
+    margin-right: 1em;
+}
+
+
+#check_promos input{
+    width: fit-content;
+    border-radius: 5px;
+    padding: 0.6em;
+    border: none;
+    margin-top: 0em;
+    max-width: none;
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
 
 #result_modif.visible,
 #result_stats.visible {
@@ -1613,6 +1679,10 @@ footer {
 
     .bloc_gestion {
         padding-left: 0;
+    }
+
+    .padding_bloc{
+        padding-left: 1em;
     }
 
     #fiches_entreprises_et_boutons {
