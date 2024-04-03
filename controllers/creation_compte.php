@@ -10,7 +10,7 @@ if (isset($_POST["search-prenom"])) {
 }
 if (isset($_POST["search-sector"])) {
     $secteur = "CESI ".$_POST["search-sector"];
-    //echo $secteur;
+    echo $secteur;
 }
 if (isset($_POST["promo"])) {
     $promo = $_POST["promo"];
@@ -21,9 +21,6 @@ if (isset($_POST["login"])) {
 }
 if (isset($_POST["password"])) {
     $password = $_POST["password"];
-}
-else {
-    echo "test";
 }
 
 

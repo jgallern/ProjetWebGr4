@@ -28,9 +28,6 @@ Class Promo{
     function set_name($name) {
         $this->name = 'A5 BTP';
     }
-    function set_id($id) {
-        $this->id = $id;    
-    }
     function get_ID()
     {
         try {
@@ -53,24 +50,8 @@ Class Promo{
 
     }
 
-    public function get_name($id)
+    function get_name()
     {
-        try {
-            $getid = $this->bddconnection->prepare("SELECT Nom_Promo FROM Promotion WHERE ID_Promotion = :idprmo");
-            $getid->bindParam(':idprmo', $id);
-            $getid->execute();
-
-            $result = $getid->fetch(PDO::FETCH_ASSOC);
-
-            if ($result) {
-                $this->name = $result['Nom_Promo'];
-                return $result['Nom_Promo'];
-            } else {
-                return "Aucun résultat trouvé";
-            }
-        } catch (PDOException $e) {
-
-            return "erreur";
-        }
+        return $this->name;
     }
 }

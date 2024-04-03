@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             setcookie("connected", true,time()+3600, "/");
             setcookie("prenom", $name ,time()+ 3600 ,"/");
             setcookie("statut", $statut ,time()+ 3600 ,"/");
-            if ($statut == "Etudiant") {
+            if ($statut == "Étudiant") {
                 header("Location: ../views/page_accueil_etudiant.php");
             }
             else if ($statut == "Pilote") {
