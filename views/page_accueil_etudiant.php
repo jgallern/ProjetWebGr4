@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Acceuil</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script.js"></script>
     <link rel="icon" href="" type="image/png">
 </head>
@@ -13,13 +13,13 @@
     <nav id="navbar">
         <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
         <div id="lien_navbar">
-            <a class="lien_nav police_texte" href="gestion_entreprise_etudiants.html"
+            <a class="lien_nav police_texte" href="gestion_entreprise_etudiants.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
-            <a class="lien_nav police_texte" href="gestion_offres_etudiants.html"
+            <a class="lien_nav police_texte" href="gestion_offres_etudiants.php"
                 id="lien_offres_etudiants">Offres</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html"
+            <a class="lien_nav police_texte" href="page_wishlist_candidatures.php"
                 id="lien_offres_etudiants">Mes listes</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html"
+            <a class="lien_nav police_texte" href="page_wishlist_candidatures.php"
                 id="lien_offres_etudiants">Candidatures</a>
         </div>
         <div id="profil">
@@ -37,7 +37,7 @@
 
     <main>
 
-        <h1 class="police_texte">Bonjour Alice</h1>
+        <h1 class="police_texte">Bonjour <?=$_COOKIE["prenom"]?></h1>
 
         <h2 class="police_texte">Dernières actualités</h2>
 

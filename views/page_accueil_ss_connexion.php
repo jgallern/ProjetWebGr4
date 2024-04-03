@@ -18,7 +18,7 @@
             <a href="page_accueil_ss_connexion.html"><img id="logo_accueil" alt="logo SEB" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"></a>
             <?php
             if (isset($_COOKIE["prenom"])) {
-                echo  "<p style='color:white'>".$_COOKIE["prenom"]."<p>";
+                echo  "<a style='color:white' href='page_accueil_admin.php'>".$_COOKIE["prenom"]."<a>";
             }
             ?>
             <a class="police_texte" href=
