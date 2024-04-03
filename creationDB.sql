@@ -33,6 +33,8 @@ CREATE TABLE Notes(
     ID_Note INT NOT NULL AUTO_INCREMENT,
     Note INT,
     Commentaire VARCHAR(280),
+    ID_Personne INT,
+    FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne),
     PRIMARY KEY(ID_Note)
 );
 
@@ -60,10 +62,8 @@ CREATE TABLE Personne(
 CREATE TABLE Pilote(
     ID_Pilote INT NOT NULL AUTO_INCREMENT,
     photoprofile VARCHAR(50),
-    ID_Note INT NOT NULL,
     ID_Personne INT NOT NULL,
     PRIMARY KEY(ID_Pilote),
-    FOREIGN KEY(ID_Note) REFERENCES Notes(ID_Note),
     FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne)
 );
 
