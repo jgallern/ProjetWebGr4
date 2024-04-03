@@ -43,7 +43,6 @@ $prs->set_Nom($nom);
 $prs->set_Prenom($prenom);
 $prs->set_ID_Centre($cntr->get_ID());
 $prmo->set_name($promo);
-echo "<p>".$prmo->get_name()."<p>";
 echo "<p>".$prmo->get_ID()."<p>";
 $prs->set_ID_Promotion($prmo->get_ID());
 $prs->set_Login($login);

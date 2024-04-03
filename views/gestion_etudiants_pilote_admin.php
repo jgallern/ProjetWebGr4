@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Gestion Etudiants
     </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script.js"></script>
     <link rel="icon" href="" type="image/png">
 
@@ -53,6 +53,15 @@
     </div>
 
     <main>
+        <?php
+        if ($_GET["creation"]=="echec"){
+            echo "<p style='text-align:center'>Erreur lors de la création du compte étudiant  	&#128546</p>";
+        }
+        else if ($_GET["creation"]== "succes"){
+
+            echo "<p style='text-align:center'>Création du compte étudiant réussie &#128077</p>";
+        }
+        ?>
         <h1 class="titre police_texte">Gestion des Etudiants</h1>
 
         <section class="bloc_gestion police_texte">
@@ -310,6 +319,7 @@
 
         <section class="bloc_gestion police_texte">
             <h2>Créer un étudiant</h2>
+            <form methode="post" action="../controllers/creation_compte.php" >
             <div class="form-row">
                 <label for="search-name">Nom de l'étudiant : *</label><br>
                 <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" required/>
@@ -392,6 +402,7 @@
                 <button class="button-reset">Réinitialiser</button>
                 <p> *: champ obligatoire </p>
             </div>
+            </form>
         </section>
 
 
