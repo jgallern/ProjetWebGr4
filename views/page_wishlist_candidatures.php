@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Stage En Bref</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script_wishlist_candidatures.js"></script>
     <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
         type="image/png">
