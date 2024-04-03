@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Acceuil</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script_page_acceuil.js"></script>
     <link rel="icon" href="" type="image/png">
 </head>
@@ -58,7 +58,7 @@
 
     <main>
 
-        <h1 class="police_texte">Bonjour Alice</h1>
+        <h1 class="police_texte">Bonjour <?=$_COOKIE["prenom"]?></h1>
 
         <h2 class="police_texte">Dernières actualités</h2>
 
