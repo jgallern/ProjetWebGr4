@@ -52,7 +52,7 @@ $creation = $prs->creer_personne();
 
 if ($creation == "true") {
     echo "création réussie";
-    header("Location: ../views/gestion_etudiants_pilote_admin.php?creation=succes");
+    header("Location: ../views/view_admin/gestion_etudiants_admin.php?creation=succes");
 } else {
-    header("Location: ../views/gestion_etudiants_pilote_admin.php?creation=echec");
+    header("Location: ../views/view_admin/gestion_etudiants_admin.php?creation=echec");
 }
