@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Nom Offre</title>
+    <title>Présentation entreprise</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
         integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
         crossorigin="" />
@@ -57,27 +57,21 @@
 
         <h1 class="titre police_texte">Intitulé Entreprise</h1>
 
-        <div class="bloc_gestion police_texte">
+        <div id="bloc_presentation_entreprise" class="bloc_gestion police_texte">
             <div id="infos_et_carte">
                 <div id="infos_entreprise">
                     <img width="150px" id="img_offre_page_presentation"
                         href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.andrh.fr%2Fprestataires%2Fonlineformapro&psig=AOvVaw1QLVdktc6MNcY0vXlTb4j3&ust=1711034985290000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIj-jZWUg4UDFQAAAAAdAAAAABAI">
                     <h2>Nom entreprise</h2>
-                    <p>Ce texte contiendra les détails de l'offre en question</p>
-                    <h3>Lieu du stage</h3>
-                    <p>Strasbourg</p>
-                    <h3>Date du stage :</h3>
-                    <p>Du 08 avril 2024 au 28 juillet 2024</p>
-                    <h3>Promotions :</h3>
-                    <p>A2 informatique, A2 Généraliste</p>
-                    <h3>Nombre de place :</h3>
-                    <p>14</p>
-                    <h3>Nombre de demandes :</h3>
-                    <p>120</p>
-                    <h3>Rémunération :</h3>
-                    <p>4.50 euros/heure</p>
+                    <p>Ce texte contiendra les détails de l'entreprise en question</p>
+                    <h3>Localité de l'entreprise</h3>
+                    <ul>
+                        <li>Lieu 1</li>
+                        <li>Lieu 2</li>
+                        <li>Lieu 3</li>
+                    </ul>
 
-                    <p>Annonce mise en ligne le : 09/04/2023</p>
+                    <p>Entreprise mise en ligne le : 09/04/2023</p>
                 </div>
 
                 <div id="map">

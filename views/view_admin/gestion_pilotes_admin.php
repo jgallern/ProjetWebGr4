@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>Gestion Pilotes
     </title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="script.js"></script>
-    <link rel="icon" href="" type="image/png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../assets/js/script_gestion_pilotes_admin.js"></script>
+    <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
 
 <body>
     <nav id="navbar">
@@ -15,19 +15,18 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
+        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60px" /></a>
         <div id="lien_navbar">
-
-            <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html" id="lien_accueil">Accueil</a>
-
-            <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html"
+            <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
+                id="lien_entreprises_etudiants">Entreprises</a>
+            <a class="lien_nav police_texte" href="../view_admin/gestion_offre_admin.php"
                 id="lien_offres_etudiants">Offres</a>
-            <a class="lien_nav police_texte" href="gestion_pilotes_admin.html" id="lien_offres_etudiants">Pilotes</a>
-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
+            <a class="lien_nav police_texte" href="../view_admin/gestion_pilotes_admin.php"
+                id="lien_offres_etudiants">Pilotes</a>
+            <a class="lien_nav police_texte" href="../view_admin/gestion_etudiants_admin.php"
                 id="lien_offres_etudiants">Etudiants</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html"
-                id="lien_candidatures">Candidatures</a>
+            <a class="lien_nav police_texte" href="../view_admin/page_wishlist_candidatures_admin.php"
+                id="lien_candidatures">Wishlit et Candidatures</a>
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
@@ -37,25 +36,25 @@
             </div>
 
             <img id="photo_profil"
-                src="C:\Users\quent\OneDrive - Association Cesi Viacesi mail\A2\04_web\Projet\images\photo_profil.png"
+                src="../../assets/images/photo_profil.png"
                 alt="photo_profil">
         </div>
 
     </nav>
 
     <div id="lien_navbar_expand">
-        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-0" href="../view_admin/page_accueil_admin.php"
             id="lien_entreprises_etudiants">Acceuil</a>
-        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-1" href="../view_admin/gestion_entreprise_admin.php"
             id="lien_entreprises_etudiants">Entreprises</a>
-        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-2" href="../view_admin/gestion_offre_admin.php"
             id="lien_offres_etudiants">Offres</a>
-        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-3" href="../view_admin/gestion_etudiants_admin.php"
             id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
-            id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
-            id="lien_candidatures">Candidatures</a>
+        <a class="lien_nav police_texte linking-animation delay-4" href="../view_admin/gestion_pilotes_admin.php"
+            id="lien_offres_etudiants">Pilotes</a>
+        <a class="lien_nav police_texte linking-animation delay-5" href="../view_admin/page_wishlist_candidatures.php"
+            id="lien_candidatures">Wishlit et Candidatures</a>
     </div>
 
     <main>
@@ -222,7 +221,7 @@
                         </div>
 
                         <div id="overlay"></div>
-                        <div id="message">Veuillez sélectionner une entreprise</div>
+                        <div id="message">Veuillez sélectionner un pilote</div>
                     </div>
 
 
@@ -247,7 +246,7 @@
         </div>
 
         <section id="result_all">
-            <fieldset id="result_modif_pilote" class="police_texte">
+            <fieldset id="result_modif" class="police_texte">
                 <legend>Modifier un pilote</legend>
                 <form>
                     <label>Nouveau nom :</label><br>

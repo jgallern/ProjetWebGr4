@@ -69,10 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var btnOui = document.getElementById('btnOui');
     var btnNon = document.getElementById('btnNon');
 
-
+    const imageContainers = document.querySelectorAll('.image-container');
 
     var divs = document.querySelectorAll('.recherche_fiche_entreprise');
 
+    
     function no_click_icones() {
         imageContainers.forEach(container => {
             container.classList.remove('clicked');
@@ -184,8 +185,6 @@ document.addEventListener('DOMContentLoaded', function () {
             window.scrollTo({ top: position, behavior: 'smooth' });
         }
     });
-
-    const imageContainers = document.querySelectorAll('.image-container');
 
     imageContainers.forEach(container => {
         container.addEventListener('click', function () {
