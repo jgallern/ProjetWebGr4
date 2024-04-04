@@ -208,7 +208,7 @@ class Etudiant extends Personne
     function chercher_personne()
     {
         try {
-            $sql = "SELECT * FROM Personne";
+            $sql = "SELECT * FROM Personne inner join Etudiant on Personne.ID_Personne = Etudiant.ID_Personne";
             $whereClause = array();
 
             if ($this->nom != null) {
@@ -247,7 +247,6 @@ class Etudiant extends Personne
             }
 
             $select->execute();
-            print_r($select);
             $result = $select->fetchAll();
             return $result;
         } catch (PDOException $e) {
@@ -255,49 +254,6 @@ class Etudiant extends Personne
         }
     }
 }
-
-//    function chercher_personne()
-//    {
-//        try {
-//            $sql = "SELECT * FROM Personne";
-//            $params = array();
-//
-//            if ($this->nom !== null) {
-//                $sql .= " WHERE nom = :nom";
-//                $params[':nom'] = $this->nom;
-//            }
-//            if ($this->prenom !== null) {
-//                if (empty($params)) {
-//                    $sql .= " WHERE";
-//                } else {
-//                    $sql .= " AND";
-//                }
-//                $sql .= " prenom = :prenom";
-//                $params[':prenom'] = $this->prenom;
-//            }
-//            if ($this->ID_Centre !== null) {
-//                if (empty($params)) {
-//                    $sql .= " WHERE";
-//                } else {
-//                    $sql .= " AND";
-//                }
-//                $sql .= " ID_Centre = :id_centre";
-//                $params[':id_centre'] = $this->ID_Centre;
-//            }
-//
-//
-//            $select = $this->bddconnection->prepare($sql);
-//            var_dump($select->queryString);
-//            $select->execute($params);
-//            $result = $select->fetchAll();
-//            return $result;
-//        } catch (PDOException $e) {
-//            // Gérer l'exception
-//        }
-//    }
-//
-//}
-
 
 class Pilote extends Personne
 {
