@@ -31,7 +31,7 @@
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
+                <a style="text-decoration: none;" href="../../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
             <img id="photo_profil"
@@ -69,7 +69,7 @@
         <h1 class="titre police_texte">Gestion des Etudiants</h1>
 
         <section class="bloc_gestion police_texte">
-            <form method="post" action="../controllers/Chercher_compte.php">
+            <form method="post" action="../../controllers/Chercher_compte.php">
             <h2>Rechercher un étudiant</h2>
             <div id="recherche_container">
                 <div id="form_recherche">
@@ -323,7 +323,7 @@
 
         <section class="bloc_gestion police_texte">
             <h2>Créer un étudiant</h2>
-            <form methode="post" action="../controllers/creation_compte.php" >
+            <form methode="post" action="../../controllers/creation_compte.php" >
             <div class="form-row">
                 <label for="search-name">Nom de l'étudiant : *</label><br>
                 <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" required/>

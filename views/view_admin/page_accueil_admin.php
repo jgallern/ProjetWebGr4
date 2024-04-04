@@ -57,9 +57,7 @@
 
     <main>
 
-        <h1 class="police_texte">Bonjour
-            <?= $_COOKIE["prenom"] ?>
-        </h1>
+        <h1 class="police_texte">Bonjour <?= $_COOKIE["prenom"]?></h1>
 
         <h2 class="police_texte">Dernières actualités</h2>
 
