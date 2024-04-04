@@ -123,8 +123,10 @@
 
     </main>
 
-    <footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
-
+    <footer class="police_texte">
+    &copy; Stage En Bref. <br> Tous droits réservés <br>
+    <a href="mentions_legales.php">Mentions Légales</a>
+</footer>
 
 </body>
 
