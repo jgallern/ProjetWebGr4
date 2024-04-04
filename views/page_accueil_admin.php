@@ -9,6 +9,7 @@
     <link rel="icon" href="" type="image/png">
 </head>
 
+
 <body>
     <nav id="navbar">
         <div class="menu-icon" onclick="toggleMenu()">
@@ -17,16 +18,16 @@
         </div>
         <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
         <div id="lien_navbar">
-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
+            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
-            <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html"
+            <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.php"
                 id="lien_offres_etudiants">Offres</a>
-            <a class="lien_nav police_texte" href="gestion_pilotes_admin.html"
+            <a class="lien_nav police_texte" href="gestion_pilotes_admin.php"
                 id="lien_offres_etudiants">Pilotes</a>
-            <a class="lien_nav police_texte" href="gestion_etudiants_pilote_admin.html"
+            <a class="lien_nav police_texte" href="gestion_etudiants_pilote_admin.php"
                 id="lien_offres_etudiants">Etudiants</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html"
+            <a class="lien_nav police_texte" href="page_wishlist_candidatures.php" id="lien_wishlist">Mes listes</a>
+            <a class="lien_nav police_texte" href="page_wishlist_candidatures.php"
                 id="lien_candidatures">Candidatures</a>
         </div>
         <div id="profil">
@@ -34,7 +35,6 @@
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
                 <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
-
             <img id="photo_profil"
                 src="C:\Users\quent\OneDrive - Association Cesi Viacesi mail\A2\04_web\Projet\images\photo_profil.png"
                 alt="photo_profil">
