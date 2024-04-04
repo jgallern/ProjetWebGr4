@@ -18,16 +18,16 @@ $prs = new Personne();
 class Personne{
     private $host;
     private $bddconnection;
-    private $Idpersonne;
+    private $loginPersonne;
     private $passwordpersonne;
 
     function __construct()
     {
     }
 
-    function set_Idpersonne($id)
+    function set_loginPersonne($id)
     {
-        $this->Idpersonne = $id;
+        $this->loginPersonne = $id;
 
     }
 
@@ -51,7 +51,7 @@ class Personne{
     {
         //$this->connection->query();
         $login = $this->bddconnection->prepare("select * from Personne where Login= :idquiexiste && Password = :password");
-        $login->bindParam(':idquiexiste', $this->Idpersonne);
+        $login->bindParam(':idquiexiste', $this->loginPersonne);
         $login->bindParam(':password', hash('SHA256',$this->passwordpersonne ));
         $login->execute();
 
@@ -62,10 +62,20 @@ class Personne{
             return false;
         }
 
-        // if (empty($login)){echo "test";}
+         // if (empty($login)){echo "test";}
         // else{
         // echo "<p>mot de passe ou nom d'utilisateur incorrect</p>";
         // }
+    }
+
+    function GetName(){
+        $name = $this->bddconnection->prepare('select prenom from Personne where Login = :login');
+        $name->bindParam(':login', $this->loginPersonne);
+        $name->execute();
+        foreach ($name->fetchAll() as $row) {
+            return $row['prenom'];
+        }
+
     }
 
 }

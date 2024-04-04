@@ -5,33 +5,50 @@
     <meta charset="utf-8">
     <title>Gestion entreprise
     </title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script_gestion_entreprise_etudiant.js"></script>
-    <link rel="icon" href="" type="image/png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../assets/js/script_gestion_offres_etudiant.js"></script>
+    <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
+
+</head>
 
 <body>
     <nav id="navbar">
-        <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar_2"></div>
+        </div>
+        <img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60px" />
         <div id="lien_navbar">
-            <a class="lien_nav police_texte" href="gestion_entreprise_etudiants.html" id="lien_entreprises_etudiants">Entreprises</a>
-            <a class="lien_nav police_texte" href="gestion_offres_etudiants.html" id="lien_offres_etudiants">Offres</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_candidatures">Candidatures</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php"
+                id="lien_entreprises_etudiants">Entreprises</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_offres_etudiants.php"
+                id="lien_offres_etudiants">Offres</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/page_wishlist_candidatures.php"
+                id="lien_candidatures">Wishlist et Candidatures</a>
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <button id="bouton_voir_profil">Voir le profil</button>
-                <button id="bouton_deconnexion">Se déconnecter</button>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
+                        id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
-            <img id="photo_profil"
-                src="C:\Users\quent\OneDrive - Association Cesi Viacesi mail\A2\04_web\Projet\images\photo_profil.png"
-                alt="photo_profil">
+            <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
         </div>
 
     </nav>
 
+
+    <div id="lien_navbar_expand">
+        <a class="lien_nav police_texte linking-animation delay-0" href="../view_etudiant/page_accueil_etudiant.php"
+            id="lien_entreprises_etudiants">Accueil</a>
+        <a class="lien_nav police_texte linking-animation delay-1" href="../view_etudiant/gestion_offres_etudiants.php"
+            id="lien_entreprises_etudiants">Entreprises</a>
+        <a class="lien_nav police_texte linking-animation delay-2"
+            href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-5"
+            href="../view_etudiant/page_wishlist_candidatures.php" id="lien_candidatures">Wishlist et Candidatures</a>
+    </div>
 
 
     <h1 class="titre police_texte">Un stage en poche en un rien de temps
@@ -51,7 +68,8 @@
                     </div>
                     <div class="un_filtre">
                         <label for="search-stages">Promotion</label><br>
-                        <select>
+                        <select name="select_promo">
+                            <option>--Choisir--</option>
                             <option>A1</option>
                             <option>A2</option>
                             <option>A3</option>
@@ -61,7 +79,8 @@
                     </div>
                     <div class="un_filtre">
                         <label for="search-sector">Secteur d'activité</label><br>
-                        <select>
+                        <select name="select_secteur">
+                            <option>--Choisir--</option>
                             <option>Informatique</option>
                             <option>BTP</option>
                             <option>S3E</option>
@@ -70,7 +89,8 @@
                     </div>
                     <div class="un_filtre">
                         <label for="search-sector">Durée du stage (en semaines)</label><br>
-                        <input type="number" placeholder="Durée du stage" id="search-sector" name="duree" min="1" max="26" step="1">
+                        <input type="number" placeholder="Durée du stage" id="search-sector" name="duree" min="1"
+                            max="26" step="1">
                     </div>
                     <div class="un_filtre">
                         <label for="search-sector">Date de l'offre</label><br>
@@ -94,38 +114,38 @@
     </section>
     <h2 class="titre police_texte" id="titre_entreprises_populaire">Les plus populaires</h2>
     <div class="listeentreprises">
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
 
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
@@ -133,7 +153,7 @@
         </a>
 
 
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
@@ -149,19 +169,19 @@
     <h2 class="titre police_texte">Proche de toi</h2>
     <div class="listeentreprises">
 
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
@@ -180,31 +200,31 @@
     <h2 class="titre police_texte">Les plus actifs</h2>
     <div class="listeentreprises">
 
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats</p>
         </a>
-        <a href="#" class="carte_entreprise police_texte">
+        <a target="_blank" href="../view_etudiant/page_presentation_offre.php" class="carte_entreprise police_texte">
             <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                 alt="img entreprise">
             <h3>Intitulé 2</h3>
@@ -218,5 +238,11 @@
     </div>
 
 
+    <footer class="police_texte">
+        &copy; Stage En Bref. <br> Tous droits réservés <br>
+        <a target="_blank" href="../mentions_legales.php">Mentions Légales</a>
+    </footer>
+
 </body>
-<footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
+
+</html>
