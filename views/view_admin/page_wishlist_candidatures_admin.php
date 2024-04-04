@@ -16,7 +16,8 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60px" /></a>
+        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png"
+                alt="logo" width="60px" /></a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
@@ -36,9 +37,7 @@
                         id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
-            <img id="photo_profil"
-                src="../../assets/images/photo_profil.png"
-                alt="photo_profil">
+            <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
         </div>
     </nav>
 
@@ -262,7 +261,7 @@
 
 <footer class="police_texte">
     &copy; Stage En Bref. <br> Tous droits réservés <br>
-    <a href="mentions_legales.php">Mentions Légales</a>
+    <a target="_blank" href="../mentions_legales.php">Mentions Légales</a>
 </footer>
 
 

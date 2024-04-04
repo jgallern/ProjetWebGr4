@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../assets/css/style1.css">
     <script src="../../assets/js/script_wishlist_candidatures.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
-
 </head>
 
 <body id="body_whislist_candidatures">
@@ -16,7 +15,8 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_etudiant/page_accueil_etudiant.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60px" /></a>
+        <a href="../view_etudiant/page_accueil_etudiant.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png"
+                alt="logo" width="60px" /></a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
@@ -32,9 +32,7 @@
                         id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
-            <img id="photo_profil"
-                src="../../assets/images/photo_profil.png"
-                alt="photo_profil">
+            <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
         </div>
     </nav>
 
@@ -43,10 +41,10 @@
             id="lien_entreprises_etudiants">Accueil</a>
         <a class="lien_nav police_texte linking-animation delay-1" href="../view_etudiant/gestion_offres_etudiants.php"
             id="lien_entreprises_etudiants">Entreprises</a>
-        <a class="lien_nav police_texte linking-animation delay-2" href="../view_etudiant/gestion_entreprise_etudiants.php"
-            id="lien_offres_etudiants">Offres</a>
-        <a class="lien_nav police_texte linking-animation delay-5" href="../view_etudiant/page_wishlist_candidatures.php"
-            id="lien_candidatures">Wishlist et Candidatures</a>
+        <a class="lien_nav police_texte linking-animation delay-2"
+            href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-5"
+            href="../view_etudiant/page_wishlist_candidatures.php" id="lien_candidatures">Wishlist et Candidatures</a>
     </div>
 
     <h1 class="police_texte titre">Wishlist et candidatures</h1>
@@ -254,7 +252,7 @@
 
 <footer class="police_texte">
     &copy; Stage En Bref. <br> Tous droits réservés <br>
-    <a href="mentions_legales.php">Mentions Légales</a>
+    <a target="_blank" href="../mentions_legales.php">Mentions Légales</a>
 </footer>
 
 </html>
