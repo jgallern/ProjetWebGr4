@@ -15,6 +15,7 @@ if (!isset($bdd)) {
 }
 
 
+
 Class Promo{
 
     public $id;
@@ -53,14 +54,14 @@ Class Promo{
 
     }
 
-    public function get_name($id)
+    function get_Name()
     {
         try {
-            $getid = $this->bddconnection->prepare("SELECT Nom_Promo FROM Promotion WHERE ID_Promotion = :idprmo");
-            $getid->bindParam(':idprmo', $id);
-            $getid->execute();
+            $getnom = $this->bddconnection->prepare("SELECT Nom_Promo FROM Promotion WHERE ID_Promotion = :idprmo");
+            $getnom->bindParam(':idprmo', $this->id);
+            $getnom->execute();
 
-            $result = $getid->fetch(PDO::FETCH_ASSOC);
+            $result = $getnom->fetch(PDO::FETCH_ASSOC);
 
             if ($result) {
                 $this->name = $result['Nom_Promo'];
