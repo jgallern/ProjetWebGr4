@@ -1,6 +1,5 @@
 <?php
 
-
 require_once "../models/Entreprise.php";
 
 class CreateEnterpriseController
@@ -19,21 +18,23 @@ class CreateEnterpriseController
             $nom = $_POST['nom'] ?? null;
             $description = $_POST['description'] ?? null;
             $secteur = $_POST['secteur'] ?? null;
-            $logoPath = $_FILES['logo']['name'] ?? null; // Assuming you're handling file upload separately
             $numeroRue = $_POST['numero_rue'] ?? null;
             $nomRue = $_POST['nom_rue'] ?? null;
             $ville = $_POST['ville'] ?? null;
 
             // Validate required fields
-            if (!$nom || !$description || !$secteur || !$logoPath || !$numeroRue || !$nomRue || !$ville) {
+            if (!$nom || !$description || !$secteur || !$numeroRue || !$nomRue || !$ville || !isset($_FILES['logo'])) {
                 // Handle missing data, perhaps set a flash message or redirect back with an error
-                $_SESSION['flash_message'] = "All fields are required.";
+                $_SESSION['flash_message'] = "All fields, including the logo, are required.";
                 header('Location: ../views/Page_Gestions/gestion_entreprise_pilote_admin.php');
                 exit();
             }
 
-            // Attempt to create the enterprise
-            $result = $this->entrepriseModel->Creer_Entreprise($nom, $description, $secteur, $logoPath, $numeroRue, $nomRue, $ville);
+            // Handling logo upload separately
+            $logoFile = $_FILES['logo'];
+
+            // Attempt to create the enterprise with logo file array
+            $result = $this->entrepriseModel->Creer_Entreprise($nom, $description, $secteur, $logoFile, $numeroRue, $nomRue, $ville);
 
             if ($result['success']) {
                 // Store a success message in the session

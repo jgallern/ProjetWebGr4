@@ -75,14 +75,14 @@ session_start(); // Start the session to access session variables
                         <label for="search-sector">Secteur d'activité :</label><br>
                         <select id="create-sector" name="secteur" ">
                             <option value="">--Choisir--</option>
-                            <option value="Autre">Autre</option>
+
                         </select>
                         <input type="text" id="autre-secteur" name="autre_secteur"
                                placeholder="Entrez le nouveau secteur" style="display: none;">
                     </div>
                     <div class="form_buttons">
                         <button type="submit" name="submit-search" class="button-search">Rechercher</button>
-                        <button type="reset" class="button-reset">Réinitialiser</button>
+                        <button id="resetbutton" type="reset" class="button-reset">Réinitialiser</button>
                     </div>
                 </form>
             </div>
@@ -115,30 +115,6 @@ session_start(); // Start the session to access session variables
                 </div>
             </div>
 
-
-            <div id="icones_modif">
-                <div class="image-container" id="btn_modif">
-                    <img
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
-                            width="30px">
-                    <div class="overlay"></div>
-                </div>
-                <div class="image-container" id="btn_stats">
-                    <img
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
-                            width="30px">
-                    <div class="overlay"></div>
-                </div>
-                <div class="image-container" id="btn_voir">
-                    <img
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
-                            width="30px">
-                    <div class="overlay"></div>
-                </div>
-            </div>
-
-        </div>
-        </div>
 
     </section>
 
@@ -261,45 +237,19 @@ session_start(); // Start the session to access session variables
                 <input id="image_entreprise" name="logo" type="file" accept="image/jpeg, image/png" required>
                 <br>
                 <?php
-                // Handle the logo file upload
-                if (isset($_FILES['logo']) && $_FILES['logo']['error'] == 0) {
-                    // Define allowed MIME types for images
-                    $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
-
-                    // Get MIME type of the uploaded file
-                    $fileMimeType = mime_content_type($_FILES['logo']['tmp_name']);
-
-                    // Check if the uploaded file is an allowed image type
-                    if (in_array($fileMimeType, $allowedMimeTypes)) {
-                        $targetDirectory = "uploads//"; // Adjust based on your actual uploads directory
-                        $logoPath = $targetDirectory . basename($_FILES['logo']['name']);
-
-                        // Attempt to move the uploaded file to the target directory
-                        if (move_uploaded_file($_FILES['logo']['tmp_name'], $logoPath)) {
-                            // Success message or further processing
-                            echo "Le logo a été téléchargé avec succès.";
-                        } else {
-                            // Reset $logoPath if the upload fails
-                            $logoPath = '';
-                            echo "Erreur lors de l'upload du logo.";
-                        }
-                    } else {
-                        echo "Le fichier téléchargé n'est pas une image valide. Seuls les formats JPEG, PNG et GIF sont autorisés.";
-                    }
-                } else {
-                    // Handle other errors or no file being uploaded
-                    if (!isset($_FILES['logo'])) {
-                        echo "Aucun fichier n'a été téléchargé.";
-                    } else {
-                        // Output error for debugging
-                        echo "Erreur lors du téléchargement: " . $_FILES['logo']['error'];
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    // Assuming you've already processed the file in your controller/model
+                    // and set a session or direct variable for success or failure message
+                    if (isset($_SESSION['uploadMessage'])) {
+                        echo $_SESSION['uploadMessage']; // Display upload message set by the controller/model
+                        unset($_SESSION['uploadMessage']); // Clear the message after displaying
                     }
                 }
                 ?>
             </div>
             <div class="form-actions">
                 <button type="submit" class="button-search">Créer</button>
-                <button type="reset" class="button-reset">Réinitialiser</button>
+                <button id="resetButton" type="reset" class="button-reset">Réinitialiser</button>
             </div>
         </form>
     </section>

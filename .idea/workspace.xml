@@ -8,24 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b150bf6-44f2-4083-9e4f-c66330f153d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Creer_Entreprise.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Evaluer_Entreprise.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Rechercher_Entreprise.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Secteur_Entreprise.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_entreprise_pilote_admin_old.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/Page_Gestions/edit_entreprise.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/Page_Gestions/entreprise_detail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ControllerEntreprise.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_entreprise_pilote_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Gestions/gestion_entreprise_pilote_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_offres_pilote_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_offres_pilote_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_pilotes_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_pilotes_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script_Gestion_Entreprise_Pilote_Admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style_Gestion_Entreprise_Pilote_Admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/viewError.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/viewError.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Offre.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Offre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationEntreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationEntreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationOffre.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationOffre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Offre.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Offre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script_Gestion_Entreprise_Pilote_Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script_Gestion_Entreprise_Pilote_Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Page_Gestions/gestion_entreprise_pilote_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Gestions/gestion_entreprise_pilote_admin.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,36 +58,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;PHP Built-in Web Server.PHP_Server.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.PagedeCandidature.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Script.Router.php.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Web Page.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;PHP Web Page.XAMPP.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;migration__archi__Class__Entreprise&amp;&amp;Offre&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/GitHub/ProjetWebGr4/views/Page_Gestions&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.php.debug.servers&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "PHP Built-in Web Server.PHP_Server.executor": "Run",
+    "PHP Script.PagedeCandidature.php.executor": "Run",
+    "PHP Script.Router.php.executor": "Run",
+    "PHP Web Page.Unnamed.executor": "Run",
+    "PHP Web Page.XAMPP.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.laravel-idea.search-composer-json": "true",
+    "git-widget-placeholder": "migration__archi__Class__Entreprise&&Offre",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/xampp/htdocs/GitHub/ProjetWebGr4/views/Page_Gestions",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "settings.php.debug.servers",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mariadb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\views\Page_Gestions" />
@@ -160,7 +149,7 @@
       <workItem from="1711984078189" duration="1028000" />
       <workItem from="1712128489356" duration="19208000" />
       <workItem from="1712164495223" duration="4643000" />
-      <workItem from="1712217855360" duration="19612000" />
+      <workItem from="1712217855360" duration="27505000" />
     </task>
     <servers />
   </component>
