@@ -6,7 +6,7 @@
     <title>Gestion Etudiants
     </title>
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <script src="script.js"></script>
+    <script src="../../assets/js/script_gestion_etudiants_admin.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
 
 <body>
@@ -15,7 +15,8 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60px" /></a>
+        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png"
+                alt="logo" width="60px" /></a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
@@ -34,9 +35,7 @@
                 <a style="text-decoration: none;" href="../../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
-            <img id="photo_profil"
-                src="../../assets/images/photo_profil.png"
-                alt="photo_profil">
+            <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
         </div>
 
     </nav>
@@ -58,12 +57,13 @@
 
     <main>
         <?php
-        if ($_GET["creation"]=="echec"){
-            echo "<p style='text-align:center'>Erreur lors de la création du compte étudiant  	&#128546</p>";
-        }
-        else if ($_GET["creation"]== "succes"){
+        if (isset($_GET["creation"])) {
+            if ($_GET["creation"] == "echec") {
+                echo "<p style='text-align:center'>Erreur lors de la création du compte étudiant  	&#128546</p>";
+            } else if ($_GET["creation"] == "succes") {
 
-            echo "<p style='text-align:center'>Création du compte étudiant réussie &#128077</p>";
+                echo "<p style='text-align:center'>Création du compte étudiant réussie &#128077</p>";
+            }
         }
         ?>
         <h1 class="titre police_texte">Gestion des Etudiants</h1>
@@ -75,11 +75,11 @@
                 <div id="form_recherche">
                         <div class="form-row">
                             <label for="search-name">Nom de l'étudiant :</label><br>
-                            <input id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
+                            <input type="text" placeholder="Entrez le nom de l'étudiant" />
                         </div><br>
                         <div class="form-row">
                             <label for="search-name">Prénom de l'étudiant :</label><br>
-                            <input id="search-name" type="text" placeholder="Entrez le prénom de l'étudiant" />
+                            <input type="text" placeholder="Entrez le prénom de l'étudiant" />
                         </div><br>
                         <label>Promotion :</label>
                         <select name="promo">
@@ -142,82 +142,75 @@
                             <button type="submit" class="button-search">Rechercher</button>
                             <button type="reset" class="button-reset">Réinitialiser</button>
                         </div>
-                    </form>
-                </div>
-                <div id="fiches_entreprises_et_boutons">
-                    <div id="result_recherche_entreprise">
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 1</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 2</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-
-                        <div id="overlay"></div>
-                        <div id="message">Veuillez sélectionner une entreprise</div>
-                    </div>
-
-
-                    <div id="icones_modif">
-                        <div class="image-container" id="btn_modif">
-                            <img 
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
-                                width="30px">
-                            <div class="overlay"></div>
-                        </div>
-                        <div class="image-container" id="btn_stats">
-                            <img
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
-                                width="30px">
-                            <div class="overlay"></div>
-                        </div>
-                    </div>
-
-                </div>
+            </form>
             </div>
-    </form>
+            <div id="fiches_entreprises_et_boutons">
+                <div id="result_recherche_entreprise">
+                    <div class="recherche_fiche_entreprise">
+                        <img width="80px"
+                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                            alt="img entreprise">
+                        <h3>Intitulé 1</h3>
+                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                            chocolats</p>
+                    </div>
+                    <div class="recherche_fiche_entreprise">
+                        <img width="80px"
+                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                            alt="img entreprise">
+                        <h3>Intitulé 2</h3>
+                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                            chocolats</p>
+                    </div>
+                    <div class="recherche_fiche_entreprise">
+                        <img width="80px"
+                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                            alt="img entreprise">
+                        <h3>Intitulé 3</h3>
+                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                            chocolats</p>
+                    </div>
+                    <div class="recherche_fiche_entreprise">
+                        <img width="80px"
+                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                            alt="img entreprise">
+                        <h3>Intitulé 3</h3>
+                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                            chocolats</p>
+                    </div>
+                    <div class="recherche_fiche_entreprise">
+                        <img width="80px"
+                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                            alt="img entreprise">
+                        <h3>Intitulé 3</h3>
+                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                            chocolats</p>
+                    </div>
+                    <div class="recherche_fiche_entreprise">
+                        <img width="80px"
+                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                            alt="img entreprise">
+                        <h3>Intitulé 3</h3>
+                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
+                            chocolats</p>
+                    </div>
+
+                    <div id="overlay"></div>
+                    <div id="message">Veuillez sélectionner une entreprise</div>
+                </div>
+
+
+                <div id="icones_modif">
+                    <div class="image-container" id="btn_modif">
+                        <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
+                            width="30px">
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+            </form>
 
         </section>
 
@@ -230,16 +223,16 @@
         </div>
 
         <section id="result_all">
-            <fieldset id="result_modif_etudiant" class="police_texte">
+            <fieldset id="result_modif" class="police_texte">
                 <legend>Modifier un étudiant</legend>
                 <form>
                     <div class="form-row">
                         <label for="search-name">Nom de l'étudiant :</label><br>
-                        <input id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
+                        <input type="text" placeholder="Entrez le nom de l'étudiant" />
                     </div><br>
                     <div class="form-row">
                         <label for="search-name">Prénom de l'étudiant :</label><br>
-                        <input id="search-name" type="text" placeholder="Entrez le prénom de l'étudiant" />
+                        <input type="text" placeholder="Entrez le prénom de l'étudiant" />
                     </div><br>
                     <label>Promotion :</label><br>
                     <select name="promo">
@@ -395,23 +388,26 @@
                 <label for="create-sector">Login : *</label><br>
                 <input required  name="login" id="search-name" type="text" placeholder="Entrez le login de connexion de l'étudiant" />
 
-            </div> 
-            <div class="form-row">
-                <label for="create-sector">Mot de passe : *</label><br>
-                <input required  name="password" id="search-name" type="password" placeholder="Entrez le mot de passe de connexion de l'étudiant" />
+                </div>
+                <div class="form-row">
+                    <label for="create-sector">Mot de passe : *</label><br>
+                    <input required name="password" type="password"
+                        placeholder="Entrez le mot de passe de connexion de l'étudiant" />
 
-            </div> 
-            <div class="form-actions">
-                <button class="button-search">Créer</button>
-                <button class="button-reset">Réinitialiser</button>
-                <p> *: champ obligatoire </p>
-            </div>
+                </div>
+                <div class="form-actions">
+                    <button class="button-search">Créer</button>
+                    <button class="button-reset">Réinitialiser</button>
+                    <p> *: champ obligatoire </p>
+                </div>
             </form>
         </section>
 
 
         
-        <footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
-</body>
+        <footer class="police_texte">
+    &copy; Stage En Bref. <br> Tous droits réservés <br>
+    <a href="mentions_legales.php">Mentions Légales</a>
+</footer></body>
 
 </html>
