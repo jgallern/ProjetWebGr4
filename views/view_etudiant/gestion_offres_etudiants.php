@@ -9,6 +9,8 @@
     <script src="../../assets/js/script_gestion_offres_etudiant.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
 
+</head>
+
 <body>
     <nav id="navbar">
         <div class="menu-icon" onclick="toggleMenu()">
@@ -17,19 +19,21 @@
         </div>
         <img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60px" />
         <div id="lien_navbar">
-            <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_entreprises_etudiants">Entreprises</a>
-            <a class="lien_nav police_texte" href="../view_etudiant/gestion_offres_etudiants.php" id="lien_offres_etudiants">Offres</a>
-            <a class="lien_nav police_texte" href="../view_etudiant/page_wishlist_candidatures.php" id="lien_candidatures">Wishlist et Candidatures</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php"
+                id="lien_entreprises_etudiants">Entreprises</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_offres_etudiants.php"
+                id="lien_offres_etudiants">Offres</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/page_wishlist_candidatures.php"
+                id="lien_candidatures">Wishlist et Candidatures</a>
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
+                        id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
-            <img id="photo_profil"
-                src="../../assets/images/photo_profil.png"
-                alt="photo_profil">
+            <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
         </div>
 
     </nav>
@@ -40,10 +44,10 @@
             id="lien_entreprises_etudiants">Accueil</a>
         <a class="lien_nav police_texte linking-animation delay-1" href="../view_etudiant/gestion_offres_etudiants.php"
             id="lien_entreprises_etudiants">Entreprises</a>
-        <a class="lien_nav police_texte linking-animation delay-2" href="../view_etudiant/gestion_entreprise_etudiants.php"
-            id="lien_offres_etudiants">Offres</a>
-        <a class="lien_nav police_texte linking-animation delay-5" href="../view_etudiant/page_wishlist_candidatures.php"
-            id="lien_candidatures">Wishlist et Candidatures</a>
+        <a class="lien_nav police_texte linking-animation delay-2"
+            href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-5"
+            href="../view_etudiant/page_wishlist_candidatures.php" id="lien_candidatures">Wishlist et Candidatures</a>
     </div>
 
 
@@ -85,7 +89,8 @@
                     </div>
                     <div class="un_filtre">
                         <label for="search-sector">Durée du stage (en semaines)</label><br>
-                        <input type="number" placeholder="Durée du stage" id="search-sector" name="duree" min="1" max="26" step="1">
+                        <input type="number" placeholder="Durée du stage" id="search-sector" name="duree" min="1"
+                            max="26" step="1">
                     </div>
                     <div class="un_filtre">
                         <label for="search-sector">Date de l'offre</label><br>
@@ -233,8 +238,11 @@
     </div>
 
 
+    <footer class="police_texte">
+        &copy; Stage En Bref. <br> Tous droits réservés <br>
+        <a target="_blank" href="../mentions_legales.php">Mentions Légales</a>
+    </footer>
+
 </body>
-<footer class="police_texte">
-    &copy; Stage En Bref. <br> Tous droits réservés <br>
-    <a href="mentions_legales.php">Mentions Légales</a>
-</footer>
+
+</html>

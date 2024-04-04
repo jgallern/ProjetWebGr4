@@ -16,18 +16,14 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60px" /></a>
+        <a href="../../view_pilote/accueil_pilote.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60px   " /></a>
         <div id="lien_navbar">
-            <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
+            <a class="lien_nav police_texte" href="../view_pilote/gestion_entreprise_pilote.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
-            <a class="lien_nav police_texte" href="../view_admin/gestion_offre_admin.php"
+            <a class="lien_nav police_texte" href="../view_pilote/gestion_offres_pilote.php"
                 id="lien_offres_etudiants">Offres</a>
-            <a class="lien_nav police_texte" href="../view_admin/gestion_pilotes_admin.php"
-                id="lien_offres_etudiants">Pilotes</a>
-            <a class="lien_nav police_texte" href="../view_admin/gestion_etudiants_admin.php"
+            <a class="lien_nav police_texte" href="../view_pilote/gestion_etudiants_pilote.php"
                 id="lien_offres_etudiants">Etudiants</a>
-            <a class="lien_nav police_texte" href="../view_admin/page_wishlist_candidatures_admin.php"
-                id="lien_candidatures">Wishlit et Candidatures</a>
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
@@ -36,25 +32,25 @@
             </div>
 
             <img id="photo_profil"
-                src="../../assets/images/photo_profil.png"
+                src="C:\Users\quent\OneDrive - Association Cesi Viacesi mail\A2\04_web\Projet\images\photo_profil.png"
                 alt="photo_profil">
         </div>
 
     </nav>
 
     <div id="lien_navbar_expand">
-        <a class="lien_nav police_texte linking-animation delay-0" href="../view_admin/page_accueil_admin.php"
+        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
             id="lien_entreprises_etudiants">Acceuil</a>
-        <a class="lien_nav police_texte linking-animation delay-1" href="../view_admin/gestion_entreprise_admin.php"
+        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
             id="lien_entreprises_etudiants">Entreprises</a>
-        <a class="lien_nav police_texte linking-animation delay-2" href="../view_admin/gestion_offre_admin.php"
+        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
             id="lien_offres_etudiants">Offres</a>
-        <a class="lien_nav police_texte linking-animation delay-3" href="../view_admin/gestion_etudiants_admin.php"
+        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
             id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte linking-animation delay-4" href="../view_admin/gestion_pilotes_admin.php"
-            id="lien_offres_etudiants">Pilotes</a>
-        <a class="lien_nav police_texte linking-animation delay-5" href="../view_admin/page_wishlist_candidatures.php"
-            id="lien_candidatures">Wishlit et Candidatures</a>
+        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
+            id="lien_candidatures">Candidatures</a>
     </div>
 
     <main>
@@ -187,7 +183,7 @@
 
         <section id="result_all">
             <fieldset id="result_modif" class="police_texte">
-                <legend>Modifier une entreprise</legend>
+                <legend>Modifer une entreprise</legend>
                 <form>
                     <div id="deux_partie_modif">
                         <div id="partie_modif">
@@ -291,12 +287,11 @@
 
 
         
-        
 </body>
 
 <footer class="police_texte">
-            &copy; Stage En Bref. <br> Tous droits réservés <br>
-            <a target="_blank" href="../mentions_legales.php">Mentions Légales</a>
-        </footer>
+        &copy; Stage En Bref. <br> Tous droits réservés <br>
+        <a target="_blank" href="../mentions_legales.php">Mentions Légales</a>
+    </footer>
 
 </html>
