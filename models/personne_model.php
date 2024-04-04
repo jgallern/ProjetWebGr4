@@ -14,8 +14,8 @@ if (!isset($bdd)) {
     }
 }
 
-class Personne{
-
+class Personne
+{
     protected $nom;
     protected $prenom;
     protected $Login;
@@ -23,8 +23,9 @@ class Personne{
     protected $ID_Centre;
     protected $bddconnection;
 
-    function __construct()
+    function __construct($bdd)
     {
+        $this->bddconnection = $bdd;
     }
 
     function set_Login($id)
@@ -33,22 +34,26 @@ class Personne{
 
     }
 
-    function set_bddconnection($bddconnection){
+    function set_bddconnection($bddconnection)
+    {
         $this->bddconnection = $bddconnection;
     }
 
     function set_Password($password)
     {
-        $this->Password = hash('SHA256',$password);
+        $this->Password = hash('SHA256', $password);
     }
 
-    function set_Nom($nom){
+    function set_Nom($nom)
+    {
         $this->nom = $nom;
     }
-    function set_Prenom($prenom){
+    function set_Prenom($prenom)
+    {
         $this->prenom = $prenom;
     }
-    function set_ID_Centre($ID_Centre){ 
+    function set_ID_Centre($ID_Centre)
+    {
         $this->ID_Centre = $ID_Centre;
     }
 
@@ -74,13 +79,14 @@ class Personne{
             return false;
         }
 
-         // if (empty($login)){echo "test";}
+        // if (empty($login)){echo "test";}
         // else{
         // echo "<p>mot de passe ou nom d'utilisateur incorrect</p>";
         // }
     }
 
-    function GetName(){
+    function GetName()
+    {
         $name = $this->bddconnection->prepare('select prenom from Personne where Login = :login');
         $name->bindParam(':login', $this->Login);
         $name->execute();
@@ -90,7 +96,8 @@ class Personne{
 
     }
 
-    function GetStatus(){
+    function GetStatus()
+    {
         $status = $this->bddconnection->prepare("SELECT 
         Per.*,
         CASE
@@ -115,47 +122,54 @@ class Personne{
             return $row["Type_de_personne"];
         }
     }
-    function creer_personne(){
-        try{
-        $creation= $this->bddconnection->prepare("INSERT INTO personne (ID_Centre,Login,nom,Password,prenom)
+    function creer_personne()
+    {
+        try {
+            $creation = $this->bddconnection->prepare("INSERT INTO personne (ID_Centre,Login,nom,Password,prenom)
         VALUES (:idcentre, :login , :nom , :motdepasse , :prenom)");
-        
-        $creation->bindParam(":login", $this->Login);
-        $creation->bindParam(":idcentre", $this->ID_Centre);
-        $creation->bindParam(":nom", $this->nom);
-        $creation->bindParam(":motdepasse", $this->Password);
-        $creation->bindParam(":prenom", $this->prenom);
 
-        return "true";
-        }
-        catch(PDOException $e){
-            setcookie("erreur", $e, time()+3600, "/");
+            $creation->bindParam(":login", $this->Login);
+            $creation->bindParam(":idcentre", $this->ID_Centre);
+            $creation->bindParam(":nom", $this->nom);
+            $creation->bindParam(":motdepasse", $this->Password);
+            $creation->bindParam(":prenom", $this->prenom);
+
+            return "true";
+        } catch (PDOException $e) {
+            setcookie("erreur", $e, time() + 3600, "/");
         }
 
     }
-    function chercher_personne() {  
+    function chercher_personne()
+    {
         try {
-            $select= $this->bddconnection->prepare("Select * from Personne");
+            $select = $this->bddconnection->prepare("Select * from Personne");
             $select->execute();
             $result = $select->fetchAll();
             return $result;
+        } catch (PDOException $e) {
+
+
         }
-        catch(PDOException $e) {
-
-
     }
 }
-}
 
 
-class Etudiant extends Personne {
+class Etudiant extends Personne
+{
     private $ID_Promotion;
 
-    function __construct(){}
-    function set_ID_Promotion($id_Promotion) {
-        $this->ID_Promotion=$id_Promotion;
+
+    function __construct($bdd)
+    {
+        $this->set_bddconnection($bdd);
     }
-    function creer_personne(){
+    function set_ID_Promotion($id_Promotion)
+    {
+        $this->ID_Promotion = $id_Promotion;
+    }
+    function creer_personne()
+    {
         try {
             $creation = $this->bddconnection->prepare("INSERT INTO Personne (ID_Centre,Login,nom,Password,prenom)
         VALUES (:idcentre, :login , :nom , :motdepasse , :prenom);
@@ -192,50 +206,90 @@ class Etudiant extends Personne {
     {
         try {
             $sql = "SELECT * FROM Personne";
-            $params = array();
+            $whereClause = array();
 
             if ($this->nom !== null) {
-                $sql .= " WHERE nom = :nom";
-                $params[':nom'] = $this->nom;
+                $whereClause[] = "nom = :nom";
             }
             if ($this->prenom !== null) {
-                if (empty($params)) {
-                    $sql .= " WHERE";
-                } else {
-                    $sql .= " AND";
-                }
-                $sql .= " prenom = :prenom";
-                $params[':prenom'] = $this->prenom;
+                $whereClause[] = "prenom = :prenom";
             }
             if ($this->ID_Centre !== null) {
-                if (empty($params)) {
-                    $sql .= " WHERE";
-                } else {
-                    $sql .= " AND";
-                }
-                $sql .= " ID_Centre = :id_centre";
-                $params[':id_centre'] = $this->ID_Centre;
+                $whereClause[] = "ID_Centre = :id_centre";
             }
             if ($this->Login !== null) {
-                if (empty($params)) {
-                    $sql .= " WHERE";
-                } else {
-                    $sql .= " AND";
-                }
-                $sql .= " Login = :login";
-                $params[':login'] = $this->Login;
+                $whereClause[] = "Login = :login";
+            }
+
+            if (!empty($whereClause)) {
+                $sql .= " WHERE " . implode(" AND ", $whereClause);
             }
 
             $select = $this->bddconnection->prepare($sql);
-            $select->execute($params);
+
+            if ($this->nom !== null) {
+                $select->bindValue(':nom', $this->nom);
+            }
+            if ($this->prenom !== null) {
+                $select->bindValue(':prenom', $this->prenom);
+            }
+            if ($this->ID_Centre !== null) {
+                $select->bindValue(':id_centre', $this->ID_Centre);
+            }
+            if ($this->Login !== null) {
+                $select->bindValue(':login', $this->Login);
+            }
+
+            $select->execute();
             $result = $select->fetchAll();
             return $result;
         } catch (PDOException $e) {
             // Gérer l'exception
         }
     }
-
 }
+
+//    function chercher_personne()
+//    {
+//        try {
+//            $sql = "SELECT * FROM Personne";
+//            $params = array();
+//
+//            if ($this->nom !== null) {
+//                $sql .= " WHERE nom = :nom";
+//                $params[':nom'] = $this->nom;
+//            }
+//            if ($this->prenom !== null) {
+//                if (empty($params)) {
+//                    $sql .= " WHERE";
+//                } else {
+//                    $sql .= " AND";
+//                }
+//                $sql .= " prenom = :prenom";
+//                $params[':prenom'] = $this->prenom;
+//            }
+//            if ($this->ID_Centre !== null) {
+//                if (empty($params)) {
+//                    $sql .= " WHERE";
+//                } else {
+//                    $sql .= " AND";
+//                }
+//                $sql .= " ID_Centre = :id_centre";
+//                $params[':id_centre'] = $this->ID_Centre;
+//            }
+//
+//
+//            $select = $this->bddconnection->prepare($sql);
+//            var_dump($select->queryString);
+//            $select->execute($params);
+//            $result = $select->fetchAll();
+//            return $result;
+//        } catch (PDOException $e) {
+//            // Gérer l'exception
+//        }
+//    }
+//
+//}
 
 
 class Pilote extends Personne

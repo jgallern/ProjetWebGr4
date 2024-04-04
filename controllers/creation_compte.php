@@ -23,7 +23,7 @@ if (isset($_POST["password"])) {
     $password = $_POST["password"];
 }
 else {
-    echo "test";
+    //echo "test";
 }
 
 
@@ -31,9 +31,9 @@ require_once '../models/personne_model.php';
 require_once '../models/promo_model.php';
 require_once '../models/centre_model.php';
 
-$prs = new Etudiant();
-$prmo = new Promo();
-$cntr = new Centre(); 
+$prs = new Etudiant($bdd);
+$prmo = new Promo($bdd);
+$cntr = new Centre($bdd); 
 $prmo->set_bddconnection($bdd);
 $prs->set_bddconnection($bdd);
 $cntr->set_bddconnection($bdd);

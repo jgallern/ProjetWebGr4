@@ -22,6 +22,10 @@ Class Promo{
     public $name;
     public $bddconnection;
 
+    function __construct($bdd){
+        $this->bddconnection = $bdd;
+    }
+
     function set_bddconnection($bdd)
     {
         $this->bddconnection = $bdd;
