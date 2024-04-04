@@ -1,25 +1,42 @@
 <?php
+
+require_once '../models/personne_model.php';
+require_once '../models/promo_model.php';
+require_once '../models/centre_model.php';
+
+$prs = new Etudiant($bdd);
+$prmo = new Promo($bdd);
+$cntr = new Centre($bdd);
+
+
 if (isset($_POST["search-name"])) {
     $nom = $_POST["search-name"];
-    //echo $nom;
+    $prs->set_Nom($nom);
+    echo $nom;
+}
+else {
+    $prs->set_Nom(null);
 }
 if (isset($_POST["search-prenom"])) {
     $prenom = $_POST["search-prenom"];
-    //echo $prenom;
+    $prs->set_Prenom($prenom);
+    echo $prenom;
+}
+else{
+    $prs->set_Prenom(null);
 }
 if (isset($_POST["search-sector"])) {
     $secteur = "CESI ".$_POST["search-sector"];
-    //echo $secteur;
+    $cntr->set_Nom($secteur);
+    $prs->set_ID_Centre($cnt->get_ID());
+}
+else{
+    $prs->set_ID_Centre(null);
+
 }
 if (isset($_POST["promo"])) {
     $promo = $_POST["promo"];
     //echo $promo;
-}
-if (isset($_POST["login"])) {
-    $login = $_POST["login"];
-}
-if (isset($_POST["password"])) {
-    $password = $_POST["password"];
 }
 else {
     echo "test";
@@ -40,16 +57,9 @@ else {
 //    $promo = $_POST["promo"];
 //}
 
-require_once '../models/personne_model.php';
-require_once '../models/promo_model.php';
-
-$prs = new Etudiant();
-$prmo = new Promo();
-
-$prs->set_bddconnection($bdd);
-$prmo->set_bddconnection($bdd);
 $donnees = $prs->chercher_personne();
 
+print_r($donnees);
 
 foreach ($donnees as $personne) {
     $nom = $personne['nom'];

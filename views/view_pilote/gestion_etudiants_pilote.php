@@ -71,11 +71,11 @@
                 <div id="form_recherche">
                         <div class="form-row">
                             <label for="search-name">Nom de l'étudiant :</label><br>
-                            <input id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
+                            <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
                         </div><br>
                         <div class="form-row">
                             <label for="search-name">Prénom de l'étudiant :</label><br>
-                            <input id="search-name" type="text" placeholder="Entrez le prénom de l'étudiant" />
+                            <input name="search-prenom" id="search-name" type="text" placeholder="Entrez le prénom de l'étudiant" />
                         </div><br>
                         <label>Promotion :</label>
                         <select name="promo">
@@ -98,7 +98,7 @@
                             <option>A5 Généraliste</option>
                         </select><br>
                         <label>Centre :</label><br>
-                        <select>
+                        <select name="search-sector">
                             <option disabled selected>Choisissez un centre</option>
                             <option disabled selected>Est</option>
                             <option>Strasbourg</option>

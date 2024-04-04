@@ -22,12 +22,16 @@ Class Promo{
     public $name;
     public $bddconnection;
 
+    function __construct($bdd){
+        $this->bddconnection = $bdd;
+    }
+
     function set_bddconnection($bdd)
     {
         $this->bddconnection = $bdd;
     }
     function set_name($name) {
-        $this->name = 'A5 BTP';
+        $this->name = $name;
     }
     function set_id($id) {
         $this->id = $id;    

@@ -20,6 +20,9 @@ Class Centre{
     public $ID_Pilote;
     public $bddconnection;
 
+    function __construct($bdd){
+        $this->bddconnection = $bdd;
+    }
     function set_bddconnection($bddconnection) {
         $this->bddconnection = $bddconnection;
     }
