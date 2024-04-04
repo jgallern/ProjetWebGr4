@@ -12,18 +12,27 @@ $cntr = new Centre($bdd);
 if (isset($_POST["search-name"])) {
     $nom = $_POST["search-name"];
     $prs->set_Nom($nom);
-    //echo $nom;
+    echo $nom;
+}
+else {
+    $prs->set_Nom(null);
 }
 if (isset($_POST["search-prenom"])) {
     $prenom = $_POST["search-prenom"];
     $prs->set_Prenom($prenom);
-    //echo $prenom;
+    echo $prenom;
+}
+else{
+    $prs->set_Prenom(null);
 }
 if (isset($_POST["search-sector"])) {
     $secteur = "CESI ".$_POST["search-sector"];
     $cntr->set_Nom($secteur);
-    //$prs->set_ID_Centre($cnt->get_ID());
-    //echo $secteur;
+    $prs->set_ID_Centre($cnt->get_ID());
+}
+else{
+    $prs->set_ID_Centre(null);
+
 }
 if (isset($_POST["promo"])) {
     $promo = $_POST["promo"];
@@ -48,12 +57,9 @@ else {
 //    $promo = $_POST["promo"];
 //}
 
-
-
-
-
 $donnees = $prs->chercher_personne();
 
+print_r($donnees);
 
 foreach ($donnees as $personne) {
     $nom = $personne['nom'];
