@@ -1,6 +1,5 @@
+
 <?php
-require_once "header1.php"; 
-global $bdd;
 
 $entreprise = new Entreprise();
 $entreprise->set_bddconnection($bdd);
@@ -9,43 +8,14 @@ $entreprise->set_bddconnection($bdd);
 $entreprises = [];
 $secteurs = [];
 
-// Handling form submissions for creating enterprises and adding new sectors
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Handling 'Other' sector submissions
-    if (isset($_POST['secteur']) && $_POST['secteur'] === 'Autre' && !empty($_POST['autre_secteur'])) {
-        $Nouveau_secteur = $_POST['autre_secteur'];
-
-        // Insert new sector into database
-        $stmt = $bdd->prepare("INSERT INTO secteuractivite (nom_secteur) VALUES (?)");
-        $stmt->execute([$Nouveau_secteur]);
-        $secteur = $bdd->lastInsertId(); // Update $secteur to use the newly inserted sector's ID
-    }
-
-    // Handling submissions from the create enterprise form
-    if (isset($_POST['nom'])) {
-        $nom = $_POST['nom'];
-        $description = $_POST['description'];
-        $numeroRue = $_POST['numero_rue'];
-        $nomRue = $_POST['nom_rue'];
-        $ville = $_POST['ville'];
-        $logoPath = ''; // Initialize the variable to avoid errors
-
-        // Handle logo upload logic here
-        // Ensure $logoPath is correctly set upon successful upload or remains empty
-
-        // Create enterprise with provided information
-        if ($logoPath !== '') {
-            $entreprise->Creer_Entreprise($nom, $description, $secteur, $logoPath, $numeroRue, $nomRue, $ville);
-        }
-    }
 
     // Handling search form submissions
     if (isset($_POST['submit-search'])) {
-        $searchName = isset($_POST['search_name']) ? $_POST['search_name'] : null;
-        $searchVille = isset($_POST['search_ville']) ? $_POST['search_ville'] : '';
-        $searchNumeroRue = isset($_POST['search_numero-rue']) ? $_POST['search_numero-rue'] : '';
-        $searchNomRue = isset($_POST['search_nom-rue']) ? $_POST['search_nom-rue'] : '';
-        $searchSector = isset($_POST['search_sector']) ? $_POST['search_sector'] : null;
+        $searchName = $_POST['search_name'] ?? null;
+        $searchVille = $_POST['search_ville'] ?? '';
+        $searchNumeroRue = $_POST['search_numero-rue'] ?? '';
+        $searchNomRue = $_POST['search_nom-rue'] ?? '';
+        $searchSector = $_POST['search_sector'] ?? null;
 
         $entreprises = $entreprise->Rechercher_Entreprise($searchName, $searchSector, $searchVille,$searchNumeroRue,$searchNomRue);
         if (empty($entreprises)) {
@@ -59,14 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
-// Fetching sectors for the sector selection dropdown
-try {
-    $stmt = $bdd->query("SELECT ID_secteur, nom_secteur FROM secteuractivite");
-    $secteurs = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    echo "Erreur lors de la récupération des secteurs : " . $e->getMessage();
-    exit;
-}
 
 // Continue with HTML content below
 ?>
@@ -78,8 +40,8 @@ try {
     <meta charset="utf-8">
     <title>Gestion entreprise
     </title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="../../assets/css/style_Gestion_Entreprise_Pilote_Admin.css">
+    <script src="../../assets/js/script_Gestion_Entreprise_Pilote_Admin.js"></script>
     <link rel="icon" href="" type="image/png">
 
 <body>

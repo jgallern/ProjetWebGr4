@@ -544,14 +544,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-function showOtherSectorInput(value) {
-    var otherInput = document.getElementById("autre-secteur");
-    if (value === "Autre") {
-        otherInput.style.display = "block";
-    } else {
-        otherInput.style.display = "none";
+document.addEventListener('DOMContentLoaded', function () {
+    const sectorSelect = document.getElementById('create-sectors');
+    const otherSectorInput = document.getElementById('autre-secteurs');
+
+    // Function to fetch sectors and update the select input
+    function fetchSectors() {
+        console.log("Fetching sectors...");
+        fetch('../../controllers/Controller_Secteur_Entreprise.php?action=fetch')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Full response data:', data); // Log the entire response
+                data.secteurs.forEach(sector => {
+                    const option = new Option(sector.nom_secteur, sector.ID_secteur);
+                    sectorSelect.add(option);
+                });
+
+                const autreOption = new Option("Autre", "Autre");
+                sectorSelect.add(autreOption);
+            })
+            .catch(error => console.error('Error fetching sectors:', error));
+
     }
-}
+
+    // Call the fetchSectors function to populate sectors dropdown
+    fetchSectors();
+
+    sectorSelect.addEventListener('change', function () {
+        const isOtherSelected = this.value === 'Autre';
+        otherSectorInput.style.display = isOtherSelected ? 'block' : 'none';
+    });
+});
+
 
 
 

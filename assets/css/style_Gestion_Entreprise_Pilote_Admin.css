@@ -1379,3 +1379,34 @@ footer{
     }
 
 }
+#result_recherche_entreprise {
+    margin-top: 20px;
+}
+
+.entreprise-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.entreprise-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.entreprise-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.entreprise-nom {
+    color: #333;
+    margin: 0 0 5px 0;
+}
+
+.entreprise-description {
+    color: #666;
+    font-size: 14px;
+}

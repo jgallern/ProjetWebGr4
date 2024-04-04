@@ -4,7 +4,7 @@ session_start();
 
 require_once "../models/Entreprise.php"; // Adjust the path as necessary.
 // controllers/OffreController.php
-class ControllerEntreprise {
+class ControllerEvaluerEntreprise {
     private $entrepriseModel;
 
     public function __construct() {
@@ -41,7 +41,7 @@ class ControllerEntreprise {
 }
 
 // Instantiate the controller
-$controller = new ControllerEntreprise();
+$controller = new ControllerEvaluerEntreprise();
 
 // Example call to handle form submission
 $controller->evaluateOffre();

@@ -51,4 +51,5 @@ class Offre extends Model {
             return ["success" => false, "message" => "Erreur lors du téléchargement des fichiers."];
         }
     }
+
 }

@@ -41,35 +41,89 @@ class Entreprise extends Model
         }
     }
 
-    // Search for enterprises based on multiple criteria
-    public function Rechercher_Entreprise($name = null, $sector = null, $ville = null, $numeroRue = null, $nomRue = null)
-    {
-        $query = "SELECT Entreprise.* FROM Entreprise 
-              JOIN Adresse ON Entreprise.ID_Adresse = Adresse.ID_Adresse 
-              WHERE 1=1";
+    public function Rechercher_Entreprise($searchName, $searchSector, $searchVille, $searchNumeroRue, $searchNomRue) {
+        // Prepare the base SQL query
+        $sql = "SELECT e.*, a.Numero_rue, a.Nom_rue, a.Ville 
+            FROM Entreprise e
+            JOIN Adresse a ON e.ID_Adresse = a.ID_Adresse";
+
+        // Initialize an array to hold the parameters for the prepared statement
         $params = [];
 
-        // Dynamically building the query based on provided parameters
-        if ($name) $query .= " AND Entreprise.Nom LIKE ?" and $params[] = "%" . $name . "%";
-        if ($sector) $query .= " AND Entreprise.Sector = ?" and $params[] = $sector;
-        if ($ville) $query .= " AND Adresse.Ville LIKE ?" and $params[] = "%" . $ville . "%";
-        if ($numeroRue) $query .= " AND Adresse.Numero_Rue = ?" and $params[] = $numeroRue;
-        if ($nomRue) $query .= " AND Adresse.Nom_Rue LIKE ?" and $params[] = "%" . $nomRue . "%";
+        // Initialize an array to hold conditions for the WHERE clause
+        $conditions = [];
 
-        $stmt = $this->getBDD()->prepare($query);
-        $stmt->execute($params);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+        // Add conditions based on provided search criteria
+        if (!empty($searchName)) {
+            $conditions[] = "e.nom LIKE ?";
+            $params[] = "%$searchName%";
+        }
+        if (!empty($searchSector)) {
+            $conditions[] = "e.secteur LIKE ?";
+            $params[] = "%$searchSector%";
+        }
+        if (!empty($searchVille)) {
+            $conditions[] = "a.Ville LIKE ?";
+            $params[] = "%$searchVille%";
+        }
+        if (!empty($searchNumeroRue)) {
+            $conditions[] = "a.Numero_rue = ?";
+            $params[] = $searchNumeroRue;
+        }
+        if (!empty($searchNomRue)) {
+            $conditions[] = "a.Nom_rue LIKE ?";
+            $params[] = "%$searchNomRue%";
+        }
 
-    // Fetch a random selection of enterprises
-    public function FetchRandomEntreprises()
-    {
+        // If there are any conditions, append them to the query
+        if (count($conditions) > 0) {
+            $sql .= " WHERE " . implode(' AND ', $conditions);
+        }
+
         try {
-            $stmt = $this->getBDD()->query("SELECT * FROM Entreprise ORDER BY RAND() LIMIT 5");
+            // Prepare the SQL statement
+            $stmt = $this->getBDD()->prepare($sql);
+
+            // Execute the statement with the parameters
+            $stmt->execute($params);
+
+            // Fetch and return the results
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            // Log the error or handle as needed
-            return ["success" => false, "message" => "Erreur lors de la récupération des entreprises: " . $e->getMessage()];
+            // Handle the error appropriately
+            error_log('Error in Rechercher_Entreprise: ' . $e->getMessage());
+            return []; // Return an empty array to indicate failure
+        }
+    }
+
+
+
+    public function fetchAllSecteurs() {
+        try {
+            $stmt = $this->getBDD()->query("SELECT ID_secteur, nom_secteur FROM secteuractivite");
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // Handle error appropriately
+            return ["error" => "Erreur lors de la récupération des secteurs : " . $e->getMessage()];
+        }
+    }
+
+    public function addSecteur($nomSecteur) {
+        try {
+            $stmt = $this->getBDD()->prepare("INSERT INTO secteuractivite (nom_secteur) VALUES (?)");
+            $stmt->execute([$nomSecteur]);
+            $secteurId = $this->getBDD()->lastInsertId();
+
+            return [
+                'success' => true,
+                'message' => 'Sector added successfully.',
+                'secteurId' => $secteurId
+            ];
+        } catch (PDOException $e) {
+            return [
+                'success' => false,
+                'message' => "Error adding sector: " . $e->getMessage()
+            ];
         }
     }
 }

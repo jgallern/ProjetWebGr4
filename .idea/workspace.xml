@@ -8,54 +8,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b150bf6-44f2-4083-9e4f-c66330f153d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/ControllerEntreprise.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/Entreprise.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Creer_Entreprise.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Evaluer_Entreprise.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Rechercher_Entreprise.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Secteur_Entreprise.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_entreprise_pilote_admin_old.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ControllerOffre.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ControllerOffre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/gestion_entreprise_pilote_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_entreprise_pilote_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/gestion_offres_pilote_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_offres_pilote_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/gestion_pilotes_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_pilotes_admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/header1.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/header1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/peuplementDB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/peuplementDB.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/style2.css" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/style2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/uploads/image (1).jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/uploads/image (1).jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Gestions/uploads/image (4).jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/uploads/image (4).jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Menus/MenuAdministrateur.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Menus/MenuAdministrateur.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Menus/MenuEtudiant.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Menus/MenuEtudiant.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Menus/MenuPilote.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Menus/MenuPilote.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_Menus/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Menus/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/2560px-Logo_Pôle_Emploi_2008.svg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/2560px-Logo_Pôle_Emploi_2008.svg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationEntreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationEntreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/PagePresentationOffre.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationOffre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/Script_Candidature.js" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_présentations+Candidatures/Script_Candidature.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_présentations+Candidatures/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script_Page_Presentation_Entreprise-Offre.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/traiterDonnees.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_présentations+Candidatures/traiterDonnees.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages_présentations+Candidatures/traiterDonnees_Candidatures.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_présentations+Candidatures/traiterDonnees_Candidatures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_wishlist_candidatures.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/page_wishlist_candidatures.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Page_Candidature/PagedeCandidature.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagedeCandidature.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/accueilView.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/accueilView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/auth/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/gestion_entreprise_etudiants.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/gestion_entreprise_etudiants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/gestion_entreprise_pilote_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/gestion_entreprise_pilote_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/gestion_etudiants_pilote_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/gestion_etudiants_pilote_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/gestion_offres_etudiants.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/gestion_offres_etudiants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/gestion_offres_pilote_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/gestion_offres_pilote_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/gestion_pilotes_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/gestion_pilotes_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/page_accueil_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/page_accueil_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/page_accueil_etudiant.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/page_accueil_etudiant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/page_accueil_pilote.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/page_accueil_pilote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/page_accueil_ss_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/page_accueil_ss_connexion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/page_presentation_entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/page_presentation_entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/page_presentation_offre.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/page_presentation_offre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/page_wishlist_candidatures.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/page_wishlist_candidatures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/viewError.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/viewError.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ControllerEntreprise.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Entreprise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_entreprise_pilote_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Gestions/gestion_entreprise_pilote_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_offres_pilote_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_offres_pilote_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_pilotes_admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/gestion_pilotes_admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script_Gestion_Entreprise_Pilote_Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/Pages_Gestions/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style_Gestion_Entreprise_Pilote_Admin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Old Files_If_Needed/viewError.php" beforeDir="false" afterPath="$PROJECT_DIR$/Old Files_If_Needed/viewError.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Offre.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Offre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationEntreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationEntreprise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationOffre.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Candidature+PresentationOffre-Entreprise/PagePresentationOffre.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,46 +69,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "PHP Built-in Web Server.PHP_Server.executor": "Run",
-    "PHP Script.PagedeCandidature.php.executor": "Run",
-    "PHP Script.Router.php.executor": "Run",
-    "PHP Web Page.Unnamed.executor": "Run",
-    "PHP Web Page.XAMPP.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.laravel-idea.search-composer-json": "true",
-    "git-widget-placeholder": "migration__archi__Class__Entreprise&&Offre",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/orfal/OneDrive/Documents/GitHub/ProjetWebGr4/Controllers/Router.php",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.php.debug.servers",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;PHP Built-in Web Server.PHP_Server.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.PagedeCandidature.php.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Script.Router.php.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Web Page.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;PHP Web Page.XAMPP.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;migration__archi__Class__Entreprise&amp;&amp;Offre&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/GitHub/ProjetWebGr4/views/Page_Gestions&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.php.debug.servers&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\views\Page_Gestions" />
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\Pages_Gestions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\assets\css" />
+      <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\assets\js" />
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\Old Files_If_Needed" />
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\models" />
-      <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\assets\js" />
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\assets\images" />
-      <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\views\Page_Candidature+PresentationOffre-Entreprise" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Web Page.XAMPP">
@@ -187,7 +158,9 @@
       <workItem from="1711882889855" duration="824000" />
       <workItem from="1711883734526" duration="4459000" />
       <workItem from="1711984078189" duration="1028000" />
-      <workItem from="1712128489356" duration="7666000" />
+      <workItem from="1712128489356" duration="19208000" />
+      <workItem from="1712164495223" duration="4643000" />
+      <workItem from="1712217855360" duration="19612000" />
     </task>
     <servers />
   </component>
@@ -205,7 +178,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Melo_Branch" />
+                        <option value="origin/migration_archi" />
                       </list>
                     </value>
                   </entry>

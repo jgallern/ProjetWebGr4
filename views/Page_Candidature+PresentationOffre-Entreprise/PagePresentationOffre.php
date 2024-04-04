@@ -24,7 +24,7 @@
         </div>
     </article>
 
-    <form id="evaluation" action="../../controllers/ControllerEntreprise.php" method="POST">
+    <form id="evaluation" action="../../controllers/Controller_Evaluer_Entreprise.php" method="POST">
         <fieldset>
             <legend>Évaluer l'offre:</legend>
             <div class="rating-container">
