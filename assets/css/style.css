@@ -41,7 +41,6 @@ body {
 }
 
 #top_acceuil {
-    background: linear-gradient(to bottom, #00D5E8, white);
     text-align: center;
 }
 
@@ -1022,6 +1021,7 @@ body {
 #fiches_entreprises_et_boutons {
     position: relative;
     max-width: calc(100% - 30%);
+    width: 80%;
 }
 
 
