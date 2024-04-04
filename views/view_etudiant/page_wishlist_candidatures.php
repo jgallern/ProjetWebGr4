@@ -7,11 +7,24 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_wishlist_candidatures.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
-    <link rel="manifest" href="../assets/manifest.json">
+    <link rel="manifest" href="../../assets/manifest.json">
 
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../../assets/serviceWorker.js')
+                .then((sw) => console.log('Le Service Worker a été enregistrer', sw))
+                .catch((err) => console.log('Le Service Worker est introuvable !!!', err));
+        }
+
+    </script>
 </head>
 
+
+
 <body id="body_whislist_candidatures">
+
+
     <nav id="navbar">
         <div class="menu-icon" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -55,7 +68,8 @@
         <div class="offres_header">
             <h2 id="titre_ta_wishlist" class="police_texte">Ta Wishlist</h2>
             <form method="POST" action="">
-                <input class="police_texte recherche_offres" type="text" id="recherche_wishlist" placeholder="Rechercher...">
+                <input class="police_texte recherche_offres" type="text" id="recherche_wishlist"
+                    placeholder="Rechercher...">
                 <button name="recherche_wishlist" type='submit'>rechercher</button>
             </form>
         </div>
@@ -187,7 +201,8 @@
         <div class="offres_header">
             <h2 class="police_texte" id="titre_tes_candidatures">Tes candidatures</h2>
             <form method="POST" action="">
-                <input class="police_texte recherche_offres" type="text" id="recherche_wishlist" placeholder="Rechercher...">
+                <input class="police_texte recherche_offres" type="text" id="recherche_wishlist"
+                    placeholder="Rechercher...">
                 <button name="recherche_candidatures" type='submit'>rechercher</button>
             </form>
         </div>

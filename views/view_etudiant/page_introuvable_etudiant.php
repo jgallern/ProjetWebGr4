@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_page_presentation_entreprise.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
-    <link rel="manifest" href="../assets/manifest.json">
+    <link rel="manifest" href="../../assets/manifest.json">
 
 </head>
 

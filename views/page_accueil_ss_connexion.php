@@ -7,25 +7,36 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/script_page_ss_connexion.js"></script>
     <link rel="icon" href="../assets/images/logo_noir.png" type="image/png">
-    <link rel="manifest" href="../assets/manifest.json">
+    <link rel="manifest" href="../../assets/manifest.json">
 
 </head>
 
 <body>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('ServiceWorker.js')
+                .then((sw) => console.log('Le Service Worker a été enregistrer', sw))
+                .catch((err) => console.log('Le Service Worker est introuvable !!!', err));
+        }
+
+    </script>
+
     <section id="top_acceuil">
         <div id="header_page_ss_connexion">
             <a href="../views/page_accueil_ss_connexion.php"><img id="logo_accueil" alt="logo SEB"
                     src="../assets/images/logo_noir.png"></a>
-            
-                    <?php
-        if (isset($_COOKIE["connected"]) && $_COOKIE["connected"] == "1") {
-            ?>
-            <a id="lien_connexion_header" href="../controllers/deconnection_controller.php" class="police_texte">Se déconnecter</a>
+
             <?php
-        } else {
-            ?>
-            <a id="lien_connexion_header" href="./auth/login.php" class="police_texte">Se connecter</a>
-        <?php } ?>
+            if (isset($_COOKIE["connected"]) && $_COOKIE["connected"] == "1") {
+                ?>
+                <a id="lien_connexion_header" href="../controllers/deconnection_controller.php" class="police_texte">Se
+                    déconnecter</a>
+                <?php
+            } else {
+                ?>
+                <a id="lien_connexion_header" href="./auth/login.php" class="police_texte">Se connecter</a>
+            <?php } ?>
 
             <?php
             if (isset($_COOKIE["prenom"])) {
