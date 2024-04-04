@@ -241,6 +241,7 @@ class Etudiant extends Personne
             }
 
             $select->execute();
+            print_r($select);
             $result = $select->fetchAll();
             return $result;
         } catch (PDOException $e) {

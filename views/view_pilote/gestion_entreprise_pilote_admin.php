@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Gestion des entreprises</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="script_page_gestion_entreprise_admin.js"></script>
+    <script src="../assets/js/script_page_gestion_entreprise_admin.js"></script>
 </head>
 
 <body>
@@ -14,7 +14,7 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
+        <img id="logo_seb" src="../assets/images/logo_noir.png" alt="logo" width="50px" />
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html" id="lien_entreprises_etudiants">Entreprises</a>
             <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html" id="lien_offres_etudiants">Offres</a>
@@ -285,9 +285,7 @@
 
 
         
-        <footer class="police_texte">
-    &copy; Stage En Bref. <br> Tous droits réservés <br>
-    <a href="mentions_legales.php">Mentions Légales</a>
-</footer></body>
+        <footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
+</body>
 
 </html>

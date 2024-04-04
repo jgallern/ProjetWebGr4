@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>Nom Offre</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="script_page_presentation_offre.js"></script>
-    <link rel="icon" href="" type="image/png">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <script src="../../assets/js/script_page_presentation_offre.js"></script>
+    <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
 </head>
 
 <body>
@@ -15,49 +15,36 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar_2"></div>
-        </div>
-        <img id="logo_seb" src="./logo_png.png" alt="logo" width="150px" />
+        <a href="../view_etudiant/page_acceuil_etudiants.php"><img id="logo_seb"
+                src="../../assets/images/logo_blanc.png" alt="logo" width="60px" /></a>
         <div id="lien_navbar">
-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
-            <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html"
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_offres_etudiants.php"
                 id="lien_offres_etudiants">Offres</a>
-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
-                id="lien_offres_etudiants">Pilotes</a>
-            <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
-                id="lien_offres_etudiants">Etudiants</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
-            <a class="lien_nav police_texte" href="page_wishlist_candidatures.html"
-                id="lien_candidatures">Candidatures</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/page_wishlist_candidatures.php"
+                id="lien_candidatures">Wishlist et Candidatures</a>
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
+                        id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
-            <img id="photo_profil"
-                src="C:\Users\quent\OneDrive - Association Cesi Viacesi mail\A2\04_web\Projet\images\photo_profil.png"
-                alt="photo_profil">
+            <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
         </div>
     </nav>
 
     <div id="lien_navbar_expand">
-        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
-            id="lien_entreprises_etudiants">Acceuil</a>
-        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-0" href="../view_etudiant/page_accueil_etudiant.php"
+            id="lien_entreprises_etudiants">Accueil</a>
+        <a class="lien_nav police_texte linking-animation delay-1" href="../view_etudiant/gestion_offres_etudiants.php"
             id="lien_entreprises_etudiants">Entreprises</a>
-        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
-            id="lien_offres_etudiants">Offres</a>
-        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
-            id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
-            id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
-            id="lien_candidatures">Candidatures</a>
+        <a class="lien_nav police_texte linking-animation delay-2"
+            href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-5"
+            href="../view_etudiant/page_wishlist_candidatures.php" id="lien_candidatures">Wishlist et Candidatures</a>
     </div>
 
     <main>
@@ -115,7 +102,8 @@
                     <button id="submit_cv" type="submit">Envoyer</button>
                 </form>
                 <div id="previews">
-                    <iframe id="pdf_viewer_cv" title="Aperçu PDF cv"></iframe>
+                    <iframe id="pdf_viewer_cv" title="Aperçu PDF cv">
+                    </iframe>
                     <iframe id="pdf_viewer_lm" title="Aperçu PDF lm"></iframe>
                 </div>
             </div>
@@ -123,10 +111,8 @@
 
     </main>
 
-    <footer class="police_texte">
-    &copy; Stage En Bref. <br> Tous droits réservés <br>
-    <a href="mentions_legales.php">Mentions Légales</a>
-</footer>
+    <footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
+
 
 </body>
 

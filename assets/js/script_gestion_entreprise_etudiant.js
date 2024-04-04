@@ -4,7 +4,7 @@ function toggleMenu() {
     var lien_navbar = document.getElementById("lien_navbar_expand");
 
     menuIcon.classList.toggle('cross');
-    if(navbar.classList.contains("expand")) {
+    if (navbar.classList.contains("expand")) {
         navbar.classList.remove("expand");
         document.body.classList.remove('disable-scroll');
         lien_navbar.classList.remove('visible');
@@ -13,7 +13,7 @@ function toggleMenu() {
         document.body.classList.add('disable-scroll');
         navbar.classList.add("expand");
         lien_navbar.classList.add('visible');
-    }  
+    }
 }
 
 
@@ -75,29 +75,41 @@ document.addEventListener("DOMContentLoaded", function () {
                 filtre.style.transitionDelay = "0.6s";
             });
             submit.style.opacity = '1';
+            submit.style.transitionProperty = "opacity"; // Spécifie la propriété à laquelle s'applique la transition
             submit.style.transitionDelay = "0.6s";
+
             filter_button.innerHTML = 'Fermer';
             formulaire_filtre.style.maxHeight = formulaire_filtre.scrollHeight + 'px';
 
             deplier_ou_pas = true;
+
         }
         else {
-            setTimeout(function() {
+            setTimeout(function () {
                 filter_button.style.borderBottomLeftRadius = '8px';
                 filter_button.style.borderBottomRightRadius = '8px';
             }, 750);
-            
+
             les_filtres.forEach(function (filtre) {
                 filtre.style.opacity = '0';
                 filtre.style.transitionDelay = "0s";
             });
             submit.style.opacity = '0';
+            submit.style.transitionProperty = "opacity";
             submit.style.transitionDelay = "0s";
             filter_button.innerHTML = 'Filtrer';
             formulaire_filtre.style.maxHeight = null;
 
             deplier_ou_pas = false;
+
         }
 
     })
+
+
+    
+
+
+
+
 })

@@ -31,7 +31,7 @@ Class Promo{
         $this->bddconnection = $bdd;
     }
     function set_name($name) {
-        $this->name = 'A5 BTP';
+        $this->name = $name;
     }
     function set_id($id) {
         $this->id = $id;    

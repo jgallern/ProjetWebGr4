@@ -2,9 +2,10 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url("C:/Users/quent/Downloads/Design sans titre (1).svg");
+    background-image: url("../images/fond5.png");
     background-attachment: fixed;
-    background-size: cover;
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 
 #header_page_ss_connexion {
@@ -28,7 +29,7 @@ body {
     margin-right: 2em;
     background-color: #B3B3B3;
     padding: 0.5em;
-    border-radius: 10px;
+    border-radius: 20px;
     color: #0b0b0b;
     cursor: pointer;
     transition: background-color 0.4s;
@@ -76,12 +77,13 @@ body {
 #navbar {
     display: flex;
     justify-content: space-between;
-    background-color: #272727;
+    background-color: #0D1321;
     position: sticky;
     top: 0em;
     height: 4em;
     z-index: 999;
     transition: height 0.4s;
+    vertical-align: top;
 }
 
 #lien_navbar_expand {
@@ -161,10 +163,10 @@ body {
 }
 
 .offre_stage {
-    width: calc(42% - 5px);
+    width: calc(40% - 5px);
     /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
     padding: 20px;
-    background-color: #f2f2f2;
+    background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
     margin-right: 10px;
     margin-bottom: 10px;
     /* Espacement entre les lignes */
@@ -323,6 +325,9 @@ body {
 }
 
 .offres_header {
+    background-color: rgba(252, 248, 252, 0.65);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     display: flex;
     align-items: center;
     padding-right: 2em;
@@ -357,14 +362,13 @@ body {
 
 
 .offres_container {
-
-    overflow-x: hidden;
+    overflow-x: scroll;
     display: flex;
     padding-bottom: 4em;
     padding-top: 2em;
     width: 100%;
-
 }
+
 
 
 
@@ -372,7 +376,7 @@ body {
     text-decoration: none;
     color: black;
     background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 11px 10px 0 rgba(0, 0, 0, .2);
     min-width: 10%;
     width: 21%;
@@ -393,7 +397,7 @@ body {
     width: 100%;
     margin-top: 1em;
     border: none;
-    background-color: #d4aa7dbc;
+    background-color: rgba(252, 248, 252, 0.75);
     padding: 2em;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -404,7 +408,7 @@ body {
 
 
 .btn_suppr:hover {
-    background-color: #bb2323;
+    background-color: #c45656;
     color: white;
     transition: 0.4s;
 
@@ -413,6 +417,7 @@ body {
 
 .offre p {
     text-align: left;
+    padding: 0.3em;
 }
 
 .offre img {
@@ -446,11 +451,26 @@ body {
     /* Permettre le passage à la ligne */
 }
 
+.actus{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#titre_bonjour{
+    margin-left: 1.7em;
+}
+
+#titre_actus{
+    margin-top: 2em;
+    margin-left: 3em;
+}
+
 .offre_stage {
-    width: calc(42% - 5px);
+    width: calc(40% - 5px);
+    box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
     /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
     padding: 20px;
-    background-color: #f2f2f2;
+    background-color: ;
     margin-right: 10px;
     margin-bottom: 10px;
     /* Espacement entre les lignes */
@@ -613,7 +633,7 @@ body {
 
     background-color: #D4AA7D;
     position: absolute;
-    border-radius: 10px;
+    border-radius: 20px;
     z-index: 1;
     top: -0.2em;
     right: -0.2em;
@@ -681,15 +701,15 @@ body {
     width: 90%;
     height: 3em;
     border: none;
-    background-color: #ccc;
-    color: #141412;
+    background-color: rgba(252, 248, 252, 0.75);
+    color: black;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 
 #form_filtre {
-    background-color: #797979;
+    background-color: #fff;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
@@ -720,7 +740,7 @@ body {
 .un_filtre select {
     border-radius: 5px;
     padding: 0.7em;
-    border: none;
+    border: solid 1px #c4d86db6;
     margin-top: 1em;
     width: 15em;
 }
@@ -730,10 +750,20 @@ body {
     cursor: pointer;
     opacity: 0;
     border-radius: 5px;
-    background-color: #B3B3B3;
+    background-color: #0D1321;
+    color: #fff;
+    border: none;
     padding: 1em;
     margin-top: 3em;
     margin-bottom: 2em;
+    min-width: fit-content;
+    width: 10%;
+    transition: background-color 0.2s;
+}
+
+#submit_button:hover {
+    background-color: #0d13219c;
+    transition: background-color 0.2s;
 }
 
 
@@ -752,18 +782,18 @@ body {
 
 
 .carte_entreprise {
+    cursor: pointer;
     width: 21%;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
     color: #141412;
     transition: transform 0.4s;
     background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
     padding: 1em;
-
-
 }
+
 
 .carte_entreprise img {
     width: 150px;
@@ -777,27 +807,32 @@ body {
 
 
 .carte_voir_plus {
-    background-color: #bbbbbb;
+    background-color: rgba(252, 248, 252, 0.65);
     text-align: center;
     border: 0px;
     transition: 1s;
+    position: relative;
 
+}
+
+.carte_voir_plus img{
+    position: inherit;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .carte_voir_plus:hover {
     transform: none;
-    border: #141412 solid;
     transition: 0.2s;
 }
 
-.carte_voir_plus h3 {
-    font-size: 30px;
+.img_voir_plus {
+    transition: transform 0.7s ease-in-out; /* Ajoute une transition sur la propriété transform */
 }
 
-
-
-
-
+.img_voir_plus:hover {
+    transform: rotate(360deg); /* Rotation de 360 degrés lors du survol */
+}
 
 
 .form-section {
@@ -812,7 +847,7 @@ body {
     background-color: #B3B3B3;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -852,6 +887,9 @@ body {
 .titre {
     padding-left: 2.5em;
     font-weight: 400;
+    position: inherit;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .form-section input {
@@ -938,8 +976,9 @@ body {
 }
 
 .bloc_gestion {
-    background-color: #B3B3B3;
-    border-radius: 10px;
+    background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
+    box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
+    border-radius: 20px;
     margin-left: 3em;
     padding-left: 2em;
     padding-top: 1em;
@@ -987,7 +1026,7 @@ body {
 
 
 #result_recherche_entreprise {
-    border-radius: 8px;
+    border-radius: 12px;
     background-color: #fff;
     max-width: 100%;
     margin-left: 2em;
@@ -999,8 +1038,9 @@ body {
     position: relative;
 }
 
-#result_recherche_offres {
-    border-radius: 8px;
+
+#result_recherche_offres{
+    border-radius: 12px;
     background-color: #fff;
     width: 80%;
     max-width: 100%;
@@ -1065,7 +1105,7 @@ body {
 .recherche_fiche_entreprise {
     height: 10em;
     border-radius: 6px;
-    background-color: #797979;
+    background-color: #ffeddf;
     padding: 1em;
     flex: 0 0 calc(30% - 1em);
     margin-right: 1em;
@@ -1075,7 +1115,7 @@ body {
     -ms-overflow-style: none;
     cursor: pointer;
 
-    transition: background-color 0.4s;
+    transition: 0.4s;
 }
 
 #fiches_offres {
@@ -1087,12 +1127,12 @@ body {
 
 .recherche_fiche_entreprise:hover,
 .recherche_fiche_entreprise.hover {
-    background-color: #B3B3B3;
-    transition: background-color 0.4s;
+    outline: solid 1px #0d1321;
+    transition: 0.4s;
 }
 
 .recherche_fiche_entreprise.selected {
-    background-color: coral;
+    background-color: #c5d86d;
     transition: background-color 0.4s;
 }
 
@@ -1204,6 +1244,76 @@ body {
     visibility: hidden;
 }
 
+
+#result_modif_pilote, #result_modif_etudiant{
+    margin-top: 2em;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 20px;
+    box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
+    padding: 2em;
+    display: block;
+}
+
+#result_modif_pilote input, select{
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+    border-radius: 12px;
+    padding: 0.5em;
+}
+
+#result_modif_pilote #supprimer_entreprise{
+    width: 40%;
+    padding: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    color: #fff;
+    transition: 0.2s;
+
+}
+
+#result_modif_pilote #supprimer_entreprise:hover{
+    background-color: rgb(183, 40, 40);
+    transition: 0.2s;
+}
+
+#result_modif_pilote #btn_envoi{
+    text-align: center;
+}
+
+#result_modif_pilote #btn_envoi button{
+    padding: 1em;
+    cursor: pointer;
+    width: fit-content;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+#result_modif_pilote #btn_envoi button:hover{
+    transition: 0.2s;
+    background-color: #c2c2c2;
+}
+
+#btn_reinitialiser_pilote{
+    margin-right: 1em;
+}
+
+
+#check_promos input{
+    width: fit-content;
+    border-radius: 5px;
+    padding: 0.6em;
+    border: none;
+    margin-top: 0em;
+    max-width: none;
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+
 #result_modif.visible,
 #result_stats.visible {
     position: static;
@@ -1213,7 +1323,7 @@ body {
     margin-top: 3em;
     padding: 2em;
     width: 60%;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
 }
 
@@ -1299,7 +1409,7 @@ body {
 .recherche_fiche_offres {
     height: 15em;
     border-radius: 6px;
-    background-color: #797979;
+    background-color: #ffeddf;
     padding: 1em;
     flex: 0 0 calc(20% - 1em);
     margin-right: 1em;
@@ -1316,11 +1426,11 @@ body {
 }
 
 .recherche_fiche_offres.hover {
-    background-color: #bbbbbb;
+    outline: solid 1px #0d1321;
 }
 
 .recherche_fiche_offres.select {
-    background-color: coral;
+    background-color: #c5d86d;
 }
 
 
@@ -1460,17 +1570,16 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 1em;
-    border: solid 2px #c2c2c2;
-    background-color: #797979;
+    border: solid 2px #c5d86d;
+    background-color: rgba(252, 248, 252, 0.25);
     transition: 0.4s;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
 }
 
 #btn_candidater:hover,
 #submit_cv:hover {
-    background-color: #B3B3B3;
-    border: solid 1px #797979;
+    background-color: rgba(252, 248, 252, 0.75);
     transition: 0.4s;
 }
 
@@ -1484,7 +1593,7 @@ body {
 
 #pdf_viewer_cv,
 #pdf_viewer_lm {
-    border-radius: 10px;
+    border-radius: 20px;
     margin-left: 3em;
     width: 250px;
     height: 300px;
@@ -1501,7 +1610,8 @@ footer {
     padding-bottom: 5em;
     padding-top: 2em;
     text-align: center;
-    background-color: lightblue;
+    background-color: #0D1321;
+    color: #fff;
 }
 
 .police_texte {
@@ -1528,7 +1638,7 @@ footer {
     background-color: white;
     position: absolute;
     transition: transform 0.4s ease;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 .bar_2 {
@@ -1572,6 +1682,44 @@ footer {
 }
 
 
+#infos_et_carte{
+    display: flex;
+}
+
+#map{
+    height: 400px;
+    width: 60%;
+    z-index: 15;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#img_404{
+    width: 400px;
+    display: block;
+    position: inherit;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#titre_404{
+    display: block;
+    text-align: center;
+}
+
+
+#bloc_presentation_entreprise p{
+    margin-bottom: 2em;
+    margin-top: 0.2em;
+}
+
+#bloc_presentation_entreprise h3{
+    margin-bottom: 0em;
+}
+
 @media (max-width: 1000px) {
 
     body {
@@ -1613,6 +1761,10 @@ footer {
 
     .bloc_gestion {
         padding-left: 0;
+    }
+
+    .padding_bloc{
+        padding-left: 1em;
     }
 
     #fiches_entreprises_et_boutons {
@@ -1733,7 +1885,7 @@ footer {
         margin-top: 3em;
         padding-left: 0.5em;
         width: 60%;
-        border-radius: 10px;
+        border-radius: 20px;
         box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
     }
 
@@ -1754,24 +1906,6 @@ footer {
         height: 7em;
         resize: none;
         cursor: text;
-    }
-
-
-    .carte_entreprise {
-        width: 80%;
-        text-decoration: none;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        color: #141412;
-        transition: transform 0.4s;
-        background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
-        padding: 1em;
-
-    }
-
-    .carte_entreprise img {
-        width: 80px;
     }
 
     #titre_page {
@@ -1831,7 +1965,6 @@ footer {
     }
 
     .offres_container {
-
         overflow-x: scroll;
         margin-left: auto;
         margin-right: auto;
@@ -1879,7 +2012,7 @@ footer {
         width: 80%;
         /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
         padding: 5px;
-        background-color: #f2f2f2;
+        background: radial-gradient(circle at 100% 0, hsla(0, 0%, 100%, .50) 0, hsla(0, 0%, 96.1%, .3) 183%);
         margin-bottom: 10px;
         /* Espacement entre les lignes */
         border-radius: 6px;
@@ -1952,6 +2085,15 @@ footer {
         border-radius: 6px;
         padding: 1em;
         margin-right: 0.5em;
+    }
+
+    #titre_bonjour{
+        margin-left: 1em;
+    }
+    
+    #titre_actus{
+        margin-top: 2em;
+        margin-left: 1em;
     }
 
 }
