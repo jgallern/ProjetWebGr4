@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Stage En Bref</title>
-    <link rel="stylesheet" href="../../assets/css/style1.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_wishlist_candidatures.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
 </head>
@@ -52,12 +52,12 @@
     <section class="wish_cand apple_style">
         <div class="offres_header">
             <h2 id="titre_ta_wishlist" class="police_texte">Ta Wishlist</h2>
-            <input class="police_texte recherche_offres" type="text" id="recherche_wishlist"
-                placeholder="Rechercher...">
+            <form method="POST" action="">
+                <input class="police_texte recherche_offres" type="text" id="recherche_wishlist" placeholder="Rechercher...">
+                <button name="recherche_wishlist" type='submit'>rechercher</button>
+            </form>
         </div>
         <div class="les_offres">
-            <h3 id="aucune_offre" class="aucune_offre police_texte" style="display: none;">Aucune offre ne correspond à
-                votre recherche</h3>
 
             <div class="offres_container" id="wishlist_container">
 
@@ -65,88 +65,110 @@
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a><a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
                 <a href="#" class="offre offre_wishlist police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
-                    <button class='btn_suppr'>SUPPRIMER</button>
+                    <form method="POST" action="">
+                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                    </form>
                 </a>
 
             </div>
@@ -162,12 +184,12 @@
     <section class="wish_cand apple_style">
         <div class="offres_header">
             <h2 class="police_texte" id="titre_tes_candidatures">Tes candidatures</h2>
-            <input class="police_texte recherche_offres" type="text" id="recherche_candidatures"
-                placeholder="Rechercher...">
+            <form method="POST" action="">
+                <input class="police_texte recherche_offres" type="text" id="recherche_wishlist" placeholder="Rechercher...">
+                <button name="recherche_candidatures" type='submit'>rechercher</button>
+            </form>
         </div>
         <div class="les_offres">
-            <h3 id="aucune_offre_candidatures" class="police_texte aucune_offre" style="display: none;">Aucune offre ne
-                correspond à votre recherche</h3>
 
             <div class="offres_container" id="candidatures_container">
 
@@ -175,70 +197,70 @@
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des chocolats
+                    <p>Ce texte décrit l'offre brièvement
                     </p>
                 </a>
 
