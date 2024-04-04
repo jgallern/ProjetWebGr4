@@ -75,11 +75,11 @@
                 <div id="form_recherche">
                         <div class="form-row">
                             <label for="search-name">Nom de l'étudiant :</label><br>
-                            <input type="text" placeholder="Entrez le nom de l'étudiant" />
+                            <input name="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
                         </div><br>
                         <div class="form-row">
                             <label for="search-name">Prénom de l'étudiant :</label><br>
-                            <input type="text" placeholder="Entrez le prénom de l'étudiant" />
+                            <input name="search-prenom" type="text" placeholder="Entrez le prénom de l'étudiant" />
                         </div><br>
                         <label>Promotion :</label>
                         <select name="promo">

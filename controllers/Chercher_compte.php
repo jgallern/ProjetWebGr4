@@ -14,16 +14,10 @@ if (isset($_POST["search-name"])) {
     $prs->set_Nom($nom);
     echo $nom;
 }
-else {
-    $prs->set_Nom(null);
-}
 if (isset($_POST["search-prenom"])) {
     $prenom = $_POST["search-prenom"];
     $prs->set_Prenom($prenom);
     echo $prenom;
-}
-else{
-    $prs->set_Prenom(null);
 }
 if (isset($_POST["search-sector"])) {
     $secteur = "CESI ".$_POST["search-sector"];
@@ -58,6 +52,8 @@ else {
 //}
 
 $donnees = $prs->chercher_personne();
+
+echo $prs->get_Prenom();
 
 print_r($donnees);
 

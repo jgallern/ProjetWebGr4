@@ -58,6 +58,9 @@ class Personne
     }
 
 
+    function get_Prenom(){
+        return $this->prenom;
+    }
     //    function Montrer_Tables(){
 //        $tables = $this->connection->query("select * from Personne");
 //        foreach($tables as $row) {
@@ -208,16 +211,17 @@ class Etudiant extends Personne
             $sql = "SELECT * FROM Personne";
             $whereClause = array();
 
-            if ($this->nom !== null) {
+            if ($this->nom != null) {
                 $whereClause[] = "nom = :nom";
             }
-            if ($this->prenom !== null) {
+
+            if ($this->prenom != null) {
                 $whereClause[] = "prenom = :prenom";
             }
-            if ($this->ID_Centre !== null) {
+            if ($this->ID_Centre != null) {
                 $whereClause[] = "ID_Centre = :id_centre";
             }
-            if ($this->Login !== null) {
+            if ($this->Login != null) {
                 $whereClause[] = "Login = :login";
             }
 
@@ -225,18 +229,20 @@ class Etudiant extends Personne
                 $sql .= " WHERE " . implode(" AND ", $whereClause);
             }
 
+
             $select = $this->bddconnection->prepare($sql);
 
-            if ($this->nom !== null) {
+            if ($this->nom != null) {
                 $select->bindValue(':nom', $this->nom);
             }
-            if ($this->prenom !== null) {
+            if ($this->prenom != null) {
                 $select->bindValue(':prenom', $this->prenom);
             }
-            if ($this->ID_Centre !== null) {
+
+            if ($this->ID_Centre != null) {
                 $select->bindValue(':id_centre', $this->ID_Centre);
             }
-            if ($this->Login !== null) {
+            if ($this->Login != null) {
                 $select->bindValue(':login', $this->Login);
             }
 
