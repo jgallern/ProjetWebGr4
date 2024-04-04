@@ -29,14 +29,6 @@ CREATE TABLE SecteurActivite(
     PRIMARY KEY(ID_secteur)
 );
 
-CREATE TABLE Notes(
-    ID_Note INT NOT NULL AUTO_INCREMENT,
-    Note INT,
-    Commentaire VARCHAR(280),
-    ID_Personne INT,
-    FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne),
-    PRIMARY KEY(ID_Note)
-);
 
 
 CREATE TABLE Centre(
@@ -58,6 +50,16 @@ CREATE TABLE Personne(
     PRIMARY KEY(ID_Personne),
     FOREIGN KEY(ID_Centre) REFERENCES Centre(ID_Centre)
 );
+
+CREATE TABLE Notes(
+    ID_Note INT NOT NULL AUTO_INCREMENT,
+    Note INT,
+    Commentaire VARCHAR(280),
+    ID_Personne INT,
+    FOREIGN KEY(ID_Personne) REFERENCES Personne(ID_Personne),
+    PRIMARY KEY(ID_Note)
+);
+
 
 CREATE TABLE Pilote(
     ID_Pilote INT NOT NULL AUTO_INCREMENT,
