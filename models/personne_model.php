@@ -221,6 +221,9 @@ class Etudiant extends Personne
             if ($this->ID_Centre != null) {
                 $whereClause[] = "ID_Centre = :id_centre";
             }
+            if ($this->ID_Promotion != null) {
+                $whereClause[] = "ID_Promotion = :id_prmo";
+            }
             if ($this->Login != null) {
                 $whereClause[] = "Login = :login";
             }
@@ -241,6 +244,9 @@ class Etudiant extends Personne
 
             if ($this->ID_Centre != null) {
                 $select->bindValue(':id_centre', $this->ID_Centre);
+            }
+            if ($this->ID_Promotion != null) {
+                $select->bindValue(':id_prmo', $this->ID_Promotion);
             }
             if ($this->Login != null) {
                 $select->bindValue(':login', $this->Login);

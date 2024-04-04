@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -32,7 +35,8 @@
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <a style="text-decoration: none;" href="../../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
+                <a style="text-decoration: none;" href="../../controllers/deconnection_controller.php"><button
+                        id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
 
             <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
@@ -70,9 +74,9 @@
 
         <section class="bloc_gestion police_texte">
             <form method="post" action="../../controllers/Chercher_compte.php">
-            <h2>Rechercher un étudiant</h2>
-            <div id="recherche_container">
-                <div id="form_recherche">
+                <h2>Rechercher un étudiant</h2>
+                <div id="recherche_container">
+                    <div id="form_recherche">
                         <div class="form-row">
                             <label for="search-name">Nom de l'étudiant :</label><br>
                             <input name="search-name" type="text" placeholder="Entrez le nom de l'étudiant" />
@@ -144,61 +148,34 @@
                         </div>
             </form>
             </div>
+
             <div id="fiches_entreprises_et_boutons">
                 <div id="result_recherche_entreprise">
+                <?php
+                foreach ($_SESSION["resultat"] as $personne): ?>
                     <div class="recherche_fiche_entreprise">
-                        <img width="80px"
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                            alt="img entreprise">
-                        <h3>Intitulé 1</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
-                    </div>
-                    <div class="recherche_fiche_entreprise">
-                        <img width="80px"
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                            alt="img entreprise">
-                        <h3>Intitulé 2</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
-                    </div>
-                    <div class="recherche_fiche_entreprise">
-                        <img width="80px"
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                            alt="img entreprise">
-                        <h3>Intitulé 3</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
-                    </div>
-                    <div class="recherche_fiche_entreprise">
-                        <img width="80px"
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                            alt="img entreprise">
-                        <h3>Intitulé 3</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
-                    </div>
-                    <div class="recherche_fiche_entreprise">
-                        <img width="80px"
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                            alt="img entreprise">
-                        <h3>Intitulé 3</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
-                    </div>
-                    <div class="recherche_fiche_entreprise">
-                        <img width="80px"
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                            alt="img entreprise">
-                        <h3>Intitulé 3</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
-                    </div>
 
-                    <div id="overlay"></div>
-                    <div id="message">Veuillez sélectionner une entreprise</div>
-                </div>
-
+                        <p>
+                            <?php if ($personne['nom']!=":nom"){
+                            ?>
+                            <img width="80px"
+                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                            alt="img personne">
+                        <h3><?php
+                            echo $personne['nom']." ".$personne['prenom']; ?>
+                        </h3>
+                        <?php
+                        $prmo->set_id($personne['ID_Promotion']);
+                        $promo = $prmo->get_Name();
+                        ?>
+                        <p>
+                            <?php echo $promo."</p>";} ?>
+                        
+                    <?php endforeach; ?>
+                            </div>
+                            <div id="overlay"></div>
+                            <div id="message">Veuillez sélectionner une entreprise</div>
+                    </div>
 
                 <div id="icones_modif">
                     <div class="image-container" id="btn_modif">
@@ -316,77 +293,80 @@
 
         <section class="bloc_gestion police_texte">
             <h2>Créer un étudiant</h2>
-            <form methode="post" action="../../controllers/creation_compte.php" >
-            <div class="form-row">
-                <label for="search-name">Nom de l'étudiant : *</label><br>
-                <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom de l'étudiant" required/>
-            </div><br>
-            <div class="form-row">
-                <label for="search-name">Prénom de l'étudiant : *</label><br>
-                <input  name="search-prenom" id="search-name" type="text" placeholder="Entrez le prénom de l'étudiant" required />
-            </div><br>
-            <label>Promotion : *</label><br>
-            <select required name="promo">
-                <option>--Choisir--</option>
-                <option>A2 informatique</option>
-                <option>A2 BTP</option>
-                <option>A2 S3E</option>
-                <option>A2 Généraliste</option>
-                <option>A3 informatique</option>
-                <option>A3 BTP</option>
-                <option>A3 S3E</option>
-                <option>A3 Généraliste</option>
-                <option>A4 informatique</option>
-                <option>A4 BTP</option>
-                <option>A4 S3E</option>
-                <option>A4 Généraliste</option>
-                <option>A5 informatique</option>
-                <option>A5 BTP</option>
-                <option>A5 S3E</option>
-                <option>A5 Généraliste</option>
-            </select><br>
-            <label>Centre : *</label><br>
-            <select required name="search-sector">
-                <option disabled selected>Choisissez un centre</option>
-                <option disabled selected>Est</option>
-                <option>Strasbourg</option>
-                <option>Dijon</option>
-                <option>Nancy</option>
-                <option>Reims</option>
-                <option disabled selected>Sud-Est</option>
-                <option>Aix-en-provence</option>
-                <option>Grenoble</option>
-                <option>Lyon</option>
-                <option>Nice</option>
-                <option disabled selected>Ile-de-France-Centre</option>
-                <option>Châteauroux</option>
-                <option>Orléans</option>
-                <option>Paris Nanterre</option>
-                <option disabled selected>Ouest</option>
-                <option>Angoulême</option>
-                <option>Brest</option>
-                <option>La Rochelle</option>
-                <option>Le Mans</option>
-                <option>Nantes</option>
-                <option>Saint-Nazaire</option>
-                <option disabled selected>Sud-Ouest</option>
-                <option>Bordeaux</option>
-                <option>Montpellier</option>
-                <option>Pau</option>
-                <option>Toulouse</option>
-                <option disabled selected>Nord-Ouest</option>
-                <option>Lille</option>
-                <option>Rouen</option>
-                <option>Arras</option>
-                <option>Cean</option>
-            </select>
-            <div class="form-row">
-                <label for="create-sector">Photo de l'étudiant :</label><br>
-                <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
-            </div>
-            <div class="form-row">
-                <label for="create-sector">Login : *</label><br>
-                <input required  name="login" id="search-name" type="text" placeholder="Entrez le login de connexion de l'étudiant" />
+            <form methode="post" action="../../controllers/creation_compte.php">
+                <div class="form-row">
+                    <label for="search-name">Nom de l'étudiant : *</label><br>
+                    <input name="search-name" id="search-name" type="text" placeholder="Entrez le nom de l'étudiant"
+                        required />
+                </div><br>
+                <div class="form-row">
+                    <label for="search-name">Prénom de l'étudiant : *</label><br>
+                    <input name="search-prenom" id="search-name" type="text"
+                        placeholder="Entrez le prénom de l'étudiant" required />
+                </div><br>
+                <label>Promotion : *</label><br>
+                <select required name="promo">
+                    <option>--Choisir--</option>
+                    <option>A2 informatique</option>
+                    <option>A2 BTP</option>
+                    <option>A2 S3E</option>
+                    <option>A2 Généraliste</option>
+                    <option>A3 informatique</option>
+                    <option>A3 BTP</option>
+                    <option>A3 S3E</option>
+                    <option>A3 Généraliste</option>
+                    <option>A4 informatique</option>
+                    <option>A4 BTP</option>
+                    <option>A4 S3E</option>
+                    <option>A4 Généraliste</option>
+                    <option>A5 informatique</option>
+                    <option>A5 BTP</option>
+                    <option>A5 S3E</option>
+                    <option>A5 Généraliste</option>
+                </select><br>
+                <label>Centre : *</label><br>
+                <select required name="search-sector">
+                    <option disabled selected>Choisissez un centre</option>
+                    <option disabled selected>Est</option>
+                    <option>Strasbourg</option>
+                    <option>Dijon</option>
+                    <option>Nancy</option>
+                    <option>Reims</option>
+                    <option disabled selected>Sud-Est</option>
+                    <option>Aix-en-provence</option>
+                    <option>Grenoble</option>
+                    <option>Lyon</option>
+                    <option>Nice</option>
+                    <option disabled selected>Ile-de-France-Centre</option>
+                    <option>Châteauroux</option>
+                    <option>Orléans</option>
+                    <option>Paris Nanterre</option>
+                    <option disabled selected>Ouest</option>
+                    <option>Angoulême</option>
+                    <option>Brest</option>
+                    <option>La Rochelle</option>
+                    <option>Le Mans</option>
+                    <option>Nantes</option>
+                    <option>Saint-Nazaire</option>
+                    <option disabled selected>Sud-Ouest</option>
+                    <option>Bordeaux</option>
+                    <option>Montpellier</option>
+                    <option>Pau</option>
+                    <option>Toulouse</option>
+                    <option disabled selected>Nord-Ouest</option>
+                    <option>Lille</option>
+                    <option>Rouen</option>
+                    <option>Arras</option>
+                    <option>Cean</option>
+                </select>
+                <div class="form-row">
+                    <label for="create-sector">Photo de l'étudiant :</label><br>
+                    <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
+                </div>
+                <div class="form-row">
+                    <label for="create-sector">Login : *</label><br>
+                    <input required name="login" id="search-name" type="text"
+                        placeholder="Entrez le login de connexion de l'étudiant" />
 
                 </div>
                 <div class="form-row">
@@ -404,10 +384,11 @@
         </section>
 
 
-        
+
         <footer class="police_texte">
-    &copy; Stage En Bref. <br> Tous droits réservés <br>
-    <a href="mentions_legales.php">Mentions Légales</a>
-</footer></body>
+            &copy; Stage En Bref. <br> Tous droits réservés <br>
+            <a href="mentions_legales.php">Mentions Légales</a>
+        </footer>
+</body>
 
 </html>
