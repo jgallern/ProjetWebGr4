@@ -4,15 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>Nom Offre</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
-        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-        crossorigin="" />
+
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-        integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-        crossorigin=""></script>
     <script src="../../assets/js/script_page_presentation_entreprise.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
+    <link rel="manifest" href="../assets/manifest.json">
+
 </head>
 
 <body>
@@ -46,9 +43,9 @@
         <a class="lien_nav police_texte linking-animation delay-0" href="../view_etudiant/page_accueil_etudiant.php"
             id="lien_entreprises_etudiants">Accueil</a>
         <a class="lien_nav police_texte linking-animation delay-1" href="../view_etudiant/gestion_offres_etudiants.php"
-            id="lien_entreprises_etudiants">Entreprises</a>
+            id="lien_entreprises_etudiants">Offres</a>
         <a class="lien_nav police_texte linking-animation delay-2"
-            href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_offres_etudiants">Offres</a>
+            href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_offres_etudiants">Entreprises</a>
         <a class="lien_nav police_texte linking-animation delay-5"
             href="../view_etudiant/page_wishlist_candidatures.php" id="lien_candidatures">Wishlist et Candidatures</a>
     </div>

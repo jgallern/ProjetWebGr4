@@ -629,8 +629,8 @@ body {
 
 
 #detail_profil {
-
-    background-color: #D4AA7D;
+    background-color: rgba(252, 248, 252, 0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: absolute;
     border-radius: 20px;
     z-index: 1;
@@ -640,7 +640,11 @@ body {
     height: 0;
     transition: height 0.6s, width 0.6s;
     text-align: center;
+}
 
+#detail_profil.visible{
+    height: 20em;
+    width: 20em;
 }
 
 #detail_profil button {
@@ -663,17 +667,22 @@ body {
     transition: top 0.6s, right 0.6s;
 }
 
-#bouton_voir_profil {
-    cursor: pointer;
-    border-radius: 5px;
-    padding: 1em;
-    background-color: #797979;
-    margin-left: auto;
-    margin-right: auto;
+#photo_profil.visible{
+    position: absolute;
+    right: 7.5em;
+    top: 2em;
+    width: 5em;
+    cursor: default;
 }
+
 
 #nom_prenom_etudiant {
     margin-top: 40%;
+    display: none;
+}
+
+#nom_prenom_etudiant.visible{
+    display: block;
 }
 
 #bouton_deconnexion {
@@ -684,11 +693,12 @@ body {
     margin-top: 1em;
     margin-left: auto;
     margin-right: auto;
+    display: none;
 }
 
-
-
-
+#bouton_deconnexion.visible {
+    display: block;
+}
 
 
 #partie_filtre {
@@ -1116,6 +1126,10 @@ body {
     cursor: pointer;
 
     transition: 0.4s;
+}
+
+.recherche_fiche_entreprise img{
+    width: 80px;
 }
 
 #fiches_offres {
@@ -1836,7 +1850,11 @@ footer {
     .recherche_fiche_entreprise {
         margin-right: 0.2em;
         margin-left: 0.2em;
-        flex: 0 0 calc(50% - 1em);
+        flex: 0 0 calc(80% - 1em);
+    }
+
+    .recherche_fiche_entreprise img{
+        width: 50px;
     }
 
 
@@ -1868,6 +1886,7 @@ footer {
     .titre {
         padding-left: 1em;
         font-weight: 400;
+        font-size: 1.5em;
     }
 
     #deux_partie_modif {
@@ -2093,6 +2112,27 @@ footer {
     #titre_actus{
         margin-top: 2em;
         margin-left: 1em;
+    }
+
+    #detail_profil.visible{
+        height: 15em;
+        width: 15em;
+    }
+
+    #photo_profil.visible{
+        position: absolute;
+        right: 5.5em;
+        top: 1em;
+        width: 3.5em;
+        cursor: default;
+    }
+
+    .carte_entreprise {
+        width: 80%;
+    }
+
+    .carte_entreprise img {
+        width: 50px;
     }
 
 }

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_gestion_etudiants_admin.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
+    <link rel="manifest" href="../assets/manifest.json">
+</head>
 
 <body>
     <nav id="navbar">
@@ -151,49 +153,38 @@
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
                         <h3>Intitulé 1</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
+                        <p>A5 informatique</p>
                     </div>
                     <div class="recherche_fiche_entreprise">
                         <img width="80px"
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
-                        <h3>Intitulé 2</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
+                        <h3>Intitulé 1</h3>
+                        <p>A5 informatique</p>
                     </div>
                     <div class="recherche_fiche_entreprise">
                         <img width="80px"
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
-                        <h3>Intitulé 3</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
+                        <h3>Intitulé 1</h3>
+                        <p>A5 informatique</p>
                     </div>
                     <div class="recherche_fiche_entreprise">
                         <img width="80px"
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
-                        <h3>Intitulé 3</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
+                        <h3>Intitulé 1</h3>
+                        <p>A5 informatique</p>
                     </div>
                     <div class="recherche_fiche_entreprise">
                         <img width="80px"
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
-                        <h3>Intitulé 3</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
+                        <h3>Intitulé 1</h3>
+                        <p>A5 informatique</p>
                     </div>
-                    <div class="recherche_fiche_entreprise">
-                        <img width="80px"
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                            alt="img entreprise">
-                        <h3>Intitulé 3</h3>
-                        <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                            chocolats</p>
-                    </div>
+                    
+                    
 
                     <div id="overlay"></div>
                     <div id="message">Veuillez sélectionner une entreprise</div>

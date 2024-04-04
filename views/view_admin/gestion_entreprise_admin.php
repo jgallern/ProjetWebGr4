@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_page_gestion_entreprise_admin.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
+    <link rel="manifest" href="../assets/manifest.json">
 
 </head>
 
@@ -156,19 +157,11 @@
                             <img 
                                 src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
                                 width="30px">
-                            <div class="overlay"></div>
                         </div>
                         <div class="image-container" id="btn_stats">
                             <img
                                 src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
                                 width="30px">
-                            <div class="overlay"></div>
-                        </div>
-                        <div class="image-container" id="btn_voir">
-                            <img
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
-                                width="30px">
-                            <div class="overlay"></div>
                         </div>
                     </div>
 

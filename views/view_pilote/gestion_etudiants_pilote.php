@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_gestion_etudiants_pilote.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
+    <link rel="manifest" href="../assets/manifest.json">
 
 </head>
 
@@ -35,25 +36,21 @@
             </div>
 
             <img id="photo_profil"
-                src="C:\Users\quent\OneDrive - Association Cesi Viacesi mail\A2\04_web\Projet\images\photo_profil.png"
+                src="../../assets/images/photo_profil.png"
                 alt="photo_profil">
         </div>
 
     </nav>
 
     <div id="lien_navbar_expand">
-        <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-0" href="../view_pilote/page_accueil_pilote.php"
             id="lien_entreprises_etudiants">Acceuil</a>
-        <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-1" href="../view_pilote/gestion_entreprise_pilote.php"
             id="lien_entreprises_etudiants">Entreprises</a>
-        <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-2" href="../view_pilote/gestion_offres_pilotes.php"
             id="lien_offres_etudiants">Offres</a>
-        <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
+        <a class="lien_nav police_texte linking-animation delay-3" href="../view_pilote/gestion_etudiants_pilote.php"
             id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
-            id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
-            id="lien_candidatures">Candidatures</a>
     </div>
 
     <main>
@@ -150,7 +147,7 @@
             <div id="fiches_entreprises_et_boutons">
                 <div id="result_recherche_entreprise">
                     <div class="recherche_fiche_entreprise">
-                        <img width="80px"
+                        <img width
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
                         <h3>Intitulé 1</h3>
@@ -158,7 +155,7 @@
                             chocolats</p>
                     </div>
                     <div class="recherche_fiche_entreprise">
-                        <img width="80px"
+                        <img width
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
                         <h3>Intitulé 2</h3>
@@ -166,7 +163,7 @@
                             chocolats</p>
                     </div>
                     <div class="recherche_fiche_entreprise">
-                        <img width="80px"
+                        <img width
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
                         <h3>Intitulé 3</h3>
@@ -174,7 +171,7 @@
                             chocolats</p>
                     </div>
                     <div class="recherche_fiche_entreprise">
-                        <img width="80px"
+                        <img width
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
                         <h3>Intitulé 3</h3>
@@ -182,7 +179,7 @@
                             chocolats</p>
                     </div>
                     <div class="recherche_fiche_entreprise">
-                        <img width="80px"
+                        <img width
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
                         <h3>Intitulé 3</h3>
@@ -190,7 +187,7 @@
                             chocolats</p>
                     </div>
                     <div class="recherche_fiche_entreprise">
-                        <img width="80px"
+                        <img width
                             src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
                             alt="img entreprise">
                         <h3>Intitulé 3</h3>
