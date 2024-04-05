@@ -3,11 +3,15 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Gestion des offres
     </title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_gestion_offres_admin.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
+    <link rel="manifest" href="../../assets/manifest.json">
+
 </head>
 
 <body>
@@ -16,8 +20,7 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png"
-                alt="logo" width="60px" /></a>
+        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" /></a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
@@ -144,7 +147,7 @@
                 <div class="recherche_fiche_offres">
 
                     <img width="80px"
-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                        src=""
                         alt="img entreprise">
                     <h3>Intitulé 1</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -154,7 +157,7 @@
                 <div class="recherche_fiche_offres">
 
                     <img width="80px"
-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                        src=""
                         alt="img entreprise">
                     <h3>Intitulé 3</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -163,7 +166,7 @@
                 <div class="recherche_fiche_offres">
 
                     <img width="80px"
-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                        src=""
                         alt="img entreprise">
                     <h3>Intitulé 3</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -172,7 +175,7 @@
                 <div class="recherche_fiche_offres">
 
                     <img width="80px"
-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                        src=""
                         alt="img entreprise">
                     <h3>Intitulé 3</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -181,7 +184,7 @@
                 <div class="recherche_fiche_offres">
 
                     <img width="80px"
-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                        src=""
                         alt="img entreprise">
                     <h3>Intitulé 3</h3>
                     <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -195,19 +198,13 @@
             <div id="icones_modif_offres">
                 <div class="fond_ico_offres" id="btn_modif_offre">
                     <img
-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png">
-                    <div class="overlay"></div>
+                        src="../../assets/images/ico_modifier.png" width="25px" alt="icone_modif">
                 </div>
 
-                <div class="fond_ico_offres" id="btn_voir_offre">
-                    <img
-                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png">
-                    <div class="overlay"></div>
-                </div>
             </div>
         </section>
 
-        <div id="overlay_suppression"></div>
+        <div id="overlay_suppression"></div> 
 
         <div id="confirmationSuppression" class="police_texte">
             <p>Voulez-vous vraiment supprimer l'entreprise ?</p>

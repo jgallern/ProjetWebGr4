@@ -10,12 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['id_connection'] == null | $_POST['password_connection'] == null) {
             header("Location: ../views/auth/login.php?login=missingfields");
     } else {
-        $prs = new Personne();
+        $prs = new Personne($bdd);
         $prs->set_Login($_POST['id_connection']);//'teste');
         //$_POST['id_connection']);
         $prs->set_Password($_POST['password_connection']); //'teste');
 
-        $prs->set_bddconnection($bdd);
 
         $name = $prs->GetName();
         $statut = $prs->GetStatus();

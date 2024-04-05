@@ -22,14 +22,13 @@ if (isset($_POST["search-prenom"])) {
 if (isset($_POST["search-sector"])) {
     $secteur = "CESI " . $_POST["search-sector"];
     $cntr->set_Nom($secteur);
-    $prs->set_ID_Centre($cnt->get_ID());
+    $prs->set_ID_Centre($cntr->get_ID());
 } else {
     $prs->set_ID_Centre(null);
 
 }
 if (isset($_POST["promo"])) {
     $promo = $_POST["promo"];
-    var_dump($promo);
     if ($promo != "--Choisir--") {
         $prmo->set_name($promo);
         $prs->set_ID_Promotion($prmo->get_ID());
@@ -58,15 +57,8 @@ $donnees = $prs->chercher_personne();
 $_SESSION["resultat"]= $donnees;
 
 if (isset($donnees) && $donnees!= null){
-    foreach ($donnees as $personne) {
-        $nom = $personne['nom'];
-//echo 'test';
-        $prenom = $personne['prenom'];
-        $prmo->set_id($personne['ID_Promotion']);
-        $promo = $prmo->get_Name();
-        //include_once('../views/view_admin/gestion_etudiants_admin.php');
-        header("location: http://localhost/ProjetWebGr4/views/view_admin/gestion_etudiants_admin.php");
-    }
+
+    header("location: http://localhost/ProjetWebGr4/views/view_admin/gestion_etudiants_admin.php");
 }
 else{
     echo "test";

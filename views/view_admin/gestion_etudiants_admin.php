@@ -1,16 +1,21 @@
 <?php
 session_start();
+
 ?>
 <!doctype html>
 <html lang="fr">
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Gestion Etudiants
     </title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_gestion_etudiants_admin.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
+    <link rel="manifest" href="../../assets/manifest.json">
+</head>
 
 <body>
     <nav id="navbar">
@@ -18,8 +23,7 @@ session_start();
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png"
-                alt="logo" width="60px" /></a>
+        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" /></a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
@@ -151,37 +155,38 @@ session_start();
 
             <div id="fiches_entreprises_et_boutons">
                 <div id="result_recherche_entreprise">
-                <?php
-                foreach ($_SESSION["resultat"] as $personne): ?>
-                    <div class="recherche_fiche_entreprise">
+                    <?php
 
-                        <p>
-                            <?php if ($personne['nom']!=":nom"){
+                    foreach ($_SESSION["resultat"] as $personne): ?>
+
+                        <?php if ($personne['nom'] != ":nom") {
                             ?>
-                            <img width="80px"
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                            alt="img personne">
-                        <h3><?php
-                            echo $personne['nom']." ".$personne['prenom']; ?>
-                        </h3>
-                        <?php
-                        $prmo->set_id($personne['ID_Promotion']);
-                        $promo = $prmo->get_Name();
-                        ?>
-                        <p>
-                            <?php echo $promo."</p>";} ?>
-                        
-                    <?php endforeach; ?>
-                            </div>
-                            <div id="overlay"></div>
-                            <div id="message">Veuillez sélectionner une entreprise</div>
-                    </div>
+                            <div class="recherche_fiche_entreprise">
+
+                                <p>
+                                    <img width="80px"
+                                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                                        alt="img personne">
+                                <h3>
+                                    <?php
+                                    echo $personne['nom'] . " " . $personne['prenom']; ?>
+                                </h3>
+                                <?php
+                                echo "<p>".$personne['Nom_Promo']."<p>";
+                                //$prmo->set_id($personne['ID_Promotion']);
+                                //$promo = $prmo->get_Name();
+                                echo "</div>";
+                        } 
+                        //print_r($_SESSION["promo"]);
+                        endforeach; ?>
+                    <div id="overlay"></div>
+                    <div id="message">Veuillez sélectionner une entreprise</div>
+                </div>
 
                 <div id="icones_modif">
                     <div class="image-container" id="btn_modif">
-                        <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
-                            width="30px">
-                        <div class="overlay"></div>
+                        <img src="../../assets/images/ico_modifier.png"
+                            width="25px" alt="icone_modif">
                     </div>
                 </div>
 

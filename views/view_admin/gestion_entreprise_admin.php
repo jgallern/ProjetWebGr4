@@ -1,7 +1,3 @@
-<?php
-session_start()
-?>
-
 <!doctype html>
 <html lang="fr">
 
@@ -15,61 +11,58 @@ session_start()
 </head>
 
 <body>
-<nav id="navbar">
-    <div class="menu-icon">
-        <div class="bar"></div>
-        <div class="bar_2"></div>
-    </div>
-    <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png"
-                                                        alt="logo" width="60px"/></a>
-    <div id="lien_navbar">
-        <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
-           id="lien_entreprises_etudiants">Entreprises</a>
-        <a class="lien_nav police_texte" href="../view_admin/gestion_offre_admin.php"
-           id="lien_offres_etudiants">Offres</a>
-        <a class="lien_nav police_texte" href="../view_admin/gestion_pilotes_admin.php"
-           id="lien_offres_etudiants">Pilotes</a>
-        <a class="lien_nav police_texte" href="../view_admin/gestion_etudiants_admin.php"
-           id="lien_offres_etudiants">Etudiants</a>
-        <a class="lien_nav police_texte" href="../view_admin/page_wishlist_candidatures_admin.php"
-           id="lien_candidatures">Wishlit et Candidatures</a>
-    </div>
-    <div id="profil">
-        <div id="detail_profil" class="police_texte">
-            <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-            <a style="text-decoration: none;" href="../controllers/deconnection_controller.php">
-                <button id="bouton_deconnexion">Se déconnecter</button>
-            </a>
+    <nav id="navbar">
+        <div class="menu-icon">
+            <div class="bar"></div>
+            <div class="bar_2"></div>
+        </div>
+        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60px" /></a>
+        <div id="lien_navbar">
+            <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
+                id="lien_entreprises_etudiants">Entreprises</a>
+            <a class="lien_nav police_texte" href="../view_admin/gestion_offre_admin.php"
+                id="lien_offres_etudiants">Offres</a>
+            <a class="lien_nav police_texte" href="../view_admin/gestion_pilotes_admin.php"
+                id="lien_offres_etudiants">Pilotes</a>
+            <a class="lien_nav police_texte" href="../view_admin/gestion_etudiants_admin.php"
+                id="lien_offres_etudiants">Etudiants</a>
+            <a class="lien_nav police_texte" href="../view_admin/page_wishlist_candidatures_admin.php"
+                id="lien_candidatures">Wishlit et Candidatures</a>
+        </div>
+        <div id="profil">
+            <div id="detail_profil" class="police_texte">
+                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
+            </div>
+
+            <img id="photo_profil"
+                src="../../assets/images/photo_profil.png"
+                alt="photo_profil">
         </div>
 
-        <img id="photo_profil"
-             src="../../assets/images/photo_profil.png"
-             alt="photo_profil">
+    </nav>
+
+    <div id="lien_navbar_expand">
+        <a class="lien_nav police_texte linking-animation delay-0" href="../view_admin/page_accueil_admin.php"
+            id="lien_entreprises_etudiants">Acceuil</a>
+        <a class="lien_nav police_texte linking-animation delay-1" href="../view_admin/gestion_entreprise_admin.php"
+            id="lien_entreprises_etudiants">Entreprises</a>
+        <a class="lien_nav police_texte linking-animation delay-2" href="../view_admin/gestion_offre_admin.php"
+            id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-3" href="../view_admin/gestion_etudiants_admin.php"
+            id="lien_offres_etudiants">Etudiants</a>
+        <a class="lien_nav police_texte linking-animation delay-4" href="../view_admin/gestion_pilotes_admin.php"
+            id="lien_offres_etudiants">Pilotes</a>
+        <a class="lien_nav police_texte linking-animation delay-5" href="../view_admin/page_wishlist_candidatures.php"
+            id="lien_candidatures">Wishlit et Candidatures</a>
     </div>
 
-</nav>
+    <main>
+        <h1 class="titre police_texte">Gestion des Entreprises</h1>
 
-<div id="lien_navbar_expand">
-    <a class="lien_nav police_texte linking-animation delay-0" href="../view_admin/page_accueil_admin.php"
-       id="lien_entreprises_etudiants">Acceuil</a>
-    <a class="lien_nav police_texte linking-animation delay-1" href="../view_admin/gestion_entreprise_admin.php"
-       id="lien_entreprises_etudiants">Entreprises</a>
-    <a class="lien_nav police_texte linking-animation delay-2" href="../view_admin/gestion_offre_admin.php"
-       id="lien_offres_etudiants">Offres</a>
-    <a class="lien_nav police_texte linking-animation delay-3" href="../view_admin/gestion_etudiants_admin.php"
-       id="lien_offres_etudiants">Etudiants</a>
-    <a class="lien_nav police_texte linking-animation delay-4" href="../view_admin/gestion_pilotes_admin.php"
-       id="lien_offres_etudiants">Pilotes</a>
-    <a class="lien_nav police_texte linking-animation delay-5" href="../view_admin/page_wishlist_candidatures.php"
-       id="lien_candidatures">Wishlit et Candidatures</a>
-</div>
-
-<main>
-    <h1 class="titre police_texte">Gestion des Entreprises</h1>
-
-    <section class="bloc_gestion police_texte">
-        <h2 id="titre_recherche">Rechercher une entreprise</h2>
-        <div id="recherche_container">
+        <section class="bloc_gestion police_texte">
+            <h2 id="titre_recherche">Rechercher une entreprise</h2>
+            <div id="recherche_container">
 
             <div id="form_recherche">
                 <form id="searchForm" method="POST" action="../../controllers/Controller_Rechercher_Entreprise_Admin.php"
@@ -131,106 +124,105 @@ session_start()
                 </div>
 
 
-                <div id="icones_modif_entreprise">
-                    <div class="image-container" id="btn_modif">
-                        <img
+                    <div id="icones_modif_entreprise">
+                        <div class="image-container" id="btn_modif">
+                            <img 
                                 src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
                                 width="30px">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="image-container" id="btn_stats">
-                        <img
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="image-container" id="btn_stats">
+                            <img
                                 src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
                                 width="30px">
-                        <div class="overlay"></div>
-                    </div>
-                    <div class="image-container" id="btn_voir">
-                        <img
+                            <div class="overlay"></div>
+                        </div>
+                        <div class="image-container" id="btn_voir">
+                            <img
                                 src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
                                 width="30px">
-                        <div class="overlay"></div>
+                            <div class="overlay"></div>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
+
+        </section>
+
+        <div id="overlay_suppression"></div>
+
+        <div id="confirmationSuppression" class="police_texte">
+            <p>Voulez-vous vraiment supprimer l'entreprise ?</p>
+            <button id="btnOui">Oui</button>
+            <button id="btnNon">Non</button>
         </div>
 
-    </section>
+        <section id="result_all">
+            <fieldset id="result_modif" class="police_texte">
+                <legend>Modifier une entreprise</legend>
+                <form>
+                    <div id="deux_partie_modif">
+                        <div id="partie_modif">
+                            <label>Nouveau nom :</label><br>
+                            <input type="text" id="nouv_nom" name="nouv_nom" placeholder="Nouveau nom">
+                            <br>
+                            <label>Nouveau secteur :</label><br>
+                            <select name="nouv_secteur">
+                                <option>--Choisir--</option>
+                                <option>Informatique</option>
+                                <option>BTP</option>
+                                <option>S3E</option>
+                                <option>jesaisplu</option>
+                            </select>
+                            <br>
+                            <label>Nouvelle localité :</label><br>
+                            <div id="adresses">
+                                <!-- Conteneur pour les adresses -->
+                            </div>
+                            <button type="button" id="ajouterAdresse">Ajouter une adresse</button>
 
-    <div id="overlay_suppression"></div>
-
-    <div id="confirmationSuppression" class="police_texte">
-        <p>Voulez-vous vraiment supprimer l'entreprise ?</p>
-        <button id="btnOui">Oui</button>
-        <button id="btnNon">Non</button>
-    </div>
-
-    <section id="result_all">
-        <fieldset id="result_modif" class="police_texte">
-            <legend>Modifier une entreprise</legend>
-            <form>
-                <div id="deux_partie_modif">
-                    <div id="partie_modif">
-                        <label>Nouveau nom :</label><br>
-                        <input type="text" id="nouv_nom" name="nouv_nom" placeholder="Nouveau nom">
-                        <br>
-                        <label>Nouveau secteur :</label><br>
-                        <select name="nouv_secteur">
-                            <option>--Choisir--</option>
-                            <option>Informatique</option>
-                            <option>BTP</option>
-                            <option>S3E</option>
-                            <option>jesaisplu</option>
-                        </select>
-                        <br>
-                        <label>Nouvelle localité :</label><br>
-                        <div id="adresses">
-                            <!-- Conteneur pour les adresses -->
+                            <br>
+                            <label>Nouvelle image :</label><br>
+                            <input id="input_image" name="image_entreprise" type="file" accept="image/jpeg, image/png">
                         </div>
-                        <button type="button" id="ajouterAdresse">Ajouter une adresse</button>
-
-                        <br>
-                        <label>Nouvelle image :</label><br>
-                        <input id="input_image" name="image_entreprise" type="file" accept="image/jpeg, image/png">
-                    </div>
-                    <div id="partie_eval">
-                        <label>Evaluer l'entreprise :</label>
-                        <div class="rating" id="rating">
-                            <span class="star" data-value="1">&#9733;</span>
-                            <span class="star" data-value="2">&#9733;</span>
-                            <span class="star" data-value="3">&#9733;</span>
-                            <span class="star" data-value="4">&#9733;</span>
-                            <span class="star" data-value="5">&#9733;</span>
-                        </div>
-                        <label>Commentaire :</label><br>
-                        <textarea class="police_texte" id="commentaire_entreprise" name="commentaire_entreprise"
-                                  placeholder="Entrez un commentaire"></textarea>
-                        <br>
-                        <button id="supprimer_entreprise">Supprimer l'entreprise</button>
-                        <br>
-                        <div id="btn_envoi">
-                            <button type="reset">Réinitialiser</button>
-                            <button type="submit">Modifer</button>
+                        <div id="partie_eval">
+                            <label>Evaluer l'entreprise :</label>
+                            <div class="rating" id="rating">
+                                <span class="star" data-value="1">&#9733;</span>
+                                <span class="star" data-value="2">&#9733;</span>
+                                <span class="star" data-value="3">&#9733;</span>
+                                <span class="star" data-value="4">&#9733;</span>
+                                <span class="star" data-value="5">&#9733;</span>
+                            </div>
+                            <label>Commentaire :</label><br>
+                            <textarea class="police_texte" id="commentaire_entreprise" name="commentaire_entreprise"
+                                placeholder="Entrez un commentaire"></textarea>
+                            <br>
+                            <button id="supprimer_entreprise">Supprimer l'entreprise</button> <br>
+                            <div id="btn_envoi">
+                                <button type="reset">Réinitialiser</button>
+                                <button type="submit">Modifer</button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </form>
-        </fieldset>
+                </form>
+            </fieldset>
 
 
-        <fieldset id="result_stats" class="police_texte">
-            <legend>Statistiques de l'entreprise</legend>
-            <p><strong>Nom de l'entreprise :</strong> GOGO Corporation</p>
-            <p><strong>Le top des offres :</strong></p>
-            <p><strong>Nombre d'étudiants actuellement en stage :</strong></p>
-            <div class="rating">
-                <span><strong>Moyenne de l'entreprise :</strong></span>
-                <div class="stars">★★★☆☆</div>
-            </div>
-        </fieldset>
+            <fieldset id="result_stats" class="police_texte">
+                <legend>Statistiques de l'entreprise</legend>
+                <p><strong>Nom de l'entreprise :</strong> GOGO Corporation</p>
+                <p><strong>Le top des offres :</strong></p>
+                <p><strong>Nombre d'étudiants actuellement en stage :</strong></p>
+                        <div class="rating">
+                            <span><strong>Moyenne de l'entreprise :</strong></span>
+                            <div class="stars">★★★☆☆</div>
+                        </div>
+            </fieldset>
 
-    </section>
+        </section>
 
     <section id="bloc_padding" class="bloc_gestion police_texte">
         <h2>Créer une entreprise</h2>
@@ -267,8 +259,6 @@ session_start()
                     <!-- Dynamically populated sectors -->
 
                 </select>
-                <input type="text" id="autre-secteurs" name="autre_secteur" placeholder="Entrez le nouveau secteur"
-                       style="display: none;">
             </div>
             <div class="form-row">
                 <label for="image_entreprise">Image de l'entreprise :</label><br>
@@ -289,15 +279,16 @@ session_start()
                 <button type="submit" class="button-search">Créer</button>
                 <button id="resetButton" type="reset" class="button-reset">Réinitialiser</button>
             </div>
-        </form>
-    </section>
+        </section>
 
 
+        
+        
 </body>
 
 <footer class="police_texte">
-    &copy; Stage En Bref. <br> Tous droits réservés <br>
-    <a target="_blank" href="../mentions_legales.php">Mentions Légales</a>
-</footer>
+            &copy; Stage En Bref. <br> Tous droits réservés <br>
+            <a target="_blank" href="../mentions_legales.php">Mentions Légales</a>
+        </footer>
 
 </html>

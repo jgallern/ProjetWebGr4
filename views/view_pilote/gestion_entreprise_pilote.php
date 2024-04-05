@@ -1,6 +1,3 @@
-<?php
-session_start()
-?>
 <!doctype html>
 <html lang="fr">
 
@@ -71,7 +68,6 @@ session_start()
                             <input id="search-name" name="search_name" type="text"
                                    placeholder="Entrez le nom de l'entreprise"/>
                         </div>
-
                         <div class="form-row">
                             <label for="search-ville">Ville d'entreprise :</label><br>
                             <input id="search-ville" name="search_ville" type="text" placeholder="Entrez le lieu"/>
@@ -91,7 +87,6 @@ session_start()
                             <option value="">--Choisir--</option>
 
                             </select>
-
                         </div>
                         <div class="form_buttons">
                             <button type="submit" name="submit-search" class="button-search">Rechercher</button>
@@ -125,21 +120,21 @@ session_start()
 
                     <div id="icones_modif_entreprise">
                         <div class="image-container" id="btn_modif">
-                            <img
-                                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
-                                    width="30px">
+                            <img 
+                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
+                                width="30px">
                             <div class="overlay"></div>
                         </div>
                         <div class="image-container" id="btn_stats">
                             <img
-                                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
-                                    width="30px">
+                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
+                                width="30px">
                             <div class="overlay"></div>
                         </div>
                         <div class="image-container" id="btn_voir">
                             <img
-                                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
-                                    width="30px">
+                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
+                                width="30px">
                             <div class="overlay"></div>
                         </div>
                     </div>

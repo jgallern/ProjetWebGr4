@@ -1,6 +1,3 @@
-<?php
-session_start()
-?>
 <!doctype html>
 <html lang="fr">
 
@@ -15,46 +12,43 @@ session_start()
 </head>
 
 <body>
-<nav id="navbar">
-    <div class="menu-icon" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar_2"></div>
-    </div>
-    <a href="../view_etudiant/page_accueil_etudiant.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png"
-                                                              alt="logo" width="60px"/></a>
-    <div id="lien_navbar">
-        <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php"
-           id="lien_entreprises_etudiants">Entreprises</a>
-        <a class="lien_nav police_texte" href="../view_etudiant/gestion_offres_etudiants.php"
-           id="lien_offres_etudiants">Offres</a>
-        <a class="lien_nav police_texte" href="../view_etudiant/page_wishlist_candidatures.php"
-           id="lien_candidatures">Wishlist et Candidatures</a>
-    </div>
-    <div id="profil">
-        <div id="detail_profil" class="police_texte">
-            <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-            <a style="text-decoration: none;" href="../../controllers/deconnection_controller.php">
-                <button
-                        id="bouton_deconnexion">Se déconnecter
-                </button>
-            </a>
+    <nav id="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar_2"></div>
+        </div>
+        <a href="../view_etudiant/page_accueil_etudiant.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png"
+                alt="logo" width="60px" /></a>
+        <div id="lien_navbar">
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php"
+                id="lien_entreprises_etudiants">Entreprises</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_offres_etudiants.php"
+                id="lien_offres_etudiants">Offres</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/page_wishlist_candidatures.php"
+                id="lien_candidatures">Wishlist et Candidatures</a>
+        </div>
+        <div id="profil">
+            <div id="detail_profil" class="police_texte">
+                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
+                <a style="text-decoration: none;" href="../../controllers/deconnection_controller.php"><button
+                        id="bouton_deconnexion">Se déconnecter</button></a>
+            </div>
+
+            <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
         </div>
 
-        <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
+    </nav>
+
+    <div id="lien_navbar_expand">
+        <a class="lien_nav police_texte linking-animation delay-0" href="../view_etudiant/page_accueil_etudiant.php"
+            id="lien_entreprises_etudiants">Accueil</a>
+        <a class="lien_nav police_texte linking-animation delay-1" href="../view_etudiant/gestion_offres_etudiants.php"
+            id="lien_entreprises_etudiants">Entreprises</a>
+        <a class="lien_nav police_texte linking-animation delay-2"
+            href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_offres_etudiants">Offres</a>
+        <a class="lien_nav police_texte linking-animation delay-5"
+            href="../view_etudiant/page_wishlist_candidatures.php" id="lien_candidatures">Wishlist et Candidatures</a>
     </div>
-
-</nav>
-
-<div id="lien_navbar_expand">
-    <a class="lien_nav police_texte linking-animation delay-0" href="../view_etudiant/page_accueil_etudiant.php"
-       id="lien_entreprises_etudiants">Accueil</a>
-    <a class="lien_nav police_texte linking-animation delay-1" href="../view_etudiant/gestion_offres_etudiants.php"
-       id="lien_entreprises_etudiants">Entreprises</a>
-    <a class="lien_nav police_texte linking-animation delay-2"
-       href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_offres_etudiants">Offres</a>
-    <a class="lien_nav police_texte linking-animation delay-5"
-       href="../view_etudiant/page_wishlist_candidatures.php" id="lien_candidatures">Wishlist et Candidatures</a>
-</div>
 
 
 <h1 class="titre police_texte">
@@ -144,6 +138,9 @@ session_start()
     <img class='img_voir_plus' src="../../assets/images/voir_plus.png">
 </a>
 
+    </div>
+
+
 
 </div>
 
@@ -172,8 +169,7 @@ session_start()
     <img class='img_voir_plus' src="../../assets/images/voir_plus.png">
 </a>
 
-
-</div>
+    </div>
 
 </body>
 

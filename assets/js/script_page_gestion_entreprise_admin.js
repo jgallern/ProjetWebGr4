@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
     adresse_entreprise.addEventListener("input", async function () {
         if (select_code_postal.value === "") {
             select_code_postal.setCustomValidity("Veuillez remplir le code postal");
-        } else if (ex_reg_cp.test(select_code_postal.value)) {
+        }
+
+        else if (ex_reg_cp.test(select_code_postal.value)) {
             var xhr = new XMLHttpRequest();
             var value_code_postal = select_code_postal.value;
             var value_adresse = remplacerEspacesParPlus(adresse_entreprise.value);
@@ -64,12 +66,15 @@ document.addEventListener('DOMContentLoaded', function () {
                         html = '<li style="list-style: none;">Aucun résultat trouvé.</li>';
                         select_adresse.innerHTML = html;
                     }
-                } else {
+                }
+                else {
                     console.log("Erreur lors de la récupération des données.");
                 }
             }
             xhr.send();
-        } else {
+        }
+
+        else {
             select_code_postal.setCustomValidity("Le code postal doit contenir 5 chiffres");
         }
         select_code_postal.reportValidity();
@@ -120,6 +125,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
+
+
     var result_all = document.getElementById("result_all");
     var result_modif = document.getElementById("result_modif");
     var result_stats = document.getElementById("result_stats");
@@ -129,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var confirmationSuppression = document.getElementById('confirmationSuppression');
     var btnOui = document.getElementById('btnOui');
     var btnNon = document.getElementById('btnNon');
+
 
 
     var divs = document.querySelectorAll('.recherche_fiche_entreprise');
@@ -171,13 +179,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (!isSelected) {
             afficherOverlay();
-        } else {
+        }
+        else {
             result_stats.classList.remove("visible");
 
             result_modif.classList.add("visible");
 
             const position = document.getElementById('result_all').getBoundingClientRect().top + window.pageYOffset - document.getElementById('navbar').offsetHeight;
-            window.scrollTo({top: position, behavior: 'smooth'});
+            window.scrollTo({ top: position, behavior: 'smooth' });
         }
     });
 
@@ -214,7 +223,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (!isSelected) {
             afficherOverlay();
-        } else {
+        }
+        else {
             result_modif.classList.remove("visible");
             result_stats.classList.remove("visible");
 
@@ -232,13 +242,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (!isSelected) {
             afficherOverlay();
-        } else {
+        }
+        else {
             result_modif.classList.remove("visible");
 
             result_stats.classList.add("visible");
 
             const position = document.getElementById('result_all').getBoundingClientRect().top + window.pageYOffset - document.getElementById('navbar').offsetHeight;
-            window.scrollTo({top: position, behavior: 'smooth'});
+            window.scrollTo({ top: position, behavior: 'smooth' });
         }
     });
 
@@ -251,6 +262,9 @@ document.addEventListener('DOMContentLoaded', function () {
             container.classList.add('clicked');
         });
     });
+
+
+
 
 
     /*   PERMETTRE DE TAPER PLUSIEURS ADRESSES  */
@@ -321,6 +335,12 @@ document.addEventListener('DOMContentLoaded', function () {
             xhr.send();
         }
     });
+
+
+
+
+
+
 
 
 })
