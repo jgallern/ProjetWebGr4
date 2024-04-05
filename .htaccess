@@ -1,0 +1,8 @@
+AuthType Basic
+AuthName "SEB"
+AuthBasicAuthoritative On
+#AuthUserFile /.htpasswd
+#AuthGroupFile htgroup
+#Require group admin
+
+ErrorDocument 404 /ProjetWebgr4/views/page_introuvable_etudiant.php
