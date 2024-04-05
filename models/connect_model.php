@@ -2,8 +2,8 @@
 if (!isset($bdd)) {
     $host = "localhost";
     $dbname = "test";
-    $dbuser = "phpmyadmin";
-    $dbpassword = "phpmyadmin";
+    $dbuser = "root";
+    $dbpassword = "";
 
 
     try {
