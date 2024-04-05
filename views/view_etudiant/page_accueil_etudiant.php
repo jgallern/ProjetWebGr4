@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Acceuil</title>
     <link rel="stylesheet" href="../../assets/css/style.css">    
     <script src="../../assets/js/script_page_acceuil_etudiant.js"></script>
@@ -17,7 +19,7 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_etudiant/page_accueil_etudiant.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png" alt="logo" width="60   px" /></a>
+        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" /></a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_entreprises_etudiants">Entreprises</a>
             <a class="lien_nav police_texte" href="../view_etudiant/gestion_offres_etudiants.php" id="lien_offres_etudiants">Offres</a>
@@ -55,7 +57,7 @@
         <div class="actus police_texte">
 
             <article class="offre_stage">
-                <img class="imgs_offre" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="image offre stage">
+                <img class="imgs_offre" src="" alt="image offre stage">
                 <div class="offre-details police_texte">
                     <h3 class="titre_poste">Intitulé du stage</h3>
                     <h4 class="entreprise_offre">CESI Corporation</h4>
@@ -65,7 +67,7 @@
             </article>
             
             <article class="offre_stage">
-                <img class="imgs_offre" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="image offre stage">
+                <img class="imgs_offre" src="" alt="image offre stage">
                 <div class="offre-details police_texte">
                     <h3 class="titre_poste">Intitulé du stage</h3>
                     <h4 class="entreprise_offre">CESI Corporation</h4>

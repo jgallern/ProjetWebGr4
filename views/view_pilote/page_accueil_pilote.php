@@ -61,7 +61,7 @@
 
             <article class="offre_stage">
                 <img class="imgs_offre"
-                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                    src=""
                     alt="image offre stage">
                 <div class="offre-details police_texte">
                     <h3 class="titre_poste">Intitulé du stage</h3>
@@ -76,7 +76,7 @@
 
             <article class="offre_stage">
                 <img class="imgs_offre"
-                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                    src=""
                     alt="image offre stage">
                 <div class="offre-details police_texte">
                     <h3 class="titre_poste">Intitulé du stage</h3>

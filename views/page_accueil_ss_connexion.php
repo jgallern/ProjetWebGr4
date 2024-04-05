@@ -9,10 +9,6 @@
     <link rel="icon" href="../assets/images/logo_noir.png" type="image/png">
     <link rel="manifest" href="../../assets/manifest.json">
 
-</head>
-
-<body>
-
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('ServiceWorker.js')
@@ -21,6 +17,12 @@
         }
 
     </script>
+
+</head>
+
+<body>
+
+    
 
     <section id="top_acceuil">
         <div id="header_page_ss_connexion">
@@ -64,7 +66,7 @@
     <section id="offres" class="offres-container">
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>
@@ -78,7 +80,7 @@
 
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>
@@ -92,7 +94,7 @@
 
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>
@@ -106,7 +108,7 @@
 
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>
@@ -120,7 +122,7 @@
 
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>

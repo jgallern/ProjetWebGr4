@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Gestion des entreprises</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_page_gestion_entreprise_admin.js"></script>
@@ -95,7 +97,7 @@
                     <div id="result_recherche_entreprise">
                         <div class="recherche_fiche_entreprise">
                             <img width
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                                src=""
                                 alt="img entreprise">
                             <h3>Intitulé 1</h3>
                             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -103,7 +105,7 @@
                         </div>
                         <div class="recherche_fiche_entreprise">
                             <img width
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                                src=""
                                 alt="img entreprise">
                             <h3>Intitulé 2</h3>
                             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -111,7 +113,7 @@
                         </div>
                         <div class="recherche_fiche_entreprise">
                             <img width
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                                src=""
                                 alt="img entreprise">
                             <h3>Intitulé 3</h3>
                             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -119,7 +121,7 @@
                         </div>
                         <div class="recherche_fiche_entreprise">
                             <img width
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                                src=""
                                 alt="img entreprise">
                             <h3>Intitulé 3</h3>
                             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -127,7 +129,7 @@
                         </div>
                         <div class="recherche_fiche_entreprise">
                             <img width
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                                src=""
                                 alt="img entreprise">
                             <h3>Intitulé 3</h3>
                             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -135,7 +137,7 @@
                         </div>
                         <div class="recherche_fiche_entreprise">
                             <img width
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                                src=""
                                 alt="img entreprise">
                             <h3>Intitulé 3</h3>
                             <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
@@ -149,13 +151,8 @@
 
                     <div id="icones_modif_entreprise">
                         <div class="image-container" id="btn_modif">
-                            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
-                                width="30px">
-                            <div class="overlay"></div>
-                        </div>
-                        <div class="image-container" id="btn_stats">
-                            <img src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
-                                width="30px">
+                            <img src="../../assets/images/ico_modifier.png"
+                                width="25px" alt="icone_modif">
                             <div class="overlay"></div>
                         </div>
                     </div>

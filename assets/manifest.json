@@ -12,6 +12,46 @@
             "src": "../assets/images/logo_noir.png",
             "sizes": "500x500",
             "type": "image/png"
+
+        },
+
+        {
+            "src": "../assets/images/logo_blanc_60.png",
+            "sizes": "60x60",
+            "type": "image/png"
+
+        },
+
+        {
+            "src": "../assets/images/ico_modifier.png",
+            "sizes": "500x500",
+            "type": "image/png"
+        },
+
+        {
+            "src": "../assets/images/photo_profil.png",
+            "sizes": "500x500",
+            "type": "image/png"
+        },
+
+        {
+            "src": "../assets/images/voir_plus.png",
+            "sizes": "500x500",
+            "type": "image/png"
         }
-    ]
+    ],
+
+    "screenshots": [
+        {
+          "src": "../assets/images/screenshot_wide.png",
+          "sizes": "1902x862",
+          "type": "image/png",
+          "form_factor": "wide"
+        },
+        {
+          "src": "../assets/images/screen_mobile.png",
+          "sizes": "338x672",
+          "type": "image/png"
+        }
+      ]
 }

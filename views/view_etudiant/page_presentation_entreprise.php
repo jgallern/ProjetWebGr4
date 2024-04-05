@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Présentation entreprise</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
         integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
@@ -23,8 +25,7 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_etudiant/page_acceuil_etudiants.php"><img id="logo_seb"
-                src="../../assets/images/logo_blanc.png" alt="logo" width="60px" /></a>
+        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" /></a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
