@@ -1,3 +1,25 @@
+<?php
+session_start();
+require_once "../../models/Entreprise.php";
+$entrepriseModel = new Entreprise();
+
+// Assuming you pass the entreprise ID via a query parameter (e.g., page_presentation_entreprise.php?id=1)
+$entrepriseId = isset($_GET['id']) ? $_GET['id'] : null;
+$entrepriseDetails = null;
+
+if ($entrepriseId) {
+    $entrepriseDetails = $entrepriseModel->getEntrepriseDetailsById($entrepriseId);
+}
+
+if (!$entrepriseDetails) {
+    // Handle case where no entreprise details were found
+    echo "<script type='text/javascript'>alert('Details for the specified entreprise were not found.');</script>";
+    // Optionally, redirect back or to a default page
+    // header('Location: ../Page_Gestions/gestion_entreprise_pilote_admin.php');
+    // exit;
+}
+?>
+
 <!doctype html>
 <html lang="fr">
 
@@ -55,27 +77,24 @@
 
     <main>
 
-        <h1 class="titre police_texte">Intitulé Entreprise</h1>
+        <h1 class="titre police_texte"><?= htmlspecialchars($entrepriseDetails['nom'] ?? 'Entreprise Inconnue') ?></h1>
 
         <div id="bloc_presentation_entreprise" class="bloc_gestion police_texte">
             <div id="infos_et_carte">
                 <div id="infos_entreprise">
-                    <img width="150px" id="img_offre_page_presentation"
-                        href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.andrh.fr%2Fprestataires%2Fonlineformapro&psig=AOvVaw1QLVdktc6MNcY0vXlTb4j3&ust=1711034985290000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIj-jZWUg4UDFQAAAAAdAAAAABAI">
-                    <h2>Nom entreprise</h2>
-                    <p>Ce texte contiendra les détails de l'entreprise en question</p>
+                    <img width="150px" id="img_offre_page_presentation" src="../../assets/images/<?= htmlspecialchars($entrepriseDetails['logo']) ?>" alt="logo entreprise">
+                    <h2><?= htmlspecialchars($entrepriseDetails['nom']) ?></h2>
+                    <p><?= htmlspecialchars($entrepriseDetails['description']) ?></p>
                     <h3>Localité de l'entreprise</h3>
                     <ul>
-                        <li>Lieu 1</li>
-                        <li>Lieu 2</li>
-                        <li>Lieu 3</li>
+                        <li><?= htmlspecialchars($entrepriseDetails['Ville']) ?></li>
+                        <li><?= htmlspecialchars($entrepriseDetails['Numero_rue']) ?>, <?= htmlspecialchars($entrepriseDetails['Nom_rue']) ?></li>
                     </ul>
 
-                    <p>Entreprise mise en ligne le : 09/04/2023</p>
+                    <p>Entreprise mise en ligne le : <?= htmlspecialchars($entrepriseDetails['date_mise_en_ligne'] ?? 'Non spécifié') ?></p>
                 </div>
 
-                <div id="map">
-                </div>
+            </div>
             </div>
 
         </div>

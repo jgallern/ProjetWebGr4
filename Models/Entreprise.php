@@ -123,6 +123,54 @@ class Entreprise extends Model
         }
     }
 
+    public function Rechercher_Entreprise_Etudiant($searchName, $searchSector, $searchVille) {
+        // Prepare the base SQL query
+        $sql = "SELECT e.*, a.Numero_rue, a.Nom_rue, a.Ville 
+            FROM Entreprise e
+            JOIN Adresse a ON e.ID_Adresse = a.ID_Adresse";
+
+        // Initialize an array to hold the parameters for the prepared statement
+        $params = [];
+
+        // Initialize an array to hold conditions for the WHERE clause
+        $conditions = [];
+
+        // Add conditions based on provided search criteria
+        if (!empty($searchName)) {
+            $conditions[] = "e.nom LIKE ?";
+            $params[] = "%$searchName%";
+        }
+        if (!empty($searchSector)) {
+            $conditions[] = "e.secteur LIKE ?";
+            $params[] = "%$searchSector%";
+        }
+        if (!empty($searchVille)) {
+            $conditions[] = "a.Ville LIKE ?";
+            $params[] = "%$searchVille%";
+        }
+
+
+        // If there are any conditions, append them to the query
+        if (count($conditions) > 0) {
+            $sql .= " WHERE " . implode(' AND ', $conditions);
+        }
+
+        try {
+            // Prepare the SQL statement
+            $stmt = $this->getBDD()->prepare($sql);
+
+            // Execute the statement with the parameters
+            $stmt->execute($params);
+
+            // Fetch and return the results
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            // Handle the error appropriately
+            error_log('Error in Rechercher_Entreprise: ' . $e->getMessage());
+            return []; // Return an empty array to indicate failure
+        }
+    }
+
 
 
     public function fetchAllSecteurs() {

@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!doctype html>
 <html lang="fr">
 
@@ -61,87 +64,60 @@
             <div id="recherche_container">
 
                 <div id="form_recherche">
-                    <form>
+                    <form id="searchForm" method="POST" action="../../controllers/Controller_Rechercher_Entreprise_Pilot.php"
+                          enctype="multipart/form-data">
                         <div class="form-row">
                             <label for="search-name">Nom de l'entreprise :</label><br>
-                            <input id="search-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+                            <input id="search-name" name="search_name" type="text"
+                                   placeholder="Entrez le nom de l'entreprise"/>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="search-ville">Ville d'entreprise :</label><br>
+                            <input id="search-ville" name="search_ville" type="text" placeholder="Entrez le lieu"/>
                         </div>
                         <div class="form-row">
-                            <label for="search-stages">Nombre d'offres de stage :</label><br>
-                            <input id="search-stages" type="number" placeholder="Entrez le nombre d'offres" />
+                            <label for="search-numero-rue">Numero-Rue d'entreprise :</label><br>
+                            <input id="search-numero-rue" name="search_numero-rue" type="text"
+                                   placeholder="Entrez le lieu"/>
                         </div>
                         <div class="form-row">
-                            <label>Lieu d'entreprise :</label><br>
-                            <input id="code_postal_entreprise" type="number" placeholder="Code postal"/>
-                            <input id="adresse_entreprise" type="text" placeholder="Entrez le lieu" />
+                            <label for="search-nom-rue">Nom-Rue d'entreprise :</label><br>
+                            <input id="search-nom-rue" name="search_nom-rue" type="text" placeholder="Entrez le lieu"/>
                         </div>
                         <div class="form-row">
-                            <label>Secteur d'activité :</label><br>
-                            <select>
-                                <option>--Choisir--</option>
-                                <option>Informatique</option>
-                                <option>BTP</option>
-                                <option>S3E</option>
-                                <option>Généraliste</option>
+                            <label for="search-sector">Secteur d'activité :</label><br>
+                            <select id="create-sectorss" name="secteur" ">
+                            <option value="">--Choisir--</option>
+
                             </select>
+
                         </div>
                         <div class="form_buttons">
-                            <button class="button-search">Rechercher</button>
-                            <button class="button-reset">Réinitialiser</button>
+                            <button type="submit" name="submit-search" class="button-search">Rechercher</button>
+                            <button id="resetbutton" type="reset" class="button-reset">Réinitialiser</button>
                         </div>
                     </form>
                 </div>
                 <div id="fiches_entreprises_et_boutons">
                     <div id="result_recherche_entreprise">
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 1</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 2</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-                        <div class="recherche_fiche_entreprise">
-                            <img width="80px"
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                                alt="img entreprise">
-                            <h3>Intitulé 3</h3>
-                            <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                                chocolats</p>
-                        </div>
-
+                        <?php
+                        $maxVisible = 4; // Number of items to show initially
+                        $count = 0; // Counter to keep track of how many items have been shown
+                        if (isset($_SESSION['searchResults']) && !empty($_SESSION['searchResults'])) {
+                            foreach ($_SESSION['searchResults'] as $entreprise) {
+                                $isHidden = $count >= $maxVisible ? "style='display:none;'" : ""; // Hide if beyond max visible
+                                echo "<a href='../view_etudiant/page_presentation_entreprise.php?id=" . htmlspecialchars($entreprise['ID_Entreprise']) . "' class='carte_entreprise police_texte' {$isHidden}>";
+                                echo "<img src='" . htmlspecialchars($entreprise['logo']) . "' alt='logo entreprise'>";
+                                echo "<h3>" . htmlspecialchars($entreprise['nom']) . "</h3>";
+                                echo "<p>" . htmlspecialchars($entreprise['description']) . "</p>";
+                                echo "</a>";
+                                $count++; // Increment counter
+                            }
+                        } elseif (isset($_SESSION['noResultsMessage'])) {
+                            echo "<p>" . $_SESSION['noResultsMessage'] . "</p>";
+                        }
+                        ?>
                         <div id="overlay"></div>
                         <div id="message">Veuillez sélectionner une entreprise</div>
                     </div>
@@ -149,21 +125,21 @@
 
                     <div id="icones_modif_entreprise">
                         <div class="image-container" id="btn_modif">
-                            <img 
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
-                                width="30px">
+                            <img
+                                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_modifier.png"
+                                    width="30px">
                             <div class="overlay"></div>
                         </div>
                         <div class="image-container" id="btn_stats">
                             <img
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
-                                width="30px">
+                                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_stats.png"
+                                    width="30px">
                             <div class="overlay"></div>
                         </div>
                         <div class="image-container" id="btn_voir">
                             <img
-                                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
-                                width="30px">
+                                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/ico_oeil.png"
+                                    width="30px">
                             <div class="overlay"></div>
                         </div>
                     </div>
@@ -249,40 +225,62 @@
 
         <section id="bloc_padding" class="bloc_gestion police_texte">
             <h2>Créer une entreprise</h2>
-            <div class="form-row">
-                <label for="create-name">Nom de l'entreprise :</label><br>
-                <input id="create-name" type="text" placeholder="Entrez le nom de l'entreprise" />
-            </div>
-            <div class="form-row">
-                <label for="create-name">Description de l'entreprise</label><br>
-                <textarea class="police_texte" id="description_entreprise" name="description_entreprise"
-                    placeholder="Decrivez l'entreprise ici"></textarea>
-            </div>
-            <div class="form-row">
-                <label >Lieu d'entreprise :</label><br>
-                <input id="code_postal_entreprise_creer" type="number" placeholder="Code postal"/>
-                <input id="adresse_entreprise_creer" type="text" placeholder="Entrez le lieu" />
-                <ul id="ul_adresse">
-                </ul>
-            </div>
-            <div class="form-row">
-                <label >Secteur d'activité :</label><br>
-                <select name="nouv_secteur">
-                    <option>--Choisir--</option>
-                    <option>Informatique</option>
-                    <option>BTP</option>
-                    <option>S3E</option>
-                    <option>jesaisplu</option>
-                </select>
-            </div>
-            <div class="form-row">
-                <label >Image de l'entreprise :</label><br>
-                <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
-            </div>
-            <div class="form-actions">
-                <button class="button-search">Créer</button>
-                <button class="button-reset">Réinitialiser</button>
-            </div>
+            <form id="entrepriseForm" action="../../controllers/Controller_Creer_Entreprise.php" method="POST"
+                  enctype="multipart/form-data">
+                <div class="form-row">
+                    <label for="create-name">Nom de l'entreprise :</label><br>
+                    <input id="create-name" name="nom" type="text" placeholder="Entrez le nom de l'entreprise"
+                           required/>
+                </div>
+                <div class="form-row">
+                    <label for="description_entreprise">Description de l'entreprise</label><br>
+                    <textarea class="police_texte" id="description_entreprise" name="description"
+                              placeholder="Décrivez l'entreprise ici" required></textarea>
+                </div>
+                <div class="form-row">
+                    <label for="create-location"> Numéro Rue :</label><br>
+                    <input id="create-location" name="numero_rue" type="text" placeholder="Entrez le numeéro de la rue"
+                           required/>
+                </div>
+                <div class="form-row">
+                    <label for="create-location">Rue :</label><br>
+                    <input id="create-location" name="nom_rue" type="text" placeholder="Entrez la Rue" required/>
+                </div>
+                <div class="form-row">
+                    <label for="create-location">Ville :</label><br>
+                    <input id="create-location" name="ville" type="text" placeholder="Entrez la ville" required/>
+                </div>
+
+                <div class="form-row">
+                    <label for="search-sector">Secteur d'activité :</label><br>
+                    <select id="create-sectors" name="secteur" required>
+                        <option value="">--Choisir--</option>
+                        <!-- Dynamically populated sectors -->
+
+                    </select>
+                    <input type="text" id="autre-secteurs" name="autre_secteur" placeholder="Entrez le nouveau secteur"
+                           style="display: none;">
+                </div>
+                <div class="form-row">
+                    <label for="image_entreprise">Image de l'entreprise :</label><br>
+                    <input id="image_entreprise" name="logo" type="file" accept="image/jpeg, image/png" required>
+                    <br>
+                    <?php
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        // Assuming you've already processed the file in your controller/model
+                        // and set a session or direct variable for success or failure message
+                        if (isset($_SESSION['uploadMessage'])) {
+                            echo $_SESSION['uploadMessage']; // Display upload message set by the controller/model
+                            unset($_SESSION['uploadMessage']); // Clear the message after displaying
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="button-search">Créer</button>
+                    <button id="resetButton" type="reset" class="button-reset">Réinitialiser</button>
+                </div>
+            </form>
         </section>
 
 

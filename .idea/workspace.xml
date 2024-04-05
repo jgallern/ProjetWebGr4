@@ -8,13 +8,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b150bf6-44f2-4083-9e4f-c66330f153d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/views/Page_Gestions/edit_entreprise.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/Page_Gestions/entreprise_detail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Rechercher_Entreprise_Admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Rechercher_Entreprise_Etudiant.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/Controller_Rechercher_Entreprise_Pilot.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Controller_Creer_Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Controller_Creer_Entreprise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Controller_Rechercher_Entreprise.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Entreprise.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Offre.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Offre.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/script_Gestion_Entreprise_Pilote_Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script_Gestion_Entreprise_Pilote_Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/connect_model.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/connect_model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script_gestion_entreprise_etudiant.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script_gestion_entreprise_etudiant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/script_page_gestion_entreprise_admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/script_page_gestion_entreprise_admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/Page_Gestions/gestion_entreprise_pilote_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Page_Gestions/gestion_entreprise_pilote_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/view_admin/gestion_entreprise_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/view_admin/gestion_entreprise_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/view_etudiant/gestion_entreprise_etudiants.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/view_etudiant/gestion_entreprise_etudiants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/view_etudiant/page_presentation_entreprise.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/view_etudiant/page_presentation_entreprise.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/view_pilote/gestion_entreprise_pilote.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/view_pilote/gestion_entreprise_pilote.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +80,7 @@
     "RunOnceActivity.laravel-idea.search-composer-json": "true",
     "git-widget-placeholder": "migration__archi__Class__Entreprise&&Offre",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/xampp/htdocs/GitHub/ProjetWebGr4/views/Page_Gestions",
+    "last_opened_file_path": "C:/xampp/htdocs/GitHub/ProjetWebGr4/controllers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -90,6 +99,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\controllers" />
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\views\Page_Gestions" />
       <recent name="C:\xampp\htdocs\GitHub\ProjetWebGr4\Pages_Gestions" />
     </key>
@@ -149,7 +159,7 @@
       <workItem from="1711984078189" duration="1028000" />
       <workItem from="1712128489356" duration="19208000" />
       <workItem from="1712164495223" duration="4643000" />
-      <workItem from="1712217855360" duration="27505000" />
+      <workItem from="1712217855360" duration="35607000" />
     </task>
     <servers />
   </component>
@@ -181,5 +191,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>

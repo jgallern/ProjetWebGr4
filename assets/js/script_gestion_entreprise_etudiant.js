@@ -1,3 +1,38 @@
+function toggleEntreprisesVisibility() {
+    // Select all entreprise items
+    const entreprises = document.querySelectorAll('.listeentreprises a');
+    // Define max visible items
+    const maxVisible = 5;
+    let hiddenItemsExist = false;
+
+    // Loop through entreprise items to check if any hidden items exist
+    entreprises.forEach((entreprise, index) => {
+        if (index >= maxVisible && entreprise.style.display === 'none') {
+            hiddenItemsExist = true; // Indicate that there are items to show
+        }
+    });
+
+    // Based on hiddenItemsExist, either show or hide the items
+    entreprises.forEach((entreprise, index) => {
+        if (index >= maxVisible) {
+            entreprise.style.display = hiddenItemsExist ? 'block' : 'none';
+        }
+    });
+
+    // Update the visibility of the 'voir plus' button accordingly
+    const voirPlusBtn = document.querySelector('.carte_voir_plus img');
+    if (hiddenItemsExist) {
+        // Optional: Change the image or text of voirPlusBtn to indicate a state of showing less
+        voirPlusBtn.src = '../../assets/images/voir_moins.png'; // Assuming you have an image for 'show less'
+    } else {
+        voirPlusBtn.src = '../../assets/images/voir_plus.png'; // Back to 'show more' state
+    }
+
+
+
+
+}
+
 function toggleMenu() {
     var menuIcon = document.querySelector('.menu-icon');
     var navbar = document.getElementById("navbar");
@@ -105,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     })
+
 
 
     

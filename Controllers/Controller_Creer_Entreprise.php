@@ -39,7 +39,7 @@ class CreateEnterpriseController
             if ($result['success']) {
                 // Store a success message in the session
                 $_SESSION['success_message'] = "Entreprise created successfully!";
-                header('Location: ../views/Page_Gestions/gestion_entreprise_pilote_admin.php');
+                header('Location: ../views/view_admin/gestion_entreprise_admin.php');
                 exit();
             } else {
                 // Handle failure case as before

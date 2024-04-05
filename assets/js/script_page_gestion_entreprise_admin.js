@@ -34,9 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
     adresse_entreprise.addEventListener("input", async function () {
         if (select_code_postal.value === "") {
             select_code_postal.setCustomValidity("Veuillez remplir le code postal");
-        }
-
-        else if (ex_reg_cp.test(select_code_postal.value)) {
+        } else if (ex_reg_cp.test(select_code_postal.value)) {
             var xhr = new XMLHttpRequest();
             var value_code_postal = select_code_postal.value;
             var value_adresse = remplacerEspacesParPlus(adresse_entreprise.value);
@@ -66,15 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         html = '<li style="list-style: none;">Aucun résultat trouvé.</li>';
                         select_adresse.innerHTML = html;
                     }
-                }
-                else {
+                } else {
                     console.log("Erreur lors de la récupération des données.");
                 }
             }
             xhr.send();
-        }
-
-        else {
+        } else {
             select_code_postal.setCustomValidity("Le code postal doit contenir 5 chiffres");
         }
         select_code_postal.reportValidity();
@@ -125,8 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
-
     var result_all = document.getElementById("result_all");
     var result_modif = document.getElementById("result_modif");
     var result_stats = document.getElementById("result_stats");
@@ -136,7 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var confirmationSuppression = document.getElementById('confirmationSuppression');
     var btnOui = document.getElementById('btnOui');
     var btnNon = document.getElementById('btnNon');
-
 
 
     var divs = document.querySelectorAll('.recherche_fiche_entreprise');
@@ -179,14 +171,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (!isSelected) {
             afficherOverlay();
-        }
-        else {
+        } else {
             result_stats.classList.remove("visible");
 
             result_modif.classList.add("visible");
 
             const position = document.getElementById('result_all').getBoundingClientRect().top + window.pageYOffset - document.getElementById('navbar').offsetHeight;
-            window.scrollTo({ top: position, behavior: 'smooth' });
+            window.scrollTo({top: position, behavior: 'smooth'});
         }
     });
 
@@ -223,8 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (!isSelected) {
             afficherOverlay();
-        }
-        else {
+        } else {
             result_modif.classList.remove("visible");
             result_stats.classList.remove("visible");
 
@@ -242,14 +232,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         if (!isSelected) {
             afficherOverlay();
-        }
-        else {
+        } else {
             result_modif.classList.remove("visible");
 
             result_stats.classList.add("visible");
 
             const position = document.getElementById('result_all').getBoundingClientRect().top + window.pageYOffset - document.getElementById('navbar').offsetHeight;
-            window.scrollTo({ top: position, behavior: 'smooth' });
+            window.scrollTo({top: position, behavior: 'smooth'});
         }
     });
 
@@ -262,9 +251,6 @@ document.addEventListener('DOMContentLoaded', function () {
             container.classList.add('clicked');
         });
     });
-
-
-
 
 
     /*   PERMETTRE DE TAPER PLUSIEURS ADRESSES  */
@@ -337,12 +323,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-
-
-
-
-
-
 })
 
 
@@ -370,4 +350,62 @@ function afficherOverlay() {
         message.style.opacity = '1';
     }, 2400);
 
+
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sectorSelect = document.getElementById('create-sectors');
+    const otherSectorInput = document.getElementById('autre-secteurs');
+
+    // Function to fetch sectors and update the select input
+    function fetchSectors() {
+        console.log("Fetching sectors...");
+        fetch('../../controllers/Controller_Secteur_Entreprise.php?action=fetch')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Full response data:', data); // Log the entire response
+                data.secteurs.forEach(sector => {
+                    const option = new Option(sector.nom_secteur, sector.ID_secteur);
+                    sectorSelect.add(option);
+                });
+
+                const autreOption = new Option("Autre", "Autre");
+                sectorSelect.add(autreOption);
+            })
+            .catch(error => console.error('Error fetching sectors:', error));
+
+    }
+
+    // Call the fetchSectors function to populate sectors dropdown
+    fetchSectors();
+
+    sectorSelect.addEventListener('change', function () {
+        const isOtherSelected = this.value === 'Autre';
+        otherSectorInput.style.display = isOtherSelected ? 'block' : 'none';
+    })
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sectorSelect = document.getElementById('create-sectorss');
+
+    // Function to fetch sectors and update the select input
+    function fetchSectors() {
+        console.log("Fetching sectors...");
+        fetch('../../controllers/Controller_Secteur_Entreprise.php?action=fetch')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Full response data:', data); // Log the entire response
+                data.secteurs.forEach(sector => {
+                    const option = new Option(sector.nom_secteur, sector.ID_secteur);
+                    sectorSelect.add(option);
+                });
+
+            })
+            .catch(error => console.error('Error fetching sectors:', error));
+
+    }
+
+    // Call the fetchSectors function to populate sectors dropdown
+    fetchSectors();
+
+})

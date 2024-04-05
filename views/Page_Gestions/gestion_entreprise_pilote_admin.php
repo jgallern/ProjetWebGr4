@@ -50,7 +50,7 @@ session_start(); // Start the session to access session variables
         <div id="recherche_container">
 
             <div id="form_recherche">
-                <form id="searchForm" method="POST" action="../../controllers/Controller_Rechercher_Entreprise.php"
+                <form id="searchForm" method="POST" action="../../controllers/Controller_Rechercher_Entreprise_Admin.php"
                       enctype="multipart/form-data">
                     <div class="form-row">
                         <label for="search-name">Nom de l'entreprise :</label><br>
