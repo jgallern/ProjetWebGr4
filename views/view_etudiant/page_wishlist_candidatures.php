@@ -33,20 +33,15 @@
         </div>
         <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" /></a>
         <div id="lien_navbar">
-            <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php"
-                id="lien_entreprises_etudiants">Entreprises</a>
-            <a class="lien_nav police_texte" href="../view_etudiant/gestion_offres_etudiants.php"
-                id="lien_offres_etudiants">Offres</a>
-            <a class="lien_nav police_texte" href="../view_etudiant/page_wishlist_candidatures.php"
-                id="lien_candidatures">Wishlist et Candidatures</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php" id="lien_entreprises_etudiants">Entreprises</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/gestion_offres_etudiants.php" id="lien_offres_etudiants">Offres</a>
+            <a class="lien_nav police_texte" href="../view_etudiant/page_wishlist_candidatures.php" id="lien_candidatures">Wishlist et Candidatures</a>
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
                 <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
-                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
-                        id="bouton_deconnexion">Se déconnecter</button></a>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
-
             <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
         </div>
     </nav>
@@ -67,225 +62,59 @@
     <section class="wish_cand apple_style">
         <div class="offres_header">
             <h2 id="titre_ta_wishlist" class="police_texte">Ta Wishlist</h2>
-            <form method="POST" action="">
-                <input class="police_texte recherche_offres" type="text" id="recherche_wishlist"
-                    placeholder="Rechercher...">
-                <button name="recherche_wishlist" type='submit'>rechercher</button>
+            <form method="POST" action="wishlist.php?action=rechercherDansWishlist"> <!-- Assurez-vous que cette action correspond à votre contrôleur MVC -->
+                <input class="police_texte recherche_offres" type="text" name="recherche_wishlist" placeholder="Rechercher...">
+                <button type="submit">Rechercher</button>
             </form>
         </div>
+        <?php $offresDetails = $offresDetails ?? []; ?>
         <div class="les_offres">
-
             <div class="offres_container" id="wishlist_container">
-
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
+                <!-- Début de la section dynamique pour les offres dans la wishlist -->
+                <?php foreach ($offresDetails as $offre): ?>
+                <div class="offre offre_wishlist police_texte">
+                    <img src="../../assets/images/logo_entreprise.png" alt="img entreprise"> <!-- Ajustez selon les données réelles -->
+                    <h3><?= htmlspecialchars($offre['titre']) ?></h3>
+                    <p><?= htmlspecialchars($offre['description']) ?></p>
+                    <form method="POST" action="wishlist.php?action=supprimerDeWishlist">
+                        <input type="hidden" name="idWishlist" value="<?= $offre['ID_Wishlist'] ?>">
+                        <button type="submit" name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
-                </a><a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-                <a href="#" class="offre offre_wishlist police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                    <form method="POST" action="">
-                        <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
-                    </form>
-                </a>
-
+                </div>
+                <?php endforeach; ?>
+                <!-- Fin de la section dynamique -->
             </div>
-
         </div>
-
-
     </section>
 
     <br><br><br>
 
 
     <section class="wish_cand apple_style">
-        <div class="offres_header">
-            <h2 class="police_texte" id="titre_tes_candidatures">Tes candidatures</h2>
-            <form method="POST" action="">
-                <input class="police_texte recherche_offres" type="text" id="recherche_wishlist"
-                    placeholder="Rechercher...">
-                <button name="recherche_candidatures" type='submit'>rechercher</button>
-            </form>
-        </div>
-        <div class="les_offres">
-
-            <div class="offres_container" id="candidatures_container">
-
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-                <a href="#" class="offre offre_candidatures police_texte">
-                    <img src=""
-                        alt="img entreprise">
-                    <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
-                </a>
-
+    <div class="offres_header">
+        <h2 class="police_texte" id="titre_tes_candidatures">Tes candidatures</h2>
+        <form method="POST" action="candidatures.php?action=rechercherDansCandidatures"> <!-- Assurez-vous que cette action correspond à votre contrôleur MVC -->
+            <input class="police_texte recherche_offres" type="text" name="recherche_candidatures" placeholder="Rechercher dans tes candidatures...">
+            <button type="submit">Rechercher</button>
+        </form>
+    </div>
+    <?php $candidaturesDetails = $candidaturesDetails ?? []; ?>
+    <div class="les_offres">
+        <div class="offres_container" id="candidatures_container">
+            <!-- Début de la section dynamique pour les candidatures -->
+            <?php foreach ($candidaturesDetails as $candidature): ?>
+            <div class="offre offre_candidatures police_texte">
+                <img src="../../assets/images/logo_entreprise.png" alt="Logo entreprise"> <!-- Ajustez selon les données réelles -->
+                <h3><?= htmlspecialchars($candidature['titre']) ?></h3>
+                <p><?= htmlspecialchars($candidature['description']) ?></p>
+                <!-- Vous pouvez ajouter ici des boutons ou des actions spécifiques à la candidature, comme annuler la candidature -->
             </div>
+            <?php endforeach; ?>
+            <!-- Fin de la section dynamique -->
         </div>
+    </div>
+</section>
 
-
-    </section>
 
 </body>
 
