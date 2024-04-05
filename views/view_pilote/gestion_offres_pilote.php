@@ -69,17 +69,19 @@
                         <div id="form_partie1">
                             <form>
                                 <div class="form-row">
-                                    <label for="search-name">Nom de l'entreprise :</label><br>
+                                    <label for="search-name">Nom de l'entreprise :<br>
                                     <input name="nom_entreprise" "search-name" type="text"
                                         placeholder="Entrez le nom de l'entreprise" />
+                                    </label>
                                 </div>
                                 <div class="form-row">
-                                    <label for="search-name">Lieu du stage :</label><br>
+                                    <label for="search-name">Lieu du stage :<br>
                                     <input name="localite" id="search-name" type="text"
                                         placeholder="Entrez le nom de l'entreprise" />
+                                    </label>
                                 </div>
                                 <div class="form-row">
-                                    <label for="search-name">Promotion :</label><br>
+                                    <label for="search-name">Promotion :<br>
                                     <select name="promo">
                                         <option>--Choisir--</option>
                                         <option>A2 informatique</option>
@@ -99,9 +101,10 @@
                                         <option>A5 S3E</option>
                                         <option>A5 Généraliste</option>
                                     </select>
+                                    </label>
                                 </div>
                                 <div class="form-row">
-                                    <label for="search-sector">Secteur d'activité :</label><br>
+                                    <label for="search-sector">Secteur d'activité :<br>
                                     <select name="secteur_activite">
                                         <option>--Choisir--</option>
                                         <option>Informatique</option>
@@ -109,25 +112,29 @@
                                         <option>S3E</option>
                                         <option>Généraliste</option>
                                     </select>
+                                    </label>
                                 </div>
 
                         </div>
 
                         <div id="form_partie2">
                             <div class="form-row">
-                                <label for="search-stages">Durée du stage (en semaines) :</label><br>
+                                <label for="search-stages">Durée du stage (en semaines) :<br>
                                 <input name="duree" id="search-stages" type="number"
                                     placeholder="Entrez la durée en semaine" />
+                                </label>
                             </div>
                             <div class="form-row">
-                                <label for="search-stages">Date de l'offre :</label><br>
+                                <label for="search-stages">Date de l'offre :<br>
                                 <input name="date_offre" id="search-stages" type="date"
                                     placeholder="Entrez la date de poste de l'offre" />
+                                </label>
                             </div>
                             <div class="form-row">
-                                <label for="search-stages">Nombre de place pour le stage :</label><br>
+                                <label for="search-stages">Nombre de place pour le stage :<br>
                                 <input name="nbr_offre" id="search-stages" type="number"
                                     placeholder="Entrez le nombre de place" />
+                                </label>
                             </div>
 
                             </form>
@@ -147,8 +154,7 @@
                         src=""
                         alt="img entreprise">
                     <h3>Intitulé 1</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                        chocolats</p>
+                    <p>lorem ipsum target sagesse et tirtlipon.</p>
                 </div>
 
                 <div class="recherche_fiche_offres">
@@ -157,8 +163,7 @@
                         src=""
                         alt="img entreprise">
                     <h3>Intitulé 3</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                        chocolats</p>
+                    <p>lorem ipsum target sagesse et tirtlipon. </p>
                 </div>
                 <div class="recherche_fiche_offres">
 
@@ -166,8 +171,7 @@
                         src=""
                         alt="img entreprise">
                     <h3>Intitulé 3</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                        chocolats</p>
+                    <p>lorem ipsum target sagesse et tirtlipon. </p>
                 </div>
                 <div class="recherche_fiche_offres">
 
@@ -175,8 +179,7 @@
                         src=""
                         alt="img entreprise">
                     <h3>Intitulé 3</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                        chocolats</p>
+                    <p>lorem ipsum target sagesse et tirtlipon.</p>
                 </div>
                 <div class="recherche_fiche_offres">
 
@@ -184,8 +187,7 @@
                         src=""
                         alt="img entreprise">
                     <h3>Intitulé 3</h3>
-                    <p>lorem ipsum target sagesse et tirtlipon. Le mauvais ordre est passé chez moi avec des
-                        chocolats</p>
+                    <p>lorem ipsum target sagesse et tirtlipon.</p>
                 </div>
 
                 <div id="overlay"></div>
@@ -215,10 +217,11 @@
                 <form>
                     <div id="deux_partie_modif">
                         <div id="partie_modif">
-                            <label>Lieu du stage</label><br>
+                            <label>Lieu du stage<br>
                             <input type="text" id="nouv_lieu_offre" name="nouv_lieu_offre" placeholder="Nouveau lieu">
+                            </label>
                             <br>
-                            <label>Nouveau secteur :</label><br>
+                            <label>Nouveau secteur :<br>
                             <select name="nouv_secteur_offre">
                                 <option>--Choisir--</option>
                                 <option>Informatique</option>
@@ -226,8 +229,9 @@
                                 <option>S3E</option>
                                 <option>Généraliste</option>
                             </select>
+                            </label>
                             <br>
-                            <label>Promotion</label><br>
+                            <label>Promotion<br>
                             <select name="promo">
                                 <option>--Choisir--</option>
                                 <option>A2 informatique</option>
@@ -247,21 +251,28 @@
                                 <option>A5 S3E</option>
                                 <option>A5 Généraliste</option>
                             </select>
+                            </label>
                             <br>
-                            <label>Nouvelle durée du stage (en semaines)</label><br>
+                            <label>Nouvelle durée du stage (en semaines)<br>
                             <input name="image_entreprise" type="number" placeholder="Durée du stage en semaines">
+                            </label>
                         </div>
                         <div id="partie_eval">
-                            <label>Nouvelle rémunération :</label><br>
-                            <input type="number" name="renum" placeholder="Rémunération en euros par mois"><br>
-                            <label>Nouvelle Date :</label><br>
-                            <input type="date" name="nouv_date">
+                            <label>Nouvelle rémunération :<br>
+                            <input type="number" name="renum" placeholder="Rémunération en euros par mois">
+                            </label>
                             <br>
-                            <label>Nombre de place</label><br>
-                            <input type="number" placeholder="Nombre de place pour l'offre" name="nbr_place"> <br>
-                            <label>Nouvelle image</label><br>
+                            <label>Nouvelle Date :<br>
+                            <input type="date" name="nouv_date">
+                            </label>
+                            <br>
+                            <label>Nombre de place<br>
+                            <input type="number" placeholder="Nombre de place pour l'offre" name="nbr_place">
+                            </label> <br>
+                            <label>Nouvelle image<br>
                             <input id="input_image" name="nouv_image_offre" type="file"
-                                accept="image/jpeg, image/png"><br>
+                                accept="image/jpeg, image/png">
+                                </label><br>
 
                         </div>
                     </div>
@@ -291,19 +302,22 @@
         <section id="bloc_padding" class="bloc_gestion police_texte">
             <h2>Créer une offre</h2>
             <div class="form-row">
-                <label for="create-name">Intitulé de l'offre :</label><br>
+                <label for="create-name">Intitulé de l'offre :<br>
                 <input id="create-name" type="text" placeholder="Entrez le nom de l'offre" name="nom_offre">
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-name">Entreprise</label><br>
+                <label for="create-name">Entreprise<br>
                 <input type="text" name="offre_entreprise" placeholder="Decrivez l'entreprise ici"></input>
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-location">Lieu du stage :</label><br>
+                <label for="create-location">Lieu du stage :<br>
                 <input id="create-location" type="text" placeholder="Entrez le lieu">
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-sector">Secteur d'activité :</label><br>
+                <label for="create-sector">Secteur d'activité :<br>
                 <select name="promo">
                     <option>--Choisir--</option>
                     <option>A2 informatique</option>
@@ -323,25 +337,31 @@
                     <option>A5 S3E</option>
                     <option>A5 Généraliste</option>
                 </select>
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-sector">Durée du stage :</label><br>
+                <label for="create-sector">Durée du stage :<br>
                 <input type="number" placeholder="Durée du stage en semaine">
+                </label>
             </div>
             <div class="form-row">
-                <label>Rémunération</label><br>
+                <label>Rémunération<br>
                 <input type="number" placeholder="Rémunération par mois">
+                </label>
             </div>
             <div class="form-row">
-                <label>Date de l'offre</label><br>
+                <label>Date de l'offre<br>
                 <input type="date">
+                </label>
             </div>
             <div class="form-row">
-                <label>Nombre de place</label><br>
+                <label>Nombre de place<br>
                 <input type="number" placeholder="Nombre de place proposées par l'entreprise">
+                </label>
             </div>
-            <label>Ajouter une image</label>
+            <label>Ajouter une image
             <input name="nouv_image_offre" type="file" accept="image/jpeg, image/png"><br>
+            </label>
 
             <div class="form-actions">
                 <button type="submit" class="button-search">Créer</button>

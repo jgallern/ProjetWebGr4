@@ -96,10 +96,12 @@
         <div class="bloc_gestion police_texte">
             <form>
                 <h1>Tu y es presque !</h1><br>
-                <label>Ton CV :</label>
-                <input type="file" accept=".pdf"><br>
-                <label>Ta lettre de motivation :</label><br>
+                <label>Ton CV :
+                <input type="file" accept=".pdf">
+                </label><br>
+                <label>Ta lettre de motivation :<br>
                 <input type="file">
+                </label>
 
                 <button type="submit">ENVOYER</button>
             </form>
