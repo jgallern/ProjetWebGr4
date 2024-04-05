@@ -30,7 +30,11 @@
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
-                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
+                <h3 id="nom_prenom_etudiant"><?php
+                        if (isset($_COOKIE['$prenom'])){
+                            echo $_COOKIE['$prenom'];
+                        }
+                    ?></h3>
                 <a style="text-decoration: none;" href="../../controllers/deconnection_controller.php"><button
                         id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
@@ -62,19 +66,22 @@
             <div id="form_filtre">
                 <div id="filtres_wrapper">
                     <div class="un_filtre">
-                        <label for="search-name">Nom de l'entreprise</label><br>
+                        <label for="search-name">Nom de l'entreprise<br>
                         <input id="search-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+                        </label>
                     </div>
                     <div class="un_filtre">
-                        <label for="search-location">Lieu d'entreprise</label><br>
+                        <label for="search-location">Lieu d'entreprise<br>
                         <input id="search-location" type="text" placeholder="Entrez le lieu" />
+                        </label>
                     </div>
                     <div class="un_filtre">
-                        <label for="search-stages">Nombre d'offres de stage</label><br>
+                        <label for="search-stages">Nombre d'offres de stage<br>
                         <input id="search-stages" type="text" placeholder="Entrez le nombre d'offres" />
+                        </label>
                     </div>
                     <div class="un_filtre">
-                        <label for="search-sector">Secteur d'activité</label><br>
+                        <label for="search-sector">Secteur d'activité<br>
                         <select name="select_secteur">
                             <option default>--Choisir-</option>
                             <option>Informatique</option>
@@ -82,6 +89,7 @@
                             <option>S3E</option>
                             <option>Généraliste</option>
                         </select>
+                        </label>
                     </div>
                 </div>
                 <button id="submit_button" type="submit">Filtrer</button>

@@ -35,7 +35,11 @@
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
-                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
+                <h3 id="nom_prenom_etudiant"><?php
+                        if (isset($_COOKIE['$prenom'])){
+                            echo $_COOKIE['$prenom'];
+                        }
+                    ?></h3>
                 <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
                         id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
@@ -218,10 +222,11 @@
                 <form>
                     <div id="deux_partie_modif">
                         <div id="partie_modif">
-                            <label>Lieu du stage</label><br>
+                            <label>Lieu du stage<br>
                             <input type="text" id="nouv_lieu_offre" name="nouv_lieu_offre" placeholder="Nouveau lieu">
+                            </label>
                             <br>
-                            <label>Nouveau secteur :</label><br>
+                            <label>Nouveau secteur :<br>
                             <select name="nouv_secteur_offre">
                                 <option>--Choisir--</option>
                                 <option>Informatique</option>
@@ -229,8 +234,9 @@
                                 <option>S3E</option>
                                 <option>Généraliste</option>
                             </select>
+                            </label>
                             <br>
-                            <label>Promotion</label><br>
+                            <label>Promotion<br>
                             <select name="promo">
                                 <option>--Choisir--</option>
                                 <option>A2 informatique</option>
@@ -250,21 +256,27 @@
                                 <option>A5 S3E</option>
                                 <option>A5 Généraliste</option>
                             </select>
+                            </label>
                             <br>
-                            <label>Nouvelle durée du stage (en semaines)</label><br>
+                            <label>Nouvelle durée du stage (en semaines)<br>
                             <input name="image_entreprise" type="number" placeholder="Durée du stage en semaines">
+                            </label>
                         </div>
                         <div id="partie_eval">
-                            <label>Nouvelle rémunération :</label><br>
+                            <label>Nouvelle rémunération :<br>
                             <input type="number" name="renum" placeholder="Rémunération en euros par mois"><br>
-                            <label>Nouvelle Date :</label><br>
+                            </label>
+                            <label>Nouvelle Date :<br>
                             <input type="date" name="nouv_date">
+                            </label>
                             <br>
-                            <label>Nombre de place</label><br>
+                            <label>Nombre de place<br>
                             <input type="number" placeholder="Nombre de place pour l'offre" name="nbr_place"> <br>
-                            <label>Nouvelle image</label><br>
+                            </label>
+                            <label>Nouvelle image<br>
                             <input id="input_image" name="nouv_image_offre" type="file"
                                 accept="image/jpeg, image/png"><br>
+                            </label>
 
                         </div>
                     </div>
@@ -294,19 +306,22 @@
         <section id="bloc_padding" class="bloc_gestion police_texte">
             <h2>Créer une offre</h2>
             <div class="form-row">
-                <label for="create-name">Intitulé de l'offre :</label><br>
+                <label for="create-name">Intitulé de l'offre :<br>
                 <input id="create-name" type="text" placeholder="Entrez le nom de l'offre" name="nom_offre">
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-name">Entreprise</label><br>
+                <label for="create-name">Entreprise<br>
                 <input type="text" name="offre_entreprise" placeholder="Decrivez l'entreprise ici"></input>
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-location">Lieu du stage :</label><br>
+                <label for="create-location">Lieu du stage :<br>
                 <input id="create-location" type="text" placeholder="Entrez le lieu">
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-sector">Secteur d'activité :</label><br>
+                <label for="create-sector">Secteur d'activité :<br>
                 <select name="promo">
                     <option>--Choisir--</option>
                     <option>A2 informatique</option>
@@ -326,25 +341,31 @@
                     <option>A5 S3E</option>
                     <option>A5 Généraliste</option>
                 </select>
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-sector">Durée du stage :</label><br>
+                <label for="create-sector">Durée du stage :<br>
                 <input type="number" placeholder="Durée du stage en semaine">
+                </label>
             </div>
             <div class="form-row">
-                <label>Rémunération</label><br>
+                <label>Rémunération<br>
                 <input type="number" placeholder="Rémunération par mois">
+                </label>
             </div>
             <div class="form-row">
-                <label>Date de l'offre</label><br>
+                <label>Date de l'offre<br>
                 <input type="date">
+                </label>
             </div>
             <div class="form-row">
-                <label>Nombre de place</label><br>
+                <label>Nombre de place<br>
                 <input type="number" placeholder="Nombre de place proposées par l'entreprise">
+                </label>
             </div>
-            <label>Ajouter une image</label>
+            <label>Ajouter une image<br>
             <input name="nouv_image_offre" type="file" accept="image/jpeg, image/png"><br>
+            </label>
 
             <div class="form-actions">
                 <button type="submit" class="button-search">Créer</button>

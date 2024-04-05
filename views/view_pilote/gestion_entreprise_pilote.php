@@ -32,7 +32,11 @@
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
-                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
+                <h3 id="nom_prenom_etudiant"><?php
+                        if (isset($_COOKIE['$prenom'])){
+                            echo $_COOKIE['$prenom'];
+                        }
+                    ?></h3>
                 <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
                         id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
@@ -65,20 +69,23 @@
                 <div id="form_recherche">
                     <form>
                         <div class="form-row">
-                            <label for="search-name">Nom de l'entreprise :</label><br>
+                            <label for="search-name">Nom de l'entreprise :<br>
                             <input id="search-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+                            </label>
                         </div>
                         <div class="form-row">
-                            <label for="search-stages">Nombre d'offres de stage :</label><br>
+                            <label for="search-stages">Nombre d'offres de stage :<br>
                             <input id="search-stages" type="number" placeholder="Entrez le nombre d'offres" />
+                            </label>
                         </div>
                         <div class="form-row">
-                            <label>Lieu d'entreprise :</label><br>
+                            <label>Lieu d'entreprise :<br>
                             <input id="code_postal_entreprise" type="number" placeholder="Code postal" />
                             <input id="adresse_entreprise" type="text" placeholder="Entrez le lieu" />
+                            </label>
                         </div>
                         <div class="form-row">
-                            <label>Secteur d'activité :</label><br>
+                            <label>Secteur d'activité :<br>
                             <select>
                                 <option>--Choisir--</option>
                                 <option>Informatique</option>
@@ -86,6 +93,7 @@
                                 <option>S3E</option>
                                 <option>Généraliste</option>
                             </select>
+                            </label>
                         </div>
                         <div class="form_buttons">
                             <button class="button-search">Rechercher</button>
@@ -176,10 +184,11 @@
                 <form>
                     <div id="deux_partie_modif">
                         <div id="partie_modif">
-                            <label>Nouveau nom :</label><br>
+                            <label>Nouveau nom :<br>
                             <input type="text" id="nouv_nom" name="nouv_nom" placeholder="Nouveau nom">
+                            </label>
                             <br>
-                            <label>Nouveau secteur :</label><br>
+                            <label>Nouveau secteur :<br>
                             <select name="nouv_secteur">
                                 <option>--Choisir--</option>
                                 <option>Informatique</option>
@@ -187,19 +196,22 @@
                                 <option>S3E</option>
                                 <option>jesaisplu</option>
                             </select>
+                            </label>
                             <br>
-                            <label>Nouvelle localité :</label><br>
+                            <label>Nouvelle localité :<br>
                             <div id="adresses">
                                 <!-- Conteneur pour les adresses -->
                             </div>
+                            </label>
                             <button type="button" id="ajouterAdresse">Ajouter une adresse</button>
 
                             <br>
-                            <label>Nouvelle image :</label><br>
+                            <label>Nouvelle image :<br>
                             <input id="input_image" name="image_entreprise" type="file" accept="image/jpeg, image/png">
+                            </label>
                         </div>
                         <div id="partie_eval">
-                            <label>Evaluer l'entreprise :</label>
+                            <label>Evaluer l'entreprise :
                             <div class="rating" id="rating">
                                 <span class="star" data-value="1">&#9733;</span>
                                 <span class="star" data-value="2">&#9733;</span>
@@ -207,9 +219,11 @@
                                 <span class="star" data-value="4">&#9733;</span>
                                 <span class="star" data-value="5">&#9733;</span>
                             </div>
-                            <label>Commentaire :</label><br>
+                            </label>
+                            <label>Commentaire :<br>
                             <textarea class="police_texte" id="commentaire_entreprise" name="commentaire_entreprise"
                                 placeholder="Entrez un commentaire"></textarea>
+                            </label>
                             <br>
                             <button id="supprimer_entreprise">Supprimer l'entreprise</button> <br>
                             <div id="btn_envoi">
@@ -239,23 +253,26 @@
         <section id="bloc_padding" class="bloc_gestion police_texte">
             <h2>Créer une entreprise</h2>
             <div class="form-row">
-                <label for="create-name">Nom de l'entreprise :</label><br>
+                <label for="create-name">Nom de l'entreprise :<br>
                 <input id="create-name" type="text" placeholder="Entrez le nom de l'entreprise" />
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-name">Description de l'entreprise</label><br>
+                <label for="create-name">Description de l'entreprise<br>
                 <textarea class="police_texte" id="description_entreprise" name="description_entreprise"
                     placeholder="Decrivez l'entreprise ici"></textarea>
+                </label>
             </div>
             <div class="form-row">
-                <label>Lieu d'entreprise :</label><br>
+                <label>Lieu d'entreprise :<br>
                 <input id="code_postal_entreprise_creer" type="number" placeholder="Code postal" />
                 <input id="adresse_entreprise_creer" type="text" placeholder="Entrez le lieu" />
                 <ul id="ul_adresse">
                 </ul>
+                </label>
             </div>
             <div class="form-row">
-                <label>Secteur d'activité :</label><br>
+                <label>Secteur d'activité :<br>
                 <select name="nouv_secteur">
                     <option>--Choisir--</option>
                     <option>Informatique</option>
@@ -263,10 +280,12 @@
                     <option>S3E</option>
                     <option>jesaisplu</option>
                 </select>
+                </label>
             </div>
             <div class="form-row">
-                <label>Image de l'entreprise :</label><br>
+                <label>Image de l'entreprise :<br>
                 <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
+                </label>
             </div>
             <div class="form-actions">
                 <button class="button-search">Créer</button>

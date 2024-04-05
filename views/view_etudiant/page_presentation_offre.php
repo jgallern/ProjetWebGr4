@@ -30,7 +30,11 @@
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
-                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
+                <h3 id="nom_prenom_etudiant"><?php
+                        if (isset($_COOKIE['$prenom'])){
+                            echo $_COOKIE['$prenom'];
+                        }
+                    ?></h3>
                 <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
                         id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
@@ -98,10 +102,11 @@
             <div style="display: flex;">
                 <form>
                     <h1>Tu y es presque !</h1><br>
-                    <label>Ton CV :</label><br>
-                    <input id="fileInput1" type="file" accept=".pdf"><br>
-                    <label>Ta lettre de motivation :</label><br>
+                    <label>Ton CV :<br>
+                    <input id="fileInput1" type="file" accept=".pdf"></label><br>
+                    <label>Ta lettre de motivation :<br>
                     <input id="fileInput2" type="file" accept=".pdf"><br>
+                    </label>
                     <button id="submit_cv" type="submit">Envoyer</button>
                 </form>
                 <div id="previews">

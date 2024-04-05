@@ -36,7 +36,11 @@
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
-                <h3 id="nom_prenom_etudiant">Quentin Baud</h3>
+                <h3 id="nom_prenom_etudiant"><?php
+                        if (isset($_COOKIE['$prenom'])){
+                            echo $_COOKIE['$prenom'];
+                        }
+                    ?></h3>
                 <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
                         id="bouton_deconnexion">Se déconnecter</button></a>
             </div>
@@ -253,13 +257,15 @@
             <fieldset id="result_modif" class="police_texte">
                 <legend>Modifier un pilote</legend>
                 <form>
-                    <label>Nouveau nom :</label><br>
+                    <label>Nouveau nom :<br>
                     <input type="text" id="nouv_nom" name="nouv_nom_pilote" placeholder="Nouveau nom">
+                    </label>
                     <br>
-                    <label>Nouveau Prénom :</label><br>
+                    <label>Nouveau Prénom :<br>
                     <input type="text" id="nouv_nom" name="nouv_prenom_pilote" placeholder="Nouveau nom">
+                    </label>
                     <br>
-                    <label>Nouveau centre :</label><br>
+                    <label>Nouveau centre :<br>
                     <select>
                         <option disabled selected>Choisissez un centre</option>
                         <option disabled selected>Est</option>
@@ -294,8 +300,9 @@
                         <option>Arras</option>
                         <option>Cean</option>
                     </select>
+                    </label>
                     <br>
-                    <label for="search-name">Promotion :</label><br>
+                    <label for="search-name">Promotion :<br>
                     <select name="promo">
                         <option>--Choisir--</option>
                         <option>A2 informatique</option>
@@ -315,10 +322,12 @@
                         <option>A5 S3E</option>
                         <option>A5 Généraliste</option>
                     </select>
+                    </label>
 
                     <br>
-                    <label>Nouvelle image :</label><br>
+                    <label>Nouvelle image :<br>
                     <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
+                    </label>
                     <br>
 
                     <button id="supprimer_entreprise">Supprimer le pilote</button> <br>
@@ -335,16 +344,18 @@
         <section class="bloc_gestion padding_bloc police_texte">
             <h2>Créer un pilote</h2>
             <div class="form-row">
-                <label for="create-name">Nom du pilote :</label><br>
+                <label for="create-name">Nom du pilote :<br>
                 <input id="create-name" type="text" placeholder="Entrez le nom du pilote" />
+                </label>
             </div>
             <div class="form-row">
-                <label for="create-name">Prénom du pilote :</label><br>
+                <label for="create-name">Prénom du pilote :<br>
                 <input id="create-name" type="text" placeholder="Entrez le nom du pilote" />
+                </label>
             </div>
 
             <div class="form-row">
-                <label for="search-sector">Centre :</label><br>
+                <label for="search-sector">Centre :<br>
                 <select>
                     <option disabled selected>Choisissez un centre</option>
                     <option disabled selected>Est</option>
@@ -379,8 +390,9 @@
                     <option>Arras</option>
                     <option>Cean</option>
                 </select>
+                </label>
             </div>
-            <label for="search-name">Promotions :</label><br>
+            <label for="search-name">Promotions :<br>
             <div id="check_promos" name="promo">
                 <input type="checkbox">A2 informatique</input><br>
                 <input type="checkbox">A2 BTP</input><br>
@@ -398,10 +410,12 @@
                 <input type="checkbox">A5 BTP</input><br>
                 <input type="checkbox">A5 S3E</input><br>
                 <input type="checkbox">A5 Généraliste</input><br>
-            </div><br>
+            </div>
+            </label><br>
             <div class="form-row">
-                <label for="create-sector">Photo du pilote :</label><br>
+                <label for="create-sector">Photo du pilote :<br>
                 <input name="image_entreprise" type="file" accept="image/jpeg, image/png">
+                </label>
             </div>
             <div class="form-actions">
                 <button class="button-search">Créer</button>
