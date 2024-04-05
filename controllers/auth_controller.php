@@ -24,13 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             setcookie("prenom", $name ,time()+ 3600 ,"/");
             setcookie("statut", $statut ,time()+ 3600 ,"/");
             if ($statut == "Etudiant") {
-                header("Location: ../views/page_accueil_etudiant.php");
+                header("Location: ../views/view_etudiant/page_accueil_etudiant.php");
             }
             else if ($statut == "Pilote") {
-                header("Location: ../views/page_accueil_pilote.php");
+                header("Location: ../views/view_pilote/page_accueil_pilote.php");
             }
             else if ($statut == "Administrateur") {
-                header("Location: ../views/page_accueil_admin.php");
+                header("Location: ../views/view_admin/page_accueil_admin.php");
             }
             else if ($statut == "Non défini") {
                 header("Location: ../views/page_accueil_ss_connexion.php");
