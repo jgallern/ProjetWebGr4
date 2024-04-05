@@ -3,10 +3,14 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Acceuil</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_wishlist_candidatures.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
+    <link rel="manifest" href="../../assets/manifest.json">
+
 </head>
 
 <body>
@@ -15,8 +19,7 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc.png"
-                alt="logo" width="60px" /></a>
+        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" /></a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
@@ -67,7 +70,7 @@
 
             <article class="offre_stage">
                 <img class="imgs_offre"
-                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                    src=""
                     alt="image offre stage">
                 <div class="offre-details police_texte">
                     <h3 class="titre_poste">Intitulé du stage</h3>
@@ -82,7 +85,7 @@
 
             <article class="offre_stage">
                 <img class="imgs_offre"
-                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                    src=""
                     alt="image offre stage">
                 <div class="offre-details police_texte">
                     <h3 class="titre_poste">Intitulé du stage</h3>

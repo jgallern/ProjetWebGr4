@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script.js"></script>
     <link rel="icon" href="" type="image/png">
+    <link rel="manifest" href="../../assets/manifest.json">
+
 </head>
 
 <body>

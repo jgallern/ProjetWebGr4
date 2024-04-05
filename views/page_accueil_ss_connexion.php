@@ -5,61 +5,68 @@
     <meta charset="utf-8">
     <title>Stage En Bref</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <script src="script_page_ss_connexion.js"></script>
-    <link rel="icon" href="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-        type="image/png">
-    <link rel="manifest" href="../assets/manifest.json" scope="/">
+    <script src="../assets/js/script_page_ss_connexion.js"></script>
+    <link rel="icon" href="../assets/images/logo_noir.png" type="image/png">
+    <link rel="manifest" href="../../assets/manifest.json">
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('ServiceWorker.js')
+                .then((sw) => console.log('Le Service Worker a été enregistrer', sw))
+                .catch((err) => console.log('Le Service Worker est introuvable !!!', err));
+        }
+
+    </script>
 
 </head>
 
 <body>
+
+    
+
     <section id="top_acceuil">
         <div id="header_page_ss_connexion">
-            <a href="page_accueil_ss_connexion.html"><img id="logo_accueil" alt="logo SEB"
-                    src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"></a>
-        <?php
+            <a href="../views/page_accueil_ss_connexion.php"><img id="logo_accueil" alt="logo SEB"
+                    src="../assets/images/logo_noir.png"></a>
+
+            <?php
+            if (isset($_COOKIE["connected"]) && $_COOKIE["connected"] == "1") {
+                ?>
+                <a id="lien_connexion_header" href="../controllers/deconnection_controller.php" class="police_texte">Se
+                    déconnecter</a>
+                <?php
+            } else {
+                ?>
+                <a id="lien_connexion_header" href="./auth/login.php" class="police_texte">Se connecter</a>
+            <?php } ?>
+
+            <?php
             if (isset($_COOKIE["prenom"])) {
-                echo  "<a style='color:white' href='page_accueil_admin.php'>".$_COOKIE["prenom"]."<a>";
+                echo "<a style='color:white' href='page_accueil_admin.php'>" . $_COOKIE["prenom"] . "<a>";
             }
             ?>
-            <a class="police_texte" href=
-            <?php if (isset ($_COOKIE["connected"])) {?>
-                "../controllers/deconnection_controller.php"
-            <?php
-        }
-        else{
-            ?>"./auth/login.php" <?php
-        }?> 
-        id="lien_connexion_header">
-            <?php
-                if ($_COOKIE['connected'] == "1") {
-                ?>
-                Deconnection
-                <?php
-                }
-            else{?>Connection <?php } 
-?>
+
         </div>
 
         <h1 class="police_texte" id="titre_accueil">Tu cherches, <br> SEB trouve, <br> et c'est tout</h1><br>
-        <?php      
-            if (isset ($_COOKIE["connected"]) && $_COOKIE["connected"] == "1") {
-?>
-            <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button class="acentrer police_texte" id="bouton_connexion_accueil">Se déconnecter</button></a>
-<?php
-                }
-            else{
-                ?>
-            <a style="text-decoration: none;" href="./auth/login.php"><button class="acentrer police_texte" id="bouton_connexion_accueil">Se connecter</button></a>
-            <?php } ?>
+        <?php
+        if (isset($_COOKIE["connected"]) && $_COOKIE["connected"] == "1") {
+            ?>
+            <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
+                    class="acentrer police_texte" id="bouton_connexion_accueil">Se déconnecter</button></a>
+            <?php
+        } else {
+            ?>
+            <a style="text-decoration: none;" href="./auth/login.php"><button class="acentrer police_texte"
+                    id="bouton_connexion_accueil">Se connecter</button></a>
+        <?php } ?>
     </section>
 
 
     <section id="offres" class="offres-container">
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>
@@ -73,7 +80,7 @@
 
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>
@@ -87,7 +94,7 @@
 
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>
@@ -101,7 +108,7 @@
 
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>
@@ -115,7 +122,7 @@
 
         <article class="offre_stage">
             <img class="imgs_offre"
-                src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                src=""
                 alt="image offre stage">
             <div class="offre-details police_texte">
                 <h3 class="titre_poste">Intitulé du stage</h3>
@@ -135,4 +142,5 @@
     &copy; Stage En Bref. <br> Tous droits réservés <br>
     <a href="mentions_legales.php">Mentions Légales</a>
 </footer>
+
 </html>

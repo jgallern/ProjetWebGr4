@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../assets/css/style.css">    
     <script src="script.js"></script>
     <link rel="icon" href="" type="image/png">
+    <link rel="manifest" href="../../assets/manifest.json">
+
 </head>
 
 <body>
@@ -62,7 +64,7 @@
         <div class="actus police_texte">
 
             <article class="offre_stage">
-                <img class="imgs_offre" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="image offre stage">
+                <img class="imgs_offre" src="" alt="image offre stage">
                 <div class="offre-details police_texte">
                     <h3 class="titre_poste">Intitulé du stage</h3>
                     <h4 class="entreprise_offre">CESI Corporation</h4>
@@ -72,7 +74,7 @@
             </article>
             
             <article class="offre_stage">
-                <img class="imgs_offre" src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png" alt="image offre stage">
+                <img class="imgs_offre" src="" alt="image offre stage">
                 <div class="offre-details police_texte">
                     <h3 class="titre_poste">Intitulé du stage</h3>
                     <h4 class="entreprise_offre">CESI Corporation</h4>

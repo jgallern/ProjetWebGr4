@@ -2,51 +2,56 @@
     "name": "Stage En Bref",
     "short_name": "SEB",
     "description": "Votre plateforme pour trouver un stage rapidement",
-    "start_url": "/",
+    "start_url": "../views/page_accueil_ss_connexion.php",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "0056b3",
+    "background-image": "../images/fond5.png",
+    "background_color": "#fff",
+    "theme_color": "#ffeddf",
     "icons": [
         {
-            "src": "images/logo_png.png",
-            "sizes": "72x72",
-            "type":"image/png"
-},
-        {
-            "src": "images/logo_png.png",
-            "sizes": "96x96",
-            "type":"image/png"
-        },
-        {
-            "src": "images/logo_png.png",
-            "sizes": "128x128",
-            "type":"image/png"
-        },
-        {
-            "src": "images/logo_png.png",
-            "sizes": "144x144",
-            "type":"image/png"
-        },
-        {
-            "src": "images/logo_png.png",
-            "sizes": "152x152",
-            "type":"image/png"
-        },
-        {
-            "src": "images/logo_png.png",
-            "sizes": "192x192",
-            "type":"image/png"
-        },
-        {
-            "src": "images/logo_png.png",
-            "sizes": "384x384",
-            "type":"image/png"
-        },
-        {
-            "src": "images/logo_png.png",
-            "sizes": "512x512",
-            "type":"image/png"
-        }
-    ]
-}
+            "src": "../assets/images/logo_noir.png",
+            "sizes": "500x500",
+            "type": "image/png"
 
+        },
+
+        {
+            "src": "../assets/images/logo_blanc_60.png",
+            "sizes": "60x60",
+            "type": "image/png"
+
+        },
+
+        {
+            "src": "../assets/images/ico_modifier.png",
+            "sizes": "500x500",
+            "type": "image/png"
+        },
+
+        {
+            "src": "../assets/images/photo_profil.png",
+            "sizes": "500x500",
+            "type": "image/png"
+        },
+
+        {
+            "src": "../assets/images/voir_plus.png",
+            "sizes": "500x500",
+            "type": "image/png"
+        }
+    ],
+
+    "screenshots": [
+        {
+          "src": "../assets/images/screenshot_wide.png",
+          "sizes": "1902x862",
+          "type": "image/png",
+          "form_factor": "wide"
+        },
+        {
+          "src": "../assets/images/screen_mobile.png",
+          "sizes": "338x672",
+          "type": "image/png"
+        }
+      ]
+}
