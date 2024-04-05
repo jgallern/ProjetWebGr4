@@ -44,7 +44,8 @@ Class Promo{
             $getid->execute();
 
             $result = $getid->fetch(PDO::FETCH_ASSOC);
-
+            $this->id = $result['ID_Promotion'];
+            return $this->id;
             if ($result) {
                 $this->id = $result['ID_Promotion'];
                 return $this->id;
@@ -65,7 +66,7 @@ Class Promo{
             $getnom->bindParam(':idprmo', $this->id);
             $getnom->execute();
 
-            $result = $getnom->fetch(PDO::FETCH_ASSOC);
+            $result = $getnom->fetch();
 
             if ($result) {
                 $this->name = $result['Nom_Promo'];

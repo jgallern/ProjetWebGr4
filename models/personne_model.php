@@ -208,7 +208,7 @@ class Etudiant extends Personne
     function chercher_personne()
     {
         try {
-            $sql = "SELECT * FROM Personne inner join Etudiant on Personne.ID_Personne = Etudiant.ID_Personne";
+            $sql = "SELECT * FROM Personne inner join Etudiant on Personne.ID_Personne = Etudiant.ID_Personne inner join Promotion on Etudiant.ID_Promotion = Promotion.ID_Promotion";
             $whereClause = array();
 
             if ($this->nom != null) {

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -151,31 +152,33 @@ session_start();
 
             <div id="fiches_entreprises_et_boutons">
                 <div id="result_recherche_entreprise">
-                <?php
-                foreach ($_SESSION["resultat"] as $personne): ?>
-                    <div class="recherche_fiche_entreprise">
+                    <?php
 
-                        <p>
-                            <?php if ($personne['nom']!=":nom"){
+                    foreach ($_SESSION["resultat"] as $personne): ?>
+
+                        <?php if ($personne['nom'] != ":nom") {
                             ?>
-                            <img width="80px"
-                            src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
-                            alt="img personne">
-                        <h3><?php
-                            echo $personne['nom']." ".$personne['prenom']; ?>
-                        </h3>
-                        <?php
-                        $prmo->set_id($personne['ID_Promotion']);
-                        $promo = $prmo->get_Name();
-                        ?>
-                        <p>
-                            <?php echo $promo."</p>";} ?>
-                        
-                    <?php endforeach; ?>
-                            </div>
-                            <div id="overlay"></div>
-                            <div id="message">Veuillez sélectionner une entreprise</div>
-                    </div>
+                            <div class="recherche_fiche_entreprise">
+
+                                <p>
+                                    <img width="80px"
+                                        src="C:/Users/quent/OneDrive - Association Cesi Viacesi mail/A2/04_web/Projet/images/logo_png.png"
+                                        alt="img personne">
+                                <h3>
+                                    <?php
+                                    echo $personne['nom'] . " " . $personne['prenom']; ?>
+                                </h3>
+                                <?php
+                                echo "<p>".$personne['Nom_Promo']."<p>";
+                                //$prmo->set_id($personne['ID_Promotion']);
+                                //$promo = $prmo->get_Name();
+                                echo "</div>";
+                        } 
+                        //print_r($_SESSION["promo"]);
+                        endforeach; ?>
+                    <div id="overlay"></div>
+                    <div id="message">Veuillez sélectionner une entreprise</div>
+                </div>
 
                 <div id="icones_modif">
                     <div class="image-container" id="btn_modif">
