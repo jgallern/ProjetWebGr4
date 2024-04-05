@@ -4,3 +4,4 @@ AuthBasicAuthoritative On
 AuthUserFile ../htdocs/app/secret/.htpasswd
 AuthGroupFile ../htdocs/app/secret/.htgroup
 Require group admin
+ErrorDocument 404 / views/view_admin/page_introuvable_etudiant.php
