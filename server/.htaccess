@@ -1,0 +1,6 @@
+AuthType Basic
+AuthName "SEB"
+AuthBasicAuthoritative On
+AuthUserFile ../htdocs/app/secret/.htpasswd
+AuthGroupFile ../htdocs/app/secret/.htgroup
+Require group admin
