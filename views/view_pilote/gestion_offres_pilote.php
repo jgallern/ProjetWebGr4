@@ -19,7 +19,7 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../../view_pilote/accueil_pilote.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png"alt="logo seb"</a>
+        <a href="../view_pilote/page_accueil_pilote.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png"alt="logo seb"</a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_pilote/gestion_entreprise_pilote.php"
                 id="lien_entreprises_etudiants">Entreprises</a>

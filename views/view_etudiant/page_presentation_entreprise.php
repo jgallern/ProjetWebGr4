@@ -25,7 +25,7 @@
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" /></a>
+        <a href="../view_etudiant/page_accueil_etudiant.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" /></a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_etudiant/gestion_entreprise_etudiants.php"
                 id="lien_entreprises_etudiants">Entreprises</a>
