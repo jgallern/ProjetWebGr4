@@ -169,3 +169,5 @@ CREATE TABLE contenir(
     FOREIGN KEY(ID_Offre) REFERENCES Offre(ID_Offre),
     FOREIGN KEY(ID_Wishlist) REFERENCES Wishlist(ID_Wishlist)
 );
+
+ALTER TABLE `entreprise` CHANGE `logo` `logo` VARCHAR(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL;
