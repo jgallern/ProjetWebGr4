@@ -45,7 +45,6 @@
             placeholder="Mot de passe"><br>
 
         <div id="boutons">
-            <input id="oubli_mdp" type="button" value="Pardon, j'ai oublié mon mot de passe">
             <input id="submit" type="submit" value="Se connecter">
             <?php
             if (isset($_GET["login"])) {
