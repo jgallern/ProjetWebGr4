@@ -80,8 +80,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -89,8 +87,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -99,8 +95,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -109,8 +103,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -119,8 +111,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -129,8 +119,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -139,8 +127,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -149,8 +135,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -159,8 +143,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -169,8 +151,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -179,8 +159,6 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                     <form method="POST" action="">
                         <button name="btn_supprimer_wishlist" class='btn_suppr'>SUPPRIMER</button>
                     </form>
@@ -212,71 +190,51 @@
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
                 <a href="#" class="offre offre_candidatures police_texte">
                     <img src=""
                         alt="img entreprise">
                     <h3>Intitulé 2</h3>
-                    <p>Ce texte décrit l'offre brièvement
-                    </p>
                 </a>
 
             </div>
