@@ -34,17 +34,18 @@
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
-                <h3 id="nom_prenom_etudiant"><?php
-                        if (isset($_COOKIE['$prenom'])){
-                            echo $_COOKIE['$prenom'];
-                        }
-                    ?></h3>
-                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
-                        id="bouton_deconnexion">Se déconnecter</button></a>
+                <h3 id="nom_prenom_etudiant">
+                    <?php
+                    if (isset($_COOKIE['$prenom'])){
+                     echo $_COOKIE['$prenom'];
+                    }
+                    ?>
+                </h3>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php">Se déconnecter</a>
             </div>
-
             <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
         </div>
+
     </nav>
 
     <div id="lien_navbar_expand">
