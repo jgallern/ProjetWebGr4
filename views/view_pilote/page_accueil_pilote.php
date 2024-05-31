@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="theme-color" content="#ffeddf">
     <title>Accueil</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_page_accueil_pilote.js"></script>

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="theme-color" content="#ffeddf">
     <title>Acceuil</title>
     <link rel="stylesheet" href="../assets/css/style.css">    
     <script src="script.js"></script>
