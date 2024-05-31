@@ -16,6 +16,12 @@
         },
 
         {
+            "src": "../assets/images/logo_noir.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+
+        {
             "src": "../assets/images/logo_blanc_60.png",
             "sizes": "60x60",
             "type": "image/png"
