@@ -469,7 +469,6 @@ body {
     box-shadow: 0 11px 34px 0 rgba(0, 0, 0, .2);
     /* Chaque article occupe 50% de la largeur avec un espacement de 5px */
     padding: 20px;
-    background-color: ;
     margin-right: 10px;
     margin-bottom: 10px;
     /* Espacement entre les lignes */
@@ -2133,6 +2132,11 @@ footer {
 
     .carte_entreprise img {
         width: 50px;
+    }
+
+    .contraste-ameliore {
+        color: #333;
+        background-color: #fff;
     }
 
 }

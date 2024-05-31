@@ -10,6 +10,8 @@
     <script src="../../assets/js/script_wishlist_candidatures.js"></script>
     <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
     <link rel="manifest" href="../../assets/manifest.json">
+    <a href="../view_admin/page_accueil_admin.php" class="lien_nav police_texte contraste-ameliore" id="lien_entreprises_etudiants">Acceuil</a>
+
 
 </head>
 
