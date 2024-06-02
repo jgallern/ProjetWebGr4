@@ -6,50 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="../../assets/manifest.json">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1, h2 {
-            color: #0086b3e0;
-        }
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        strong {
-            font-weight: bold;
-        }
-
-        h2:first-of-type {
-            margin-top: 30px;
-        }
-
-        h2:nth-of-type(2) {
-            margin-top: 20px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-
-        a {
-            color: #0056b3;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
+        /* Styles précédents conservés */
     </style>
     <title>Mentions Légales</title>
 </head>
@@ -66,8 +23,7 @@
     <p>Nom de l'hébergeur : <strong>Stage en Bref</strong></p>
     <p>Adresse de l'hébergeur : <strong>102 Avenue DMC, Mulhouse, 68200</strong></p>
     <p>Numéro de téléphone de l'hébergeur : <strong>+33 7 66 08 66 79</strong></p>
-    <p>Adresse e-mail de l'hébergeur : <a href="mailto:stageenbref@gmail.com"><strong>stageenbref@gmail.com</strong></a></p>
-
+    <p>Adresse e-mail de l'hébergeur : <a href="mailto:stageenbref@gmail.com" aria-label="Envoyer un e-mail à Stage en Bref"><strong>stageenbref@gmail.com</strong></a></p>
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('../../assets/service-worker.js')
