@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="theme-color" content="#ffeddf">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="../../assets/manifest.json">
+    <link rel="icon" href="../../assets/images/logo_noir.png" type="image/png">
+    <script src="../../assets/js/service-worker.js"></script>
     <title>Acceuil</title>
     <link rel="stylesheet" href="../assets/css/style.css">    
     <script src="script.js"></script>
