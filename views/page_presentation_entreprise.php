@@ -10,9 +10,19 @@
 
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="script.js"></script>
-    <link rel="icon" href="" type="image/png">
+    <link rel="icon" href="../assets/images/logo_noir.png" type="image/png">
     <link rel="manifest" href="../../assets/manifest.json">
-
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -24,13 +34,13 @@
         <img id="logo_seb" src="./logo_png.png" alt="Logo de votre entreprise" width="150px">
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
-                id="lien_entreprises_etudiants">Entreprises</a>
+                id="lien_entreprises_etudiants_1">Entreprises</a>
             <a class="lien_nav police_texte" href="gestion_offres_pilote_admin.html"
-                id="lien_offres_etudiants">Offres</a>
+                id="lien_offres_etudiants_1">Offres</a>
             <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
-                id="lien_offres_etudiants">Pilotes</a>
+                id="lien_offres_etudiants_2">Pilotes</a>
             <a class="lien_nav police_texte" href="gestion_entreprise_pilote_admin.html"
-                id="lien_offres_etudiants">Étudiants</a>
+                id="lien_offres_etudiants_3">Étudiants</a>
             <a class="lien_nav police_texte" href="page_wishlist_candidatures.html" id="lien_wishlist">Mes listes</a>
             <a class="lien_nav police_texte" href="page_wishlist_candidatures.html"
                 id="lien_candidatures">Candidatures</a>
@@ -53,17 +63,17 @@
 
     <div id="lien_navbar_expand">
         <a class="lien_nav police_texte linking-animation delay-0" href="page_accueil_admin.html"
-            id="lien_entreprises_etudiants">Accueil</a>
+            id="lien_entreprises_etudiants_2">Accueil</a>
         <a class="lien_nav police_texte linking-animation delay-1" href="gestion_entreprise_pilote_admin.html"
-            id="lien_entreprises_etudiants">Entreprises</a>
+            id="lien_entreprises_etudiants_3">Entreprises</a>
         <a class="lien_nav police_texte linking-animation delay-2" href="gestion_entreprise_pilote_admin.html"
-            id="lien_offres_etudiants">Offres</a>
+            id="lien_offres_etudiants_4">Offres</a>
         <a class="lien_nav police_texte linking-animation delay-3" href="gestion_entreprise_pilote_admin.html"
-            id="lien_offres_etudiants">Étudiants</a>
+            id="lien_offres_etudiants_5">Étudiants</a>
         <a class="lien_nav police_texte linking-animation delay-4" href="gestion_entreprise_pilote_admin.html"
-            id="lien_offres_etudiants">Étudiants</a>
+            id="lien_offres_etudiants_6">Étudiants</a>
         <a class="lien_nav police_texte linking-animation delay-5" href="page_wishlist_candidatures.html"
-            id="lien_candidatures">Candidatures</a>
+            id="lien_candidatures_2">Candidatures</a>
     </div>
 
     <main>
@@ -115,5 +125,3 @@
 </body>
 
 </html>
-
-           
