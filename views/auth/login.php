@@ -1,15 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffeddf">
     <title>Stage En Bref</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
     <script src="../../assets/js/script_page_connexion.js"></script>
     <link rel="icon" href="../assets/images/logo_noir.png" type="image/png">
+    <link rel="manifest" href="../../assets/manifest.json"> <!-- Ajout du lien vers le manifest -->
 
-
+    <!-- Ajout de la balise meta pour le viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -18,21 +21,14 @@
                 src="../../assets/images/logo_blanc.png"></a>
 
         <?php
-
-        if (isset($_COOKIE["connected"])) {
-            if ($_COOKIE["connected"] == 1) {
-                ?>
-                <form method="post" action="disconnect.php">
-                    <input type="submit" value="Se déconnecter">
-                </form>
-
-                <?php
-            }
-        }
-
-        ?>
-
-
+        // Vérification de la connexion de l'utilisateur
+        if (isset($_COOKIE["connected"]) && $_COOKIE["connected"] == 1) {
+            ?>
+            <!-- Affichage du bouton de déconnexion si l'utilisateur est connecté -->
+            <form method="post" action="disconnect.php">
+                <input type="submit" value="Se déconnecter">
+            </form>
+        <?php } ?>
 
         <h1 class="police_texte" id="titre_bienvenue">salut</h1>
     </div>
@@ -48,6 +44,7 @@
         <div id="boutons">
             <input id="submit" type="submit" value="Se connecter">
             <?php
+            // Vérification des erreurs de connexion
             if (isset($_GET["login"])) {
                 $erreur = $_GET['login'];
                 if ($erreur == 'false') {
@@ -56,18 +53,12 @@
                     echo "<p>Veuillez entrer tous les champs de connection</p>";
                 }
             }
-
             ?>
         </div>
     </form>
 
-
-
+    <footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés</footer>
 
 </body>
-
-<footer class="police_texte">&copy; Stage En Bref. <br> Tous droits réservés
-
-</footer>
 
 </html>
