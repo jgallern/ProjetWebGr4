@@ -14,50 +14,51 @@
 
 <body>
     <nav id="navbar">
-        <div class="menu-icon" onclick="toggleMenu()">
+        <div class="menu-icon" onclick="toggleMenu()" aria-label="Menu">
             <div class="bar"></div>
             <div class="bar_2"></div>
         </div>
-        <a href="../view_admin/page_accueil_admin.php"><img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" /></a>
+        <a href="../view_admin/page_accueil_admin.php">
+            <img id="logo_seb" src="../../assets/images/logo_blanc_60.png" alt="logo" />
+        </a>
         <div id="lien_navbar">
             <a class="lien_nav police_texte" href="../view_admin/gestion_entreprise_admin.php"
-                id="lien_entreprises_etudiants">Entreprises</a>
+                id="lien_entreprises_etudiants_1">Entreprises</a>
             <a class="lien_nav police_texte" href="../view_admin/gestion_offre_admin.php"
-                id="lien_offres_etudiants">Offres</a>
+                id="lien_offres_etudiants_1">Offres</a>
             <a class="lien_nav police_texte" href="../view_admin/gestion_pilotes_admin.php"
-                id="lien_offres_etudiants">Pilotes</a>
+                id="lien_offres_etudiants_2">Pilotes</a>
             <a class="lien_nav police_texte" href="../view_admin/gestion_etudiants_admin.php"
-                id="lien_offres_etudiants">Etudiants</a>
+                id="lien_offres_etudiants_3">Etudiants</a>
             <a class="lien_nav police_texte" href="../view_admin/page_wishlist_candidatures_admin.php"
-                id="lien_candidatures">Wishlist et Candidatures</a>
+                id="lien_candidatures_1">Wishlist et Candidatures</a>
         </div>
         <div id="profil">
             <div id="detail_profil" class="police_texte">
-                <h3 id="nom_prenom_etudiant"><?php
-                        if (isset($_COOKIE['$prenom'])){
-                            echo $_COOKIE['$prenom'];
-                        }
-                    ?></h3>
-                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php"><button
-                        id="bouton_deconnexion">Se déconnecter</button></a>
+                <h3 id="nom_prenom_etudiant">
+                    <?php if (isset($_COOKIE['$prenom'])) { echo $_COOKIE['$prenom']; } ?>
+                </h3>
+                <a style="text-decoration: none;" href="../controllers/deconnection_controller.php">
+                    <button id="bouton_deconnexion">Se déconnecter</button>
+                </a>
             </div>
-            <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo_profil">
+            <img id="photo_profil" src="../../assets/images/photo_profil.png" alt="photo de profil">
         </div>
     </nav>
 
     <div id="lien_navbar_expand">
         <a class="lien_nav police_texte linking-animation delay-0" href="../view_admin/page_accueil_admin.php"
-            id="lien_entreprises_etudiants">Accueil</a>
+            id="lien_entreprises_etudiants_2" aria-label="Accueil">Accueil</a>
         <a class="lien_nav police_texte linking-animation delay-1" href="../view_admin/gestion_entreprise_admin.php"
-            id="lien_entreprises_etudiants">Entreprises</a>
+            id="lien_entreprises_etudiants_3" aria-label="Entreprises">Entreprises</a>
         <a class="lien_nav police_texte linking-animation delay-2" href="../view_admin/gestion_offre_admin.php"
-            id="lien_offres_etudiants">Offres</a>
+            id="lien_offres_etudiants_4" aria-label="Offres">Offres</a>
         <a class="lien_nav police_texte linking-animation delay-3" href="../view_admin/gestion_etudiants_admin.php"
-            id="lien_offres_etudiants">Etudiants</a>
+            id="lien_offres_etudiants_5" aria-label="Etudiants">Etudiants</a>
         <a class="lien_nav police_texte linking-animation delay-4" href="../view_admin/gestion_pilotes_admin.php"
-            id="lien_offres_etudiants">Pilotes</a>
+            id="lien_offres_etudiants_6" aria-label="Pilotes">Pilotes</a>
         <a class="lien_nav police_texte linking-animation delay-5" href="../view_admin/page_wishlist_candidatures.php"
-            id="lien_candidatures">Wishlist et Candidatures</a>
+            id="lien_candidatures_2" aria-label="Wishlist et Candidatures">Wishlist et Candidatures</a>
     </div>
 
     <main>
@@ -89,15 +90,14 @@
                     <button class="bouton_candidater">Candidater</button>
                 </div>
             </article>
-            </div>
+        </div>
     </main>
     
     <footer class="police_texte">
         &copy; Stage En Bref. <br> Tous droits réservés <br>
-        <a target="_blank" href="../mentions_legales.php">Mentions Légales</a>
+        <a target="_blank" href="../mentions_legales.php" aria-label="Mentions Légales">Mentions Légales</a>
     </footer>
 
 </body>
 
 </html>
-
